@@ -1,0 +1,68 @@
+{
+  "inputs": [
+    {
+      "type": "text",
+      "id": "",
+      "name": "",
+      "class": "cl-text",
+      "placeholder": "",
+      "value": "",
+      "readonly": false,
+      "disabled": false,
+      "visible": true,
+      "rect": {
+        "x": 769,
+        "y": 434,
+        "width": 381,
+        "height": 48,
+        "top": 434,
+        "right": 1150,
+        "bottom": 482,
+        "left": 769
+      }
+    },
+    {
+      "type": "password",
+      "id": "",
+      "name": "",
+      "class": "cl-text",
+      "placeholder": "",
+      "value": "",
+      "readonly": false,
+      "disabled": false,
+      "visible": true,
+      "rect": {
+        "x": 769,
+        "y": 490,
+        "width": 381,
+        "height": 48,
+        "top": 490,
+        "right": 1150,
+        "bottom": 538,
+        "left": 769
+      }
+    }
+  ],
+  "buttons": [
+    {
+      "tag": "A",
+      "text": "공동인증서 로그인",
+      "id": "",
+      "class": "cl-text-wrapper",
+      "onclick": null,
+      "href": null,
+      "visible": false
+    },
+    {
+      "tag": "A",
+      "text": "로그인",
+      "id": "",
+      "class": "cl-text-wrapper",
+      "onclick": null,
+      "href": null,
+      "visible": true
+    }
+  ],
+  "forms": [],
+  "scripts_with_login": []
+}

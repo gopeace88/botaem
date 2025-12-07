@@ -1,0 +1,21 @@
+[
+  {
+    "url": "https://www.losims.go.kr/lss.do",
+    "status": 200,
+    "body_preview": "<!DOCTYPE html><html lang=\"ko\" style=\"width:100%;height:100%;\"><head><base href=\"/resources/ui/\" /><meta charset=\"utf-8\"/><meta name=\"viewport\" content=\"user-scalable=1, initial-scale=1.0, width=device-width\" /><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" /><title>com/inc/login2</title><link rel=\"stylesheet\" media=\"all\" href=\"../css/cleopatra.css?p=0.5155826665380175\"/><link rel=\"stylesheet\" media=\"all\" href=\"theme/cleopatra-theme.css?p=0.5155826665380175\"/><link rel=\"stylesheet\" media=\""
+  },
+  {
+    "url": "https://www.losims.go.kr/resources/ui/com/inc/login2.clx.js?p=0.5155826665380175",
+    "status": 200,
+    "body_preview": "(function(){var a=new cpr.core.App(\"com/inc/login2\",{onPrepare:function(b){},onCreate:function(b,P){var F={};var l=createCommonUtil();var v=128;var j=10000;var g=\"0c68efe9e3c3a02b3f9f69a08987e4ab\";var x=\"18b8e16db963ae9bfe9fccbe37d452e0\";var U=\"exb6Frame\";function r(Y,X,V){var W=new Date();W.setDate(W.getDate()+parseInt(V));document.cookie=Y+\"=\"+escape(X)+\";path=/;expires=\"+W.toGMTString()+\";\"}function c(ab){var aa=document.cookie+\";\";var Y=aa.split(\";\");var W=Y.length;var Z=null;var V=null;for("
+  },
+  {
+    "url": "https://www.losims.go.kr/resources/ui/theme/images/com/login/technology-network-background.png",
+    "status": 200
+  },
+  {
+    "url": "https://www.losims.go.kr/resources/ui/theme/images/com/main/logo_lss_n.svg",
+    "status": 200,
+    "body_preview": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!-- Generator: Adobe Illustrator 26.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->\n<svg version=\"1.1\" id=\"레이어_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\"\n\t y=\"0px\" viewBox=\"0 0 140 70\" style=\"enable-background:new 0 0 140 70;\" xml:space=\"preserve\">\n<style type=\"text/css\">\n\t.st0{fill:#808183;}\n\t.st1{fill:#BED62F;}\n\t.st2{fill:#014DA1;}\n\t.st3{fill:#FFFFFF;}\n\t.st4{fill:#02509F;}\n</style>\n<g>\n\t<path class="
+  }
+]

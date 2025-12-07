@@ -1,0 +1,65 @@
+{
+  "name": "botame-admin",
+  "version": "1.0.0",
+  "description": "보탬e 플레이북 관리 도구 (관리자용)",
+  "main": "out/main/main.js",
+  "scripts": {
+    "dev": "electron-vite dev -c electron-vite.config.js",
+    "build": "electron-vite build -c electron-vite.config.js",
+    "preview": "electron-vite preview -c electron-vite.config.js",
+    "lint": "eslint . --ext .ts,.tsx",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.86.0",
+    "clsx": "^2.1.0",
+    "dotenv": "^17.2.3",
+    "js-yaml": "^4.1.0",
+    "lucide-react": "^0.303.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.2.0",
+    "zustand": "^4.4.7"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.10.6",
+    "@types/react": "^18.2.46",
+    "@types/react-dom": "^18.2.18",
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
+    "@typescript-eslint/parser": "^6.17.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.16",
+    "electron": "^28.3.3",
+    "electron-builder": "^24.9.1",
+    "electron-vite": "^2.0.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "pg": "^8.16.3",
+    "playwright": "^1.57.0",
+    "postcss": "^8.4.33",
+    "supabase": "^2.65.6",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.10"
+  },
+  "build": {
+    "appId": "com.botame.admin",
+    "productName": "보탬e 관리자",
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico"
+    }
+  }
+}

@@ -1,0 +1,93 @@
+# 보탬e 자동화 설정
+# 실제 값은 .env 파일에서 환경변수로 관리
+
+botame:
+  # 시스템 URL
+  url: "https://www.losims.go.kr/lss.do"
+  timeout: 30000  # 밀리초
+
+# 인증 정보 (환경변수 참조)
+credentials:
+  user_id: "${BOTAME_USER_ID}"
+  password: "${BOTAME_PASSWORD}"
+  transfer_password: "${BOTAME_TRANSFER_PASSWORD}"
+
+# 대상 보조사업 (실행 시 설정)
+project:
+  fiscal_year: "2024"
+  project_code: ""  # 실행 시 입력
+
+# 자동화 설정
+automation:
+  # 전자세금계산서 집행등록
+  tax_invoice:
+    enabled: true
+    max_items: 100
+
+  # 카드사용내역 집행등록
+  card_usage:
+    enabled: true
+    max_items: 50
+
+  # 집행이체 (반자동)
+  transfer:
+    enabled: true
+    require_manual_auth: true
+
+# 비목/세목 매핑 규칙
+budget_mapping:
+  rules:
+    - vendor_type: "음식점"
+      budget_item: "회의비"
+      funding_type: "시도비"
+
+    - vendor_type: "사무용품"
+      budget_item: "사무용품비"
+      funding_type: "시도비"
+
+    - vendor_name_contains: "인쇄"
+      budget_item: "인쇄비"
+      funding_type: "시도비"
+
+    - vendor_name_contains: "택시"
+      budget_item: "여비"
+      funding_type: "시도비"
+
+    - vendor_type: "주유소"
+      budget_item: "차량유지비"
+      funding_type: "시도비"
+
+  # 기본값 (매칭 안될 때)
+  default:
+    budget_item: "기타운영비"
+    funding_type: "시도비"
+
+# 알림 설정
+notification:
+  slack:
+    enabled: false
+    webhook_url: "${SLACK_WEBHOOK_URL}"
+    channel: "#botame-automation"
+
+  email:
+    enabled: false
+    smtp_server: ""
+    smtp_port: 587
+    username: ""
+    password: ""
+    recipients: []
+
+# 로깅 설정
+logging:
+  level: "INFO"
+  file: "logs/automation.log"
+  rotation: "10 MB"
+  retention: "30 days"
+
+# 브라우저 설정
+browser:
+  headless: false  # true: 화면 없이, false: 화면 표시
+  slow_mo: 100     # 동작 간 딜레이 (밀리초)
+  viewport:
+    width: 1920
+    height: 1080

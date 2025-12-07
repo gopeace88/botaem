@@ -1,0 +1,2516 @@
+{
+  "filename": "보탬e 업무대행 간소화 기능 안내 자료_v1.1.docx",
+  "total_chars": 12854,
+  "total_paragraphs": 499,
+  "total_tables": 1,
+  "paragraphs": [
+    {
+      "index": 34,
+      "text": "안내문구 확인.",
+      "style": "Heading 2"
+    },
+    {
+      "index": 35,
+      "text": "회계연도 기준 공모사업목록 확인.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 36,
+      "text": "자체형, 지정형공모사업만 조회.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 37,
+      "text": "최종확정된 사업만 조회.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 38,
+      "text": "선정기관 중 정보취약계층으로 등록된 기관이 존 재하는 사업만 조회.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 39,
+      "text": "비예치형사업신청가능여부 확인.",
+      "style": "Heading 2"
+    },
+    {
+      "index": 40,
+      "text": "업무대행 민간보조사업은 비예치형만 가능. (공모사업의 비예치형사업신청가능여부 'Y')",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 41,
+      "text": "공모사업의 비예치형 사업 신청가능여부 값은 최 종확정사업관리(99029) 메뉴에서 변경 가능.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 42,
+      "text": "민간보조사업일괄등록 버튼 클릭",
+      "style": "Heading 2"
+    },
+    {
+      "index": 43,
+      "text": "③\t- 일괄등록화면으로 이동",
+      "style": "Body Text"
+    },
+    {
+      "index": 44,
+      "text": "<비예치형 사업 신청가능여부>",
+      "style": "Normal"
+    },
+    {
+      "index": 45,
+      "text": "업무대행 민간보조사업은 비예치형만 가능. (공모사업의 비예치형사업신청가능여부 'Y')",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 46,
+      "text": "공모사업의 비예치형 사업 신청가능여부 값은 최 종확정사업관리(99029) 메뉴에서 변경 가능.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 47,
+      "text": "공모사업의 비예치형사업신청가능여부 가 ‘N’ 일 경우 [민간보조사업 일괄등록] 버튼 클릭 시 해당 경 고창 호출",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 51,
+      "text": "안내문구 확인.",
+      "style": "Heading 2"
+    },
+    {
+      "index": 52,
+      "text": "아 예시로 작성된 행은 삭제 후 작성하여 등록해 주 세요. (파일확장자는 .xlsx만 가능합니다.)",
+      "style": "Body Text"
+    },
+    {
+      "index": 53,
+      "text": "수행사업계획신청서 '미제출' 상태의 민간보조사업 만 조회되며, 정보 등록이 가능합니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 54,
+      "text": "정보취약계층으로 등록된 기관의 민간보조사업만 조회됩니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 55,
+      "text": "자부담계좌 개설은행은 자치단체 금고은행만 입력 가능합니다. (시스템상 자치단체별 은행 자동표기)",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 56,
+      "text": "보조금표지판유형은 공사표지판, 시설표지판, 운영 표지판, 기타, 미대상 만 입력 가능합니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 57,
+      "text": "계좌실명확인유형구분은 대표자주민등록번호, 사 업자등록번호, 개인주민등록번호 만 입력 가능합니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 58,
+      "text": "민간보조사업의 사업기간은 공모사업의 사업기간 내에서만 설정이 가능합니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 59,
+      "text": "[저장] 버튼을 누른 후 각각의 민간보조사업 수행 사업계획신청(91043) 화면에서 추가정보 입력하여 제출이 필요합니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 60,
+      "text": "하나의 보조사업 당 한 행만 작성 가능하며, 세부 추진계획 및 예산집행계획은 수행사업계획신청 (91043) 화면을 통해 작성하시길 바랍니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 64,
+      "text": "공모사업의 대상 민간보조사업 목록 확인.",
+      "style": "Heading 2"
+    },
+    {
+      "index": 65,
+      "text": "정보취약계층으로 등록된 보조사업자의 사업만 조 회.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 66,
+      "text": "수행사업계획신청서 미제출 상태의 사업만 조회.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 67,
+      "text": "엑셀다운로드",
+      "style": "Heading 2"
+    },
+    {
+      "index": 68,
+      "text": "기존 작성내용을 포함 한 화면상의 현재정보를 엑셀로 다운로드.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 69,
+      "text": "엑셀다운로드 버튼을 눌러 다운로드 폴더에 엑셀 업로드용 템플릿 다운로드 후 업로드 할 내용 작성 (F열~AB열까지 작성 후 저장)",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 70,
+      "text": "※ 열 수정 시 업로드 불가",
+      "style": "Body Text"
+    },
+    {
+      "index": 71,
+      "text": "엑셀업로드",
+      "style": "Heading 2"
+    },
+    {
+      "index": 72,
+      "text": "엑셀다운로드 한 업로드용 템플릿(엑셀양식)에 등록 할 내용을 작성(F열~AB열까지) 후 엑셀업로",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 73,
+      "text": "드",
+      "style": "Body Text"
+    },
+    {
+      "index": 74,
+      "text": "버튼을 누른 후 업로드 할 파일을 선택 후 업로드 처리.",
+      "style": "Body Text"
+    },
+    {
+      "index": 75,
+      "text": "※ 자세한 작성예시는 6페이지 참고",
+      "style": "Body Text"
+    },
+    {
+      "index": 76,
+      "text": "행삭제",
+      "style": "Heading 2"
+    },
+    {
+      "index": 77,
+      "text": "사업삭제가 아님",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 78,
+      "text": "사업계획서 작성을 원치 않는 대상 행을 삭제",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 79,
+      "text": "초기화",
+      "style": "Heading 2"
+    },
+    {
+      "index": 80,
+      "text": "해당 화면 최초 진입상태로 초기화",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 85,
+      "text": "선택된 민간보조사업의 사업기간, 보조금, 자부담 금 입력 후 진행",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 86,
+      "text": "선택된 민간보조사업의 세부추진계획 내용을 입력",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 87,
+      "text": "※ 자세한 작성예시는 7페이지 참고",
+      "style": "Body Text"
+    },
+    {
+      "index": 88,
+      "text": "예산집행계획 탭",
+      "style": "Heading 2"
+    },
+    {
+      "index": 89,
+      "text": "선택된 민간보조사업의 보조금, 자부담금 입력 후",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 90,
+      "text": "선택된 민간보조사업의 예산집행계획 내용을 입력",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 91,
+      "text": "※ 자세한 작성예시는 8페이지 참고",
+      "style": "Body Text"
+    },
+    {
+      "index": 92,
+      "text": "취소",
+      "style": "Heading 2"
+    },
+    {
+      "index": 93,
+      "text": "목록화면으로 이동",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 94,
+      "text": "저장",
+      "style": "Heading 2"
+    },
+    {
+      "index": 95,
+      "text": "각각의 민간보조사업 수행사업계획신청(91043) 화 면에서 추가정보 입력하여 제출 필요",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 99,
+      "text": "안내문구 확인",
+      "style": "Heading 2"
+    },
+    {
+      "index": 100,
+      "text": "안내문구의 파란색 안내를 참조하여 입력",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 101,
+      "text": "(시스템상 자치단체별 은행 자동표기)",
+      "style": "Body Text"
+    },
+    {
+      "index": 102,
+      "text": "민간보조사업명",
+      "style": "Heading 2"
+    },
+    {
+      "index": 104,
+      "text": "사업기간 입력",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 105,
+      "text": "필수입력",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 106,
+      "text": "공모사업기간 이내로 입력",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 107,
+      "text": "공모사업기간에 맞지않는 기간 입력시 저장 실패 및 해당 입력에대한 안내창 호출",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 108,
+      "text": "보조금/자부담금 입력",
+      "style": "Heading 2"
+    },
+    {
+      "index": 109,
+      "text": "금액은 숫자로 입력",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 110,
+      "text": "자부담계좌개설은행 입력",
+      "style": "Heading 2"
+    },
+    {
+      "index": 111,
+      "text": "필수입력",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 112,
+      "text": "엑셀 양식 작성시 안내문구에 해당하는 지자체의 금고은행을 정확한 한글명칭으로 입력",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 113,
+      "text": "자부담계좌번호 입력",
+      "style": "Heading 2"
+    },
+    {
+      "index": 114,
+      "text": "필수입력",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 115,
+      "text": "숫자로 입력",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 116,
+      "text": "계좌실명확인유형구분 입력",
+      "style": "Heading 2"
+    },
+    {
+      "index": 117,
+      "text": "필수입력",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 118,
+      "text": "엑셀 양식 작성시 안내문구에 기재되어있는 계좌 실명확인유형구분을 참고하여 정확하게 입력 (대표자주민등록번호, 사업자등록번호, 개인주민등록 번호)",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 119,
+      "text": "보조금표지판유형 입력",
+      "style": "Heading 2"
+    },
+    {
+      "index": 120,
+      "text": "엑셀 양식 작성시 안내문구에 기재되어있는 보조 금표지판유형을 참고하여 정확하게 입력 (공사표지판, 시설표지판, 운영표지판, 기타, 미대상)",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 124,
+      "text": "안내문구 확인",
+      "style": "Heading 2"
+    },
+    {
+      "index": 125,
+      "text": "선택된 민간보조사업의 보조금, 자부담금, 사업기 간에 맞게 입력해야 합니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 126,
+      "text": "세부추진계획 작성 후 [임시저장(세부추진계획)]",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 127,
+      "text": "버튼을 반드시 클릭해야 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 128,
+      "text": "[임시저장(세부추진계획)] 버튼 클릭 시 실제 저장 은 되지 않으며, 화면을 닫을 경우 작성된 내용은 초",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 129,
+      "text": "대상 민간보조사업 목록 전체의 임시저장(세부추 진계획) 후 [저장] 버튼을 반드시 클릭해야 합니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 130,
+      "text": "세부사업명, 추진계획내용, 추진일정기간, 사업예 산금액(원) 입력",
+      "style": "Heading 2"
+    },
+    {
+      "index": 131,
+      "text": "필수입력",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 132,
+      "text": "행추가",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 134,
+      "text": "행삭제",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 136,
+      "text": "임시저장(세부추진계획)",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 137,
+      "text": "선택된 민간보조사업의 사업비에 맞춰 세부추진계 획의 사업예산 총 금액(ⓐ)을 입력하지 않으면 임시 저장 불가",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 138,
+      "text": "선택된 민간보조사업의 사업기간에 맞춰 추진일정 기간(ⓑ)을 선택하지 않으면 임시저장 불가",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 139,
+      "text": "임시저장은 실제 저장이 아니며 화면을 닫을 경우 작성된 내용은 초기화, 하단의 [저장] 버튼을 눌러야 수행사업계획신청(91043) 메뉴에서 확인 가능",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 143,
+      "text": "안내문구 확인",
+      "style": "Heading 2"
+    },
+    {
+      "index": 144,
+      "text": "선택된 민간보조사업의 보조금, 자부담금에 맞게 입력해야 합니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 145,
+      "text": "동일한 보조세목을 중복으로 등록할 수 없습니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 146,
+      "text": "예산집행계획 작성 후 [임시저장(예산집행계획)]",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 147,
+      "text": "버튼을 반드시 클릭해야 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 148,
+      "text": "[임시저장(예산집행계획)] 버튼 클릭 시 실제 저장 은 되지 않으며, 화면을 닫을 경우 작성된 내용은 초",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 149,
+      "text": "대상 민간보조사업 목록 전체 임시저장(예산집행 계획) 후 [저장] 버튼을 반드시 클릭해야 합니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 150,
+      "text": "보조세목, 지방비금액(원), 자부담금액(원) 입력",
+      "style": "Heading 2"
+    },
+    {
+      "index": 151,
+      "text": "필수입력",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 152,
+      "text": "예산합계액(원) 항목은 자동 계산",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 153,
+      "text": "행추가",
+      "style": "Heading 2"
+    },
+    {
+      "index": 154,
+      "text": "입력할 항목 행추가",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 155,
+      "text": "행삭제",
+      "style": "Heading 2"
+    },
+    {
+      "index": 156,
+      "text": "입력한 항목 행삭제",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 157,
+      "text": "임시저장(세부추진계획)",
+      "style": "Heading 2"
+    },
+    {
+      "index": 158,
+      "text": "선택된 민간보조사업의 보조금 금액에 맞춰 예산 집행계획의 지방비 총 금액(ⓐ)을 입력하지 않으면 임시저장 불가",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 159,
+      "text": "선택된 민간보조사업의 자부담 금액에 맞춰 예산 집행계획의 자부담 총 금액(ⓑ)을 입력하지 않으면 임시저장 불가",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 160,
+      "text": "동일한 보조세목을 중복 등록 시 임시저장 불가",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 161,
+      "text": "임시저장은 실제 저장이 아니며 화면을 닫을 경우 작성된 내용은 초기화, 하단의 [저장] 버튼을 눌러야 수행사업계획신청(91043) 메뉴에서 확인 가능",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 179,
+      "text": "아래 조건을 모두 충족하는 사업에 대해서만 업무대행 일괄등록 사업으로 처리 가능.",
+      "style": "Normal"
+    },
+    {
+      "index": 181,
+      "text": "사업목적 및 사업수행내용이 유사한 유형의 사업",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 182,
+      "text": "-. 사업수행계획의 세부추진 계획 및 실적이 1개로만 발생(슬라이드22 참고)",
+      "style": "Normal"
+    },
+    {
+      "index": 183,
+      "text": "-. 집행계획의 보조세목을 1개로만 사용 (슬라이드22 참고)",
+      "style": "Normal"
+    },
+    {
+      "index": 184,
+      "text": "보조사업자가 IT취약계층이기에 업무대행으로 사업을 수행해야 하는 경우",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 185,
+      "text": "-. 비예치형 사업",
+      "style": "Normal"
+    },
+    {
+      "index": 186,
+      "text": "보조사업자의 자부담 계좌를 금고은행 이외의 타은행인 경우도 등록가능.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 199,
+      "text": "카드 해외사용여부 신청",
+      "style": "Normal"
+    },
+    {
+      "index": 203,
+      "text": "사업확정(공고확정)",
+      "style": "Normal"
+    },
+    {
+      "index": 205,
+      "text": "수행사업 자료생성",
+      "style": "Normal"
+    },
+    {
+      "index": 206,
+      "text": "계정생성 제외처리",
+      "style": "Normal"
+    },
+    {
+      "index": 211,
+      "text": "교부\t집행\t정산/정보공시",
+      "style": "Normal"
+    },
+    {
+      "index": 215,
+      "text": "일반지출",
+      "style": "Normal"
+    },
+    {
+      "index": 216,
+      "text": "이자금액등록",
+      "style": "Normal"
+    },
+    {
+      "index": 217,
+      "text": "이자정보",
+      "style": "Normal"
+    },
+    {
+      "index": 222,
+      "text": "수행사업 정보",
+      "style": "Normal"
+    },
+    {
+      "index": 225,
+      "text": "교부결정 정보",
+      "style": "Normal"
+    },
+    {
+      "index": 227,
+      "text": "집행정보",
+      "style": "Normal"
+    },
+    {
+      "index": 228,
+      "text": "정산정보",
+      "style": "Normal"
+    },
+    {
+      "index": 237,
+      "text": "이월신청 정보",
+      "style": "Normal"
+    },
+    {
+      "index": 240,
+      "text": "중요재산 정보",
+      "style": "Normal"
+    },
+    {
+      "index": 241,
+      "text": "실적보고 서",
+      "style": "Normal"
+    },
+    {
+      "index": 243,
+      "text": "정보공시",
+      "style": "Normal"
+    },
+    {
+      "index": 247,
+      "text": "업무대행 처리하고자 하는 보조사업자(기관) 정보가 보탬e에 IT취약계층으로 지정되어 있는지 확인",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 248,
+      "text": "매뉴 : 사용자지원 > 정보취약계층지원 > 정보취약 계층관리 (97011)",
+      "style": "Body Text"
+    },
+    {
+      "index": 249,
+      "text": "1) 성명, 휴대전화번호, 생년월일 등을 이용하여 [IT취약계층 사용자목록] 에 사용자 정보가 있는지 확인한다. ①",
+      "style": "Body Text"
+    },
+    {
+      "index": 250,
+      "text": "1",
+      "style": "Heading 1"
+    },
+    {
+      "index": 254,
+      "text": "소속기관 정보 존재여부 확인",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 255,
+      "text": "[IT취약계층 사용자목록] 에서 조회된 사용자를 선택 ① 하여",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 256,
+      "text": "하단에 소속기관 정보가 조회되는지 확인 ②",
+      "style": "Body Text"
+    },
+    {
+      "index": 257,
+      "text": "[IT취약계층 사용자목록] 에서 조회되지 않거나 [소속기관목록] 에 기관정보가 조회되지 않는다면 [신규] ③ 버튼을 이용하여 정보 등록",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 258,
+      "text": "1",
+      "style": "Heading 1"
+    },
+    {
+      "index": 264,
+      "text": "2",
+      "style": "Normal"
+    },
+    {
+      "index": 268,
+      "text": "IT취약계층 신규등록",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 269,
+      "text": "IT취약계층 등록은 개별등록 방법과",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 270,
+      "text": "엑셀 양식을 이용한 엑셀업로드 방식을 선택해서 등록가능.",
+      "style": "Body Text"
+    },
+    {
+      "index": 271,
+      "text": "엑셀업로드 방법",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 272,
+      "text": "[서식] 버튼을 이용하여 서식을 다운로드 받은 뒤 작성하여 [엑셀업로드] 버튼을 통해 자료를 업로드 한 뒤 [저장] 버튼 클릭",
+      "style": "Body Text"
+    },
+    {
+      "index": 273,
+      "text": "개별등록 방법",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 274,
+      "text": "-. [행추가] 버튼을 이용하여 입력",
+      "style": "Body Text"
+    },
+    {
+      "index": 275,
+      "text": "-. 사용자 ID는 직접 입력",
+      "style": "Body Text"
+    },
+    {
+      "index": 276,
+      "text": "-. 기관ID는 기관명 등록후 저장하면 자동 생성됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 277,
+      "text": "[IT취약계층 사용자목록] 에서 조회되었으나",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 278,
+      "text": "[소속기관목록] 에 기관정보가 조회되지 않은경우",
+      "style": "Body Text"
+    },
+    {
+      "index": 279,
+      "text": "-. ID, 성명, 휴대전화번호, 생년월일은 [IT취약계층 사용자목록] 에서 조회된 정보를 등록하고 기관정보 는 신규로 등록",
+      "style": "Body Text"
+    },
+    {
+      "index": 283,
+      "text": "업무대행자 지정여부 확인",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 284,
+      "text": "업무대행 하고자 하는 기관정보를 선택했을때 ① 하단의 [업무대행자자목록] 에 자신의 정보가 조회 되어야 함. ②",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 285,
+      "text": "업무대행자 목록에 조회되지 않는 경우",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 286,
+      "text": "[업무대행자추가] ③ 버튼을 통해 ID정보를 추가",
+      "style": "Body Text"
+    },
+    {
+      "index": 287,
+      "text": "1",
+      "style": "Heading 1"
+    },
+    {
+      "index": 291,
+      "text": "2\t3",
+      "style": "Normal"
+    },
+    {
+      "index": 295,
+      "text": "업무대행자 등록",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 296,
+      "text": "소속자치단체, ID, 성명, 휴대전화번호 등을 이용하 여 자기정보가 업무대행자로 등록되어 있는지 확인",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 297,
+      "text": "조회된 자신의 정보를 선택하고 [확인]버튼 클릭하 여 업무대행자 로 지정.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 301,
+      "text": "포탈사용자정보 생성",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 302,
+      "text": "업무대행자 등록 위해 업무대행자 검색시 자신의 정보가 조회 되지 않는 경우 포탈사용자 정보를 생성",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 303,
+      "text": "-. 앞페이지 5번에서 자신의 정보가 없을때.",
+      "style": "Body Text"
+    },
+    {
+      "index": 305,
+      "text": "[포탈사용자정보생성] 버튼 클릭시 자신의 정보가 생성됨. ①",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 308,
+      "text": "1",
+      "style": "Heading 1"
+    },
+    {
+      "index": 312,
+      "text": "지정사업등록",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 313,
+      "text": "매뉴 : 보조사업선정 > 지정사업관리 > 지정사업등 록 (91033)",
+      "style": "Body Text"
+    },
+    {
+      "index": 314,
+      "text": "1) 지정사업 등록 화면에서 [신규]버튼 클릭 ①",
+      "style": "Body Text"
+    },
+    {
+      "index": 316,
+      "text": "1",
+      "style": "Heading 1"
+    },
+    {
+      "index": 320,
+      "text": "지정사업 사업정보 등록",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 321,
+      "text": "관리사업 선택 후 사업개요 등 사업정보 등록",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 322,
+      "text": "재원정보 등록",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 323,
+      "text": "-. 선택한 관리사업의 예산중",
+      "style": "Body Text"
+    },
+    {
+      "index": 324,
+      "text": "이 사업에서 사용하게 될 재원별 금액을 등록",
+      "style": "Body Text"
+    },
+    {
+      "index": 328,
+      "text": "지정사업 사업명 등록",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 329,
+      "text": "1) 사업명 등록",
+      "style": "Body Text"
+    },
+    {
+      "index": 330,
+      "text": "- 공모 사업명 등록",
+      "style": "Body Text"
+    },
+    {
+      "index": 334,
+      "text": "지정사업 보조사업자 등록",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 335,
+      "text": "1) [행추가] ① 버튼을 통해 선정기관(보조사업자) 추가",
+      "style": "Body Text"
+    },
+    {
+      "index": 336,
+      "text": "1",
+      "style": "Heading 1"
+    },
+    {
+      "index": 340,
+      "text": "기관 조회",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 341,
+      "text": "행추가 버튼클릭시 나타나는 기관조회 팝업 화면",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 343,
+      "text": "기관명, 사업자등록번호 등을 통해 기관조회",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 344,
+      "text": "조회된 목록을 선택후 ① 화살표 클릭 ②으로",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 345,
+      "text": "1\t선택목록으로 이동",
+      "style": "Body Text"
+    },
+    {
+      "index": 346,
+      "text": "[적용] 버튼 클릭 ③",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 348,
+      "text": "2",
+      "style": "Heading 1"
+    },
+    {
+      "index": 356,
+      "text": "3",
+      "style": "Normal"
+    },
+    {
+      "index": 360,
+      "text": "지정사업 선정기관 적용",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 361,
+      "text": "1) 기관조회 화면을 통해 선택한 기관이 적용됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 365,
+      "text": "신청정보 등록",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 366,
+      "text": "1) 비예치형 신청가능 여부",
+      "style": "Body Text"
+    },
+    {
+      "index": 367,
+      "text": "-. 가능으로 선택 ①",
+      "style": "Body Text"
+    },
+    {
+      "index": 368,
+      "text": "-. 업무대행 일괄처리 사업은 반드시 비예치형으로 생성되어야 함.",
+      "style": "Body Text"
+    },
+    {
+      "index": 369,
+      "text": "1",
+      "style": "Heading 1"
+    },
+    {
+      "index": 373,
+      "text": "제출서류 등록",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 374,
+      "text": "사업수행을 위해 필요한 제출서류가 있는 경우 제출서류목록으로 추가.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 375,
+      "text": "[저장] 버튼 클릭",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 376,
+      "text": "-. 지정사업 정보 등록된 내용이 저장됨",
+      "style": "Body Text"
+    },
+    {
+      "index": 377,
+      "text": "-. 보조사업선정 진행상태가 ‘공고등록‘ 상태가 됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 381,
+      "text": "지정사업 공고확정",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 382,
+      "text": "[확정] 버튼 클릭",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 383,
+      "text": "-. 등록한 지정형 공모사업 정보가 공고확정 처리 됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 384,
+      "text": "확정취소",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 385,
+      "text": "-. 보조사업선정진행상태 값이 ‘공고확정‘ 상태인 자료는 ‘확정취소’ 가능",
+      "style": "Body Text"
+    },
+    {
+      "index": 397,
+      "text": "1",
+      "style": "Heading 1"
+    },
+    {
+      "index": 401,
+      "text": "지정사업 공고확정 자료 조회",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 402,
+      "text": "매뉴 : 보조사업선정 > 지정사업관리 > 지정사업선 정결과 (91041)",
+      "style": "Body Text"
+    },
+    {
+      "index": 403,
+      "text": "지정사업 선정결과(91041) 화면에서 공고확정 된 사업조회",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 404,
+      "text": "상세화면 조회",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 405,
+      "text": "-. [확정버튼] 클릭 ①",
+      "style": "Body Text"
+    },
+    {
+      "index": 406,
+      "text": "-. 상세화면으로 이동",
+      "style": "Body Text"
+    },
+    {
+      "index": 411,
+      "text": "1",
+      "style": "Heading 1"
+    },
+    {
+      "index": 415,
+      "text": "최종확정 처리",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 416,
+      "text": "각 보조사업자별 개별 사업비 예산정보 등록 ①",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 418,
+      "text": "업무대행 일괄관리 여부 지정 ②",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 419,
+      "text": "-. 업무대행 일괄관리 처리대상 사업지정",
+      "style": "Body Text"
+    },
+    {
+      "index": 420,
+      "text": "전자결재 연계기안",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 421,
+      "text": "-. 온나라 전자결재 등록 후 결재완료 되면 [최종확정] 처리 ③",
+      "style": "Body Text"
+    },
+    {
+      "index": 422,
+      "text": "2",
+      "style": "Normal"
+    },
+    {
+      "index": 423,
+      "text": "1",
+      "style": "Normal"
+    },
+    {
+      "index": 430,
+      "text": "3",
+      "style": "Normal"
+    },
+    {
+      "index": 434,
+      "text": "사업기본 신청서 일괄등록",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 435,
+      "text": "매뉴 : 사용자지원 > 업무대행사업일괄관리 > 사업 정보일괄등록 (91510)",
+      "style": "Body Text"
+    },
+    {
+      "index": 436,
+      "text": "1\t1) 업무대행 일괄처리 대상으로 지정된 사업목록",
+      "style": "Body Text"
+    },
+    {
+      "index": 437,
+      "text": "조회",
+      "style": "Body Text"
+    },
+    {
+      "index": 438,
+      "text": "-. 세부사업 단위로 조회 ①",
+      "style": "Body Text"
+    },
+    {
+      "index": 439,
+      "text": "-. 보탬e 의 경우 대부분 관리사업 단위로 조회하는 것이 기본이나",
+      "style": "Body Text"
+    },
+    {
+      "index": 440,
+      "text": "업무대행 일괄처리 대상조회시 관리사업을 여러개로 분리하는 경우도",
+      "style": "Body Text"
+    },
+    {
+      "index": 441,
+      "text": "함께 처리할 수 있도록 세부사업 단위로 조회할 수 있도록 함.",
+      "style": "Body Text"
+    },
+    {
+      "index": 442,
+      "text": "-. 관리사업으로도 조회 가능.",
+      "style": "Body Text"
+    },
+    {
+      "index": 443,
+      "text": "사업기본신청서 생성 (공통 적용부분) ②",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 444,
+      "text": "-. 사업목적 및 사업수행내용이 동일한 사업이므로",
+      "style": "Body Text"
+    },
+    {
+      "index": 445,
+      "text": "3\t등록한 내용이 선택한 사업에 모두 적용됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 446,
+      "text": "사업기본신청서 생성 (개별 적용부분) ③",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 447,
+      "text": "-. 보조사업명, 사업기간, 사업장소등 각 개별사업에 대한 내용을 기재후",
+      "style": "Body Text"
+    },
+    {
+      "index": 448,
+      "text": "[저장] 버튼 클릭시 사업기본 신청서 자료가 생성됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 449,
+      "text": "-. 선택박스 체크후 등록하면 동일한 내용으로 모두 적용됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 453,
+      "text": "사업수행계획서 일괄등록",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 454,
+      "text": "대상사업의 사업수행계획서 자료 등록",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 455,
+      "text": "자부담 계좌정보 등록 ①",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 456,
+      "text": "-. 금고은행 이외의 은행계좌도 등록 가능",
+      "style": "Body Text"
+    },
+    {
+      "index": 457,
+      "text": "-. 은행 및 계좌번호 등록 후",
+      "style": "Body Text"
+    },
+    {
+      "index": 458,
+      "text": "[일괄예금주조회] 버튼 ② 을 통해 예금주 확인",
+      "style": "Body Text"
+    },
+    {
+      "index": 459,
+      "text": "세부추진 계획 등 등록 ③",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 460,
+      "text": "-. 세부추진계획, 집행계획 보조세목 등록",
+      "style": "Body Text"
+    },
+    {
+      "index": 461,
+      "text": "-. 세부추진계획 및 집행계획에 사용하는 보조세목은 1개씩만 등록가능.",
+      "style": "Body Text"
+    },
+    {
+      "index": 462,
+      "text": "-. 1개이상의 추진계획 자료와 집행 세목을 등록하려면 해당 일괄등록 화면에서는 불가. (업무대행 사용자로 민간화면을 통해",
+      "style": "Body Text"
+    },
+    {
+      "index": 463,
+      "text": "개별 등록 해야함,",
+      "style": "Body Text"
+    },
+    {
+      "index": 464,
+      "text": "이후 수정도 개별로만 처리해야 함)",
+      "style": "Body Text"
+    },
+    {
+      "index": 465,
+      "text": "[저장]",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 466,
+      "text": "-. 선택한 사업의 사업수행계획서 자료 생성",
+      "style": "Body Text"
+    },
+    {
+      "index": 467,
+      "text": "-. 사업수행중 상태로 변경처리.",
+      "style": "Body Text"
+    },
+    {
+      "index": 468,
+      "text": "-. 교부정보 생성이 가능하게 됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 469,
+      "text": "(교부정보 생성전, 해당 자료 삭제 가능)",
+      "style": "Body Text"
+    },
+    {
+      "index": 470,
+      "text": "사업수행 확인서를 출력",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 471,
+      "text": "-. 보조사업자에게 은행/카드사에 제출하여 체크/신용 카드 발급 받으라고 안내",
+      "style": "Body Text"
+    },
+    {
+      "index": 473,
+      "text": "2",
+      "style": "Heading 1"
+    },
+    {
+      "index": 477,
+      "text": "보조금카드 일괄등록",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 478,
+      "text": "매뉴 : 사용자지원 > 업무대행사업일괄관리 > 보조 금카드일괄등록 (91510)",
+      "style": "Body Text"
+    },
+    {
+      "index": 479,
+      "text": "집행정보를 등록하기 위해서는 보조사업에 카드정보를 등록처리 해야 함.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 480,
+      "text": "-. 보조사업자가 카드발급 후 사용하면 카드사로 부터 매입내역이 연계됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 481,
+      "text": "-. 연계된 매입내역이 어떤 사업으로 사용한 내역 인지 연결처리를 해주기 위해 사업별 카드정보를 등록 해야함.",
+      "style": "Body Text"
+    },
+    {
+      "index": 482,
+      "text": "[등록] 버튼을 이용하여 개별 사업에 해당하는 카드정보를 등록 ①",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 486,
+      "text": "사업별 카드정보 등록",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 487,
+      "text": "보조사업자가 카드사로 부터 발급받은 카드내역을 조회.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 488,
+      "text": "조회된 카드내역을 선택하여 [인증] ① 버튼을 이용하여 카드에 대한 결재계좌번호 인증처리 후 [추가] ② 버튼을 통해 해당 사업에 카드정보 등록",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 489,
+      "text": "-. 해당사업에 등록된 카드정보의 매입내역이 집행정보 생성의 기초자료가 됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 494,
+      "text": "1",
+      "style": "Heading 1"
+    },
+    {
+      "index": 500,
+      "text": "2",
+      "style": "Normal"
+    },
+    {
+      "index": 504,
+      "text": "사업별 카드정보 수정/삭제",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 505,
+      "text": "1) 보조사업별 카드정보 등록자료의 수정 또는 삭제.",
+      "style": "Body Text"
+    },
+    {
+      "index": 506,
+      "text": "-. 카드정보 등록이 잘못된 경우 수정하는 방법은 삭제 후 등록하는 방식으로 수정해야 함.",
+      "style": "Body Text"
+    },
+    {
+      "index": 507,
+      "text": "-. 집행정보 존재시 카드삭제 불가능 하므로 집행정보 삭제 후 카드삭제 처리 해야 함.",
+      "style": "Body Text"
+    },
+    {
+      "index": 508,
+      "text": "1\t2) 왼쪽 체크박스에 체크 후 [삭제] ② 버튼 클릭시 기존 등록된 카드정보가 삭제 처리 됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 509,
+      "text": "-. 카드정보 등록 당일 => 바로 삭제 처리됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 510,
+      "text": "-. 카드정보 등록 후 하루이상 지났음 정산자료 일괄생성 은 당일처리",
+      "style": "Body Text"
+    },
+    {
+      "index": 511,
+      "text": "=> 삭제대기 로 되었다가 다음날 삭제 처리됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 512,
+      "text": "-. 카드정보 등록 후 하루이상 지났음 정산자료 일괄생성 도 하루이상 지났음",
+      "style": "Body Text"
+    },
+    {
+      "index": 513,
+      "text": "=> 바로 삭제 처리됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 514,
+      "text": "카드삭제 불가",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 515,
+      "text": "-. 등록된 카드수 ① 가 2개 이상 등록된 경우에는 해당화면에서 삭제가 불가능함.",
+      "style": "Body Text"
+    },
+    {
+      "index": 516,
+      "text": "(사업당 한개의 카드자료만 조회되기 때문에 2개 이상의 카드사용시 선택해서 조회할 수 없음)",
+      "style": "Body Text"
+    },
+    {
+      "index": 517,
+      "text": "-. 민간보조사업자 화면으로 접속하여 보조금전용카드정보관리(97002) 에서 삭제 하여야 함",
+      "style": "Body Text"
+    },
+    {
+      "index": 520,
+      "text": "2",
+      "style": "Heading 1"
+    },
+    {
+      "index": 524,
+      "text": "수행사업별 실적일괄생성(교부,집행,정산)",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 525,
+      "text": "매뉴 : 사용자지원 > 업무대행사업일괄관리 > 교부 집행정산일괄등록 (91501)",
+      "style": "Body Text"
+    },
+    {
+      "index": 526,
+      "text": "-. 세부사업별 업무대행 일괄처리 대상 사업자료를 조회",
+      "style": "Body Text"
+    },
+    {
+      "index": 527,
+      "text": "1\t2\t-. 정산 및 반환을 위해 실적자료를 등록해야 한다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 528,
+      "text": "-. 대상사업을 조회 후 처리 대상을 선택 ①",
+      "style": "Body Text"
+    },
+    {
+      "index": 529,
+      "text": "-. 교부 및 집행실적을 일괄생성 후",
+      "style": "Body Text"
+    },
+    {
+      "index": 530,
+      "text": "잔액 및 이자에 대한 반환처리를 한다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 531,
+      "text": "세부사업 선택 후 [사업조회] 버튼 클릭시 업무대행 일괄처리 대상사업이 조회됨.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 532,
+      "text": "-. 조회된 사업중 일괄처리 할 대상 사업을 선택 ①",
+      "style": "Body Text"
+    },
+    {
+      "index": 533,
+      "text": "사업진행상태 확인 ②",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 534,
+      "text": "-. 교부액, 집행액에 금액이 조회되면 교부실적, 집행실적이 생성된 것임.",
+      "style": "Body Text"
+    },
+    {
+      "index": 535,
+      "text": "- ‘사업수행중‘ : 정산자료 생성 이전",
+      "style": "Body Text"
+    },
+    {
+      "index": 536,
+      "text": "‘정산마감‘ : 정산자료 생성 이후",
+      "style": "Body Text"
+    },
+    {
+      "index": 540,
+      "text": "일괄정보 생성",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 541,
+      "text": "-. [일괄정보생성] 버튼 클릭시 자료가 생성되는 것 아님.",
+      "style": "Body Text"
+    },
+    {
+      "index": 542,
+      "text": "-. 등록되기 직전의 자료 ①를 화면상에 보여줌",
+      "style": "Body Text"
+    },
+    {
+      "index": 543,
+      "text": "② (수정할 수 있는 준비단계 자료)",
+      "style": "Body Text"
+    },
+    {
+      "index": 544,
+      "text": "-. [검토완료 및 저장] 버튼을 클릭하면 화면의 자료가 실제 실적 자료로 등록 처리 됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 545,
+      "text": "교부 정보 생성",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 546,
+      "text": "-. 사업별 1건의 교부정보를 생성합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 547,
+      "text": "-. 체크된 내역만 실제 자료로 등록합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 548,
+      "text": "-. 교부결정액은 사업비예산 기준으로 생성합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 549,
+      "text": "-. 재원별 한도내에서 사업비 조정이 가능합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 550,
+      "text": "-. 예산보다 교부결정액을 적게하여 N차 등록이 가 능합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 551,
+      "text": "-. 교부결정일은 사업시작일로 일괄생성합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 552,
+      "text": "교부정보 수정",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 553,
+      "text": "-. 시도비, 시군구비 재원별 금액 및 교부결정일은 수정가능",
+      "style": "Body Text"
+    },
+    {
+      "index": 554,
+      "text": "-. 시도비, 시군구비의 재원별 금액은 예산비율에",
+      "style": "Body Text"
+    },
+    {
+      "index": 555,
+      "text": "2\t맞춰 자동 배분처리됨.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 556,
+      "text": "(자동 배분된 금액이 잘못된 경우 재원별 금액을 직접 수정해서 등록)",
+      "style": "Body Text"
+    },
+    {
+      "index": 557,
+      "text": "-. 재원별 교부금액의 비율대로 잔액도 배분처리 되므로 재원별 금액을 명확하게 등록 해야함.",
+      "style": "Body Text"
+    },
+    {
+      "index": 558,
+      "text": "교부정보 실적 등록",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 559,
+      "text": "-. [검토완료 및 저장] 버튼 클릭",
+      "style": "Body Text"
+    },
+    {
+      "index": 560,
+      "text": "-. 화면상의 생성 / 수정된 자료를 실적자료로 등록",
+      "style": "Body Text"
+    },
+    {
+      "index": 561,
+      "text": "-. 조회된 자료중 등록하고자 하는 자료를 선택 ① 하여 등록가능.",
+      "style": "Body Text"
+    },
+    {
+      "index": 562,
+      "text": "** [검토완료 및 저장] 버튼은 교부, 집행, 정산자료 를 모두 검토한 후 한꺼번에 저장할 수 있으므로 집행자료 및 정산자료도 검토 후 저장.",
+      "style": "Body Text"
+    },
+    {
+      "index": 566,
+      "text": "집행정보 생성",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 567,
+      "text": "1) 집행 정보 생성",
+      "style": "Body Text"
+    },
+    {
+      "index": 568,
+      "text": "-. 사업별 카드(N건) + 기타(1건) 설정합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 569,
+      "text": "-. 체크된 내역만 등록합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 570,
+      "text": "-. 카드증빙을 우선 설정합니다.(카드내역 수집가능 한 경우)",
+      "style": "Body Text"
+    },
+    {
+      "index": 571,
+      "text": "-. 카드증빙 외 잔여 한도는 기타증빙으로 설정 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 572,
+      "text": "-. 자부담재원을 우선 설정합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 573,
+      "text": "-. 증빙파일은 집행건별 첨부가능합니다. ③ (하나의 집행정보에 여러건의 증빙을 첨부할때는 압축해서 하나의 파일로 첨부)",
+      "style": "Body Text"
+    },
+    {
+      "index": 574,
+      "text": "-. 카드내역은 재원구분만 수정가능합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 575,
+      "text": "-. 사업명 왼쪽의 ‘>’ 표시를 클릭하면 ① 하단에 집행정보 생성대상 자료가 펼쳐 집니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 576,
+      "text": "1\t2) 집행정보 수정",
+      "style": "Body Text"
+    },
+    {
+      "index": 577,
+      "text": "-. 재원구분, 공급금액, 부가세액 및 집행일자",
+      "style": "Body Text"
+    },
+    {
+      "index": 578,
+      "text": "수정가능 ②",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 579,
+      "text": "-. 카드증빙으로 집행자료 생성 후 남은 잔액은",
+      "style": "Body Text"
+    },
+    {
+      "index": 580,
+      "text": "모두 기타증빙으로 합계금액으로 집행자료 생성",
+      "style": "Body Text"
+    },
+    {
+      "index": 581,
+      "text": "-. 잔액을 남기고자 하는 경우 기타증빙 으로 생성될 금액에서 차감하는 금액이 잔액으로 생성됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 582,
+      "text": "-. 기타증빙 금액으로 잔액이 부족한 경우 카드증빙 생성대상을 제외하면 됨. (처리상태 체크 해제)",
+      "style": "Body Text"
+    },
+    {
+      "index": 598,
+      "text": "1\t2\t3",
+      "style": "Heading 1"
+    },
+    {
+      "index": 599,
+      "text": "정산정보 생성",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 600,
+      "text": "정산 정보 생성",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 601,
+      "text": "-. 사업별 1건씩 생성합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 602,
+      "text": "체크된 내역만 등록합니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 603,
+      "text": "(교부액-집행액)으로 잔액을 계산합니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 604,
+      "text": "이자잔액은 자부담계좌에서 발생된 이자액입니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 605,
+      "text": "반환총액은 시도비/시군구비의 집행/이자 잔액입 니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 606,
+      "text": "반환완료는 고지서를 통해 반환완료된 경우 설정 하세요.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 607,
+      "text": "정산정보 수정",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 608,
+      "text": "-. 교부금액 비율로 생성된 재원별 잔액 수정가능①",
+      "style": "Body Text"
+    },
+    {
+      "index": 609,
+      "text": "-. 이자금액 등록 ②",
+      "style": "Body Text"
+    },
+    {
+      "index": 610,
+      "text": "보조사업자의 자부담 계좌에서 발생한 이자금액 을 재원별로 등록",
+      "style": "Body Text"
+    },
+    {
+      "index": 611,
+      "text": "(자부담 재원의 이자금액은 반환대상이 아님)",
+      "style": "Body Text"
+    },
+    {
+      "index": 612,
+      "text": "반환처리 ③",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 613,
+      "text": "-. 잔액과 이자금액을 고지서를 통해 반환하였다면 반환여부를 ‘반납완료‘ 로 변경하고 반환일자 등 록",
+      "style": "Body Text"
+    },
+    {
+      "index": 614,
+      "text": "첨부파일에 고지서 반납 영수증 등 증빙자료 첨부",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 618,
+      "text": "등록정보 삭제",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 619,
+      "text": "등록정보 수정",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 620,
+      "text": "-. 일괄처리 등록자료는 수정이 불가능 합니다. 수정을 위해서는 기존 자료 전체 삭제 처리 후 재생성을 하는 방식으로 수정해야 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 621,
+      "text": "-. [등록정보삭제] 버튼을 통해 기존 등록 자료를",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 622,
+      "text": "삭제 ①",
+      "style": "Body Text"
+    },
+    {
+      "index": 623,
+      "text": "-. [일괄정보생성] 버튼 클릭하여 자료 생성 후",
+      "style": "Body Text"
+    },
+    {
+      "index": 624,
+      "text": "내용 수정하고",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 625,
+      "text": "[검토완료및저장] 버튼 클릭하여 해당 자료 등록 처리",
+      "style": "Body Text"
+    },
+    {
+      "index": 626,
+      "text": "각 단계별 삭제 ①",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 627,
+      "text": "-. 정산 : 정산자료만 삭제",
+      "style": "Body Text"
+    },
+    {
+      "index": 628,
+      "text": "-. 집행 : 집행, 정산 자료삭제",
+      "style": "Body Text"
+    },
+    {
+      "index": 629,
+      "text": "-. 교부 : 교부, 집행, 정산 자료 삭제",
+      "style": "Body Text"
+    },
+    {
+      "index": 630,
+      "text": "각 단계별 등록여부 확인 ②",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 631,
+      "text": "-. 사업조회시 교부액 금액이 조회되면 교부자료 등록된 것임",
+      "style": "Body Text"
+    },
+    {
+      "index": 632,
+      "text": "-. 사업조회시 집행액 이 조회되면 집행자료 등록된 것임.",
+      "style": "Body Text"
+    },
+    {
+      "index": 633,
+      "text": "-. 사업진행상태 값이 ‘정산마감’ 이면 정산자료 등록된 것임.",
+      "style": "Body Text"
+    },
+    {
+      "index": 637,
+      "text": "이월신청",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 638,
+      "text": "이월신청 조건",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 639,
+      "text": "-. 보조금을 교부받은 상태에서",
+      "style": "Body Text"
+    },
+    {
+      "index": 640,
+      "text": "해당 회계연도말까지 사업이 종료되지 않아 다음해 까지 집행을 해야하는 경우.",
+      "style": "Body Text"
+    },
+    {
+      "index": 641,
+      "text": "-. 사업이 아직도 수행중이며",
+      "style": "Body Text"
+    },
+    {
+      "index": 642,
+      "text": "교부받은 보조금 사업비의 잔액이 남아 있는 경우",
+      "style": "Body Text"
+    },
+    {
+      "index": 643,
+      "text": "이월신청이 필요없는 사업",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 644,
+      "text": "-. 보조사업에 대해 정산을 진행중, 또는 정산이 완 료된 사업",
+      "style": "Body Text"
+    },
+    {
+      "index": 645,
+      "text": "-. 잔액이 남아 있지 않은 사업은 이월신청 대상이 아님.",
+      "style": "Body Text"
+    },
+    {
+      "index": 646,
+      "text": "이월신청을 하지 않을 경우",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 647,
+      "text": "-. 사업이 아직 수행중이고 올해 교부받은 보조금이 남아 있는데 회계연도 말 이전에 이월신청의 승인을 받지 못한 사업은 다음회계 연도에 남은 잔액의 집행 정보를 수정 할 수 없게됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 648,
+      "text": "-. 교부집행정산일괄등록 화면을 통한 집행정보 등 록은 가능하나 개별 집행등록 화면에서 수정 불가.",
+      "style": "Body Text"
+    },
+    {
+      "index": 649,
+      "text": "이월신청 기한",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 650,
+      "text": "-. 이월신청 및 반려처리는 회계연도말(12월31일) 까지만 적용됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 651,
+      "text": "-. 다음해 1월1일에 배치프로그램이 이월 미승인 사 업을 모두 집행마감 처리 해버림.",
+      "style": "Body Text"
+    },
+    {
+      "index": 652,
+      "text": "-. 12월31일 이후의 승인, 취소 자료는 반영되지 못 함",
+      "style": "Body Text"
+    },
+    {
+      "index": 653,
+      "text": "주의사항.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 654,
+      "text": "-. 이월신청의 조건에 정산진행상태가 ‘사업수행중’ 이어야 하므로 이월신청을 해야 하는 사업의 경우 교부집행정산일괄등록(91501) 화면에서 집행, 정산까 지 작업해 버리면 안됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 655,
+      "text": "-. 교부실적 자료까지만 생성하여야 함.",
+      "style": "Body Text"
+    },
+    {
+      "index": 656,
+      "text": "-. 집행실적, 정산자료까지 완료했다면 해당 자료는",
+      "style": "Body Text"
+    },
+    {
+      "index": 657,
+      "text": "40 \t삭제 후 이월 신청 처리.",
+      "style": "Normal"
+    },
+    {
+      "index": 661,
+      "text": "이월 처리",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 662,
+      "text": "대상 사업조회",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 663,
+      "text": "-. 세부사업별 업무대행 일괄처리 대상 사업자료를 조회",
+      "style": "Body Text"
+    },
+    {
+      "index": 664,
+      "text": "사업비 잔액이 0 이거나 ①",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 665,
+      "text": "정산진행상태 값이 ‘수행중’ 이 아닌 사업은 ② 이월승인처리 대상에서 제외됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 666,
+      "text": "3) 이월승인처리",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 667,
+      "text": "-. 이월대상 사업중 이월처리 해야할 사업을 선택하 고 [이월승인처리] 버튼 클릭시 해당 사업은 이월승 인 처리 됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 668,
+      "text": "4) 이월취소 처리(이월반려)",
+      "style": "Body Text"
+    },
+    {
+      "index": 669,
+      "text": "-. 이월승인된 자료를 선택 후 이월취소 버튼 클릭 시 ‘이월반려’ 상태로 변경됨",
+      "style": "Body Text"
+    },
+    {
+      "index": 670,
+      "text": "-. 이월반려 자료는 다시 이월승인 처리 가능.",
+      "style": "Body Text"
+    },
+    {
+      "index": 671,
+      "text": "2",
+      "style": "Heading 1"
+    },
+    {
+      "index": 675,
+      "text": "중요재산 등록",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 676,
+      "text": "1) 중요재산의 등록 및 수정은 정산진행상태가 ‘사업 수행중’ 인 경우에만 가능 하므로 교부집행정산일괄등록(91501) 화면에서 정산까지 작 업해 버리면 안됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 677,
+      "text": "-. 정산자료까지 완료했다면 해당 자료는 삭제 후 중요재산 등록 처리.",
+      "style": "Body Text"
+    },
+    {
+      "index": 678,
+      "text": "1\t2) 중요재산의 등록은 등록항목이 다양하여 일괄처리",
+      "style": "Body Text"
+    },
+    {
+      "index": 679,
+      "text": "가 불가능 하므로 개별건으로 등록처리",
+      "style": "Body Text"
+    },
+    {
+      "index": 680,
+      "text": "3) 사업등록현황에서 사업을 선택 ① 후",
+      "style": "Body Text"
+    },
+    {
+      "index": 681,
+      "text": "[중요재산등록] ② 버튼을 통해 중요재산등록 화면 호출",
+      "style": "Body Text"
+    },
+    {
+      "index": 682,
+      "text": "-. 사업선택시 기 등록된 내역이 있다면 하단의 중요재산목록에 등록된 내역이 조회됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 686,
+      "text": "2",
+      "style": "Heading 1"
+    },
+    {
+      "index": 690,
+      "text": "중요재산 신규등록",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 691,
+      "text": "1) 중요재산 확정처리(제출)",
+      "style": "Body Text"
+    },
+    {
+      "index": 692,
+      "text": "-. 중요재산의 기본정보 등록 후 [저장]버튼 클릭",
+      "style": "Body Text"
+    },
+    {
+      "index": 693,
+      "text": "-. 저장된 자료는 작성중 상태로 저장되며 [제출] ① 버튼을 클릭해야 중요재산 등록 상태가 ‘확정’ 처리가 됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 694,
+      "text": "-. 제출을 통해 확정처리 해야만 해당 자료가 민간 중요재산 현황(93012) 에 조회되며,",
+      "style": "Body Text"
+    },
+    {
+      "index": 695,
+      "text": "정산실적보고서에 중요재산 내역도 반영이 됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 696,
+      "text": "-. 확정된 자료는 수정이 불가능 하므로 수정이 필 요한 경우 제출취소를 한 이후에 수정 가능.",
+      "style": "Body Text"
+    },
+    {
+      "index": 697,
+      "text": "(단, 정산마감 이후에는 제출취소가 불가능)",
+      "style": "Body Text"
+    },
+    {
+      "index": 707,
+      "text": "1",
+      "style": "Heading 1"
+    },
+    {
+      "index": 711,
+      "text": "중요재산 수정",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 712,
+      "text": "중요재산등록한 자료의 조회 또는 수정을 위해서 는 중요재산 목록에서 중요재산명을 클릭 ① 하면 중요재산 조회 /수정 화면이 호출 됨.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 713,
+      "text": "중요재산의 확정여부 ② 에 따라 수정가능 여부 판 단.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 714,
+      "text": "작성중 : 수정 및 삭제 가능",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 715,
+      "text": "확정 : 수정 불가능",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 716,
+      "text": "제출취소를 통해 확정취소 가능",
+      "style": "Body Text"
+    },
+    {
+      "index": 717,
+      "text": "(단, 정산마감 이후에는 제출취소가 불가능)",
+      "style": "Body Text"
+    },
+    {
+      "index": 724,
+      "text": "1\t2",
+      "style": "Heading 1"
+    },
+    {
+      "index": 728,
+      "text": "중요재산 조회",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 729,
+      "text": "확정여부 ①",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 730,
+      "text": "작성중 : 수정 및 삭제 가능",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 731,
+      "text": "확정 : 수정 불가능",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 732,
+      "text": "제출취소 ② 를 통해 확정취소 가능",
+      "style": "Body Text"
+    },
+    {
+      "index": 733,
+      "text": "(단, 정산마감 이후에는 제출취소가 불가능)",
+      "style": "Body Text"
+    },
+    {
+      "index": 734,
+      "text": "변동현황등록",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 735,
+      "text": "정산마감 이후에 중요재산의 변동사항 발생시",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 736,
+      "text": "[변동현황등록] 버튼을 통해 변동내역을 등록.",
+      "style": "Body Text"
+    },
+    {
+      "index": 739,
+      "text": "1",
+      "style": "Heading 1"
+    },
+    {
+      "index": 746,
+      "text": "2",
+      "style": "Normal"
+    },
+    {
+      "index": 750,
+      "text": "실적보고서 등록",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 751,
+      "text": "실적보고서 생성은 정산 진행상태값이 ‘정산마감’ 인 경우에만 가능 하므로 교부집행정산일괄등록(91501) 화면을 통해 정산까지 처리한 이후에 진행 가능함.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 752,
+      "text": "-. 실적보고서 생성이 이미 완료된 경우",
+      "style": "Body Text"
+    },
+    {
+      "index": 753,
+      "text": "실적보고서 진행상태값이 ‘작성중’ ① 으로 표시됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 754,
+      "text": "실적보고서 일괄생성 ②",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 755,
+      "text": "-. 실적보고서 진행상태 값이 ‘미작성’ 인 자료를 선 택 후 [실적보고서생성] 버튼 클릭시 선택된 사업의 실적보고서 자료가 일괄로 생성 처리되며 진행상태 값은 ‘작성중’ 으로 변경됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 759,
+      "text": "실적보고서 수정",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 760,
+      "text": "실적보고서 진행상태값이 ‘작성중’ 인 자료는 수정 가능",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 761,
+      "text": "수정하고자 하는 사업의 보조사업명 클릭시 상세 화면이 호출되며 수정 가능.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 762,
+      "text": "실적보고서 제출/제출취소",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 763,
+      "text": "1\t1) [실적보고서제출] 버튼 을 통해 실적보고서 제출",
+      "style": "Body Text"
+    },
+    {
+      "index": 764,
+      "text": "처리",
+      "style": "Body Text"
+    },
+    {
+      "index": 765,
+      "text": "-. 실적보고서의 제출 이후에는 수정불가",
+      "style": "Body Text"
+    },
+    {
+      "index": 766,
+      "text": "2) 실적보고서 진행상태 값이 ‘제출’ 상태의 경우 제 출 취소 가능",
+      "style": "Body Text"
+    },
+    {
+      "index": 767,
+      "text": "실적보고서 삭제",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 768,
+      "text": "1) 실적보고서 진행상태 값이 ‘작성중’ 상태의 경우 삭제 가능",
+      "style": "Body Text"
+    },
+    {
+      "index": 772,
+      "text": "실적보고서 상세",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 773,
+      "text": "실적보고서 생성된 자료의 상세 조회",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 774,
+      "text": "‘작성중’ 상태의 경우 수정 가능",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 778,
+      "text": "실적보고서 승인",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 779,
+      "text": "제출된 실적보고서를 승인처리 하거나 반려처리.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 780,
+      "text": "전자결재 : 승인처리도 전자결재가 필요하지만 승인처리된 실적보고서의 승인취소 처리시에도 전자결재가 필요함.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 784,
+      "text": "정보공시 일괄등록(생성)",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 785,
+      "text": "정보공시 자료를 생성 ① 하기 위해서는 공시진행 상태 값이 ‘통보’ 상태 여야 가능.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 786,
+      "text": "-. 정보공시 생성 : 진행상태 값이 ‘작성중’ ② 으로 표시됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 787,
+      "text": "-. 정보공시 자료는 파일첨부 해야 하는 부분도 있 으므로 개별 화면을 통해 직접 파일첨부 해야함.",
+      "style": "Body Text"
+    },
+    {
+      "index": 788,
+      "text": "-. 비고 항목에 필요사항 표시됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 789,
+      "text": "정보공시 자료생성 후 해당 자료를 삭제하고자 하 는 경우 [정보공시삭제] 버튼을 이용하여 삭제 가능",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 790,
+      "text": "-. 단, 작성중 상태에서만 삭제 가능",
+      "style": "Body Text"
+    },
+    {
+      "index": 791,
+      "text": "2",
+      "style": "Heading 1"
+    },
+    {
+      "index": 792,
+      "text": "공시생성자료 조회/수정화면 호출",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 793,
+      "text": "-. 공공민간보조사업명 클릭시 해당 사업의 개별 공 시자료를 조회 하거나 수정할 수 있는 화면 호출됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 797,
+      "text": "정보공시 통보",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 798,
+      "text": "정보공시 일괄처리하려 하는데 해당 사업이 통보 가 안되어 있다면",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 799,
+      "text": "보조사업공시통보관리(95008) 화면을 통해 통보 처리.",
+      "style": "Body Text"
+    },
+    {
+      "index": 800,
+      "text": "통보처리할 사업을 선택 ① 후",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 801,
+      "text": "[통보] ② 버튼 클릭",
+      "style": "Body Text"
+    },
+    {
+      "index": 802,
+      "text": "1",
+      "style": "Heading 1"
+    },
+    {
+      "index": 813,
+      "text": "2",
+      "style": "Normal"
+    },
+    {
+      "index": 817,
+      "text": "파일첨부 등 추가작업",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 818,
+      "text": "정보공시 생성을 통해 정보공시 자료가 생성된 이 후 첨부파일 첨부 등의 추가 작업을 위해 개별 정보",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 819,
+      "text": "공시 화면을 호출",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 820,
+      "text": "각 탭화면을 통해 첨부파일을 추가 또는 삭제 ①",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 821,
+      "text": "해당 정보를 저장처리 ②",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 832,
+      "text": "1",
+      "style": "Heading 1"
+    },
+    {
+      "index": 836,
+      "text": "정보공시 공시처리",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 837,
+      "text": "개별 사업의 공시자료를 모두 작성하였다면 비고에 ‘정보공시가능’ ① 으로 조회 됨.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 838,
+      "text": "-. 해당 사업을 선택한 후 [정보공시 공시] ② 버튼 클릭 시 공시 처리 됨.",
+      "style": "Body Text"
+    },
+    {
+      "index": 839,
+      "text": "2",
+      "style": "Heading 1"
+    },
+    {
+      "index": 840,
+      "text": "공시 처리된 자료는 보탬e 포탈 공시화면에서 확",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 841,
+      "text": "인 가능",
+      "style": "Body Text"
+    },
+    {
+      "index": 842,
+      "text": "-. 공시한 자료가 잘못되어 공시를 취소하고자 하는 경우 [정보공시 공시취소] 버튼을 클릭하여 취소 가",
+      "style": "Body Text"
+    },
+    {
+      "index": 843,
+      "text": "1\t능",
+      "style": "Normal"
+    },
+    {
+      "index": 846,
+      "text": "1",
+      "style": "Heading 1"
+    },
+    {
+      "index": 847,
+      "text": "6. 보탬e 포탈",
+      "style": "Body Text"
+    },
+    {
+      "index": 848,
+      "text": "보탬e 포탈 주소 : losims.e-hojo.go.kr/sp",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 849,
+      "text": "보탬e 포탈에서 [정보공시] ① 클릭하면 공시화면 호출 됨",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 853,
+      "text": "7. 보탬e 포탈 정보공시 조회",
+      "style": "Body Text"
+    },
+    {
+      "index": 854,
+      "text": "1) 회계연도, 지방자치단체 선택 후 검색을 통해 공 시된 자료를 조회",
+      "style": "Body Text"
+    }
+  ],
+  "tables": [
+    {
+      "table_index": 0,
+      "rows": [
+        [
+          "업무대행 등록",
+          "지정사업 최종확정",
+          "사업수행계획 일괄생성"
+        ]
+      ]
+    }
+  ],
+  "full_text": "안내문구 확인.\n회계연도 기준 공모사업목록 확인.\n자체형, 지정형공모사업만 조회.\n최종확정된 사업만 조회.\n선정기관 중 정보취약계층으로 등록된 기관이 존 재하는 사업만 조회.\n비예치형사업신청가능여부 확인.\n업무대행 민간보조사업은 비예치형만 가능. (공모사업의 비예치형사업신청가능여부 'Y')\n공모사업의 비예치형 사업 신청가능여부 값은 최 종확정사업관리(99029) 메뉴에서 변경 가능.\n민간보조사업일괄등록 버튼 클릭\n③\t- 일괄등록화면으로 이동\n<비예치형 사업 신청가능여부>\n업무대행 민간보조사업은 비예치형만 가능. (공모사업의 비예치형사업신청가능여부 'Y')\n공모사업의 비예치형 사업 신청가능여부 값은 최 종확정사업관리(99029) 메뉴에서 변경 가능.\n공모사업의 비예치형사업신청가능여부 가 ‘N’ 일 경우 [민간보조사업 일괄등록] 버튼 클릭 시 해당 경 고창 호출\n안내문구 확인.\n아 예시로 작성된 행은 삭제 후 작성하여 등록해 주 세요. (파일확장자는 .xlsx만 가능합니다.)\n수행사업계획신청서 '미제출' 상태의 민간보조사업 만 조회되며, 정보 등록이 가능합니다.\n정보취약계층으로 등록된 기관의 민간보조사업만 조회됩니다.\n자부담계좌 개설은행은 자치단체 금고은행만 입력 가능합니다. (시스템상 자치단체별 은행 자동표기)\n보조금표지판유형은 공사표지판, 시설표지판, 운영 표지판, 기타, 미대상 만 입력 가능합니다.\n계좌실명확인유형구분은 대표자주민등록번호, 사 업자등록번호, 개인주민등록번호 만 입력 가능합니다.\n민간보조사업의 사업기간은 공모사업의 사업기간 내에서만 설정이 가능합니다.\n[저장] 버튼을 누른 후 각각의 민간보조사업 수행 사업계획신청(91043) 화면에서 추가정보 입력하여 제출이 필요합니다.\n하나의 보조사업 당 한 행만 작성 가능하며, 세부 추진계획 및 예산집행계획은 수행사업계획신청 (91043) 화면을 통해 작성하시길 바랍니다.\n공모사업의 대상 민간보조사업 목록 확인.\n정보취약계층으로 등록된 보조사업자의 사업만 조 회.\n수행사업계획신청서 미제출 상태의 사업만 조회.\n엑셀다운로드\n기존 작성내용을 포함 한 화면상의 현재정보를 엑셀로 다운로드.\n엑셀다운로드 버튼을 눌러 다운로드 폴더에 엑셀 업로드용 템플릿 다운로드 후 업로드 할 내용 작성 (F열~AB열까지 작성 후 저장)\n※ 열 수정 시 업로드 불가\n엑셀업로드\n엑셀다운로드 한 업로드용 템플릿(엑셀양식)에 등록 할 내용을 작성(F열~AB열까지) 후 엑셀업로\n드\n버튼을 누른 후 업로드 할 파일을 선택 후 업로드 처리.\n※ 자세한 작성예시는 6페이지 참고\n행삭제\n사업삭제가 아님\n사업계획서 작성을 원치 않는 대상 행을 삭제\n초기화\n해당 화면 최초 진입상태로 초기화\n선택된 민간보조사업의 사업기간, 보조금, 자부담 금 입력 후 진행\n선택된 민간보조사업의 세부추진계획 내용을 입력\n※ 자세한 작성예시는 7페이지 참고\n예산집행계획 탭\n선택된 민간보조사업의 보조금, 자부담금 입력 후\n선택된 민간보조사업의 예산집행계획 내용을 입력\n※ 자세한 작성예시는 8페이지 참고\n취소\n목록화면으로 이동\n저장\n각각의 민간보조사업 수행사업계획신청(91043) 화 면에서 추가정보 입력하여 제출 필요\n안내문구 확인\n안내문구의 파란색 안내를 참조하여 입력\n(시스템상 자치단체별 은행 자동표기)\n민간보조사업명\n사업기간 입력\n필수입력\n공모사업기간 이내로 입력\n공모사업기간에 맞지않는 기간 입력시 저장 실패 및 해당 입력에대한 안내창 호출\n보조금/자부담금 입력\n금액은 숫자로 입력\n자부담계좌개설은행 입력\n필수입력\n엑셀 양식 작성시 안내문구에 해당하는 지자체의 금고은행을 정확한 한글명칭으로 입력\n자부담계좌번호 입력\n필수입력\n숫자로 입력\n계좌실명확인유형구분 입력\n필수입력\n엑셀 양식 작성시 안내문구에 기재되어있는 계좌 실명확인유형구분을 참고하여 정확하게 입력 (대표자주민등록번호, 사업자등록번호, 개인주민등록 번호)\n보조금표지판유형 입력\n엑셀 양식 작성시 안내문구에 기재되어있는 보조 금표지판유형을 참고하여 정확하게 입력 (공사표지판, 시설표지판, 운영표지판, 기타, 미대상)\n안내문구 확인\n선택된 민간보조사업의 보조금, 자부담금, 사업기 간에 맞게 입력해야 합니다.\n세부추진계획 작성 후 [임시저장(세부추진계획)]\n버튼을 반드시 클릭해야 합니다.\n[임시저장(세부추진계획)] 버튼 클릭 시 실제 저장 은 되지 않으며, 화면을 닫을 경우 작성된 내용은 초\n대상 민간보조사업 목록 전체의 임시저장(세부추 진계획) 후 [저장] 버튼을 반드시 클릭해야 합니다.\n세부사업명, 추진계획내용, 추진일정기간, 사업예 산금액(원) 입력\n필수입력\n행추가\n행삭제\n임시저장(세부추진계획)\n선택된 민간보조사업의 사업비에 맞춰 세부추진계 획의 사업예산 총 금액(ⓐ)을 입력하지 않으면 임시 저장 불가\n선택된 민간보조사업의 사업기간에 맞춰 추진일정 기간(ⓑ)을 선택하지 않으면 임시저장 불가\n임시저장은 실제 저장이 아니며 화면을 닫을 경우 작성된 내용은 초기화, 하단의 [저장] 버튼을 눌러야 수행사업계획신청(91043) 메뉴에서 확인 가능\n안내문구 확인\n선택된 민간보조사업의 보조금, 자부담금에 맞게 입력해야 합니다.\n동일한 보조세목을 중복으로 등록할 수 없습니다.\n예산집행계획 작성 후 [임시저장(예산집행계획)]\n버튼을 반드시 클릭해야 합니다.\n[임시저장(예산집행계획)] 버튼 클릭 시 실제 저장 은 되지 않으며, 화면을 닫을 경우 작성된 내용은 초\n대상 민간보조사업 목록 전체 임시저장(예산집행 계획) 후 [저장] 버튼을 반드시 클릭해야 합니다.\n보조세목, 지방비금액(원), 자부담금액(원) 입력\n필수입력\n예산합계액(원) 항목은 자동 계산\n행추가\n입력할 항목 행추가\n행삭제\n입력한 항목 행삭제\n임시저장(세부추진계획)\n선택된 민간보조사업의 보조금 금액에 맞춰 예산 집행계획의 지방비 총 금액(ⓐ)을 입력하지 않으면 임시저장 불가\n선택된 민간보조사업의 자부담 금액에 맞춰 예산 집행계획의 자부담 총 금액(ⓑ)을 입력하지 않으면 임시저장 불가\n동일한 보조세목을 중복 등록 시 임시저장 불가\n임시저장은 실제 저장이 아니며 화면을 닫을 경우 작성된 내용은 초기화, 하단의 [저장] 버튼을 눌러야 수행사업계획신청(91043) 메뉴에서 확인 가능\n아래 조건을 모두 충족하는 사업에 대해서만 업무대행 일괄등록 사업으로 처리 가능.\n사업목적 및 사업수행내용이 유사한 유형의 사업\n-. 사업수행계획의 세부추진 계획 및 실적이 1개로만 발생(슬라이드22 참고)\n-. 집행계획의 보조세목을 1개로만 사용 (슬라이드22 참고)\n보조사업자가 IT취약계층이기에 업무대행으로 사업을 수행해야 하는 경우\n-. 비예치형 사업\n보조사업자의 자부담 계좌를 금고은행 이외의 타은행인 경우도 등록가능.\n카드 해외사용여부 신청\n사업확정(공고확정)\n수행사업 자료생성\n계정생성 제외처리\n교부\t집행\t정산/정보공시\n일반지출\n이자금액등록\n이자정보\n수행사업 정보\n교부결정 정보\n집행정보\n정산정보\n이월신청 정보\n중요재산 정보\n실적보고 서\n정보공시\n업무대행 처리하고자 하는 보조사업자(기관) 정보가 보탬e에 IT취약계층으로 지정되어 있는지 확인\n매뉴 : 사용자지원 > 정보취약계층지원 > 정보취약 계층관리 (97011)\n1) 성명, 휴대전화번호, 생년월일 등을 이용하여 [IT취약계층 사용자목록] 에 사용자 정보가 있는지 확인한다. ①\n1\n소속기관 정보 존재여부 확인\n[IT취약계층 사용자목록] 에서 조회된 사용자를 선택 ① 하여\n하단에 소속기관 정보가 조회되는지 확인 ②\n[IT취약계층 사용자목록] 에서 조회되지 않거나 [소속기관목록] 에 기관정보가 조회되지 않는다면 [신규] ③ 버튼을 이용하여 정보 등록\n1\n2\nIT취약계층 신규등록\nIT취약계층 등록은 개별등록 방법과\n엑셀 양식을 이용한 엑셀업로드 방식을 선택해서 등록가능.\n엑셀업로드 방법\n[서식] 버튼을 이용하여 서식을 다운로드 받은 뒤 작성하여 [엑셀업로드] 버튼을 통해 자료를 업로드 한 뒤 [저장] 버튼 클릭\n개별등록 방법\n-. [행추가] 버튼을 이용하여 입력\n-. 사용자 ID는 직접 입력\n-. 기관ID는 기관명 등록후 저장하면 자동 생성됨.\n[IT취약계층 사용자목록] 에서 조회되었으나\n[소속기관목록] 에 기관정보가 조회되지 않은경우\n-. ID, 성명, 휴대전화번호, 생년월일은 [IT취약계층 사용자목록] 에서 조회된 정보를 등록하고 기관정보 는 신규로 등록\n업무대행자 지정여부 확인\n업무대행 하고자 하는 기관정보를 선택했을때 ① 하단의 [업무대행자자목록] 에 자신의 정보가 조회 되어야 함. ②\n업무대행자 목록에 조회되지 않는 경우\n[업무대행자추가] ③ 버튼을 통해 ID정보를 추가\n1\n2\t3\n업무대행자 등록\n소속자치단체, ID, 성명, 휴대전화번호 등을 이용하 여 자기정보가 업무대행자로 등록되어 있는지 확인\n조회된 자신의 정보를 선택하고 [확인]버튼 클릭하 여 업무대행자 로 지정.\n포탈사용자정보 생성\n업무대행자 등록 위해 업무대행자 검색시 자신의 정보가 조회 되지 않는 경우 포탈사용자 정보를 생성\n-. 앞페이지 5번에서 자신의 정보가 없을때.\n[포탈사용자정보생성] 버튼 클릭시 자신의 정보가 생성됨. ①\n1\n지정사업등록\n매뉴 : 보조사업선정 > 지정사업관리 > 지정사업등 록 (91033)\n1) 지정사업 등록 화면에서 [신규]버튼 클릭 ①\n1\n지정사업 사업정보 등록\n관리사업 선택 후 사업개요 등 사업정보 등록\n재원정보 등록\n-. 선택한 관리사업의 예산중\n이 사업에서 사용하게 될 재원별 금액을 등록\n지정사업 사업명 등록\n1) 사업명 등록\n- 공모 사업명 등록\n지정사업 보조사업자 등록\n1) [행추가] ① 버튼을 통해 선정기관(보조사업자) 추가\n1\n기관 조회\n행추가 버튼클릭시 나타나는 기관조회 팝업 화면\n기관명, 사업자등록번호 등을 통해 기관조회\n조회된 목록을 선택후 ① 화살표 클릭 ②으로\n1\t선택목록으로 이동\n[적용] 버튼 클릭 ③\n2\n3\n지정사업 선정기관 적용\n1) 기관조회 화면을 통해 선택한 기관이 적용됨.\n신청정보 등록\n1) 비예치형 신청가능 여부\n-. 가능으로 선택 ①\n-. 업무대행 일괄처리 사업은 반드시 비예치형으로 생성되어야 함.\n1\n제출서류 등록\n사업수행을 위해 필요한 제출서류가 있는 경우 제출서류목록으로 추가.\n[저장] 버튼 클릭\n-. 지정사업 정보 등록된 내용이 저장됨\n-. 보조사업선정 진행상태가 ‘공고등록‘ 상태가 됨.\n지정사업 공고확정\n[확정] 버튼 클릭\n-. 등록한 지정형 공모사업 정보가 공고확정 처리 됨.\n확정취소\n-. 보조사업선정진행상태 값이 ‘공고확정‘ 상태인 자료는 ‘확정취소’ 가능\n1\n지정사업 공고확정 자료 조회\n매뉴 : 보조사업선정 > 지정사업관리 > 지정사업선 정결과 (91041)\n지정사업 선정결과(91041) 화면에서 공고확정 된 사업조회\n상세화면 조회\n-. [확정버튼] 클릭 ①\n-. 상세화면으로 이동\n1\n최종확정 처리\n각 보조사업자별 개별 사업비 예산정보 등록 ①\n업무대행 일괄관리 여부 지정 ②\n-. 업무대행 일괄관리 처리대상 사업지정\n전자결재 연계기안\n-. 온나라 전자결재 등록 후 결재완료 되면 [최종확정] 처리 ③\n2\n1\n3\n사업기본 신청서 일괄등록\n매뉴 : 사용자지원 > 업무대행사업일괄관리 > 사업 정보일괄등록 (91510)\n1\t1) 업무대행 일괄처리 대상으로 지정된 사업목록\n조회\n-. 세부사업 단위로 조회 ①\n-. 보탬e 의 경우 대부분 관리사업 단위로 조회하는 것이 기본이나\n업무대행 일괄처리 대상조회시 관리사업을 여러개로 분리하는 경우도\n함께 처리할 수 있도록 세부사업 단위로 조회할 수 있도록 함.\n-. 관리사업으로도 조회 가능.\n사업기본신청서 생성 (공통 적용부분) ②\n-. 사업목적 및 사업수행내용이 동일한 사업이므로\n3\t등록한 내용이 선택한 사업에 모두 적용됨.\n사업기본신청서 생성 (개별 적용부분) ③\n-. 보조사업명, 사업기간, 사업장소등 각 개별사업에 대한 내용을 기재후\n[저장] 버튼 클릭시 사업기본 신청서 자료가 생성됨.\n-. 선택박스 체크후 등록하면 동일한 내용으로 모두 적용됨.\n사업수행계획서 일괄등록\n대상사업의 사업수행계획서 자료 등록\n자부담 계좌정보 등록 ①\n-. 금고은행 이외의 은행계좌도 등록 가능\n-. 은행 및 계좌번호 등록 후\n[일괄예금주조회] 버튼 ② 을 통해 예금주 확인\n세부추진 계획 등 등록 ③\n-. 세부추진계획, 집행계획 보조세목 등록\n-. 세부추진계획 및 집행계획에 사용하는 보조세목은 1개씩만 등록가능.\n-. 1개이상의 추진계획 자료와 집행 세목을 등록하려면 해당 일괄등록 화면에서는 불가. (업무대행 사용자로 민간화면을 통해\n개별 등록 해야함,\n이후 수정도 개별로만 처리해야 함)\n[저장]\n-. 선택한 사업의 사업수행계획서 자료 생성\n-. 사업수행중 상태로 변경처리.\n-. 교부정보 생성이 가능하게 됨.\n(교부정보 생성전, 해당 자료 삭제 가능)\n사업수행 확인서를 출력\n-. 보조사업자에게 은행/카드사에 제출하여 체크/신용 카드 발급 받으라고 안내\n2\n보조금카드 일괄등록\n매뉴 : 사용자지원 > 업무대행사업일괄관리 > 보조 금카드일괄등록 (91510)\n집행정보를 등록하기 위해서는 보조사업에 카드정보를 등록처리 해야 함.\n-. 보조사업자가 카드발급 후 사용하면 카드사로 부터 매입내역이 연계됨.\n-. 연계된 매입내역이 어떤 사업으로 사용한 내역 인지 연결처리를 해주기 위해 사업별 카드정보를 등록 해야함.\n[등록] 버튼을 이용하여 개별 사업에 해당하는 카드정보를 등록 ①\n사업별 카드정보 등록\n보조사업자가 카드사로 부터 발급받은 카드내역을 조회.\n조회된 카드내역을 선택하여 [인증] ① 버튼을 이용하여 카드에 대한 결재계좌번호 인증처리 후 [추가] ② 버튼을 통해 해당 사업에 카드정보 등록\n-. 해당사업에 등록된 카드정보의 매입내역이 집행정보 생성의 기초자료가 됨.\n1\n2\n사업별 카드정보 수정/삭제\n1) 보조사업별 카드정보 등록자료의 수정 또는 삭제.\n-. 카드정보 등록이 잘못된 경우 수정하는 방법은 삭제 후 등록하는 방식으로 수정해야 함.\n-. 집행정보 존재시 카드삭제 불가능 하므로 집행정보 삭제 후 카드삭제 처리 해야 함.\n1\t2) 왼쪽 체크박스에 체크 후 [삭제] ② 버튼 클릭시 기존 등록된 카드정보가 삭제 처리 됨.\n-. 카드정보 등록 당일 => 바로 삭제 처리됨.\n-. 카드정보 등록 후 하루이상 지났음 정산자료 일괄생성 은 당일처리\n=> 삭제대기 로 되었다가 다음날 삭제 처리됨.\n-. 카드정보 등록 후 하루이상 지났음 정산자료 일괄생성 도 하루이상 지났음\n=> 바로 삭제 처리됨.\n카드삭제 불가\n-. 등록된 카드수 ① 가 2개 이상 등록된 경우에는 해당화면에서 삭제가 불가능함.\n(사업당 한개의 카드자료만 조회되기 때문에 2개 이상의 카드사용시 선택해서 조회할 수 없음)\n-. 민간보조사업자 화면으로 접속하여 보조금전용카드정보관리(97002) 에서 삭제 하여야 함\n2\n수행사업별 실적일괄생성(교부,집행,정산)\n매뉴 : 사용자지원 > 업무대행사업일괄관리 > 교부 집행정산일괄등록 (91501)\n-. 세부사업별 업무대행 일괄처리 대상 사업자료를 조회\n1\t2\t-. 정산 및 반환을 위해 실적자료를 등록해야 한다.\n-. 대상사업을 조회 후 처리 대상을 선택 ①\n-. 교부 및 집행실적을 일괄생성 후\n잔액 및 이자에 대한 반환처리를 한다.\n세부사업 선택 후 [사업조회] 버튼 클릭시 업무대행 일괄처리 대상사업이 조회됨.\n-. 조회된 사업중 일괄처리 할 대상 사업을 선택 ①\n사업진행상태 확인 ②\n-. 교부액, 집행액에 금액이 조회되면 교부실적, 집행실적이 생성된 것임.\n- ‘사업수행중‘ : 정산자료 생성 이전\n‘정산마감‘ : 정산자료 생성 이후\n일괄정보 생성\n-. [일괄정보생성] 버튼 클릭시 자료가 생성되는 것 아님.\n-. 등록되기 직전의 자료 ①를 화면상에 보여줌\n② (수정할 수 있는 준비단계 자료)\n-. [검토완료 및 저장] 버튼을 클릭하면 화면의 자료가 실제 실적 자료로 등록 처리 됨.\n교부 정보 생성\n-. 사업별 1건의 교부정보를 생성합니다.\n-. 체크된 내역만 실제 자료로 등록합니다.\n-. 교부결정액은 사업비예산 기준으로 생성합니다.\n-. 재원별 한도내에서 사업비 조정이 가능합니다.\n-. 예산보다 교부결정액을 적게하여 N차 등록이 가 능합니다.\n-. 교부결정일은 사업시작일로 일괄생성합니다.\n교부정보 수정\n-. 시도비, 시군구비 재원별 금액 및 교부결정일은 수정가능\n-. 시도비, 시군구비의 재원별 금액은 예산비율에\n2\t맞춰 자동 배분처리됨.\n(자동 배분된 금액이 잘못된 경우 재원별 금액을 직접 수정해서 등록)\n-. 재원별 교부금액의 비율대로 잔액도 배분처리 되므로 재원별 금액을 명확하게 등록 해야함.\n교부정보 실적 등록\n-. [검토완료 및 저장] 버튼 클릭\n-. 화면상의 생성 / 수정된 자료를 실적자료로 등록\n-. 조회된 자료중 등록하고자 하는 자료를 선택 ① 하여 등록가능.\n** [검토완료 및 저장] 버튼은 교부, 집행, 정산자료 를 모두 검토한 후 한꺼번에 저장할 수 있으므로 집행자료 및 정산자료도 검토 후 저장.\n집행정보 생성\n1) 집행 정보 생성\n-. 사업별 카드(N건) + 기타(1건) 설정합니다.\n-. 체크된 내역만 등록합니다.\n-. 카드증빙을 우선 설정합니다.(카드내역 수집가능 한 경우)\n-. 카드증빙 외 잔여 한도는 기타증빙으로 설정 합니다.\n-. 자부담재원을 우선 설정합니다.\n-. 증빙파일은 집행건별 첨부가능합니다. ③ (하나의 집행정보에 여러건의 증빙을 첨부할때는 압축해서 하나의 파일로 첨부)\n-. 카드내역은 재원구분만 수정가능합니다.\n-. 사업명 왼쪽의 ‘>’ 표시를 클릭하면 ① 하단에 집행정보 생성대상 자료가 펼쳐 집니다.\n1\t2) 집행정보 수정\n-. 재원구분, 공급금액, 부가세액 및 집행일자\n수정가능 ②\n-. 카드증빙으로 집행자료 생성 후 남은 잔액은\n모두 기타증빙으로 합계금액으로 집행자료 생성\n-. 잔액을 남기고자 하는 경우 기타증빙 으로 생성될 금액에서 차감하는 금액이 잔액으로 생성됨.\n-. 기타증빙 금액으로 잔액이 부족한 경우 카드증빙 생성대상을 제외하면 됨. (처리상태 체크 해제)\n1\t2\t3\n정산정보 생성\n정산 정보 생성\n-. 사업별 1건씩 생성합니다.\n체크된 내역만 등록합니다.\n(교부액-집행액)으로 잔액을 계산합니다.\n이자잔액은 자부담계좌에서 발생된 이자액입니다.\n반환총액은 시도비/시군구비의 집행/이자 잔액입 니다.\n반환완료는 고지서를 통해 반환완료된 경우 설정 하세요.\n정산정보 수정\n-. 교부금액 비율로 생성된 재원별 잔액 수정가능①\n-. 이자금액 등록 ②\n보조사업자의 자부담 계좌에서 발생한 이자금액 을 재원별로 등록\n(자부담 재원의 이자금액은 반환대상이 아님)\n반환처리 ③\n-. 잔액과 이자금액을 고지서를 통해 반환하였다면 반환여부를 ‘반납완료‘ 로 변경하고 반환일자 등 록\n첨부파일에 고지서 반납 영수증 등 증빙자료 첨부\n등록정보 삭제\n등록정보 수정\n-. 일괄처리 등록자료는 수정이 불가능 합니다. 수정을 위해서는 기존 자료 전체 삭제 처리 후 재생성을 하는 방식으로 수정해야 합니다.\n-. [등록정보삭제] 버튼을 통해 기존 등록 자료를\n삭제 ①\n-. [일괄정보생성] 버튼 클릭하여 자료 생성 후\n내용 수정하고\n[검토완료및저장] 버튼 클릭하여 해당 자료 등록 처리\n각 단계별 삭제 ①\n-. 정산 : 정산자료만 삭제\n-. 집행 : 집행, 정산 자료삭제\n-. 교부 : 교부, 집행, 정산 자료 삭제\n각 단계별 등록여부 확인 ②\n-. 사업조회시 교부액 금액이 조회되면 교부자료 등록된 것임\n-. 사업조회시 집행액 이 조회되면 집행자료 등록된 것임.\n-. 사업진행상태 값이 ‘정산마감’ 이면 정산자료 등록된 것임.\n이월신청\n이월신청 조건\n-. 보조금을 교부받은 상태에서\n해당 회계연도말까지 사업이 종료되지 않아 다음해 까지 집행을 해야하는 경우.\n-. 사업이 아직도 수행중이며\n교부받은 보조금 사업비의 잔액이 남아 있는 경우\n이월신청이 필요없는 사업\n-. 보조사업에 대해 정산을 진행중, 또는 정산이 완 료된 사업\n-. 잔액이 남아 있지 않은 사업은 이월신청 대상이 아님.\n이월신청을 하지 않을 경우\n-. 사업이 아직 수행중이고 올해 교부받은 보조금이 남아 있는데 회계연도 말 이전에 이월신청의 승인을 받지 못한 사업은 다음회계 연도에 남은 잔액의 집행 정보를 수정 할 수 없게됨.\n-. 교부집행정산일괄등록 화면을 통한 집행정보 등 록은 가능하나 개별 집행등록 화면에서 수정 불가.\n이월신청 기한\n-. 이월신청 및 반려처리는 회계연도말(12월31일) 까지만 적용됨.\n-. 다음해 1월1일에 배치프로그램이 이월 미승인 사 업을 모두 집행마감 처리 해버림.\n-. 12월31일 이후의 승인, 취소 자료는 반영되지 못 함\n주의사항.\n-. 이월신청의 조건에 정산진행상태가 ‘사업수행중’ 이어야 하므로 이월신청을 해야 하는 사업의 경우 교부집행정산일괄등록(91501) 화면에서 집행, 정산까 지 작업해 버리면 안됨.\n-. 교부실적 자료까지만 생성하여야 함.\n-. 집행실적, 정산자료까지 완료했다면 해당 자료는\n40 \t삭제 후 이월 신청 처리.\n이월 처리\n대상 사업조회\n-. 세부사업별 업무대행 일괄처리 대상 사업자료를 조회\n사업비 잔액이 0 이거나 ①\n정산진행상태 값이 ‘수행중’ 이 아닌 사업은 ② 이월승인처리 대상에서 제외됨.\n3) 이월승인처리\n-. 이월대상 사업중 이월처리 해야할 사업을 선택하 고 [이월승인처리] 버튼 클릭시 해당 사업은 이월승 인 처리 됨.\n4) 이월취소 처리(이월반려)\n-. 이월승인된 자료를 선택 후 이월취소 버튼 클릭 시 ‘이월반려’ 상태로 변경됨\n-. 이월반려 자료는 다시 이월승인 처리 가능.\n2\n중요재산 등록\n1) 중요재산의 등록 및 수정은 정산진행상태가 ‘사업 수행중’ 인 경우에만 가능 하므로 교부집행정산일괄등록(91501) 화면에서 정산까지 작 업해 버리면 안됨.\n-. 정산자료까지 완료했다면 해당 자료는 삭제 후 중요재산 등록 처리.\n1\t2) 중요재산의 등록은 등록항목이 다양하여 일괄처리\n가 불가능 하므로 개별건으로 등록처리\n3) 사업등록현황에서 사업을 선택 ① 후\n[중요재산등록] ② 버튼을 통해 중요재산등록 화면 호출\n-. 사업선택시 기 등록된 내역이 있다면 하단의 중요재산목록에 등록된 내역이 조회됨.\n2\n중요재산 신규등록\n1) 중요재산 확정처리(제출)\n-. 중요재산의 기본정보 등록 후 [저장]버튼 클릭\n-. 저장된 자료는 작성중 상태로 저장되며 [제출] ① 버튼을 클릭해야 중요재산 등록 상태가 ‘확정’ 처리가 됨.\n-. 제출을 통해 확정처리 해야만 해당 자료가 민간 중요재산 현황(93012) 에 조회되며,\n정산실적보고서에 중요재산 내역도 반영이 됨.\n-. 확정된 자료는 수정이 불가능 하므로 수정이 필 요한 경우 제출취소를 한 이후에 수정 가능.\n(단, 정산마감 이후에는 제출취소가 불가능)\n1\n중요재산 수정\n중요재산등록한 자료의 조회 또는 수정을 위해서 는 중요재산 목록에서 중요재산명을 클릭 ① 하면 중요재산 조회 /수정 화면이 호출 됨.\n중요재산의 확정여부 ② 에 따라 수정가능 여부 판 단.\n작성중 : 수정 및 삭제 가능\n확정 : 수정 불가능\n제출취소를 통해 확정취소 가능\n(단, 정산마감 이후에는 제출취소가 불가능)\n1\t2\n중요재산 조회\n확정여부 ①\n작성중 : 수정 및 삭제 가능\n확정 : 수정 불가능\n제출취소 ② 를 통해 확정취소 가능\n(단, 정산마감 이후에는 제출취소가 불가능)\n변동현황등록\n정산마감 이후에 중요재산의 변동사항 발생시\n[변동현황등록] 버튼을 통해 변동내역을 등록.\n1\n2\n실적보고서 등록\n실적보고서 생성은 정산 진행상태값이 ‘정산마감’ 인 경우에만 가능 하므로 교부집행정산일괄등록(91501) 화면을 통해 정산까지 처리한 이후에 진행 가능함.\n-. 실적보고서 생성이 이미 완료된 경우\n실적보고서 진행상태값이 ‘작성중’ ① 으로 표시됨.\n실적보고서 일괄생성 ②\n-. 실적보고서 진행상태 값이 ‘미작성’ 인 자료를 선 택 후 [실적보고서생성] 버튼 클릭시 선택된 사업의 실적보고서 자료가 일괄로 생성 처리되며 진행상태 값은 ‘작성중’ 으로 변경됨.\n실적보고서 수정\n실적보고서 진행상태값이 ‘작성중’ 인 자료는 수정 가능\n수정하고자 하는 사업의 보조사업명 클릭시 상세 화면이 호출되며 수정 가능.\n실적보고서 제출/제출취소\n1\t1) [실적보고서제출] 버튼 을 통해 실적보고서 제출\n처리\n-. 실적보고서의 제출 이후에는 수정불가\n2) 실적보고서 진행상태 값이 ‘제출’ 상태의 경우 제 출 취소 가능\n실적보고서 삭제\n1) 실적보고서 진행상태 값이 ‘작성중’ 상태의 경우 삭제 가능\n실적보고서 상세\n실적보고서 생성된 자료의 상세 조회\n‘작성중’ 상태의 경우 수정 가능\n실적보고서 승인\n제출된 실적보고서를 승인처리 하거나 반려처리.\n전자결재 : 승인처리도 전자결재가 필요하지만 승인처리된 실적보고서의 승인취소 처리시에도 전자결재가 필요함.\n정보공시 일괄등록(생성)\n정보공시 자료를 생성 ① 하기 위해서는 공시진행 상태 값이 ‘통보’ 상태 여야 가능.\n-. 정보공시 생성 : 진행상태 값이 ‘작성중’ ② 으로 표시됨.\n-. 정보공시 자료는 파일첨부 해야 하는 부분도 있 으므로 개별 화면을 통해 직접 파일첨부 해야함.\n-. 비고 항목에 필요사항 표시됨.\n정보공시 자료생성 후 해당 자료를 삭제하고자 하 는 경우 [정보공시삭제] 버튼을 이용하여 삭제 가능\n-. 단, 작성중 상태에서만 삭제 가능\n2\n공시생성자료 조회/수정화면 호출\n-. 공공민간보조사업명 클릭시 해당 사업의 개별 공 시자료를 조회 하거나 수정할 수 있는 화면 호출됨.\n정보공시 통보\n정보공시 일괄처리하려 하는데 해당 사업이 통보 가 안되어 있다면\n보조사업공시통보관리(95008) 화면을 통해 통보 처리.\n통보처리할 사업을 선택 ① 후\n[통보] ② 버튼 클릭\n1\n2\n파일첨부 등 추가작업\n정보공시 생성을 통해 정보공시 자료가 생성된 이 후 첨부파일 첨부 등의 추가 작업을 위해 개별 정보\n공시 화면을 호출\n각 탭화면을 통해 첨부파일을 추가 또는 삭제 ①\n해당 정보를 저장처리 ②\n1\n정보공시 공시처리\n개별 사업의 공시자료를 모두 작성하였다면 비고에 ‘정보공시가능’ ① 으로 조회 됨.\n-. 해당 사업을 선택한 후 [정보공시 공시] ② 버튼 클릭 시 공시 처리 됨.\n2\n공시 처리된 자료는 보탬e 포탈 공시화면에서 확\n인 가능\n-. 공시한 자료가 잘못되어 공시를 취소하고자 하는 경우 [정보공시 공시취소] 버튼을 클릭하여 취소 가\n1\t능\n1\n6. 보탬e 포탈\n보탬e 포탈 주소 : losims.e-hojo.go.kr/sp\n보탬e 포탈에서 [정보공시] ① 클릭하면 공시화면 호출 됨\n7. 보탬e 포탈 정보공시 조회\n1) 회계연도, 지방자치단체 선택 후 검색을 통해 공 시된 자료를 조회"
+}

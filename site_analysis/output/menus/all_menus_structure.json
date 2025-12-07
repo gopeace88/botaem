@@ -1,0 +1,512 @@
+{
+  "즐겨찾기": {
+    "menu": "즐겨찾기",
+    "submenus": [
+      {
+        "text": "접속일시\n2025-12-05 16:43:23\n59:56\n알티케이\n김진희\n회계연도",
+        "id": "uuid-d7f07099-9075-e8d1-6695-2e32210627ad",
+        "class": "cl-control cl-container header",
+        "top": 0
+      },
+      {
+        "text": "접속일시\n2025-12-05 16:43:23\n59:56\n알티케이\n김진희",
+        "id": "uuid-a52b2058-b315-3304-2f16-75a770aeb3c0",
+        "class": "cl-control cl-container",
+        "top": 9.5
+      },
+      {
+        "text": "챗봇",
+        "id": "",
+        "class": "btn-i btn-transparent cl-control cl-button cl-first-row cl-icon-align-top cl-last-row cl-unselectable",
+        "top": 946
+      },
+      {
+        "text": "확장",
+        "id": "",
+        "class": "cl-control cl-container cl-first-row",
+        "top": 58
+      },
+      {
+        "text": "확장",
+        "id": "",
+        "class": "cl-control cl-button cl-unselectable",
+        "top": 58
+      },
+      {
+        "text": "전체메뉴 검색",
+        "id": "",
+        "class": "cl-control cl-searchinput cl-last-row menu-search",
+        "top": 88
+      },
+      {
+        "text": "즐겨찾기",
+        "id": "",
+        "class": "-cl-root cl-collapsed cl-first-node cl-folder cl-last-node cl-tree-item tree-item-level-1",
+        "top": 146
+      },
+      {
+        "text": "잠시만 기다려 주세요",
+        "id": "uuid-8eb9c082-cc4e-b2b3-de6b-e4a57176b2c7",
+        "class": "cl-control cl-embeddedapp",
+        "top": -1
+      },
+      {
+        "text": "잠시만 기다려 주세요",
+        "id": "uuid-a8c0fcdc-eab1-6b5e-44f0-d75777c0719a",
+        "class": "cl-control cl-container cl-overlay",
+        "top": -1
+      },
+      {
+        "text": "잠시만 기다려 주세요",
+        "id": "uuid-278f6cb2-c376-1fae-b9b6-446850fae575",
+        "class": "cl-control cl-output cl-unselectable cl-writingmode-horizontal-tb h3 text-center",
+        "top": 41.5
+      }
+    ],
+    "screenshot": "01_즐겨찾기.png"
+  },
+  "보조사업선정": {
+    "menu": "보조사업선정",
+    "submenus": [
+      {
+        "text": "접속일시\n2025-12-05 16:43:23\n59:54\n알티케이\n김진희\n회계연도",
+        "id": "uuid-d7f07099-9075-e8d1-6695-2e32210627ad",
+        "class": "cl-control cl-container header",
+        "top": 0
+      },
+      {
+        "text": "접속일시\n2025-12-05 16:43:23\n59:54\n알티케이\n김진희",
+        "id": "uuid-a52b2058-b315-3304-2f16-75a770aeb3c0",
+        "class": "cl-control cl-container",
+        "top": 9.5
+      },
+      {
+        "text": "챗봇",
+        "id": "",
+        "class": "btn-i btn-transparent cl-control cl-button cl-first-row cl-icon-align-top cl-last-row cl-unselectable",
+        "top": 946
+      },
+      {
+        "text": "확장",
+        "id": "",
+        "class": "cl-control cl-container cl-first-row",
+        "top": 58
+      },
+      {
+        "text": "확장",
+        "id": "",
+        "class": "cl-control cl-button cl-unselectable",
+        "top": 58
+      },
+      {
+        "text": "전체메뉴 검색",
+        "id": "",
+        "class": "cl-control cl-searchinput cl-last-row menu-search",
+        "top": 88
+      },
+      {
+        "text": "공모사업신청관리",
+        "id": "",
+        "class": "-cl-root cl-collapsed cl-first-node cl-folder cl-tree-item tree-item-level-1",
+        "top": 146
+      },
+      {
+        "text": "수행사업계획관리",
+        "id": "",
+        "class": "-cl-root cl-collapsed cl-folder cl-last-node cl-tree-item tree-item-level-1",
+        "top": 186
+      },
+      {
+        "text": "잠시만 기다려 주세요",
+        "id": "uuid-8eb9c082-cc4e-b2b3-de6b-e4a57176b2c7",
+        "class": "cl-control cl-embeddedapp",
+        "top": -1
+      },
+      {
+        "text": "잠시만 기다려 주세요",
+        "id": "uuid-a8c0fcdc-eab1-6b5e-44f0-d75777c0719a",
+        "class": "cl-control cl-container cl-overlay",
+        "top": -1
+      },
+      {
+        "text": "잠시만 기다려 주세요",
+        "id": "uuid-278f6cb2-c376-1fae-b9b6-446850fae575",
+        "class": "cl-control cl-output cl-unselectable cl-writingmode-horizontal-tb h3 text-center",
+        "top": 41.5
+      }
+    ],
+    "screenshot": "02_보조사업선정.png"
+  },
+  "교부관리": {
+    "menu": "교부관리",
+    "submenus": [
+      {
+        "text": "접속일시\n2025-12-05 16:43:23\n59:52\n알티케이\n김진희\n회계연도",
+        "id": "uuid-d7f07099-9075-e8d1-6695-2e32210627ad",
+        "class": "cl-control cl-container header",
+        "top": 0
+      },
+      {
+        "text": "접속일시\n2025-12-05 16:43:23\n59:52\n알티케이\n김진희",
+        "id": "uuid-a52b2058-b315-3304-2f16-75a770aeb3c0",
+        "class": "cl-control cl-container",
+        "top": 9.5
+      },
+      {
+        "text": "챗봇",
+        "id": "",
+        "class": "btn-i btn-transparent cl-control cl-button cl-first-row cl-icon-align-top cl-last-row cl-unselectable",
+        "top": 946
+      },
+      {
+        "text": "확장",
+        "id": "",
+        "class": "cl-control cl-container cl-first-row",
+        "top": 58
+      },
+      {
+        "text": "확장",
+        "id": "",
+        "class": "cl-control cl-button cl-unselectable",
+        "top": 58
+      },
+      {
+        "text": "전체메뉴 검색",
+        "id": "",
+        "class": "cl-control cl-searchinput cl-last-row menu-search",
+        "top": 88
+      },
+      {
+        "text": "잠시만 기다려 주세요",
+        "id": "uuid-8eb9c082-cc4e-b2b3-de6b-e4a57176b2c7",
+        "class": "cl-control cl-embeddedapp",
+        "top": -1
+      },
+      {
+        "text": "잠시만 기다려 주세요",
+        "id": "uuid-a8c0fcdc-eab1-6b5e-44f0-d75777c0719a",
+        "class": "cl-control cl-container cl-overlay",
+        "top": -1
+      },
+      {
+        "text": "잠시만 기다려 주세요",
+        "id": "uuid-278f6cb2-c376-1fae-b9b6-446850fae575",
+        "class": "cl-control cl-output cl-unselectable cl-writingmode-horizontal-tb h3 text-center",
+        "top": 41.5
+      }
+    ],
+    "screenshot": "03_교부관리.png"
+  },
+  "사업수행관리": {
+    "menu": "사업수행관리",
+    "submenus": [
+      {
+        "text": "접속일시\n2025-12-05 16:43:23\n59:49\n알티케이\n김진희\n회계연도",
+        "id": "uuid-d7f07099-9075-e8d1-6695-2e32210627ad",
+        "class": "cl-control cl-container header",
+        "top": 0
+      },
+      {
+        "text": "접속일시\n2025-12-05 16:43:23\n59:49\n알티케이\n김진희",
+        "id": "uuid-a52b2058-b315-3304-2f16-75a770aeb3c0",
+        "class": "cl-control cl-container",
+        "top": 9.5
+      },
+      {
+        "text": "챗봇",
+        "id": "",
+        "class": "btn-i btn-transparent cl-control cl-button cl-first-row cl-icon-align-top cl-last-row cl-unselectable",
+        "top": 946
+      },
+      {
+        "text": "확장",
+        "id": "",
+        "class": "cl-control cl-container cl-first-row",
+        "top": 58
+      },
+      {
+        "text": "확장",
+        "id": "",
+        "class": "cl-control cl-button cl-unselectable",
+        "top": 58
+      },
+      {
+        "text": "전체메뉴 검색",
+        "id": "",
+        "class": "cl-control cl-searchinput cl-last-row menu-search",
+        "top": 88
+      },
+      {
+        "text": "수행점검관리",
+        "id": "",
+        "class": "-cl-root cl-collapsed cl-first-node cl-folder cl-tree-item tree-item-level-1",
+        "top": 146
+      },
+      {
+        "text": "문제사업 관리",
+        "id": "",
+        "class": "-cl-root cl-collapsed cl-folder cl-tree-item tree-item-level-1",
+        "top": 186
+      },
+      {
+        "text": "이의신청",
+        "id": "",
+        "class": "-cl-root cl-collapsed cl-folder cl-last-node cl-tree-item tree-item-level-1",
+        "top": 226
+      },
+      {
+        "text": "잠시만 기다려 주세요",
+        "id": "uuid-8eb9c082-cc4e-b2b3-de6b-e4a57176b2c7",
+        "class": "cl-control cl-embeddedapp",
+        "top": -1
+      },
+      {
+        "text": "잠시만 기다려 주세요",
+        "id": "uuid-a8c0fcdc-eab1-6b5e-44f0-d75777c0719a",
+        "class": "cl-control cl-container cl-overlay",
+        "top": -1
+      },
+      {
+        "text": "잠시만 기다려 주세요",
+        "id": "uuid-278f6cb2-c376-1fae-b9b6-446850fae575",
+        "class": "cl-control cl-output cl-unselectable cl-writingmode-horizontal-tb h3 text-center",
+        "top": 41.5
+      }
+    ],
+    "screenshot": "04_사업수행관리.png"
+  },
+  "정보공시관리": {
+    "menu": "정보공시관리",
+    "submenus": [
+      {
+        "text": "접속일시\n2025-12-05 16:43:23\n59:47\n알티케이\n김진희\n회계연도",
+        "id": "uuid-d7f07099-9075-e8d1-6695-2e32210627ad",
+        "class": "cl-control cl-container header",
+        "top": 0
+      },
+      {
+        "text": "접속일시\n2025-12-05 16:43:23\n59:47\n알티케이\n김진희",
+        "id": "uuid-a52b2058-b315-3304-2f16-75a770aeb3c0",
+        "class": "cl-control cl-container",
+        "top": 9.5
+      },
+      {
+        "text": "챗봇",
+        "id": "",
+        "class": "btn-i btn-transparent cl-control cl-button cl-first-row cl-icon-align-top cl-last-row cl-unselectable",
+        "top": 946
+      },
+      {
+        "text": "확장",
+        "id": "",
+        "class": "cl-control cl-container cl-first-row",
+        "top": 58
+      },
+      {
+        "text": "확장",
+        "id": "",
+        "class": "cl-control cl-button cl-unselectable",
+        "top": 58
+      },
+      {
+        "text": "전체메뉴 검색",
+        "id": "",
+        "class": "cl-control cl-searchinput cl-last-row menu-search",
+        "top": 88
+      },
+      {
+        "text": "보조사업공시관리",
+        "id": "",
+        "class": "-cl-root cl-collapsed cl-first-node cl-folder cl-tree-item tree-item-level-1",
+        "top": 146
+      },
+      {
+        "text": "시정명령 관리",
+        "id": "",
+        "class": "-cl-root cl-collapsed cl-folder cl-last-node cl-tree-item tree-item-level-1",
+        "top": 186
+      },
+      {
+        "text": "잠시만 기다려 주세요",
+        "id": "uuid-8eb9c082-cc4e-b2b3-de6b-e4a57176b2c7",
+        "class": "cl-control cl-embeddedapp",
+        "top": -1
+      },
+      {
+        "text": "잠시만 기다려 주세요",
+        "id": "uuid-a8c0fcdc-eab1-6b5e-44f0-d75777c0719a",
+        "class": "cl-control cl-container cl-overlay",
+        "top": -1
+      },
+      {
+        "text": "잠시만 기다려 주세요",
+        "id": "uuid-278f6cb2-c376-1fae-b9b6-446850fae575",
+        "class": "cl-control cl-output cl-unselectable cl-writingmode-horizontal-tb h3 text-center",
+        "top": 41.5
+      }
+    ],
+    "screenshot": "05_정보공시관리.png"
+  },
+  "금융정보관리": {
+    "menu": "금융정보관리",
+    "submenus": [
+      {
+        "text": "접속일시\n2025-12-05 16:43:23\n59:45\n알티케이\n김진희\n회계연도",
+        "id": "uuid-d7f07099-9075-e8d1-6695-2e32210627ad",
+        "class": "cl-control cl-container header",
+        "top": 0
+      },
+      {
+        "text": "접속일시\n2025-12-05 16:43:23\n59:45\n알티케이\n김진희",
+        "id": "uuid-a52b2058-b315-3304-2f16-75a770aeb3c0",
+        "class": "cl-control cl-container",
+        "top": 9.5
+      },
+      {
+        "text": "챗봇",
+        "id": "",
+        "class": "btn-i btn-transparent cl-control cl-button cl-first-row cl-icon-align-top cl-last-row cl-unselectable",
+        "top": 946
+      },
+      {
+        "text": "확장",
+        "id": "",
+        "class": "cl-control cl-container cl-first-row",
+        "top": 58
+      },
+      {
+        "text": "확장",
+        "id": "",
+        "class": "cl-control cl-button cl-unselectable",
+        "top": 58
+      },
+      {
+        "text": "전체메뉴 검색",
+        "id": "",
+        "class": "cl-control cl-searchinput cl-last-row menu-search",
+        "top": 88
+      },
+      {
+        "text": "잠시만 기다려 주세요",
+        "id": "uuid-8eb9c082-cc4e-b2b3-de6b-e4a57176b2c7",
+        "class": "cl-control cl-embeddedapp",
+        "top": -1
+      },
+      {
+        "text": "잠시만 기다려 주세요",
+        "id": "uuid-a8c0fcdc-eab1-6b5e-44f0-d75777c0719a",
+        "class": "cl-control cl-container cl-overlay",
+        "top": -1
+      },
+      {
+        "text": "잠시만 기다려 주세요",
+        "id": "uuid-278f6cb2-c376-1fae-b9b6-446850fae575",
+        "class": "cl-control cl-output cl-unselectable cl-writingmode-horizontal-tb h3 text-center",
+        "top": 41.5
+      }
+    ],
+    "screenshot": "06_금융정보관리.png"
+  },
+  "사용자지원": {
+    "menu": "사용자지원",
+    "submenus": [
+      {
+        "text": "접속일시\n2025-12-05 16:43:23\n59:43\n알티케이\n김진희\n회계연도",
+        "id": "uuid-d7f07099-9075-e8d1-6695-2e32210627ad",
+        "class": "cl-control cl-container header",
+        "top": 0
+      },
+      {
+        "text": "접속일시\n2025-12-05 16:43:23\n59:43\n알티케이\n김진희",
+        "id": "uuid-a52b2058-b315-3304-2f16-75a770aeb3c0",
+        "class": "cl-control cl-container",
+        "top": 9.5
+      },
+      {
+        "text": "챗봇",
+        "id": "",
+        "class": "btn-i btn-transparent cl-control cl-button cl-first-row cl-icon-align-top cl-last-row cl-unselectable",
+        "top": 946
+      },
+      {
+        "text": "확장",
+        "id": "",
+        "class": "cl-control cl-container cl-first-row",
+        "top": 58
+      },
+      {
+        "text": "확장",
+        "id": "",
+        "class": "cl-control cl-button cl-unselectable",
+        "top": 58
+      },
+      {
+        "text": "전체메뉴 검색",
+        "id": "",
+        "class": "cl-control cl-searchinput cl-last-row menu-search",
+        "top": 88
+      },
+      {
+        "text": "보조사업자온라인교육",
+        "id": "",
+        "class": "-cl-root cl-collapsed cl-first-node cl-folder cl-tree-item tree-item-level-1",
+        "top": 146
+      },
+      {
+        "text": "내정보관리",
+        "id": "",
+        "class": "-cl-root cl-collapsed cl-folder cl-tree-item tree-item-level-1",
+        "top": 186
+      },
+      {
+        "text": "보조사업자공지사항 (97018)",
+        "id": "",
+        "class": "-cl-root cl-leaf cl-tree-item tree-item-level-1",
+        "top": 226
+      },
+      {
+        "text": "지방보조금 FAQ (97044)",
+        "id": "",
+        "class": "-cl-root cl-leaf cl-tree-item tree-item-level-1",
+        "top": 266
+      },
+      {
+        "text": "사용자매뉴얼 (97045)",
+        "id": "",
+        "class": "-cl-root cl-leaf cl-tree-item tree-item-level-1",
+        "top": 306
+      },
+      {
+        "text": "문의게시판 (97019)",
+        "id": "",
+        "class": "-cl-root cl-leaf cl-tree-item tree-item-level-1",
+        "top": 346
+      },
+      {
+        "text": "만족도조사 (97047)",
+        "id": "",
+        "class": "-cl-root cl-last-node cl-leaf cl-tree-item tree-item-level-1",
+        "top": 386
+      },
+      {
+        "text": "잠시만 기다려 주세요",
+        "id": "uuid-8eb9c082-cc4e-b2b3-de6b-e4a57176b2c7",
+        "class": "cl-control cl-embeddedapp",
+        "top": -1
+      },
+      {
+        "text": "잠시만 기다려 주세요",
+        "id": "uuid-a8c0fcdc-eab1-6b5e-44f0-d75777c0719a",
+        "class": "cl-control cl-container cl-overlay",
+        "top": -1
+      },
+      {
+        "text": "잠시만 기다려 주세요",
+        "id": "uuid-278f6cb2-c376-1fae-b9b6-446850fae575",
+        "class": "cl-control cl-output cl-unselectable cl-writingmode-horizontal-tb h3 text-center",
+        "top": 41.5
+      }
+    ],
+    "screenshot": "07_사용자지원.png"
+  }
+}

@@ -1,0 +1,3374 @@
+{
+  "metadata": {
+    "url": "https://www.losims.go.kr/sp",
+    "timestamp": "2025-12-05T06:02:31.100Z",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "interactiveElementsSummary": {
+    "total": 168,
+    "visible": 106,
+    "byType": {
+      "button": {
+        "total": 3,
+        "visible": 3
+      },
+      "a": {
+        "total": 85,
+        "visible": 39
+      },
+      "input": {
+        "total": 3,
+        "visible": 3
+      },
+      "select": {
+        "total": 2,
+        "visible": 2
+      },
+      "div": {
+        "total": 53,
+        "visible": 40
+      },
+      "span": {
+        "total": 22,
+        "visible": 19
+      }
+    }
+  },
+  "loginElements": {
+    "forms": [
+      {
+        "tagName": "form",
+        "id": "mpbs",
+        "className": "",
+        "action": "https://www.losims.go.kr/sp/pbcnBizSrch",
+        "method": "get",
+        "name": null,
+        "boundingBox": {
+          "x": 342.5,
+          "y": 362,
+          "width": 490,
+          "height": 60
+        },
+        "innerHTML": "\n                        <fieldset>\n                            <legend>지방보조사업 검색</legend>\n                                <input type=\"text\" title=\"공모사업 검색\" placeholder=\"공모사업 또는 키워드로 검색하세요\" name=\"pbcnNm\"> \n                                <input type=\"button\" value=\"검색\" title=\"검색\" onclick=\"javascript:fn_formPbcnSrch();\">\n                        </fieldset>\n                    "
+      }
+    ],
+    "inputs": [
+      {
+        "tagName": "input",
+        "id": "zoom_num",
+        "className": "zoom_num",
+        "type": "text",
+        "name": null,
+        "placeholder": null,
+        "value": "100%",
+        "autocomplete": null,
+        "required": false,
+        "disabled": false,
+        "readonly": true,
+        "maxLength": null,
+        "ariaLabel": null,
+        "ariaRequired": null,
+        "isVisible": true,
+        "boundingBox": {
+          "x": 1340.765625,
+          "y": 15,
+          "width": 50,
+          "height": 20
+        }
+      },
+      {
+        "tagName": "input",
+        "id": null,
+        "className": "",
+        "type": "text",
+        "name": "pbcnNm",
+        "placeholder": "공모사업 또는 키워드로 검색하세요",
+        "value": null,
+        "autocomplete": null,
+        "required": false,
+        "disabled": false,
+        "readonly": false,
+        "maxLength": null,
+        "ariaLabel": null,
+        "ariaRequired": null,
+        "isVisible": true,
+        "boundingBox": {
+          "x": 342.5,
+          "y": 362,
+          "width": 430,
+          "height": 60
+        }
+      },
+      {
+        "tagName": "input",
+        "id": null,
+        "className": "",
+        "type": "button",
+        "name": null,
+        "placeholder": null,
+        "value": "검색",
+        "autocomplete": null,
+        "required": false,
+        "disabled": false,
+        "readonly": false,
+        "maxLength": null,
+        "ariaLabel": null,
+        "ariaRequired": null,
+        "isVisible": true,
+        "boundingBox": {
+          "x": 769.25,
+          "y": 362,
+          "width": 60,
+          "height": 60
+        }
+      }
+    ],
+    "buttons": [
+      {
+        "tagName": "button",
+        "id": null,
+        "className": "plus",
+        "type": "submit",
+        "textContent": "화면 10%씩 확대",
+        "innerHTML": "화면 10%씩 확대",
+        "role": null,
+        "ariaLabel": null,
+        "disabled": false,
+        "isVisible": true,
+        "boundingBox": {
+          "x": 1318.765625,
+          "y": 15,
+          "width": 20,
+          "height": 20
+        },
+        "onclick": "function onclick(event) {\nzoomIn();\n}"
+      },
+      {
+        "tagName": "button",
+        "id": null,
+        "className": "minus",
+        "type": "submit",
+        "textContent": "화면 10%씩 축소",
+        "innerHTML": "화면 10%씩 축소",
+        "role": null,
+        "ariaLabel": null,
+        "disabled": false,
+        "isVisible": true,
+        "boundingBox": {
+          "x": 1392.765625,
+          "y": 15,
+          "width": 20,
+          "height": 20
+        },
+        "onclick": "function onclick(event) {\nzoomOut();\n}"
+      },
+      {
+        "tagName": "button",
+        "id": null,
+        "className": "btn s_size on",
+        "type": "submit",
+        "textContent": "검색",
+        "innerHTML": "검색",
+        "role": null,
+        "ariaLabel": null,
+        "disabled": false,
+        "isVisible": true,
+        "boundingBox": {
+          "x": 1477.046875,
+          "y": 688,
+          "width": 80.453125,
+          "height": 32
+        },
+        "onclick": "function onclick(event) {\njavascript:srchBtn();\n}"
+      },
+      {
+        "tagName": "div",
+        "id": null,
+        "className": "swiper-button-prev swiper-button-disabled",
+        "type": null,
+        "textContent": "이전",
+        "innerHTML": "이전",
+        "role": "button",
+        "ariaLabel": "Previous slide",
+        "isVisible": true,
+        "boundingBox": {
+          "x": 342.5,
+          "y": 1915.1875,
+          "width": 14,
+          "height": 27
+        },
+        "onclick": null
+      },
+      {
+        "tagName": "div",
+        "id": null,
+        "className": "swiper-button-next swiper-button-disabled",
+        "type": null,
+        "textContent": "다음",
+        "innerHTML": "다음",
+        "role": "button",
+        "ariaLabel": "Next slide",
+        "isVisible": true,
+        "boundingBox": {
+          "x": 1548.5,
+          "y": 1915.1875,
+          "width": 14,
+          "height": 27
+        },
+        "onclick": null
+      }
+    ],
+    "labels": []
+  },
+  "tabStructure": {
+    "containers": [],
+    "tabs": [
+      {
+        "tagName": "div",
+        "id": null,
+        "className": "tabContent",
+        "textContent": "최신공모사업\n                    인기공모사업\n                    마감임박사업\n                \n                \n                    \n                        광역 선택\n                        \n                            강원특별자치도\n                        \n                            경기도\n                        \n                            경상남도\n                        \n                            경상북도\n                        \n                            광주광역시\n                        \n                            대구광역시\n                        \n                            대전광역시\n                        \n                            부산광역시\n                        \n                            서울특별시\n                        \n                            세종특별자치시\n                        \n                            울산광역시\n                        \n                            인천광역시\n                        \n                            전라남도\n                        \n                            전북특별자치도\n                        \n                            제주특별자치도\n                        \n                            충청남도\n                        \n                            충청북도\n                        \n                    \n                     \n                        기초 선택\n                    \n                    검색\n                \n                \n                    최신공모사업\n                    \n                    등록된 공모사업이 없습니다.\n                    12026년 양산시 지역문화진흥기금 지원사업 공고 2025-11-24~2025-12-142지역민과 함께하는 어울림 한마당 2025-11-21~2025-12-0532026 신년 해맞이 행사 2025-11-21~2025-12-0542025「맛나는 평창-청년 로컬 레시피 공모전」후속지원 사업 2025-11-14~2025-12-0952025년 영구임대아파트 공동전기요금 지원 사업 2025-11-12~2025-12-0862025년도 의성군 자연환경보전지원사업 2025-03-01~2025-12-317럼피스킨 방역 물품 지원사업 2025-02-11~2025-12-31\n                    최신공모사업 더보기\n                \n                \n                    인기공모사업\n                    \n                    등록된 공모사업이 없습니다.\n                    \n                        \n                    \n                    인기공모사업 더보기\n                \n                \n                    마감임박사업\n                    \n                    등록된 공모사업이 없습니다.\n                    \n                        \n                    \n                    마감임박사업 더보기",
+        "role": null,
+        "ariaSelected": null,
+        "ariaControls": null,
+        "isActive": false,
+        "boundingBox": {
+          "x": 342.5,
+          "y": 678,
+          "width": 1220,
+          "height": 711
+        },
+        "onclick": null
+      },
+      {
+        "tagName": "ul",
+        "id": "tabBarBizRcmdtn",
+        "className": "tabBar",
+        "textContent": "최신공모사업\n                    인기공모사업\n                    마감임박사업",
+        "role": null,
+        "ariaSelected": null,
+        "ariaControls": null,
+        "isActive": false,
+        "boundingBox": {
+          "x": 342.5,
+          "y": 678,
+          "width": 1220,
+          "height": 51
+        },
+        "onclick": null
+      },
+      {
+        "tagName": "div",
+        "id": null,
+        "className": "tabPage active",
+        "textContent": "최신공모사업\n                    \n                    등록된 공모사업이 없습니다.\n                    12026년 양산시 지역문화진흥기금 지원사업 공고 2025-11-24~2025-12-142지역민과 함께하는 어울림 한마당 2025-11-21~2025-12-0532026 신년 해맞이 행사 2025-11-21~2025-12-0542025「맛나는 평창-청년 로컬 레시피 공모전」후속지원 사업 2025-11-14~2025-12-0952025년 영구임대아파트 공동전기요금 지원 사업 2025-11-12~2025-12-0862025년도 의성군 자연환경보전지원사업 2025-03-01~2025-12-317럼피스킨 방역 물품 지원사업 2025-02-11~2025-12-31\n                    최신공모사업 더보기",
+        "role": null,
+        "ariaSelected": null,
+        "ariaControls": null,
+        "isActive": true,
+        "boundingBox": {
+          "x": 342.5,
+          "y": 759,
+          "width": 1220,
+          "height": 630
+        },
+        "onclick": null
+      },
+      {
+        "tagName": "div",
+        "id": null,
+        "className": "tabPage",
+        "textContent": "인기공모사업\n                    \n                    등록된 공모사업이 없습니다.\n                    \n                        \n                    \n                    인기공모사업 더보기",
+        "role": null,
+        "ariaSelected": null,
+        "ariaControls": null,
+        "isActive": false,
+        "boundingBox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "onclick": null
+      },
+      {
+        "tagName": "div",
+        "id": null,
+        "className": "tabPage",
+        "textContent": "마감임박사업\n                    \n                    등록된 공모사업이 없습니다.\n                    \n                        \n                    \n                    마감임박사업 더보기",
+        "role": null,
+        "ariaSelected": null,
+        "ariaControls": null,
+        "isActive": false,
+        "boundingBox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "onclick": null
+      },
+      {
+        "tagName": "div",
+        "id": null,
+        "className": "tabContent",
+        "textContent": "공지사항\n                            홍보센터\n                        \n                        \n                            공지사항\n                            \n                                \n                                    \n                                            \n                                                \n                                                    new\n                                                        (12월6일) 국민비서 시스템 작업 안내\n                                                \n                                                \n                                            \n                                            o 작업일시 : 25.12.6.(토) 09:00 ~ 24:00(예정)\n  ※ 작업 시간은 단축될 수 있음\n\no 작업내용 : 국민비서 DB 이중화 작업\n\no 작업주체 : 국가정보자원관리원, 국민비서 운영사업팀\n\no 작업영향 : 국민비서 서비스 일시중단\n\no 상담서비스 영향범위\n- 작업시간대 상담서비스 차단, sorry page 표출\n- 기관 배너도 연결안됨\n 2025.12.02\n                                    \n                                \n                                    \n                                            \n                                                \n                                                \n                                                    보탬e 웹취약점 조치 안내(중복로그인 허용 불가)\n                                                \n                                            \n                                            보탬e 웹취약점 조치사항으로 민간보조사업자 로그인 시 중복로그인이 되지 않도록 적용될 예정이오니 업무에 참고하시기 바랍니다.\n\n (예시1)\n①번 PC에서 엣지 브라우저로 로그인 후, 크롬 브라우저를 새로 열어서 로그인 할 경우 엣지 브라우저의 로그인이 종료된 뒤 로그인 가능\n\n(예시2)\n①번 PC에서 엣지 또는 크롬 브라우저로 로그인 후 ②번 PC에서 엣지 또는 크롬 브라우저로 로그인 시 ①번 PC의 엣지 또는 크롬 브라우저 로그인이 종료된 뒤 로그인 가능\n\n ○ 적용 일시 : 12. 9. (화). 19시 이후\n ○ 적용사항 : 보탬e 중복로그인 허용되지 않도록 적용\n 2025.11.27\n                                    \n                                \n                            \n                            공지사항 전체보기\n                        \n                        \n                            홍보센터\n                            \n                                \n                                     지방보조금관리시스템 명칭‘보탬이(보탬e)’확정 \n                                            지방보조금관리시스템 명칭‘보탬이(보탬e)’확정\n- 366개 후보작 중 1차 심사와 대국민 심사 등을 거쳐 최종 선정 -\n\n행정안전부(장관 이상민)는 지방보조금을 관리하기 위한 새로운 시스템인 ‘지방보조금관리시스템’ 명칭을 “보탬이(보탬e)”로 최종 선정했다고 밝혔다.\n\n “보탬이(보탬e)”는 보태어 도와준다는 의미와 전자시스템을 의미하는 ‘이(e)’를 덧붙여, 지방보조금을 통해 국민 생활에 보탬을 드리겠다는 의미를 담고 있다.\n\n국정과제로 선정되어 추진되고 있는 ‘지방보조금관리시스템’은 매년 증가하고 있는 지방보조금(2022년 54조 원 규모)의 교부․집행․정산 등 업무 전(全) 과정을 전자화하여 지방보조금의 중복․부정수급을 방지하고 투명성을 제고하기 위해 마련됐다.\n이와 관련해 행안부는 지난 8월 1일, ‘지방보조금관리시스템’ 1단계 사업을 완료하고 지방자치단체에 지방보조금 예산편성 기능을 일부 서비스하고 있다.\n오는 2023년 1월부터 지방보조금 집행과 대국민 정보공개 서비스를 포함한 2단계를 개통할 예정이며, 지방보조금 부정수급 관리 등을 포함한 전면 개통은 2024년 1월을 목표로 추진되고 있다.\n\n 행안부는 지방보조금에 대한 사회적 관심을 높이고, ‘지방보조금관리시스템’이 지방보조금을 관리하는 대표 창구임을 홍보하기 위해 온(ON)국민소통을 통해 명칭 공모를 시행했다.\n\n 9월 6일(화)부터 9월 20일(화)까지 진행된 공모에는 총 366개(중복제외)의 후보작이 접수되었으며, 1차 심사를 통해 상위 10개의 명칭이 후보로 선정됐다. \n이어서 대국민 심사와 전문가 심사 등을 거쳐 “보탬이(보탬e)”가 지방보조금관리시스템의 최종 명칭으로 선정되었다.\n\n 최종 당선작은 ▴대상(100만 원) : 보탬e(보태미) \n                      ,▴최우수상(30만 원) : 지방도움e\n                      ,▴우수상(20만 원) : 지방보조금 알림e\n                      ,▴응원상(1만 원) : 지방보조금 속속들e \n등 25개 등으로 당선자에게 모바일 상품권으로 상금을 지급할 계획이다.\n\n행정안전부는 명칭이 확정된 만큼 내년 1월부터 시행되는 지방보조금 집행과 대국민 정보공개 등이 차질 없이 추진 될 수 있도록 지원을 강화할 계획이다.\n\n최병관 행정안전부 지방재정경제실장은 “보탬이(보탬e)가 지방보조금 관리에 큰 힘을 실어줄 수 있도록 지방자치단체와 관계 기관 및 국민께서 기억해 주시고 많이 활용해 주시기 바란다”라고 말했다. 2022.12.31\n                                    \n                                \n                            \n\n                            홍보센터 전체보기",
+        "role": null,
+        "ariaSelected": null,
+        "ariaControls": null,
+        "isActive": false,
+        "boundingBox": {
+          "x": 342.5,
+          "y": 1494,
+          "width": 595,
+          "height": 352
+        },
+        "onclick": null
+      },
+      {
+        "tagName": "ul",
+        "id": "tabBar",
+        "className": "tabBar",
+        "textContent": "공지사항\n                            홍보센터",
+        "role": null,
+        "ariaSelected": null,
+        "ariaControls": null,
+        "isActive": false,
+        "boundingBox": {
+          "x": 342.5,
+          "y": 1494,
+          "width": 595,
+          "height": 51
+        },
+        "onclick": null
+      },
+      {
+        "tagName": "div",
+        "id": null,
+        "className": "tabPage active",
+        "textContent": "공지사항\n                            \n                                \n                                    \n                                            \n                                                \n                                                    new\n                                                        (12월6일) 국민비서 시스템 작업 안내\n                                                \n                                                \n                                            \n                                            o 작업일시 : 25.12.6.(토) 09:00 ~ 24:00(예정)\n  ※ 작업 시간은 단축될 수 있음\n\no 작업내용 : 국민비서 DB 이중화 작업\n\no 작업주체 : 국가정보자원관리원, 국민비서 운영사업팀\n\no 작업영향 : 국민비서 서비스 일시중단\n\no 상담서비스 영향범위\n- 작업시간대 상담서비스 차단, sorry page 표출\n- 기관 배너도 연결안됨\n 2025.12.02\n                                    \n                                \n                                    \n                                            \n                                                \n                                                \n                                                    보탬e 웹취약점 조치 안내(중복로그인 허용 불가)\n                                                \n                                            \n                                            보탬e 웹취약점 조치사항으로 민간보조사업자 로그인 시 중복로그인이 되지 않도록 적용될 예정이오니 업무에 참고하시기 바랍니다.\n\n (예시1)\n①번 PC에서 엣지 브라우저로 로그인 후, 크롬 브라우저를 새로 열어서 로그인 할 경우 엣지 브라우저의 로그인이 종료된 뒤 로그인 가능\n\n(예시2)\n①번 PC에서 엣지 또는 크롬 브라우저로 로그인 후 ②번 PC에서 엣지 또는 크롬 브라우저로 로그인 시 ①번 PC의 엣지 또는 크롬 브라우저 로그인이 종료된 뒤 로그인 가능\n\n ○ 적용 일시 : 12. 9. (화). 19시 이후\n ○ 적용사항 : 보탬e 중복로그인 허용되지 않도록 적용\n 2025.11.27\n                                    \n                                \n                            \n                            공지사항 전체보기",
+        "role": null,
+        "ariaSelected": null,
+        "ariaControls": null,
+        "isActive": true,
+        "boundingBox": {
+          "x": 342.5,
+          "y": 1561,
+          "width": 595,
+          "height": 285
+        },
+        "onclick": null
+      },
+      {
+        "tagName": "div",
+        "id": null,
+        "className": "tabPage",
+        "textContent": "홍보센터\n                            \n                                \n                                     지방보조금관리시스템 명칭‘보탬이(보탬e)’확정 \n                                            지방보조금관리시스템 명칭‘보탬이(보탬e)’확정\n- 366개 후보작 중 1차 심사와 대국민 심사 등을 거쳐 최종 선정 -\n\n행정안전부(장관 이상민)는 지방보조금을 관리하기 위한 새로운 시스템인 ‘지방보조금관리시스템’ 명칭을 “보탬이(보탬e)”로 최종 선정했다고 밝혔다.\n\n “보탬이(보탬e)”는 보태어 도와준다는 의미와 전자시스템을 의미하는 ‘이(e)’를 덧붙여, 지방보조금을 통해 국민 생활에 보탬을 드리겠다는 의미를 담고 있다.\n\n국정과제로 선정되어 추진되고 있는 ‘지방보조금관리시스템’은 매년 증가하고 있는 지방보조금(2022년 54조 원 규모)의 교부․집행․정산 등 업무 전(全) 과정을 전자화하여 지방보조금의 중복․부정수급을 방지하고 투명성을 제고하기 위해 마련됐다.\n이와 관련해 행안부는 지난 8월 1일, ‘지방보조금관리시스템’ 1단계 사업을 완료하고 지방자치단체에 지방보조금 예산편성 기능을 일부 서비스하고 있다.\n오는 2023년 1월부터 지방보조금 집행과 대국민 정보공개 서비스를 포함한 2단계를 개통할 예정이며, 지방보조금 부정수급 관리 등을 포함한 전면 개통은 2024년 1월을 목표로 추진되고 있다.\n\n 행안부는 지방보조금에 대한 사회적 관심을 높이고, ‘지방보조금관리시스템’이 지방보조금을 관리하는 대표 창구임을 홍보하기 위해 온(ON)국민소통을 통해 명칭 공모를 시행했다.\n\n 9월 6일(화)부터 9월 20일(화)까지 진행된 공모에는 총 366개(중복제외)의 후보작이 접수되었으며, 1차 심사를 통해 상위 10개의 명칭이 후보로 선정됐다. \n이어서 대국민 심사와 전문가 심사 등을 거쳐 “보탬이(보탬e)”가 지방보조금관리시스템의 최종 명칭으로 선정되었다.\n\n 최종 당선작은 ▴대상(100만 원) : 보탬e(보태미) \n                      ,▴최우수상(30만 원) : 지방도움e\n                      ,▴우수상(20만 원) : 지방보조금 알림e\n                      ,▴응원상(1만 원) : 지방보조금 속속들e \n등 25개 등으로 당선자에게 모바일 상품권으로 상금을 지급할 계획이다.\n\n행정안전부는 명칭이 확정된 만큼 내년 1월부터 시행되는 지방보조금 집행과 대국민 정보공개 등이 차질 없이 추진 될 수 있도록 지원을 강화할 계획이다.\n\n최병관 행정안전부 지방재정경제실장은 “보탬이(보탬e)가 지방보조금 관리에 큰 힘을 실어줄 수 있도록 지방자치단체와 관계 기관 및 국민께서 기억해 주시고 많이 활용해 주시기 바란다”라고 말했다. 2022.12.31\n                                    \n                                \n                            \n\n                            홍보센터 전체보기",
+        "role": null,
+        "ariaSelected": null,
+        "ariaControls": null,
+        "isActive": false,
+        "boundingBox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "onclick": null
+      }
+    ],
+    "panels": []
+  },
+  "clickableElements": {
+    "buttons": [
+      {
+        "className": "plus",
+        "textContent": "화면 10%씩 확대",
+        "type": "submit",
+        "xpath": "id(\"header\")/div[1]/div[1]/div[1]/div[1]/button[1]",
+        "boundingBox": {
+          "x": 1318.765625,
+          "y": 15,
+          "width": 20,
+          "height": 20,
+          "top": 15,
+          "right": 1338.765625,
+          "bottom": 35,
+          "left": 1318.765625
+        },
+        "onclick": "function onclick(event) {\nzoomIn();\n}"
+      },
+      {
+        "className": "minus",
+        "textContent": "화면 10%씩 축소",
+        "type": "submit",
+        "xpath": "id(\"header\")/div[1]/div[1]/div[1]/div[1]/button[2]",
+        "boundingBox": {
+          "x": 1392.765625,
+          "y": 15,
+          "width": 20,
+          "height": 20,
+          "top": 15,
+          "right": 1412.765625,
+          "bottom": 35,
+          "left": 1392.765625
+        },
+        "onclick": "function onclick(event) {\nzoomOut();\n}"
+      },
+      {
+        "className": "btn s_size on",
+        "textContent": "검색",
+        "type": "submit",
+        "xpath": "id(\"container\")/div[2]/div[1]/div[1]/div[1]/button[1]",
+        "boundingBox": {
+          "x": 1477.046875,
+          "y": 688,
+          "width": 80.453125,
+          "height": 32,
+          "top": 688,
+          "right": 1557.5,
+          "bottom": 720,
+          "left": 1477.046875
+        },
+        "onclick": "function onclick(event) {\njavascript:srchBtn();\n}"
+      }
+    ],
+    "links": [
+      {
+        "className": null,
+        "textContent": "주메뉴 바로가기",
+        "href": "https://www.losims.go.kr/sp#gnb",
+        "xpath": "id(\"skip_navi\")/ul[1]/li[1]/a[1]",
+        "boundingBox": {
+          "x": 0,
+          "y": -999,
+          "width": 1905,
+          "height": 40,
+          "top": -999,
+          "right": 1905,
+          "bottom": -959,
+          "left": 0
+        }
+      },
+      {
+        "className": null,
+        "textContent": "본문 바로가기",
+        "href": "https://www.losims.go.kr/sp#container",
+        "xpath": "id(\"skip_navi\")/ul[1]/li[2]/a[1]",
+        "boundingBox": {
+          "x": 0,
+          "y": -999,
+          "width": 1905,
+          "height": 40,
+          "top": -999,
+          "right": 1905,
+          "bottom": -959,
+          "left": 0
+        }
+      },
+      {
+        "className": "system_link",
+        "textContent": "업무시스템 바로가기",
+        "href": "https://www.losims.go.kr/lss.do",
+        "xpath": "id(\"header\")/div[1]/div[1]/div[1]/a[1]",
+        "boundingBox": {
+          "x": 1422.765625,
+          "y": 10,
+          "width": 129.734375,
+          "height": 30,
+          "top": 10,
+          "right": 1552.5,
+          "bottom": 40,
+          "left": 1422.765625
+        }
+      },
+      {
+        "className": null,
+        "textContent": null,
+        "href": "https://www.losims.go.kr/sp",
+        "xpath": "id(\"header\")/div[2]/div[1]/h1[1]/a[1]",
+        "boundingBox": {
+          "x": 342.5,
+          "y": 83.390625,
+          "width": 124,
+          "height": 19,
+          "top": 83.390625,
+          "right": 466.5,
+          "bottom": 102.390625,
+          "left": 342.5
+        }
+      },
+      {
+        "className": null,
+        "textContent": "보탬e소개",
+        "href": "https://www.losims.go.kr/sp#",
+        "xpath": "id(\"pc_gnb\")/li[1]/a[1]",
+        "boundingBox": {
+          "x": 627.5,
+          "y": 50,
+          "width": 155.828125,
+          "height": 90,
+          "top": 50,
+          "right": 783.328125,
+          "bottom": 140,
+          "left": 627.5
+        }
+      },
+      {
+        "className": null,
+        "textContent": "지방보조금소개",
+        "href": "https://www.losims.go.kr/sp#",
+        "xpath": "id(\"pc_gnb\")/li[2]/a[1]",
+        "boundingBox": {
+          "x": 783.328125,
+          "y": 50,
+          "width": 155.828125,
+          "height": 90,
+          "top": 50,
+          "right": 939.15625,
+          "bottom": 140,
+          "left": 783.328125
+        }
+      },
+      {
+        "className": null,
+        "textContent": "보조사업",
+        "href": "https://www.losims.go.kr/sp#",
+        "xpath": "id(\"pc_gnb\")/li[3]/a[1]",
+        "boundingBox": {
+          "x": 939.15625,
+          "y": 50,
+          "width": 155.828125,
+          "height": 90,
+          "top": 50,
+          "right": 1094.984375,
+          "bottom": 140,
+          "left": 939.15625
+        }
+      },
+      {
+        "className": null,
+        "textContent": "공모사업",
+        "href": "https://www.losims.go.kr/sp#",
+        "xpath": "id(\"pc_gnb\")/li[4]/a[1]",
+        "boundingBox": {
+          "x": 1094.984375,
+          "y": 50,
+          "width": 155.828125,
+          "height": 90,
+          "top": 50,
+          "right": 1250.8125,
+          "bottom": 140,
+          "left": 1094.984375
+        }
+      },
+      {
+        "className": null,
+        "textContent": "정보공시",
+        "href": "https://www.losims.go.kr/sp#",
+        "xpath": "id(\"pc_gnb\")/li[5]/a[1]",
+        "boundingBox": {
+          "x": 1250.8125,
+          "y": 50,
+          "width": 155.828125,
+          "height": 90,
+          "top": 50,
+          "right": 1406.640625,
+          "bottom": 140,
+          "left": 1250.8125
+        }
+      },
+      {
+        "className": null,
+        "textContent": "참여와 소통",
+        "href": "https://www.losims.go.kr/sp#",
+        "xpath": "id(\"pc_gnb\")/li[6]/a[1]",
+        "boundingBox": {
+          "x": 1406.640625,
+          "y": 50,
+          "width": 155.828125,
+          "height": 90,
+          "top": 50,
+          "right": 1562.46875,
+          "bottom": 140,
+          "left": 1406.640625
+        }
+      },
+      {
+        "className": null,
+        "textContent": "알기쉬운 지방보조금",
+        "href": "https://www.losims.go.kr/sp/lsaInfo",
+        "xpath": "id(\"container\")/div[1]/div[1]/ul[1]/li[1]/a[1]",
+        "boundingBox": {
+          "x": 1135.5,
+          "y": 165,
+          "width": 205,
+          "height": 113,
+          "top": 165,
+          "right": 1340.5,
+          "bottom": 278,
+          "left": 1135.5
+        }
+      },
+      {
+        "className": null,
+        "textContent": "부정수급 신고하기",
+        "href": "https://www.clean.go.kr/",
+        "xpath": "id(\"container\")/div[1]/div[1]/ul[1]/li[2]/a[1]",
+        "boundingBox": {
+          "x": 1357.5,
+          "y": 165,
+          "width": 205,
+          "height": 113,
+          "top": 165,
+          "right": 1562.5,
+          "bottom": 278,
+          "left": 1357.5
+        }
+      },
+      {
+        "className": null,
+        "textContent": "사용자 매뉴얼",
+        "href": "https://www.losims.go.kr/sp/usrMual",
+        "xpath": "id(\"container\")/div[1]/div[1]/ul[1]/li[3]/a[1]",
+        "boundingBox": {
+          "x": 1135.5,
+          "y": 297.65625,
+          "width": 205,
+          "height": 113,
+          "top": 297.65625,
+          "right": 1340.5,
+          "bottom": 410.65625,
+          "left": 1135.5
+        }
+      },
+      {
+        "className": null,
+        "textContent": "자주묻는 질문",
+        "href": "https://www.losims.go.kr/sp/lsaFaq",
+        "xpath": "id(\"container\")/div[1]/div[1]/ul[1]/li[4]/a[1]",
+        "boundingBox": {
+          "x": 1357.5,
+          "y": 297.65625,
+          "width": 205,
+          "height": 113,
+          "top": 297.65625,
+          "right": 1562.5,
+          "bottom": 410.65625,
+          "left": 1357.5
+        }
+      },
+      {
+        "className": null,
+        "textContent": "업무시스템 바로가기",
+        "href": "https://www.losims.go.kr/lss.do",
+        "xpath": "id(\"container\")/div[1]/div[1]/ul[1]/li[5]/a[1]",
+        "boundingBox": {
+          "x": 1135.5,
+          "y": 430.3125,
+          "width": 427,
+          "height": 113,
+          "top": 430.3125,
+          "right": 1562.5,
+          "bottom": 543.3125,
+          "left": 1135.5
+        }
+      },
+      {
+        "className": null,
+        "textContent": "최신공모사업",
+        "href": "javascript:void(0);",
+        "xpath": "id(\"new\")/a[1]",
+        "boundingBox": {
+          "x": 342.5,
+          "y": 678,
+          "width": 235,
+          "height": 50,
+          "top": 678,
+          "right": 577.5,
+          "bottom": 728,
+          "left": 342.5
+        }
+      },
+      {
+        "className": null,
+        "textContent": "인기공모사업",
+        "href": "https://www.losims.go.kr/sp#",
+        "xpath": "id(\"plty\")/a[1]",
+        "boundingBox": {
+          "x": 577.5,
+          "y": 678,
+          "width": 235,
+          "height": 50,
+          "top": 678,
+          "right": 812.5,
+          "bottom": 728,
+          "left": 577.5
+        }
+      },
+      {
+        "className": null,
+        "textContent": "마감임박사업",
+        "href": "https://www.losims.go.kr/sp#",
+        "xpath": "id(\"end\")/a[1]",
+        "boundingBox": {
+          "x": 812.5,
+          "y": 678,
+          "width": 235,
+          "height": 50,
+          "top": 678,
+          "right": 1047.5,
+          "bottom": 728,
+          "left": 812.5
+        }
+      },
+      {
+        "className": null,
+        "textContent": "12026년 양산시 지역문화진흥기금 지원사업 공고 2025-11-24~2025-12-14",
+        "href": "https://www.losims.go.kr/sp/pbcnBizCntt?id=20260318540&fyr=2026",
+        "xpath": "id(\"newBiz\")/li[1]/a[1]",
+        "boundingBox": {
+          "x": 360.5,
+          "y": 777,
+          "width": 559,
+          "height": 60,
+          "top": 777,
+          "right": 919.5,
+          "bottom": 837,
+          "left": 360.5
+        }
+      },
+      {
+        "className": null,
+        "textContent": "2지역민과 함께하는 어울림 한마당 2025-11-21~2025-12-05",
+        "href": "https://www.losims.go.kr/sp/pbcnBizCntt?id=20250319054&fyr=2025",
+        "xpath": "id(\"newBiz\")/li[2]/a[1]",
+        "boundingBox": {
+          "x": 360.5,
+          "y": 893,
+          "width": 559,
+          "height": 60,
+          "top": 893,
+          "right": 919.5,
+          "bottom": 953,
+          "left": 360.5
+        }
+      },
+      {
+        "className": null,
+        "textContent": "32026 신년 해맞이 행사 2025-11-21~2025-12-05",
+        "href": "https://www.losims.go.kr/sp/pbcnBizCntt?id=20250318926&fyr=2025",
+        "xpath": "id(\"newBiz\")/li[3]/a[1]",
+        "boundingBox": {
+          "x": 360.5,
+          "y": 1009,
+          "width": 559,
+          "height": 60,
+          "top": 1009,
+          "right": 919.5,
+          "bottom": 1069,
+          "left": 360.5
+        }
+      },
+      {
+        "className": null,
+        "textContent": "42025「맛나는 평창-청년 로컬 레시피 공모전」후속지원 사업 2025-11-14~2025-12-09",
+        "href": "https://www.losims.go.kr/sp/pbcnBizCntt?id=20250317615&fyr=2025",
+        "xpath": "id(\"newBiz\")/li[4]/a[1]",
+        "boundingBox": {
+          "x": 360.5,
+          "y": 1125,
+          "width": 559,
+          "height": 60,
+          "top": 1125,
+          "right": 919.5,
+          "bottom": 1185,
+          "left": 360.5
+        }
+      },
+      {
+        "className": null,
+        "textContent": "52025년 영구임대아파트 공동전기요금 지원 사업 2025-11-12~2025-12-08",
+        "href": "https://www.losims.go.kr/sp/pbcnBizCntt?id=20240317600&fyr=2025",
+        "xpath": "id(\"newBiz\")/li[5]/a[1]",
+        "boundingBox": {
+          "x": 360.5,
+          "y": 1241,
+          "width": 559,
+          "height": 60,
+          "top": 1241,
+          "right": 919.5,
+          "bottom": 1301,
+          "left": 360.5
+        }
+      },
+      {
+        "className": null,
+        "textContent": "62025년도 의성군 자연환경보전지원사업 2025-03-01~2025-12-31",
+        "href": "https://www.losims.go.kr/sp/pbcnBizCntt?id=20250227326&fyr=2025",
+        "xpath": "id(\"newBiz\")/li[6]/a[1]",
+        "boundingBox": {
+          "x": 985.5,
+          "y": 777,
+          "width": 559,
+          "height": 60,
+          "top": 777,
+          "right": 1544.5,
+          "bottom": 837,
+          "left": 985.5
+        }
+      },
+      {
+        "className": null,
+        "textContent": "7럼피스킨 방역 물품 지원사업 2025-02-11~2025-12-31",
+        "href": "https://www.losims.go.kr/sp/pbcnBizCntt?id=20250223510&fyr=2025",
+        "xpath": "id(\"newBiz\")/li[7]/a[1]",
+        "boundingBox": {
+          "x": 985.5,
+          "y": 893,
+          "width": 559,
+          "height": 60,
+          "top": 893,
+          "right": 1544.5,
+          "bottom": 953,
+          "left": 985.5
+        }
+      },
+      {
+        "className": null,
+        "textContent": "공지사항",
+        "href": "https://www.losims.go.kr/sp#",
+        "xpath": "id(\"tabBar\")/li[1]/a[1]",
+        "boundingBox": {
+          "x": 342.5,
+          "y": 1494,
+          "width": 135,
+          "height": 50,
+          "top": 1494,
+          "right": 477.5,
+          "bottom": 1544,
+          "left": 342.5
+        }
+      },
+      {
+        "className": null,
+        "textContent": "홍보센터",
+        "href": "https://www.losims.go.kr/sp#",
+        "xpath": "id(\"tabBar\")/li[2]/a[1]",
+        "boundingBox": {
+          "x": 477.5,
+          "y": 1494,
+          "width": 135,
+          "height": 50,
+          "top": 1494,
+          "right": 612.5,
+          "bottom": 1544,
+          "left": 477.5
+        }
+      },
+      {
+        "className": null,
+        "textContent": "new\n                                                        (12월6일) 국민비서 시스템 작업 안내\n                 ",
+        "href": "https://www.losims.go.kr/sp/ntcMttrCntt?id=202512004088",
+        "xpath": "id(\"container\")/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]",
+        "boundingBox": {
+          "x": 342.5,
+          "y": 1561,
+          "width": 282.5,
+          "height": 285,
+          "top": 1561,
+          "right": 625,
+          "bottom": 1846,
+          "left": 342.5
+        }
+      },
+      {
+        "className": null,
+        "textContent": "보탬e 웹취약점 조치 안내(중복로그인 허용 불가)\n                                                \n                       ",
+        "href": "https://www.losims.go.kr/sp/ntcMttrCntt?id=202511004050",
+        "xpath": "id(\"container\")/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]",
+        "boundingBox": {
+          "x": 655,
+          "y": 1561,
+          "width": 282.5,
+          "height": 285,
+          "top": 1561,
+          "right": 937.5,
+          "bottom": 1846,
+          "left": 655
+        }
+      },
+      {
+        "className": "more",
+        "textContent": "공지사항 전체보기",
+        "href": "https://www.losims.go.kr/sp/ntcMttr",
+        "xpath": "id(\"container\")/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]",
+        "boundingBox": {
+          "x": 800.890625,
+          "y": 1511,
+          "width": 136.609375,
+          "height": 22,
+          "top": 1511,
+          "right": 937.5,
+          "bottom": 1533,
+          "left": 800.890625
+        }
+      },
+      {
+        "className": null,
+        "textContent": null,
+        "href": "https://www.mois.go.kr/",
+        "xpath": "id(\"container\")/div[4]/div[1]/div[1]/ul[1]/li[1]/a[1]",
+        "boundingBox": {
+          "x": 383.796875,
+          "y": 1921.703125,
+          "width": 187,
+          "height": 9,
+          "top": 1921.703125,
+          "right": 570.796875,
+          "bottom": 1930.703125,
+          "left": 383.796875
+        }
+      },
+      {
+        "className": null,
+        "textContent": null,
+        "href": "https://www.gosims.go.kr/",
+        "xpath": "id(\"container\")/div[4]/div[1]/div[1]/ul[1]/li[2]/a[1]",
+        "boundingBox": {
+          "x": 621.390625,
+          "y": 1921.703125,
+          "width": 187,
+          "height": 9,
+          "top": 1921.703125,
+          "right": 808.390625,
+          "bottom": 1930.703125,
+          "left": 621.390625
+        }
+      },
+      {
+        "className": null,
+        "textContent": null,
+        "href": "https://www.lofin365.go.kr/",
+        "xpath": "id(\"container\")/div[4]/div[1]/div[1]/ul[1]/li[3]/a[1]",
+        "boundingBox": {
+          "x": 858.984375,
+          "y": 1921.703125,
+          "width": 187,
+          "height": 9,
+          "top": 1921.703125,
+          "right": 1045.984375,
+          "bottom": 1930.703125,
+          "left": 858.984375
+        }
+      },
+      {
+        "className": null,
+        "textContent": null,
+        "href": "https://www.gov.kr/",
+        "xpath": "id(\"container\")/div[4]/div[1]/div[1]/ul[1]/li[4]/a[1]",
+        "boundingBox": {
+          "x": 1096.578125,
+          "y": 1921.703125,
+          "width": 187,
+          "height": 9,
+          "top": 1921.703125,
+          "right": 1283.578125,
+          "bottom": 1930.703125,
+          "left": 1096.578125
+        }
+      },
+      {
+        "className": null,
+        "textContent": null,
+        "href": "https://www.losims-edu.com/",
+        "xpath": "id(\"container\")/div[4]/div[1]/div[1]/ul[1]/li[5]/a[1]",
+        "boundingBox": {
+          "x": 1328.875,
+          "y": 1923.390625,
+          "width": 197.578125,
+          "height": 9,
+          "top": 1923.390625,
+          "right": 1526.453125,
+          "bottom": 1932.390625,
+          "left": 1328.875
+        }
+      },
+      {
+        "className": null,
+        "textContent": "이용약관",
+        "href": "https://www.losims.go.kr/sp/utztTrms",
+        "xpath": "id(\"footer\")/div[1]/ul[1]/li[1]/a[1]",
+        "boundingBox": {
+          "x": 342.5,
+          "y": 1996.375,
+          "width": 58.890625,
+          "height": 24,
+          "top": 1996.375,
+          "right": 401.390625,
+          "bottom": 2020.375,
+          "left": 342.5
+        }
+      },
+      {
+        "className": "txt_blue",
+        "textContent": "개인정보처리방침",
+        "href": "https://www.losims.go.kr/sp/psdtInfo",
+        "xpath": "id(\"footer\")/div[1]/ul[1]/li[2]/a[1]",
+        "boundingBox": {
+          "x": 421.390625,
+          "y": 1996.375,
+          "width": 117.765625,
+          "height": 24,
+          "top": 1996.375,
+          "right": 539.15625,
+          "bottom": 2020.375,
+          "left": 421.390625
+        }
+      },
+      {
+        "className": null,
+        "textContent": "저작권 및 공공데이터 이용정책",
+        "href": "https://www.losims.go.kr/sp/cphtPdta",
+        "xpath": "id(\"footer\")/div[1]/ul[1]/li[3]/a[1]",
+        "boundingBox": {
+          "x": 559.15625,
+          "y": 1996.375,
+          "width": 204.8125,
+          "height": 24,
+          "top": 1996.375,
+          "right": 763.96875,
+          "bottom": 2020.375,
+          "left": 559.15625
+        }
+      },
+      {
+        "className": null,
+        "textContent": "원격지원",
+        "href": "https://939.co.kr/",
+        "xpath": "id(\"footer\")/div[1]/ul[1]/li[4]/a[1]",
+        "boundingBox": {
+          "x": 783.96875,
+          "y": 1996.375,
+          "width": 58.890625,
+          "height": 24,
+          "top": 1996.375,
+          "right": 842.859375,
+          "bottom": 2020.375,
+          "left": 783.96875
+        }
+      }
+    ]
+  },
+  "accessibility": {
+    "totalNodes": 433,
+    "interactiveNodes": [
+      {
+        "nodeId": "84",
+        "role": "link",
+        "name": "주메뉴 바로가기",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp#gnb"
+          }
+        ],
+        "childIds": [
+          "447"
+        ]
+      },
+      {
+        "nodeId": "86",
+        "role": "link",
+        "name": "본문 바로가기",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp#container"
+          }
+        ],
+        "childIds": [
+          "448"
+        ]
+      },
+      {
+        "nodeId": "94",
+        "role": "button",
+        "name": "화면 10%씩 확대",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "invalid",
+            "value": "false"
+          },
+          {
+            "name": "focusable",
+            "value": true
+          }
+        ],
+        "childIds": [
+          "449"
+        ]
+      },
+      {
+        "nodeId": "7",
+        "role": "textbox",
+        "name": "화면 확대축소 비율(%)",
+        "value": "100%",
+        "description": null,
+        "properties": [
+          {
+            "name": "invalid",
+            "value": "false"
+          },
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "editable",
+            "value": "plaintext"
+          },
+          {
+            "name": "multiline",
+            "value": false
+          },
+          {
+            "name": "readonly",
+            "value": true
+          },
+          {
+            "name": "required",
+            "value": false
+          }
+        ],
+        "childIds": [
+          "95"
+        ]
+      },
+      {
+        "nodeId": "96",
+        "role": "button",
+        "name": "화면 10%씩 축소",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "invalid",
+            "value": "false"
+          },
+          {
+            "name": "focusable",
+            "value": true
+          }
+        ],
+        "childIds": [
+          "451"
+        ]
+      },
+      {
+        "nodeId": "97",
+        "role": "link",
+        "name": "업무시스템 바로가기",
+        "value": null,
+        "description": "새창열림",
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/lss.do"
+          }
+        ],
+        "childIds": [
+          "452"
+        ]
+      },
+      {
+        "nodeId": "431",
+        "role": "button",
+        "name": "Previous slide",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "disabled",
+            "value": true
+          },
+          {
+            "name": "focusable",
+            "value": true
+          }
+        ],
+        "childIds": [
+          "568",
+          "569"
+        ]
+      },
+      {
+        "nodeId": "432",
+        "role": "button",
+        "name": "Next slide",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "disabled",
+            "value": true
+          },
+          {
+            "name": "focusable",
+            "value": true
+          }
+        ],
+        "childIds": [
+          "570",
+          "571"
+        ]
+      },
+      {
+        "nodeId": "396",
+        "role": "link",
+        "name": "공지사항 전체보기",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp/ntcMttr"
+          }
+        ],
+        "childIds": [
+          "561"
+        ]
+      },
+      {
+        "nodeId": "101",
+        "role": "link",
+        "name": "지방보조금관리시스템 보탬e",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp"
+          }
+        ],
+        "childIds": [
+          "102"
+        ]
+      },
+      {
+        "nodeId": "6",
+        "role": "textbox",
+        "name": "공모사업 검색",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "invalid",
+            "value": "false"
+          },
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "editable",
+            "value": "plaintext"
+          },
+          {
+            "name": "settable",
+            "value": true
+          },
+          {
+            "name": "multiline",
+            "value": false
+          },
+          {
+            "name": "readonly",
+            "value": false
+          },
+          {
+            "name": "required",
+            "value": false
+          }
+        ],
+        "childIds": [
+          "226",
+          "227"
+        ]
+      },
+      {
+        "nodeId": "228",
+        "role": "button",
+        "name": "검색",
+        "value": null,
+        "description": "검색",
+        "properties": [
+          {
+            "name": "invalid",
+            "value": "false"
+          },
+          {
+            "name": "focusable",
+            "value": true
+          }
+        ],
+        "childIds": [
+          "505"
+        ]
+      },
+      {
+        "nodeId": "231",
+        "role": "link",
+        "name": "알기쉬운 지방보조금",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp/lsaInfo"
+          }
+        ],
+        "childIds": [
+          "506",
+          "232",
+          "507"
+        ]
+      },
+      {
+        "nodeId": "234",
+        "role": "link",
+        "name": "부정수급 신고하기",
+        "value": null,
+        "description": "새창 열림",
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.clean.go.kr/"
+          }
+        ],
+        "childIds": [
+          "508",
+          "235",
+          "509"
+        ]
+      },
+      {
+        "nodeId": "237",
+        "role": "link",
+        "name": "사용자 매뉴얼",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp/usrMual"
+          }
+        ],
+        "childIds": [
+          "510",
+          "238",
+          "511"
+        ]
+      },
+      {
+        "nodeId": "240",
+        "role": "link",
+        "name": "자주묻는 질문",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp/lsaFaq"
+          }
+        ],
+        "childIds": [
+          "512",
+          "241",
+          "513"
+        ]
+      },
+      {
+        "nodeId": "243",
+        "role": "link",
+        "name": "업무시스템 바로가기",
+        "value": null,
+        "description": "새창 열림",
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/lss.do"
+          }
+        ],
+        "childIds": [
+          "514"
+        ]
+      },
+      {
+        "nodeId": "320",
+        "role": "button",
+        "name": "검색",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "invalid",
+            "value": "false"
+          },
+          {
+            "name": "focusable",
+            "value": true
+          }
+        ],
+        "childIds": [
+          "519"
+        ]
+      },
+      {
+        "nodeId": "12",
+        "role": "link",
+        "name": "공지사항",
+        "value": null,
+        "description": "선택됨",
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp#"
+          }
+        ],
+        "childIds": [
+          "551"
+        ]
+      },
+      {
+        "nodeId": "13",
+        "role": "link",
+        "name": "홍보센터",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp#"
+          }
+        ],
+        "childIds": [
+          "552"
+        ]
+      },
+      {
+        "nodeId": "437",
+        "role": "link",
+        "name": "이용약관",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp/utztTrms"
+          }
+        ],
+        "childIds": [
+          "572"
+        ]
+      },
+      {
+        "nodeId": "439",
+        "role": "link",
+        "name": "개인정보처리방침",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp/psdtInfo"
+          }
+        ],
+        "childIds": [
+          "573"
+        ]
+      },
+      {
+        "nodeId": "441",
+        "role": "link",
+        "name": "저작권 및 공공데이터 이용정책",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp/cphtPdta"
+          }
+        ],
+        "childIds": [
+          "574"
+        ]
+      },
+      {
+        "nodeId": "443",
+        "role": "link",
+        "name": "원격지원",
+        "value": null,
+        "description": "새창열림",
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://939.co.kr/"
+          }
+        ],
+        "childIds": [
+          "575"
+        ]
+      },
+      {
+        "nodeId": "24",
+        "role": "link",
+        "name": "최신공모사업",
+        "value": null,
+        "description": "선택됨",
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "javascript:void(0);"
+          }
+        ],
+        "childIds": [
+          "516"
+        ]
+      },
+      {
+        "nodeId": "25",
+        "role": "link",
+        "name": "인기공모사업",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp#"
+          }
+        ],
+        "childIds": [
+          "517"
+        ]
+      },
+      {
+        "nodeId": "26",
+        "role": "link",
+        "name": "마감임박사업",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp#"
+          }
+        ],
+        "childIds": [
+          "518"
+        ]
+      },
+      {
+        "nodeId": "326",
+        "role": "link",
+        "name": "1 2026년 양산시 지역문화진흥기금 지원사업 공고 2025-11-24~2025-12-14",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp/pbcnBizCntt?id=20260318540&fyr=2026"
+          }
+        ],
+        "childIds": [
+          "327",
+          "328"
+        ]
+      },
+      {
+        "nodeId": "330",
+        "role": "link",
+        "name": "2 지역민과 함께하는 어울림 한마당 2025-11-21~2025-12-05",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp/pbcnBizCntt?id=20250319054&fyr=2025"
+          }
+        ],
+        "childIds": [
+          "331",
+          "332"
+        ]
+      },
+      {
+        "nodeId": "334",
+        "role": "link",
+        "name": "3 2026 신년 해맞이 행사 2025-11-21~2025-12-05",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp/pbcnBizCntt?id=20250318926&fyr=2025"
+          }
+        ],
+        "childIds": [
+          "335",
+          "336"
+        ]
+      },
+      {
+        "nodeId": "338",
+        "role": "link",
+        "name": "4 2025「맛나는 평창-청년 로컬 레시피 공모전」후속지원 사업 2025-11-14~2025-12-09",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp/pbcnBizCntt?id=20250317615&fyr=2025"
+          }
+        ],
+        "childIds": [
+          "339",
+          "340"
+        ]
+      },
+      {
+        "nodeId": "344",
+        "role": "link",
+        "name": "5 2025년 영구임대아파트 공동전기요금 지원 사업 2025-11-12~2025-12-08",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp/pbcnBizCntt?id=20240317600&fyr=2025"
+          }
+        ],
+        "childIds": [
+          "345",
+          "346"
+        ]
+      },
+      {
+        "nodeId": "350",
+        "role": "link",
+        "name": "6 2025년도 의성군 자연환경보전지원사업 2025-03-01~2025-12-31",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp/pbcnBizCntt?id=20250227326&fyr=2025"
+          }
+        ],
+        "childIds": [
+          "351",
+          "352"
+        ]
+      },
+      {
+        "nodeId": "354",
+        "role": "link",
+        "name": "7 럼피스킨 방역 물품 지원사업 2025-02-11~2025-12-31",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp/pbcnBizCntt?id=20250223510&fyr=2025"
+          }
+        ],
+        "childIds": [
+          "355",
+          "356"
+        ]
+      },
+      {
+        "nodeId": "386",
+        "role": "link",
+        "name": "new (12월6일) 국민비서 시스템 작업 안내 o 작업일시 : 25.12.6.(토) 09:00 ~ 24:00(예정) ※ 작업 시간은 단축될 수 있음 o 작업내용 : 국민비서 DB 이중화 작업 o 작업주체 : 국가정보자원관리원, 국민비서 운영사업팀 o 작업영향 : 국민비서 서비스 일시중단 o 상담서비스 영향범위 - 작업시간대 상담서비스 차단, sorry page 표출 - 기관 배너도 연결안됨 2025.12.02",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp/ntcMttrCntt?id=202512004088"
+          }
+        ],
+        "childIds": [
+          "387",
+          "389",
+          "557"
+        ]
+      },
+      {
+        "nodeId": "392",
+        "role": "link",
+        "name": "보탬e 웹취약점 조치 안내(중복로그인 허용 불가) 보탬e 웹취약점 조치사항으로 민간보조사업자 로그인 시 중복로그인이 되지 않도록 적용될 예정이오니 업무에 참고하시기 바랍니다. (예시1) ①번 PC에서 엣지 브라우저로 로그인 후, 크롬 브라우저를 새로 열어서 로그인 할 경우 엣지 브라우저의 로그인이 종료된 뒤 로그인 가능 (예시2) ①번 PC에서 엣지 또는 크롬 브라우저로 로그인 후 ②번 PC에서 엣지 또는 크롬 브라우저로 로그인 시 ①번 PC의 엣지 또는 크롬 브라우저 로그인이 종료된 뒤 로그인 가능 ○ 적용 일시 : 12. 9. (화). 19시 이후 ○ 적용사항 : 보탬e 중복로그인 허용되지 않도록 적용 2025.11.27",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp/ntcMttrCntt?id=202511004050"
+          }
+        ],
+        "childIds": [
+          "393",
+          "394",
+          "560"
+        ]
+      },
+      {
+        "nodeId": "416",
+        "role": "link",
+        "name": "행정안전부",
+        "value": null,
+        "description": "새창열림",
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.mois.go.kr/"
+          }
+        ],
+        "childIds": [
+          "417"
+        ]
+      },
+      {
+        "nodeId": "419",
+        "role": "link",
+        "name": "e나라도움",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.gosims.go.kr/"
+          }
+        ],
+        "childIds": [
+          "420"
+        ]
+      },
+      {
+        "nodeId": "422",
+        "role": "link",
+        "name": "지방재정365 지방재정통합공개시스템",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.lofin365.go.kr/"
+          }
+        ],
+        "childIds": [
+          "423"
+        ]
+      },
+      {
+        "nodeId": "425",
+        "role": "link",
+        "name": "정부24",
+        "value": null,
+        "description": "새창열림",
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.gov.kr/"
+          }
+        ],
+        "childIds": [
+          "426"
+        ]
+      },
+      {
+        "nodeId": "428",
+        "role": "link",
+        "name": "보탬e 온라인 교육",
+        "value": null,
+        "description": "새창열림",
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims-edu.com/"
+          }
+        ],
+        "childIds": [
+          "429"
+        ]
+      },
+      {
+        "nodeId": "106",
+        "role": "link",
+        "name": "보탬e소개",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp#"
+          }
+        ],
+        "childIds": [
+          "453"
+        ]
+      },
+      {
+        "nodeId": "117",
+        "role": "link",
+        "name": "지방보조금소개",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp#"
+          }
+        ],
+        "childIds": [
+          "458"
+        ]
+      },
+      {
+        "nodeId": "122",
+        "role": "link",
+        "name": "보조사업",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp#"
+          }
+        ],
+        "childIds": [
+          "460"
+        ]
+      },
+      {
+        "nodeId": "129",
+        "role": "link",
+        "name": "공모사업",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp#"
+          }
+        ],
+        "childIds": [
+          "463"
+        ]
+      },
+      {
+        "nodeId": "136",
+        "role": "link",
+        "name": "정보공시",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp#"
+          }
+        ],
+        "childIds": [
+          "466"
+        ]
+      },
+      {
+        "nodeId": "145",
+        "role": "link",
+        "name": "참여와 소통",
+        "value": null,
+        "description": null,
+        "properties": [
+          {
+            "name": "focusable",
+            "value": true
+          },
+          {
+            "name": "url",
+            "value": "https://www.losims.go.kr/sp#"
+          }
+        ],
+        "childIds": [
+          "470"
+        ]
+      }
+    ]
+  },
+  "detailedLoginAnalysis": {
+    "loginInputs": [],
+    "loginButtons": [],
+    "loginTabs": [
+      {
+        "tagName": "div",
+        "id": null,
+        "className": "tabContent",
+        "textContent": "공지사항\n                            홍보센터\n                        \n                        \n                            공지사항\n                            \n                                \n                                    \n                                            \n                                                \n                                                    new\n                                                        (12월6일) 국민비서 시스템 작업 안내\n                                                \n                                                \n                                            \n                                            o 작업일시 : 25.12.6.(토) 09:00 ~ 24:00(예정)\n  ※ 작업 시간은 단축될 수 있음\n\no 작업내용 : 국민비서 DB 이중화 작업\n\no 작업주체 : 국가정보자원관리원, 국민비서 운영사업팀\n\no 작업영향 : 국민비서 서비스 일시중단\n\no 상담서비스 영향범위\n- 작업시간대 상담서비스 차단, sorry page 표출\n- 기관 배너도 연결안됨\n 2025.12.02\n                                    \n                                \n                                    \n                                            \n                                                \n                                                \n                                                    보탬e 웹취약점 조치 안내(중복로그인 허용 불가)\n                                                \n                                            \n                                            보탬e 웹취약점 조치사항으로 민간보조사업자 로그인 시 중복로그인이 되지 않도록 적용될 예정이오니 업무에 참고하시기 바랍니다.\n\n (예시1)\n①번 PC에서 엣지 브라우저로 로그인 후, 크롬 브라우저를 새로 열어서 로그인 할 경우 엣지 브라우저의 로그인이 종료된 뒤 로그인 가능\n\n(예시2)\n①번 PC에서 엣지 또는 크롬 브라우저로 로그인 후 ②번 PC에서 엣지 또는 크롬 브라우저로 로그인 시 ①번 PC의 엣지 또는 크롬 브라우저 로그인이 종료된 뒤 로그인 가능\n\n ○ 적용 일시 : 12. 9. (화). 19시 이후\n ○ 적용사항 : 보탬e 중복로그인 허용되지 않도록 적용\n 2025.11.27\n                                    \n                                \n                            \n                            공지사항 전체보기\n                        \n                        \n                            홍보센터\n                            \n                                \n                                     지방보조금관리시스템 명칭‘보탬이(보탬e)’확정 \n                                            지방보조금관리시스템 명칭‘보탬이(보탬e)’확정\n- 366개 후보작 중 1차 심사와 대국민 심사 등을 거쳐 최종 선정 -\n\n행정안전부(장관 이상민)는 지방보조금을 관리하기 위한 새로운 시스템인 ‘지방보조금관리시스템’ 명칭을 “보탬이(보탬e)”로 최종 선정했다고 밝혔다.\n\n “보탬이(보탬e)”는 보태어 도와준다는 의미와 전자시스템을 의미하는 ‘이(e)’를 덧붙여, 지방보조금을 통해 국민 생활에 보탬을 드리겠다는 의미를 담고 있다.\n\n국정과제로 선정되어 추진되고 있는 ‘지방보조금관리시스템’은 매년 증가하고 있는 지방보조금(2022년 54조 원 규모)의 교부․집행․정산 등 업무 전(全) 과정을 전자화하여 지방보조금의 중복․부정수급을 방지하고 투명성을 제고하기 위해 마련됐다.\n이와 관련해 행안부는 지난 8월 1일, ‘지방보조금관리시스템’ 1단계 사업을 완료하고 지방자치단체에 지방보조금 예산편성 기능을 일부 서비스하고 있다.\n오는 2023년 1월부터 지방보조금 집행과 대국민 정보공개 서비스를 포함한 2단계를 개통할 예정이며, 지방보조금 부정수급 관리 등을 포함한 전면 개통은 2024년 1월을 목표로 추진되고 있다.\n\n 행안부는 지방보조금에 대한 사회적 관심을 높이고, ‘지방보조금관리시스템’이 지방보조금을 관리하는 대표 창구임을 홍보하기 위해 온(ON)국민소통을 통해 명칭 공모를 시행했다.\n\n 9월 6일(화)부터 9월 20일(화)까지 진행된 공모에는 총 366개(중복제외)의 후보작이 접수되었으며, 1차 심사를 통해 상위 10개의 명칭이 후보로 선정됐다. \n이어서 대국민 심사와 전문가 심사 등을 거쳐 “보탬이(보탬e)”가 지방보조금관리시스템의 최종 명칭으로 선정되었다.\n\n 최종 당선작은 ▴대상(100만 원) : 보탬e(보태미) \n                      ,▴최우수상(30만 원) : 지방도움e\n                      ,▴우수상(20만 원) : 지방보조금 알림e\n                      ,▴응원상(1만 원) : 지방보조금 속속들e \n등 25개 등으로 당선자에게 모바일 상품권으로 상금을 지급할 계획이다.\n\n행정안전부는 명칭이 확정된 만큼 내년 1월부터 시행되는 지방보조금 집행과 대국민 정보공개 등이 차질 없이 추진 될 수 있도록 지원을 강화할 계획이다.\n\n최병관 행정안전부 지방재정경제실장은 “보탬이(보탬e)가 지방보조금 관리에 큰 힘을 실어줄 수 있도록 지방자치단체와 관계 기관 및 국민께서 기억해 주시고 많이 활용해 주시기 바란다”라고 말했다. 2022.12.31\n                                    \n                                \n                            \n\n                            홍보센터 전체보기",
+        "role": null,
+        "ariaSelected": null,
+        "ariaControls": null,
+        "isActive": false,
+        "boundingBox": {
+          "x": 342.5,
+          "y": 1494,
+          "width": 595,
+          "height": 352
+        },
+        "onclick": null
+      },
+      {
+        "tagName": "div",
+        "id": null,
+        "className": "tabPage active",
+        "textContent": "공지사항\n                            \n                                \n                                    \n                                            \n                                                \n                                                    new\n                                                        (12월6일) 국민비서 시스템 작업 안내\n                                                \n                                                \n                                            \n                                            o 작업일시 : 25.12.6.(토) 09:00 ~ 24:00(예정)\n  ※ 작업 시간은 단축될 수 있음\n\no 작업내용 : 국민비서 DB 이중화 작업\n\no 작업주체 : 국가정보자원관리원, 국민비서 운영사업팀\n\no 작업영향 : 국민비서 서비스 일시중단\n\no 상담서비스 영향범위\n- 작업시간대 상담서비스 차단, sorry page 표출\n- 기관 배너도 연결안됨\n 2025.12.02\n                                    \n                                \n                                    \n                                            \n                                                \n                                                \n                                                    보탬e 웹취약점 조치 안내(중복로그인 허용 불가)\n                                                \n                                            \n                                            보탬e 웹취약점 조치사항으로 민간보조사업자 로그인 시 중복로그인이 되지 않도록 적용될 예정이오니 업무에 참고하시기 바랍니다.\n\n (예시1)\n①번 PC에서 엣지 브라우저로 로그인 후, 크롬 브라우저를 새로 열어서 로그인 할 경우 엣지 브라우저의 로그인이 종료된 뒤 로그인 가능\n\n(예시2)\n①번 PC에서 엣지 또는 크롬 브라우저로 로그인 후 ②번 PC에서 엣지 또는 크롬 브라우저로 로그인 시 ①번 PC의 엣지 또는 크롬 브라우저 로그인이 종료된 뒤 로그인 가능\n\n ○ 적용 일시 : 12. 9. (화). 19시 이후\n ○ 적용사항 : 보탬e 중복로그인 허용되지 않도록 적용\n 2025.11.27\n                                    \n                                \n                            \n                            공지사항 전체보기",
+        "role": null,
+        "ariaSelected": null,
+        "ariaControls": null,
+        "isActive": true,
+        "boundingBox": {
+          "x": 342.5,
+          "y": 1561,
+          "width": 595,
+          "height": 285
+        },
+        "onclick": null
+      }
+    ]
+  },
+  "visualizationData": {
+    "interactiveElements": [
+      {
+        "type": "button",
+        "text": "화면 10%씩 확대",
+        "role": null,
+        "x": 1318.765625,
+        "y": 15,
+        "width": 20,
+        "height": 20,
+        "xpath": "id(\"header\")/div[1]/div[1]/div[1]/div[1]/button[1]",
+        "className": "plus",
+        "id": null
+      },
+      {
+        "type": "button",
+        "text": "화면 10%씩 축소",
+        "role": null,
+        "x": 1392.765625,
+        "y": 15,
+        "width": 20,
+        "height": 20,
+        "xpath": "id(\"header\")/div[1]/div[1]/div[1]/div[1]/button[2]",
+        "className": "minus",
+        "id": null
+      },
+      {
+        "type": "button",
+        "text": "검색",
+        "role": null,
+        "x": 1477.046875,
+        "y": 688,
+        "width": 80.453125,
+        "height": 32,
+        "xpath": "id(\"container\")/div[2]/div[1]/div[1]/div[1]/button[1]",
+        "className": "btn s_size on",
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "주메뉴 바로가기",
+        "role": null,
+        "x": 0,
+        "y": -999,
+        "width": 1905,
+        "height": 40,
+        "xpath": "id(\"skip_navi\")/ul[1]/li[1]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "본문 바로가기",
+        "role": null,
+        "x": 0,
+        "y": -999,
+        "width": 1905,
+        "height": 40,
+        "xpath": "id(\"skip_navi\")/ul[1]/li[2]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "업무시스템 바로가기",
+        "role": null,
+        "x": 1422.765625,
+        "y": 10,
+        "width": 129.734375,
+        "height": 30,
+        "xpath": "id(\"header\")/div[1]/div[1]/div[1]/a[1]",
+        "className": "system_link",
+        "id": null
+      },
+      {
+        "type": "a",
+        "role": null,
+        "x": 342.5,
+        "y": 83.390625,
+        "width": 124,
+        "height": 19,
+        "xpath": "id(\"header\")/div[2]/div[1]/h1[1]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "보탬e소개",
+        "role": null,
+        "x": 627.5,
+        "y": 50,
+        "width": 155.828125,
+        "height": 90,
+        "xpath": "id(\"pc_gnb\")/li[1]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "지방보조금소개",
+        "role": null,
+        "x": 783.328125,
+        "y": 50,
+        "width": 155.828125,
+        "height": 90,
+        "xpath": "id(\"pc_gnb\")/li[2]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "보조사업",
+        "role": null,
+        "x": 939.15625,
+        "y": 50,
+        "width": 155.828125,
+        "height": 90,
+        "xpath": "id(\"pc_gnb\")/li[3]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "공모사업",
+        "role": null,
+        "x": 1094.984375,
+        "y": 50,
+        "width": 155.828125,
+        "height": 90,
+        "xpath": "id(\"pc_gnb\")/li[4]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "정보공시",
+        "role": null,
+        "x": 1250.8125,
+        "y": 50,
+        "width": 155.828125,
+        "height": 90,
+        "xpath": "id(\"pc_gnb\")/li[5]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "참여와 소통",
+        "role": null,
+        "x": 1406.640625,
+        "y": 50,
+        "width": 155.828125,
+        "height": 90,
+        "xpath": "id(\"pc_gnb\")/li[6]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "알기쉬운 지방보조금",
+        "role": null,
+        "x": 1135.5,
+        "y": 165,
+        "width": 205,
+        "height": 113,
+        "xpath": "id(\"container\")/div[1]/div[1]/ul[1]/li[1]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "부정수급 신고하기",
+        "role": null,
+        "x": 1357.5,
+        "y": 165,
+        "width": 205,
+        "height": 113,
+        "xpath": "id(\"container\")/div[1]/div[1]/ul[1]/li[2]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "사용자 매뉴얼",
+        "role": null,
+        "x": 1135.5,
+        "y": 297.65625,
+        "width": 205,
+        "height": 113,
+        "xpath": "id(\"container\")/div[1]/div[1]/ul[1]/li[3]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "자주묻는 질문",
+        "role": null,
+        "x": 1357.5,
+        "y": 297.65625,
+        "width": 205,
+        "height": 113,
+        "xpath": "id(\"container\")/div[1]/div[1]/ul[1]/li[4]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "업무시스템 바로가기",
+        "role": null,
+        "x": 1135.5,
+        "y": 430.3125,
+        "width": 427,
+        "height": 113,
+        "xpath": "id(\"container\")/div[1]/div[1]/ul[1]/li[5]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "최신공모사업",
+        "role": null,
+        "x": 342.5,
+        "y": 678,
+        "width": 235,
+        "height": 50,
+        "xpath": "id(\"new\")/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "인기공모사업",
+        "role": null,
+        "x": 577.5,
+        "y": 678,
+        "width": 235,
+        "height": 50,
+        "xpath": "id(\"plty\")/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "마감임박사업",
+        "role": null,
+        "x": 812.5,
+        "y": 678,
+        "width": 235,
+        "height": 50,
+        "xpath": "id(\"end\")/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "12026년 양산시 지역문화진흥기금 지원사업 공고 2025-11-24~2025-12-14",
+        "role": null,
+        "x": 360.5,
+        "y": 777,
+        "width": 559,
+        "height": 60,
+        "xpath": "id(\"newBiz\")/li[1]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "2지역민과 함께하는 어울림 한마당 2025-11-21~2025-12-05",
+        "role": null,
+        "x": 360.5,
+        "y": 893,
+        "width": 559,
+        "height": 60,
+        "xpath": "id(\"newBiz\")/li[2]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "32026 신년 해맞이 행사 2025-11-21~2025-12-05",
+        "role": null,
+        "x": 360.5,
+        "y": 1009,
+        "width": 559,
+        "height": 60,
+        "xpath": "id(\"newBiz\")/li[3]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "42025「맛나는 평창-청년 로컬 레시피 공모전」후속지원 사업 2025-11-14~2025",
+        "role": null,
+        "x": 360.5,
+        "y": 1125,
+        "width": 559,
+        "height": 60,
+        "xpath": "id(\"newBiz\")/li[4]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "52025년 영구임대아파트 공동전기요금 지원 사업 2025-11-12~2025-12-08",
+        "role": null,
+        "x": 360.5,
+        "y": 1241,
+        "width": 559,
+        "height": 60,
+        "xpath": "id(\"newBiz\")/li[5]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "62025년도 의성군 자연환경보전지원사업 2025-03-01~2025-12-31",
+        "role": null,
+        "x": 985.5,
+        "y": 777,
+        "width": 559,
+        "height": 60,
+        "xpath": "id(\"newBiz\")/li[6]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "7럼피스킨 방역 물품 지원사업 2025-02-11~2025-12-31",
+        "role": null,
+        "x": 985.5,
+        "y": 893,
+        "width": 559,
+        "height": 60,
+        "xpath": "id(\"newBiz\")/li[7]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "공지사항",
+        "role": null,
+        "x": 342.5,
+        "y": 1494,
+        "width": 135,
+        "height": 50,
+        "xpath": "id(\"tabBar\")/li[1]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "홍보센터",
+        "role": null,
+        "x": 477.5,
+        "y": 1494,
+        "width": 135,
+        "height": 50,
+        "xpath": "id(\"tabBar\")/li[2]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "new\n                                              ",
+        "role": null,
+        "x": 342.5,
+        "y": 1561,
+        "width": 282.5,
+        "height": 285,
+        "xpath": "id(\"container\")/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "보탬e 웹취약점 조치 안내(중복로그인 허용 불가)\n                      ",
+        "role": null,
+        "x": 655,
+        "y": 1561,
+        "width": 282.5,
+        "height": 285,
+        "xpath": "id(\"container\")/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "공지사항 전체보기",
+        "role": null,
+        "x": 800.890625,
+        "y": 1511,
+        "width": 136.609375,
+        "height": 22,
+        "xpath": "id(\"container\")/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]",
+        "className": "more",
+        "id": null
+      },
+      {
+        "type": "a",
+        "role": null,
+        "x": 383.796875,
+        "y": 1921.703125,
+        "width": 187,
+        "height": 9,
+        "xpath": "id(\"container\")/div[4]/div[1]/div[1]/ul[1]/li[1]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "role": null,
+        "x": 621.390625,
+        "y": 1921.703125,
+        "width": 187,
+        "height": 9,
+        "xpath": "id(\"container\")/div[4]/div[1]/div[1]/ul[1]/li[2]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "role": null,
+        "x": 858.984375,
+        "y": 1921.703125,
+        "width": 187,
+        "height": 9,
+        "xpath": "id(\"container\")/div[4]/div[1]/div[1]/ul[1]/li[3]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "role": null,
+        "x": 1096.578125,
+        "y": 1921.703125,
+        "width": 187,
+        "height": 9,
+        "xpath": "id(\"container\")/div[4]/div[1]/div[1]/ul[1]/li[4]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "role": null,
+        "x": 1328.875,
+        "y": 1923.390625,
+        "width": 197.578125,
+        "height": 9,
+        "xpath": "id(\"container\")/div[4]/div[1]/div[1]/ul[1]/li[5]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "이용약관",
+        "role": null,
+        "x": 342.5,
+        "y": 1996.375,
+        "width": 58.890625,
+        "height": 24,
+        "xpath": "id(\"footer\")/div[1]/ul[1]/li[1]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "개인정보처리방침",
+        "role": null,
+        "x": 421.390625,
+        "y": 1996.375,
+        "width": 117.765625,
+        "height": 24,
+        "xpath": "id(\"footer\")/div[1]/ul[1]/li[2]/a[1]",
+        "className": "txt_blue",
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "저작권 및 공공데이터 이용정책",
+        "role": null,
+        "x": 559.15625,
+        "y": 1996.375,
+        "width": 204.8125,
+        "height": 24,
+        "xpath": "id(\"footer\")/div[1]/ul[1]/li[3]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "a",
+        "text": "원격지원",
+        "role": null,
+        "x": 783.96875,
+        "y": 1996.375,
+        "width": 58.890625,
+        "height": 24,
+        "xpath": "id(\"footer\")/div[1]/ul[1]/li[4]/a[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "input",
+        "role": null,
+        "x": 1340.765625,
+        "y": 15,
+        "width": 50,
+        "height": 20,
+        "xpath": "id(\"zoom_num\")",
+        "className": "zoom_num",
+        "id": "zoom_num"
+      },
+      {
+        "type": "input",
+        "role": null,
+        "x": 342.5,
+        "y": 362,
+        "width": 430,
+        "height": 60,
+        "xpath": "id(\"mpbs\")/fieldset[1]/input[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "input",
+        "role": null,
+        "x": 769.25,
+        "y": 362,
+        "width": 60,
+        "height": 60,
+        "xpath": "id(\"mpbs\")/fieldset[1]/input[2]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "select",
+        "text": "광역 선택\n                        \n                   ",
+        "role": null,
+        "x": 1168.546875,
+        "y": 688,
+        "width": 150,
+        "height": 32,
+        "xpath": "id(\"lafWa\")",
+        "className": "w150",
+        "id": "lafWa"
+      },
+      {
+        "type": "select",
+        "text": "기초 선택",
+        "role": null,
+        "x": 1320.296875,
+        "y": 688,
+        "width": 150,
+        "height": 32,
+        "xpath": "id(\"lafPry\")",
+        "className": "w150",
+        "id": "lafPry"
+      },
+      {
+        "type": "div",
+        "text": "이전",
+        "role": "button",
+        "x": 342.5,
+        "y": 1915.1875,
+        "width": 14,
+        "height": 27,
+        "xpath": "id(\"container\")/div[4]/div[1]/div[2]",
+        "className": "swiper-button-prev swiper-button-disabled",
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "다음",
+        "role": "button",
+        "x": 1548.5,
+        "y": 1915.1875,
+        "width": 14,
+        "height": 27,
+        "xpath": "id(\"container\")/div[4]/div[1]/div[3]",
+        "className": "swiper-button-next swiper-button-disabled",
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "화면 10%씩 확대\n                            \n          ",
+        "role": null,
+        "x": 0,
+        "y": 0,
+        "width": 1905,
+        "height": 2108.375,
+        "xpath": "id(\"wrap\")",
+        "className": null,
+        "id": "wrap"
+      },
+      {
+        "type": "div",
+        "text": "화면 10%씩 확대\n                            \n          ",
+        "role": null,
+        "x": 0,
+        "y": 0,
+        "width": 1905,
+        "height": 141,
+        "xpath": "id(\"header\")",
+        "className": null,
+        "id": "header"
+      },
+      {
+        "type": "div",
+        "text": "화면 10%씩 확대\n                            \n          ",
+        "role": null,
+        "x": 0,
+        "y": 0,
+        "width": 1905,
+        "height": 50,
+        "xpath": "id(\"header\")/div[1]",
+        "className": "header_top",
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "화면 10%씩 확대\n                            \n          ",
+        "role": null,
+        "x": 312.5,
+        "y": 0,
+        "width": 1280,
+        "height": 50,
+        "xpath": "id(\"header\")/div[1]/div[1]",
+        "className": "inner",
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "화면 10%씩 확대\n                            \n          ",
+        "role": null,
+        "x": 1318.765625,
+        "y": 10,
+        "width": 243.734375,
+        "height": 30,
+        "xpath": "id(\"header\")/div[1]/div[1]/div[1]",
+        "className": "header_right_box",
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "화면 10%씩 확대\n                            \n          ",
+        "role": null,
+        "x": 1318.765625,
+        "y": 15,
+        "width": 94,
+        "height": 20,
+        "xpath": "id(\"header\")/div[1]/div[1]/div[1]/div[1]",
+        "className": "zoom",
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "보탬e소개\n                                \n           ",
+        "role": null,
+        "x": 0,
+        "y": 50,
+        "width": 1905,
+        "height": 91,
+        "xpath": "id(\"header\")/div[2]",
+        "className": "header_bottom",
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "보탬e소개\n                                \n           ",
+        "role": null,
+        "x": 312.5,
+        "y": 50,
+        "width": 1280,
+        "height": 90,
+        "xpath": "id(\"header\")/div[2]/div[1]",
+        "className": "inner",
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "보탬e소개\n                                \n           ",
+        "role": null,
+        "x": 627.5,
+        "y": 50,
+        "width": 935,
+        "height": 90,
+        "xpath": "id(\"gnb\")",
+        "className": null,
+        "id": "gnb"
+      },
+      {
+        "type": "div",
+        "text": "지금 공모사업을 검색하고 \n                    지방보조사업 에 참여하세요!",
+        "role": null,
+        "x": 0,
+        "y": 141,
+        "width": 1905,
+        "height": 1834.375,
+        "xpath": "id(\"container\")",
+        "className": "main",
+        "id": "container"
+      },
+      {
+        "type": "div",
+        "text": "지금 공모사업을 검색하고 \n                    지방보조사업 에 참여하세요!",
+        "role": null,
+        "x": 0,
+        "y": 141,
+        "width": 1905,
+        "height": 422,
+        "xpath": "id(\"container\")/div[1]",
+        "className": "visual_box",
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "지금 공모사업을 검색하고 \n                    지방보조사업 에 참여하세요!",
+        "role": null,
+        "x": 312.5,
+        "y": 141,
+        "width": 1280,
+        "height": 422,
+        "xpath": "id(\"container\")/div[1]/div[1]",
+        "className": "inner",
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "지금 공모사업을 검색하고 \n                    지방보조사업 에 참여하세요!",
+        "role": null,
+        "x": 342.5,
+        "y": 141,
+        "width": 770,
+        "height": 422,
+        "xpath": "id(\"container\")/div[1]/div[1]/div[1]",
+        "className": "visual_search_box",
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "지방보조사업 검색",
+        "role": null,
+        "x": 342.5,
+        "y": 362,
+        "width": 770,
+        "height": 60,
+        "xpath": "id(\"container\")/div[1]/div[1]/div[1]/div[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "추천 공모사업\n            \n                \n            ",
+        "role": null,
+        "x": 0,
+        "y": 603,
+        "width": 1905,
+        "height": 786,
+        "xpath": "id(\"container\")/div[2]",
+        "className": "section section_box1",
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "추천 공모사업\n            \n                \n            ",
+        "role": null,
+        "x": 312.5,
+        "y": 603,
+        "width": 1280,
+        "height": 786,
+        "xpath": "id(\"container\")/div[2]/div[1]",
+        "className": "inner",
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "최신공모사업\n                    인기공모사업\n                ",
+        "role": null,
+        "x": 342.5,
+        "y": 678,
+        "width": 1220,
+        "height": 711,
+        "xpath": "id(\"container\")/div[2]/div[1]/div[1]",
+        "className": "tabContent",
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "광역 선택\n                        \n                   ",
+        "role": null,
+        "x": 1168.546875,
+        "y": 688,
+        "width": 393.953125,
+        "height": 32,
+        "xpath": "id(\"container\")/div[2]/div[1]/div[1]/div[1]",
+        "className": "select_box",
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "최신공모사업\n                    \n                    등록",
+        "role": null,
+        "x": 342.5,
+        "y": 759,
+        "width": 1220,
+        "height": 630,
+        "xpath": "id(\"container\")/div[2]/div[1]/div[1]/div[2]",
+        "className": "tabPage active",
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "2026년 양산시 지역문화진흥기금 지원사업 공고 2025-11-24~2025-12-14",
+        "role": null,
+        "x": 440.5,
+        "y": 777,
+        "width": 479,
+        "height": 60,
+        "xpath": "id(\"newBiz\")/li[1]/a[1]/div[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "지역민과 함께하는 어울림 한마당 2025-11-21~2025-12-05",
+        "role": null,
+        "x": 440.5,
+        "y": 893,
+        "width": 479,
+        "height": 60,
+        "xpath": "id(\"newBiz\")/li[2]/a[1]/div[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "2026 신년 해맞이 행사 2025-11-21~2025-12-05",
+        "role": null,
+        "x": 440.5,
+        "y": 1009,
+        "width": 479,
+        "height": 60,
+        "xpath": "id(\"newBiz\")/li[3]/a[1]/div[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "2025「맛나는 평창-청년 로컬 레시피 공모전」후속지원 사업 2025-11-14~2025-",
+        "role": null,
+        "x": 440.5,
+        "y": 1125,
+        "width": 479,
+        "height": 60,
+        "xpath": "id(\"newBiz\")/li[4]/a[1]/div[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "2025년 영구임대아파트 공동전기요금 지원 사업 2025-11-12~2025-12-08",
+        "role": null,
+        "x": 440.5,
+        "y": 1241,
+        "width": 479,
+        "height": 60,
+        "xpath": "id(\"newBiz\")/li[5]/a[1]/div[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "2025년도 의성군 자연환경보전지원사업 2025-03-01~2025-12-31",
+        "role": null,
+        "x": 1065.5,
+        "y": 777,
+        "width": 479,
+        "height": 60,
+        "xpath": "id(\"newBiz\")/li[6]/a[1]/div[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "럼피스킨 방역 물품 지원사업 2025-02-11~2025-12-31",
+        "role": null,
+        "x": 1065.5,
+        "y": 893,
+        "width": 479,
+        "height": 60,
+        "xpath": "id(\"newBiz\")/li[7]/a[1]/div[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "알림마당\n            \n                \n               ",
+        "role": null,
+        "x": 0,
+        "y": 1389,
+        "width": 1905,
+        "height": 492,
+        "xpath": "id(\"container\")/div[3]",
+        "className": "section section_box2",
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "알림마당\n            \n                \n               ",
+        "role": null,
+        "x": 312.5,
+        "y": 1419,
+        "width": 1280,
+        "height": 427,
+        "xpath": "id(\"container\")/div[3]/div[1]",
+        "className": "inner",
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "공지사항\n                            홍보센터\n            ",
+        "role": null,
+        "x": 342.5,
+        "y": 1494,
+        "width": 1220,
+        "height": 352,
+        "xpath": "id(\"container\")/div[3]/div[1]/div[1]",
+        "className": "notice_box",
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "공지사항\n                            홍보센터\n            ",
+        "role": null,
+        "x": 342.5,
+        "y": 1494,
+        "width": 595,
+        "height": 352,
+        "xpath": "id(\"container\")/div[3]/div[1]/div[1]/div[1]",
+        "className": "notice_list",
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "공지사항\n                            홍보센터\n            ",
+        "role": null,
+        "x": 342.5,
+        "y": 1494,
+        "width": 595,
+        "height": 352,
+        "xpath": "id(\"container\")/div[3]/div[1]/div[1]/div[1]/div[1]",
+        "className": "tabContent",
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "공지사항\n                            \n                ",
+        "role": null,
+        "x": 342.5,
+        "y": 1561,
+        "width": 595,
+        "height": 285,
+        "xpath": "id(\"container\")/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]",
+        "className": "tabPage active",
+        "id": null
+      },
+      {
+        "type": "div",
+        "role": null,
+        "x": 952.5,
+        "y": 1494,
+        "width": 595,
+        "height": 352,
+        "xpath": "id(\"bannerZone\")",
+        "className": "notice_pop swiper notice_banner_slide swiper-container-initialized swiper-container-horizontal",
+        "id": "bannerZone"
+      },
+      {
+        "type": "div",
+        "text": "배너존                 \n        \n            \n       ",
+        "role": null,
+        "x": 0,
+        "y": 1881,
+        "width": 1905,
+        "height": 94.375,
+        "xpath": "id(\"container\")/div[4]",
+        "className": "banner_box",
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "이전\n            다음",
+        "role": null,
+        "x": 312.5,
+        "y": 1882,
+        "width": 1280,
+        "height": 93.375,
+        "xpath": "id(\"container\")/div[4]/div[1]",
+        "className": "inner",
+        "id": null
+      },
+      {
+        "type": "div",
+        "role": null,
+        "x": 378.5,
+        "y": 1897,
+        "width": 1148,
+        "height": 63.375,
+        "xpath": "id(\"container\")/div[4]/div[1]/div[1]",
+        "className": "swiper main_banner_slide swiper-container-initialized swiper-container-horizontal",
+        "id": null
+      },
+      {
+        "type": "div",
+        "text": "이용약관\n                    개인정보처리방침\n                ",
+        "role": null,
+        "x": 0,
+        "y": 1975.375,
+        "width": 1905,
+        "height": 133,
+        "xpath": "id(\"footer\")",
+        "className": null,
+        "id": "footer"
+      },
+      {
+        "type": "div",
+        "text": "이용약관\n                    개인정보처리방침\n                ",
+        "role": null,
+        "x": 312.5,
+        "y": 1976.375,
+        "width": 1280,
+        "height": 132,
+        "xpath": "id(\"footer\")/div[1]",
+        "className": "inner",
+        "id": null
+      },
+      {
+        "type": "span",
+        "text": "(사용자 지원센터)",
+        "role": null,
+        "x": 342.5,
+        "y": 298,
+        "width": 147.921875,
+        "height": 29,
+        "xpath": "id(\"container\")/div[1]/div[1]/div[1]/p[1]/span[1]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "span",
+        "text": "(수어상담)",
+        "role": null,
+        "x": 708.796875,
+        "y": 298,
+        "width": 87.125,
+        "height": 29,
+        "xpath": "id(\"container\")/div[1]/div[1]/div[1]/p[1]/span[2]",
+        "className": null,
+        "id": null
+      },
+      {
+        "type": "span",
+        "text": "1",
+        "role": null,
+        "x": 360.5,
+        "y": 777,
+        "width": 60,
+        "height": 60,
+        "xpath": "id(\"newBiz\")/li[1]/a[1]/span[1]",
+        "className": "lank",
+        "id": null
+      },
+      {
+        "type": "span",
+        "text": "2025-11-24~2025-12-14",
+        "role": null,
+        "x": 440.5,
+        "y": 814,
+        "width": 140.765625,
+        "height": 19,
+        "xpath": "id(\"newBiz\")/li[1]/a[1]/div[1]/span[1]",
+        "className": "period",
+        "id": null
+      },
+      {
+        "type": "span",
+        "text": "2",
+        "role": null,
+        "x": 360.5,
+        "y": 893,
+        "width": 60,
+        "height": 60,
+        "xpath": "id(\"newBiz\")/li[2]/a[1]/span[1]",
+        "className": "lank",
+        "id": null
+      },
+      {
+        "type": "span",
+        "text": "2025-11-21~2025-12-05",
+        "role": null,
+        "x": 440.5,
+        "y": 930,
+        "width": 140.765625,
+        "height": 19,
+        "xpath": "id(\"newBiz\")/li[2]/a[1]/div[1]/span[1]",
+        "className": "period",
+        "id": null
+      },
+      {
+        "type": "span",
+        "text": "3",
+        "role": null,
+        "x": 360.5,
+        "y": 1009,
+        "width": 60,
+        "height": 60,
+        "xpath": "id(\"newBiz\")/li[3]/a[1]/span[1]",
+        "className": "lank",
+        "id": null
+      },
+      {
+        "type": "span",
+        "text": "2025-11-21~2025-12-05",
+        "role": null,
+        "x": 440.5,
+        "y": 1046,
+        "width": 140.765625,
+        "height": 19,
+        "xpath": "id(\"newBiz\")/li[3]/a[1]/div[1]/span[1]",
+        "className": "period",
+        "id": null
+      },
+      {
+        "type": "span",
+        "text": "4",
+        "role": null,
+        "x": 360.5,
+        "y": 1125,
+        "width": 60,
+        "height": 60,
+        "xpath": "id(\"newBiz\")/li[4]/a[1]/span[1]",
+        "className": "lank",
+        "id": null
+      },
+      {
+        "type": "span",
+        "text": "2025-11-14~2025-12-09",
+        "role": null,
+        "x": 440.5,
+        "y": 1162,
+        "width": 140.765625,
+        "height": 19,
+        "xpath": "id(\"newBiz\")/li[4]/a[1]/div[1]/span[1]",
+        "className": "period",
+        "id": null
+      },
+      {
+        "type": "span",
+        "text": "5",
+        "role": null,
+        "x": 360.5,
+        "y": 1241,
+        "width": 60,
+        "height": 60,
+        "xpath": "id(\"newBiz\")/li[5]/a[1]/span[1]",
+        "className": "lank",
+        "id": null
+      },
+      {
+        "type": "span",
+        "text": "2025-11-12~2025-12-08",
+        "role": null,
+        "x": 440.5,
+        "y": 1278,
+        "width": 140.765625,
+        "height": 19,
+        "xpath": "id(\"newBiz\")/li[5]/a[1]/div[1]/span[1]",
+        "className": "period",
+        "id": null
+      },
+      {
+        "type": "span",
+        "text": "6",
+        "role": null,
+        "x": 985.5,
+        "y": 777,
+        "width": 60,
+        "height": 60,
+        "xpath": "id(\"newBiz\")/li[6]/a[1]/span[1]",
+        "className": "lank",
+        "id": null
+      },
+      {
+        "type": "span",
+        "text": "2025-03-01~2025-12-31",
+        "role": null,
+        "x": 1065.5,
+        "y": 814,
+        "width": 140.765625,
+        "height": 19,
+        "xpath": "id(\"newBiz\")/li[6]/a[1]/div[1]/span[1]",
+        "className": "period",
+        "id": null
+      },
+      {
+        "type": "span",
+        "text": "7",
+        "role": null,
+        "x": 985.5,
+        "y": 893,
+        "width": 60,
+        "height": 60,
+        "xpath": "id(\"newBiz\")/li[7]/a[1]/span[1]",
+        "className": "lank",
+        "id": null
+      },
+      {
+        "type": "span",
+        "text": "2025-02-11~2025-12-31",
+        "role": null,
+        "x": 1065.5,
+        "y": 930,
+        "width": 140.765625,
+        "height": 19,
+        "xpath": "id(\"newBiz\")/li[7]/a[1]/div[1]/span[1]",
+        "className": "period",
+        "id": null
+      },
+      {
+        "type": "span",
+        "text": "new",
+        "role": null,
+        "x": 372.5,
+        "y": 1586,
+        "width": 20,
+        "height": 27,
+        "xpath": "id(\"container\")/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/strong[1]/span[1]",
+        "className": "new_icon",
+        "id": null
+      },
+      {
+        "type": "span",
+        "text": "2025.12.02",
+        "role": null,
+        "x": 372.5,
+        "y": 1787,
+        "width": 69.984375,
+        "height": 20,
+        "xpath": "id(\"container\")/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]",
+        "className": "date",
+        "id": null
+      },
+      {
+        "type": "span",
+        "text": "2025.11.27",
+        "role": null,
+        "x": 685,
+        "y": 1787,
+        "width": 69.984375,
+        "height": 20,
+        "xpath": "id(\"container\")/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1]",
+        "className": "date",
+        "id": null
+      }
+    ]
+  }
+}

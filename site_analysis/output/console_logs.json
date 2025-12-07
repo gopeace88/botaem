@@ -1,0 +1,38 @@
+[
+  {
+    "type": "log",
+    "text": "eXbuilder6 Runtime Version: 1.0.3738, Release Date: 2022. 4. 8. 오후 2:29:55"
+  },
+  {
+    "type": "error",
+    "text": "적용되지 않는 패치가 있습니다."
+  },
+  {
+    "type": "warning",
+    "text": "Failed to execute 'write' on 'Document': It isn't possible to write into a document from an asynchronously-loaded external script unless it is explicitly opened."
+  },
+  {
+    "type": "warning",
+    "text": "Failed to execute 'write' on 'Document': It isn't possible to write into a document from an asynchronously-loaded external script unless it is explicitly opened."
+  },
+  {
+    "type": "warning",
+    "text": "Failed to execute 'write' on 'Document': It isn't possible to write into a document from an asynchronously-loaded external script unless it is explicitly opened."
+  },
+  {
+    "type": "warning",
+    "text": "Failed to execute 'write' on 'Document': It isn't possible to write into a document from an asynchronously-loaded external script unless it is explicitly opened."
+  },
+  {
+    "type": "warning",
+    "text": "Failed to execute 'write' on 'Document': It isn't possible to write into a document from an asynchronously-loaded external script unless it is explicitly opened."
+  },
+  {
+    "type": "warning",
+    "text": "Failed to execute 'write' on 'Document': It isn't possible to write into a document from an asynchronously-loaded external script unless it is explicitly opened."
+  },
+  {
+    "type": "warning",
+    "text": "service value doesn't meet tag requirements and will be sanitized"
+  }
+]

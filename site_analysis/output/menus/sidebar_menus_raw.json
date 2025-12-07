@@ -1,0 +1,18 @@
+[
+  {
+    "text": "챗봇",
+    "id": "uuid-8c8329c1-8293-0193-2f6a-80d9f8eebd8c",
+    "left": 0,
+    "top": 930,
+    "width": 70,
+    "height": 150
+  },
+  {
+    "text": "잠시만 기다려 주세요",
+    "id": "uuid-8eb9c082-cc4e-b2b3-de6b-e4a57176b2c7",
+    "left": -1,
+    "top": -1,
+    "width": 1,
+    "height": 1
+  }
+]

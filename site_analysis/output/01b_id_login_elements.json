@@ -1,0 +1,57 @@
+{
+  "inputs": [
+    {
+      "type": "text",
+      "id": null,
+      "name": null,
+      "class": "cl-text",
+      "placeholder": null,
+      "selector": "input.cl-text"
+    },
+    {
+      "type": "password",
+      "id": null,
+      "name": null,
+      "class": "cl-text",
+      "placeholder": null,
+      "selector": "input.cl-text"
+    }
+  ],
+  "buttons": [
+    {
+      "text": "공동인증서 로그인",
+      "id": null,
+      "class": "cl-text-wrapper",
+      "selector": "a.cl-text-wrapper"
+    },
+    {
+      "text": "로그인",
+      "id": null,
+      "class": "cl-text-wrapper",
+      "selector": "a.cl-text-wrapper"
+    },
+    {
+      "text": "(회원가입 방법) 동영상안내",
+      "id": null,
+      "class": "cl-text-wrapper",
+      "selector": "a.cl-text-wrapper"
+    },
+    {
+      "text": "소프트웨어 다운로드",
+      "id": null,
+      "class": "cl-text-wrapper",
+      "selector": "a.cl-text-wrapper"
+    },
+    {
+      "text": "개인정보 처리방침",
+      "id": null,
+      "class": "cl-text-wrapper",
+      "selector": "a.cl-text-wrapper"
+    }
+  ],
+  "selects": [],
+  "links": [],
+  "textareas": [],
+  "checkboxes": [],
+  "radios": []
+}

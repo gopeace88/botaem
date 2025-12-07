@@ -1,0 +1,352 @@
+/**
+ * Electron Main Process - botame-admin
+ */
+
+import { app, BrowserWindow, ipcMain } from 'electron';
+import { join } from 'path';
+import { config } from 'dotenv';
+import { PlaybookService } from './services/playbook.service';
+import { RecordingService } from './services/recording.service';
+import { SupabaseService } from './services/supabase.service';
+import { PlaybookRunnerService } from './services/playbook-runner.service';
+import { BrowserService } from './services/browser.service';
+import { Playbook } from '../shared/types';
+
+// Load .env file
+config();
+
+// Linux IME (fcitx) support
+app.commandLine.appendSwitch('enable-features', 'UseOzonePlatform');
+app.commandLine.appendSwitch('ozone-platform', 'x11');
+app.commandLine.appendSwitch('gtk-version', '3');
+app.commandLine.appendSwitch('enable-wayland-ime');
+
+let mainWindow: BrowserWindow | null = null;
+let playbookService: PlaybookService;
+let recordingService: RecordingService;
+let supabaseService: SupabaseService;
+let runnerService: PlaybookRunnerService;
+let browserService: BrowserService;
+
+function createWindow() {
+  const isDev = !app.isPackaged;
+
+  mainWindow = new BrowserWindow({
+    width: 1200,
+    height: 800,
+    minWidth: 900,
+    minHeight: 600,
+    webPreferences: {
+      preload: join(__dirname, '../preload/preload.js'),
+      nodeIntegration: false,
+      contextIsolation: true,
+    },
+    frame: true,
+    show: true,
+  });
+
+  console.log('[Main] isDev:', isDev);
+
+  // Initialize services
+  playbookService = new PlaybookService();
+  recordingService = new RecordingService();
+  supabaseService = new SupabaseService();
+  browserService = new BrowserService();
+  runnerService = new PlaybookRunnerService(browserService);
+
+  // Connect recording service to shared browser
+  recordingService.setBrowserService(browserService);
+
+  // Setup IPC handlers
+  setupIpcHandlers();
+
+  // Forward recording events to renderer
+  recordingService.onEvent((event) => {
+    if (mainWindow && !mainWindow.isDestroyed()) {
+      mainWindow.webContents.send('recording:event', event);
+    }
+  });
+
+  // Forward runner events to renderer
+  runnerService.onEvent((event) => {
+    if (mainWindow && !mainWindow.isDestroyed()) {
+      mainWindow.webContents.send('runner:event', event);
+    }
+  });
+
+  // Load the app
+  if (isDev) {
+    mainWindow.loadURL('http://localhost:5173');
+    mainWindow.webContents.openDevTools();
+  } else {
+    mainWindow.loadFile(join(__dirname, '../renderer/index.html'));
+  }
+
+  mainWindow.once('ready-to-show', async () => {
+    mainWindow?.show();
+
+    // Auto-connect to Supabase using env variables
+    const supabaseUrl = process.env.VITE_SUPABASE_URL;
+    const supabaseKey = process.env.VITE_SUPABASE_ANON_KEY;
+
+    if (supabaseUrl && supabaseKey) {
+      console.log('[Main] Auto-connecting to Supabase...');
+      const configResult = await supabaseService.configure(supabaseUrl, supabaseKey);
+      if (configResult.success) {
+        console.log('[Main] Supabase connected successfully');
+        // Notify renderer about connection status
+        if (mainWindow && !mainWindow.isDestroyed()) {
+          mainWindow.webContents.send('supabase:connected', {
+            connected: true,
+            configured: true,
+          });
+        }
+      } else {
+        console.error('[Main] Supabase connection failed:', configResult.message);
+      }
+    } else {
+      console.warn('[Main] Supabase credentials not found in env');
+    }
+
+    // Auto-launch browser and navigate to login page
+    console.log('[Main] Auto-initializing browser...');
+    const initResult = await browserService.initialize();
+    if (initResult.success) {
+      console.log('[Main] Browser initialized, login page loaded');
+    } else {
+      console.error('[Main] Browser initialization failed:', initResult.error);
+    }
+  });
+
+  mainWindow.on('closed', () => {
+    mainWindow = null;
+  });
+}
+
+function setupIpcHandlers() {
+  // Window controls
+  ipcMain.handle('window:minimize', () => mainWindow?.minimize());
+  ipcMain.handle('window:maximize', () => {
+    if (mainWindow?.isMaximized()) {
+      mainWindow.unmaximize();
+    } else {
+      mainWindow?.maximize();
+    }
+  });
+  ipcMain.handle('window:close', () => mainWindow?.close());
+
+  // Playbook CRUD
+  ipcMain.handle('playbook:list', async () => {
+    return await playbookService.listPlaybooks();
+  });
+
+  ipcMain.handle('playbook:load', async (_event, id: string) => {
+    return await playbookService.loadPlaybook(id);
+  });
+
+  ipcMain.handle('playbook:save', async (_event, playbook) => {
+    return await playbookService.savePlaybook(playbook);
+  });
+
+  ipcMain.handle('playbook:delete', async (_event, id: string) => {
+    return await playbookService.deletePlaybook(id);
+  });
+
+  ipcMain.handle('playbook:export', async (_event, id: string, targetPath: string) => {
+    return await playbookService.exportPlaybook(id, targetPath);
+  });
+
+  ipcMain.handle('playbook:import', async (_event, sourcePath: string) => {
+    return await playbookService.importPlaybook(sourcePath);
+  });
+
+  // Recording
+  ipcMain.handle('recording:start', async (_event, targetUrl?: string) => {
+    return await recordingService.startRecording(targetUrl);
+  });
+
+  ipcMain.handle('recording:stop', async () => {
+    return await recordingService.stopRecording();
+  });
+
+  ipcMain.handle('recording:pause', () => {
+    recordingService.pauseRecording();
+    return { success: true };
+  });
+
+  ipcMain.handle('recording:resume', () => {
+    recordingService.resumeRecording();
+    return { success: true };
+  });
+
+  ipcMain.handle('recording:getState', () => {
+    return {
+      success: true,
+      state: recordingService.getState(),
+    };
+  });
+
+  ipcMain.handle('recording:getSteps', () => {
+    return {
+      success: true,
+      steps: recordingService.getRecordedSteps(),
+    };
+  });
+
+  ipcMain.handle('recording:clear', () => {
+    recordingService.clearRecording();
+    return { success: true };
+  });
+
+  ipcMain.handle('recording:deleteStep', (_event, index: number) => {
+    recordingService.deleteStep(index);
+    return { success: true };
+  });
+
+  ipcMain.handle('recording:generatePlaybook', (_event, metadata) => {
+    return recordingService.generatePlaybook(metadata);
+  });
+
+  // Supabase sync
+  ipcMain.handle('supabase:configure', async (_event, url: string, key: string) => {
+    return await supabaseService.configure(url, key);
+  });
+
+  ipcMain.handle('supabase:getStatus', () => {
+    return {
+      success: true,
+      status: supabaseService.getStatus(),
+      configured: supabaseService.isConfigured(),
+      connected: supabaseService.isConnected(),
+    };
+  });
+
+  ipcMain.handle('supabase:upload', async (_event, playbookId: string) => {
+    const result = await playbookService.loadPlaybook(playbookId);
+    if (!result.success || !result.data) {
+      return { success: false, message: '플레이북을 찾을 수 없습니다' };
+    }
+    return await supabaseService.uploadPlaybook(result.data);
+  });
+
+  ipcMain.handle('supabase:uploadAll', async () => {
+    const listResult = await playbookService.listPlaybooks();
+    if (!listResult.success || !listResult.data) {
+      return { success: false, message: '플레이북 목록을 가져올 수 없습니다' };
+    }
+
+    const playbooks = [];
+    for (const meta of listResult.data) {
+      const result = await playbookService.loadPlaybook(meta.id);
+      if (result.success && result.data) {
+        playbooks.push(result.data);
+      }
+    }
+
+    return await supabaseService.uploadAllPlaybooks(playbooks);
+  });
+
+  ipcMain.handle('supabase:listRemote', async () => {
+    return await supabaseService.listRemotePlaybooks();
+  });
+
+  ipcMain.handle('supabase:download', async (_event, id: string) => {
+    const result = await supabaseService.downloadPlaybook(id);
+    if (result.success && result.playbook) {
+      // 로컬에 저장
+      await playbookService.savePlaybook(result.playbook);
+    }
+    return result;
+  });
+
+  ipcMain.handle('supabase:deleteRemote', async (_event, id: string) => {
+    return await supabaseService.deleteRemotePlaybook(id);
+  });
+
+  // Catalog - DB에서 전체 플레이북 목록 조회 (관리자용)
+  ipcMain.handle('supabase:getCatalog', async () => {
+    return await supabaseService.getPlaybookCatalog();
+  });
+
+  // 플레이북 상세 조회 (DB에서)
+  ipcMain.handle('supabase:getPlaybook', async (_event, playbookId: string) => {
+    return await supabaseService.getPlaybookDetail(playbookId);
+  });
+
+  // 플레이북 업데이트 (DB에 저장)
+  ipcMain.handle('supabase:updatePlaybook', async (_event, playbook: Playbook) => {
+    return await supabaseService.updatePlaybook(playbook);
+  });
+
+  // 브라우저 하이라이트 (단계별 미리보기용)
+  ipcMain.handle('browser:highlight', async (_event, selector: string) => {
+    return await browserService.highlightElement(selector);
+  });
+
+  ipcMain.handle('browser:clearHighlight', async () => {
+    return await browserService.clearHighlight();
+  });
+
+  // Playbook Runner - from local files
+  ipcMain.handle('runner:run', async (_event, playbookId: string, startUrl?: string) => {
+    const result = await playbookService.loadPlaybook(playbookId);
+    if (!result.success || !result.data) {
+      return { success: false, error: '플레이북을 찾을 수 없습니다' };
+    }
+    return await runnerService.runPlaybook(result.data, startUrl);
+  });
+
+  // Playbook Runner - from Supabase catalog (DB)
+  ipcMain.handle('runner:runFromCatalog', async (_event, playbookId: string, overrideStartUrl?: string) => {
+    const result = await supabaseService.getPlaybookDetail(playbookId);
+    if (!result.success || !result.playbook) {
+      return { success: false, error: result.message || '플레이북을 찾을 수 없습니다' };
+    }
+    // 사용자가 직접 지정한 URL이 있으면 사용, 없으면 DB의 start_url 사용
+    const startUrl = overrideStartUrl || result.startUrl;
+    return await runnerService.runPlaybook(result.playbook, startUrl);
+  });
+
+  ipcMain.handle('runner:pause', () => {
+    runnerService.pause();
+    return { success: true };
+  });
+
+  ipcMain.handle('runner:resume', () => {
+    runnerService.resume();
+    return { success: true };
+  });
+
+  ipcMain.handle('runner:stop', () => {
+    runnerService.stop();
+    return { success: true };
+  });
+
+  ipcMain.handle('runner:closeBrowser', async () => {
+    await runnerService.navigateToMain();
+    return { success: true };
+  });
+
+  ipcMain.handle('runner:getState', () => {
+    return {
+      success: true,
+      state: runnerService.getState(),
+    };
+  });
+}
+
+app.whenReady().then(createWindow);
+
+app.on('window-all-closed', async () => {
+  recordingService?.cleanup();
+  await browserService?.cleanup();
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
+});
+
+app.on('activate', () => {
+  if (BrowserWindow.getAllWindows().length === 0) {
+    createWindow();
+  }
+});

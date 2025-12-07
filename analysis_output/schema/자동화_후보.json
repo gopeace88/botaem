@@ -1,0 +1,56 @@
+{
+  "high_priority": [
+    {
+      "area": "집행관리",
+      "function": "증빙등록",
+      "method": "RPA/API",
+      "effort": "중"
+    },
+    {
+      "area": "집행관리",
+      "function": "일괄이체",
+      "method": "API",
+      "effort": "하"
+    },
+    {
+      "area": "정산관리",
+      "function": "정산보고서생성",
+      "method": "템플릿",
+      "effort": "하"
+    },
+    {
+      "area": "회원관리",
+      "function": "구성원일괄등록",
+      "method": "엑셀업로드",
+      "effort": "하"
+    }
+  ],
+  "medium_priority": [
+    {
+      "area": "교부관리",
+      "function": "교부신청",
+      "method": "RPA",
+      "effort": "중"
+    },
+    {
+      "area": "사업선정",
+      "function": "공모신청",
+      "method": "RPA",
+      "effort": "상"
+    }
+  ],
+  "low_priority": [
+    {
+      "area": "정산관리",
+      "function": "검토승인",
+      "method": "수동",
+      "effort": "-"
+    },
+    {
+      "area": "특수기능",
+      "function": "예외처리",
+      "method": "수동",
+      "effort": "-"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+(node:195332) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///mnt/d/00.Projects/02.%EB%B3%B4%ED%83%ACe/botame-admin/postcss.config.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /mnt/d/00.Projects/02.보탬e/botame-admin/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+⚠️  Node.js 18 and below are deprecated and will no longer be supported in future versions of @supabase/supabase-js. Please upgrade to Node.js 20 or later. For more information, visit: https://github.com/orgs/supabase/discussions/37217
+[195432:1204/233745.322441:ERROR:bus.cc(407)] Failed to connect to the bus: Failed to connect to socket /run/user/1000/bus: 그런 파일이나 디렉터리가 없습니다
+[195432:1204/233745.354851:ERROR:bus.cc(407)] Failed to connect to the bus: Failed to connect to socket /run/user/1000/bus: 그런 파일이나 디렉터리가 없습니다
+[195432:1204/233745.355510:ERROR:bus.cc(407)] Failed to connect to the bus: Failed to connect to socket /run/user/1000/bus: 그런 파일이나 디렉터리가 없습니다
+[195432:1204/233745.356001:ERROR:bus.cc(407)] Failed to connect to the bus: Failed to connect to socket /run/user/1000/bus: 그런 파일이나 디렉터리가 없습니다
+[195432:1204/233745.493667:ERROR:bus.cc(407)] Failed to connect to the bus: Failed to connect to socket /run/user/1000/bus: 그런 파일이나 디렉터리가 없습니다
+[Supabase] URL or ANON_KEY not configured
+[195609:1204/233745.525665:ERROR:viz_main_impl.cc(196)] Exiting GPU process due to errors during initialization
+[195686:1204/233745.697089:ERROR:viz_main_impl.cc(196)] Exiting GPU process due to errors during initialization
+[195674:1204/233745.868925:ERROR:command_buffer_proxy_impl.cc(127)] ContextResult::kTransientFailure: Failed to send GpuControl.CreateCommandBuffer.
+[195680:1204/233745.869015:ERROR:command_buffer_proxy_impl.cc(127)] ContextResult::kTransientFailure: Failed to send GpuControl.CreateCommandBuffer.
+[195432:1204/233828.502633:ERROR:browser_main_loop.cc(276)] GLib-GObject: ../../../gobject/gsignal.c:2685: instance '0x273001215750' has no handler with id '829'

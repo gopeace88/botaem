@@ -1,0 +1,201 @@
+# 보탬e 메뉴 구조 정의
+# 분석 일시: 2025-12-05
+# 분석 계정: gopeace (보조사업자 권한)
+
+site:
+  name: "보탬e 지방보조금관리시스템"
+  url: "https://www.losims.go.kr/lss.do"
+  framework: "eXBuilder6 (Cleopatra)"
+
+login:
+  methods:
+    - type: "인증서"
+      tab_selector: "text=인증서 로그인"
+      description: "공동인증서 로그인"
+    - type: "아이디"
+      tab_selector: "text=아이디 로그인"
+      id_selector: "input[type='text'].cl-text"
+      pw_selector: "input[type='password'].cl-text"
+      submit_selector: ".btn-login:visible >> text=로그인"
+
+menus:
+  - name: "즐겨찾기"
+    icon: "star"
+    selector: "text=즐겨찾기"
+    css_class: "cl-tree-item"
+    submenus: []
+
+  - name: "보조사업선정"
+    icon: "document"
+    selector: "text=보조사업선정"
+    css_class: "cl-folder.cl-tree-item"
+    submenus:
+      - name: "공모사업신청관리"
+        selector: "text=공모사업신청관리"
+        css_class: "cl-folder.cl-tree-item"
+        submenus: []  # 하위 메뉴 추가 필요
+      - name: "수행사업계획관리"
+        selector: "text=수행사업계획관리"
+        css_class: "cl-folder.cl-tree-item"
+        submenus: []
+
+  - name: "교부관리"
+    icon: "money"
+    selector: "text=교부관리"
+    css_class: "cl-tree-item"
+    submenus: []  # 권한 제한으로 확인 불가
+
+  - name: "사업수행관리"
+    icon: "building"
+    selector: "text=사업수행관리"
+    css_class: "cl-folder.cl-tree-item"
+    submenus:
+      - name: "수행점검관리"
+        selector: "text=수행점검관리"
+        css_class: "cl-folder.cl-tree-item"
+        submenus: []
+      - name: "문제사업 관리"
+        selector: "text=문제사업 관리"
+        css_class: "cl-folder.cl-tree-item"
+        submenus: []
+      - name: "이의신청"
+        selector: "text=이의신청"
+        css_class: "cl-folder.cl-tree-item"
+        submenus: []
+
+  - name: "정보공시관리"
+    icon: "chart"
+    selector: "text=정보공시관리"
+    css_class: "cl-folder.cl-tree-item"
+    submenus:
+      - name: "보조사업공시관리"
+        selector: "text=보조사업공시관리"
+        css_class: "cl-folder.cl-tree-item"
+        submenus: []
+      - name: "시정명령 관리"
+        selector: "text=시정명령 관리"
+        css_class: "cl-folder.cl-tree-item"
+        submenus: []
+
+  - name: "금융정보관리"
+    icon: "bank"
+    selector: "text=금융정보관리"
+    css_class: "cl-tree-item"
+    submenus: []  # 권한 제한으로 확인 불가
+
+  - name: "사용자지원"
+    icon: "user"
+    selector: "text=사용자지원"
+    css_class: "cl-folder.cl-tree-item"
+    submenus:
+      - name: "보조사업자온라인교육"
+        selector: "text=보조사업자온라인교육"
+        css_class: "cl-folder.cl-tree-item"
+        submenus: []
+      - name: "내정보관리"
+        selector: "text=내정보관리"
+        css_class: "cl-folder.cl-tree-item"
+        submenus: []
+      - name: "보조사업자공지사항"
+        screen_id: "97018"
+        selector: "text=보조사업자공지사항 (97018)"
+        css_class: "cl-leaf.cl-tree-item"
+      - name: "지방보조금 FAQ"
+        screen_id: "97044"
+        selector: "text=지방보조금 FAQ (97044)"
+        css_class: "cl-leaf.cl-tree-item"
+      - name: "사용자매뉴얼"
+        screen_id: "97045"
+        selector: "text=사용자매뉴얼 (97045)"
+        css_class: "cl-leaf.cl-tree-item"
+      - name: "문의게시판"
+        screen_id: "97019"
+        selector: "text=문의게시판 (97019)"
+        css_class: "cl-leaf.cl-tree-item"
+      - name: "만족도조사"
+        screen_id: "97047"
+        selector: "text=만족도조사 (97047)"
+        css_class: "cl-leaf.cl-tree-item"
+
+# 매뉴얼 기준 전체 메뉴 (권한 있는 계정으로 확인 필요)
+manual_menus:
+  - name: "회원관리"
+    status: "권한 제한"
+    submenus:
+      - "회원가입"
+      - "단체정보관리"
+      - "구성원관리"
+
+  - name: "사업선정"
+    status: "일부 확인"
+    submenus:
+      - "공모형"
+      - "지정형"
+
+  - name: "교부관리"
+    status: "확인 필요"
+    submenus:
+      - "교부신청"
+      - "교부결정"
+
+  - name: "집행관리"
+    status: "권한 제한 - 자동화 핵심"
+    priority: "highest"
+    submenus:
+      - name: "집행등록"
+        screens:
+          - "전자세금계산서 집행등록"
+          - "카드사용내역 집행등록"
+          - "기타증빙 집행등록"
+      - name: "집행이체관리"
+        screen_id: "93003"
+        screens:
+          - "이체요청"
+          - "이체비밀번호검증"
+          - "이체인증"
+
+  - name: "정산관리"
+    status: "권한 제한"
+    submenus:
+      - name: "집행마감"
+        screen_id: "94001"
+      - name: "정산검토"
+        screen_id: "94002"
+      - "정산마감"
+      - name: "실적보고서"
+        screen_id: "94008"
+      - "정산반환/징수처리"
+
+common_selectors:
+  # 헤더 영역
+  header:
+    fiscal_year: "#회계연도"  # 확인 필요
+    session_timer: ".session-timer"  # 확인 필요
+    user_info: "text=알티케이"
+
+  # 메뉴 트리
+  menu_tree:
+    expanded: ".cl-expanded"
+    collapsed: ".cl-collapsed"
+    folder: ".cl-folder"
+    leaf: ".cl-leaf"
+    tree_item: ".cl-tree-item"
+
+  # 공통 버튼
+  buttons:
+    search: "text=조회"
+    save: "text=저장"
+    cancel: "text=취소"
+    confirm: "text=확인"
+    close: "text=닫기"
+
+  # 로딩
+  loading:
+    overlay: ".cl-overlay"
+    message: "text=잠시만 기다려 주세요"
+
+notes:
+  - "현재 계정(gopeace)은 보조사업자 권한으로 집행/정산 메뉴 접근 제한"
+  - "집행등록, 카드사용내역 등 자동화 핵심 화면은 관리자 권한 필요"
+  - "화면ID가 있는 메뉴는 직접 URL 접근 가능할 수 있음"
+  - "eXBuilder6 프레임워크 특성상 요소 ID는 동적 생성(uuid-*)"

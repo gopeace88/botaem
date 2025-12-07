@@ -1,0 +1,2655 @@
+{
+  "filename": "LFM-SP-TE-01(사용자지침서)_보조사업선정.docx",
+  "total_chars": 19878,
+  "total_paragraphs": 529,
+  "total_tables": 0,
+  "paragraphs": [
+    {
+      "index": 0,
+      "text": "보조금포털 사용방법 (보조사업 선정)",
+      "style": "Heading 1"
+    },
+    {
+      "index": 8,
+      "text": "G 행정안전부\t!!;1(1_10 만국지역정보개발언",
+      "style": "Normal"
+    },
+    {
+      "index": 10,
+      "text": "보조사업선정 방법",
+      "style": "Normal"
+    },
+    {
+      "index": 12,
+      "text": "공모사업 관리",
+      "style": "Normal"
+    },
+    {
+      "index": 13,
+      "text": "공모신청 업무처리 흐름도\t\t1",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 14,
+      "text": "공모사업등록(91032) \t2",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 15,
+      "text": "공모사업신청접수(91037)  10",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 16,
+      "text": "공모사업선정심사(91038)  22",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 17,
+      "text": "공모사업선정결과(91040)  26",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 18,
+      "text": "지정사업관리",
+      "style": "Normal"
+    },
+    {
+      "index": 19,
+      "text": "지정사업등록(91033)  25",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 20,
+      "text": "성질별코드관리(91041)  35",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 21,
+      "text": "자체사업관리",
+      "style": "Normal"
+    },
+    {
+      "index": 22,
+      "text": "자체공모사업등록(91034)  37",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 23,
+      "text": "자체공모사업선정결과(91042)  44",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 24,
+      "text": "공모사업신청관리",
+      "style": "Normal"
+    },
+    {
+      "index": 25,
+      "text": "민간보조사업공모현황(91035)  46",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 26,
+      "text": "My보조사업정보등록(91036)  48",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 27,
+      "text": "사업정보관리",
+      "style": "Normal"
+    },
+    {
+      "index": 28,
+      "text": "보조사업정보등록(91043)  50",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 29,
+      "text": "사엄정보검토",
+      "style": "Normal"
+    },
+    {
+      "index": 30,
+      "text": "보조사업정보검토(91044)  61",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 33,
+      "text": "공모사업 관리",
+      "style": "Heading 1"
+    },
+    {
+      "index": 42,
+      "text": "1. 공모사업등록",
+      "style": "Heading 2"
+    },
+    {
+      "index": 43,
+      "text": "화면위치\t지방보조금 → 보조사업선정 → 공모사업관리 → 공모사업등록 \t선행업무\t-",
+      "style": "Normal"
+    },
+    {
+      "index": 44,
+      "text": "작업시기\t수시",
+      "style": "Normal"
+    },
+    {
+      "index": 45,
+      "text": "후속업무\t공모사업등록",
+      "style": "Normal"
+    },
+    {
+      "index": 47,
+      "text": "① “회계년도”, “대상사업명”, “공모명”, “기간”, “보조사업선정진행상태”의 조회조건을 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 48,
+      "text": "② [조회] 버튼을 클릭하여 입력한 조회조건에 해당하는 공모사업 목록을 조회합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 49,
+      "text": "③ 조회된 목록을 선택 후 [상세] 버튼을 클릭하거나, [공모명]을 클릭하여 공모사업을 조회할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 55,
+      "text": "① [신규] 버튼을 클릭하여 공모사업 등록 화면으로 이동합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 60,
+      "text": "① 사업정보 Tab을 선택한 후 내용을 작성합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 61,
+      "text": "회계연도 선택.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 62,
+      "text": "전년도사업연계여부 선택.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 63,
+      "text": "공모사업을 진행할 대상 사업을 선택.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 64,
+      "text": "관리사업에 기본 등록된 “사업개요”, “사업목적”, “지원내용”, “기대효과“, ”사업기간“을 확인하고 수정 가능.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 65,
+      "text": "보조사업지원예산금액을 확인하고 보조사업지원금액을 입력",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 66,
+      "text": "※ 사업지원금액은 대상사업의 보조사업정보에 등록된 예산집행계획에 [30702]민간경상사업보조, [40202]민간자본사업보조 항목의 금액이 있어야 하며 해당 금액이 총사업비 입력의 최대 가능 금 액입니다.",
+      "style": "Heading 4"
+    },
+    {
+      "index": 100,
+      "text": "① 기본정보 Tab을 선택한 후 내용을 작성합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 101,
+      "text": "② 기본정보를 작성합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 102,
+      "text": "공모명",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 103,
+      "text": "공모기간",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 104,
+      "text": "공모게시일",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 105,
+      "text": "③ 담당자 정보를 작성합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 106,
+      "text": "등록하는 보조사업 담당자 이외 담당자로 변경하고자 할 경우 조회 버튼을 클릭하고 사용자정보 를 조회하여 선택 변경 가능",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 110,
+      "text": "① 선정정보 Tab을 선택한 후 내용을 작성합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 111,
+      "text": "② 공모사업의 민간보조사업자 선정과 관련된 선정정보를 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 112,
+      "text": "선정수, 선정기준안내, 제외대상, 결과통보방법, 공모사업 추진절차, 선정일자, 통보일자",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 137,
+      "text": "① 신청정보 Tab을 선택한 후 내용을 작성합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 138,
+      "text": "② 신청정보를 입력 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 139,
+      "text": "보조금의 비예치형 신청가능 여부",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 140,
+      "text": "▸ 비예치형사업신청가능여부를 불가능으로 할 경우 보조사업자는 비예치형으로 선택할 수 없음.",
+      "style": "Body Text"
+    },
+    {
+      "index": 141,
+      "text": "하위 민간보조사업자 신청시 입력 가능한 최대 사업비",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 142,
+      "text": "자부담 최소 금액",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 143,
+      "text": "▸ 자부담최소신청가능금액을 입력할 경우 민간보조사업자는 공모사업 신청 시 자부담금액을 자 부담최소신청가능금액 이상을 입력해야 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 144,
+      "text": "※ 비예치형이란?",
+      "style": "Body Text"
+    },
+    {
+      "index": 145,
+      "text": "보조사업의 보조금은 기본적으로 상위사업자의 계좌에서 교부 신청한 금액내에서 집행 요청시 마다 지급하는 것을 예치형이라 하며 이와 상반되게 교부 신청시 신청한 보조금액을 상위 사업자의 관리 계좌에서 하위 사업자의 자부담 계좌로 교부 신청 승인 후 일괄 지급되는 형태를 말합니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 146,
+      "text": "③ 접수정보를 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 147,
+      "text": "접수기간, 접수종료시각, 유의사항, 문의 안내관련 입력",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 148,
+      "text": "④ 보조사업안내서류내역목록에 안내서류를 추가합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 149,
+      "text": "[행추가] 버튼 클릭하여 행을 추가한 후 [파일추가]를 클릭하여 안내서류 파일 추가",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 150,
+      "text": "⑤ 상세신청정보목록을 확인할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 153,
+      "text": "⑥ 신청정보간소화 여부를 선택할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 154,
+      "text": "하위 민간보조사업자의 공모사업 신청시 신청서 간소화를 통해 필수적인 내용만으로 신청할 수 있는 기능입니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 155,
+      "text": "신청정보간소화를 미사용으로 선택할 경우 민간보조사업자는 사업정보등록 시 입력하는 세부추진 계획, 재원조달계획, 예산집행계획 등을 모두 입력해야 합니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 160,
+      "text": "① 자격검증 Tab을 선택한 후 내용을 작성합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 161,
+      "text": "② 자격검증 및 중복수급불가사업 검증여부를 선택합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 162,
+      "text": "반드시 온라인자격검증, 오프라인자격검증 중 선택 필수",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 163,
+      "text": "중복수급불가사업검증여부는 필요한 경우만 선택",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 164,
+      "text": "③ 온라인자격검증, 오프라인자격 검증 선택 후 [행추가] 추가 버튼 클릭",
+      "style": "Body Text"
+    },
+    {
+      "index": 165,
+      "text": "온라인자격검증",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 166,
+      "text": "▸ 온라인자격검증항목선택 팝업 창을 통해 자격검증기관 선택 후 조회. 기관별 자격검증정보목록 중 대상을 [선택] 버튼 클릭",
+      "style": "Body Text"
+    },
+    {
+      "index": 167,
+      "text": "오프라인자격검증",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 168,
+      "text": "▸ 필수여부 선택하고 검증항목을 입력, 연산자를 선택하고 기준값을 입력. “설명 및 비고” 항목에 해당 설명을 간략하게 입력.",
+      "style": "Body Text"
+    },
+    {
+      "index": 169,
+      "text": "④ 중복수급불가사업정보를 추가합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 170,
+      "text": "[행추가] 버튼 클릭",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 171,
+      "text": "중복수급불가사업선택 팝업에서 [조회] 버튼 클릭하여 사업목록 조회",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 172,
+      "text": "중복수급불가사업 선택하고 [선택] 버튼 클릭하여 추가",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 180,
+      "text": "① 제출서류 Tab을 선택한 후 내용을 작성합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 181,
+      "text": "② [파일추가] 버튼을 클릭하고 등록한 서류 양식 파일을 등록합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 182,
+      "text": "③ [행추가] 버튼을 클릭합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 183,
+      "text": "추가할 제출 서류가 있을 경우 추가하며 행 추가후 필수여부, 제출서류명을 입력하고 [파일추가] 버튼을 클릭하여 양식 파일을 등록",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 184,
+      "text": "④ 임시저장 기능을 사용할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 185,
+      "text": "공모사업 사업 등록 중간에 임시 저장하는 기능입니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 186,
+      "text": "⑤ [저장] 버튼을 클릭하고 공모사업 등록 정보를 저장합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 187,
+      "text": "저장 후 공모사업등록 메뉴에서 등록한 공모사업을 클릭하여 상세화면으로 이동 후 하단의 [ 모 사업연계기안] 버튼을 클릭하여 연계기안 승인 요청을 작성합니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 188,
+      "text": "연계기안 승인 후 [공모확정] 버튼을 클릭하여 공모사업 최종 확정 등록합니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 196,
+      "text": "공모사업신청접수",
+      "style": "Heading 2"
+    },
+    {
+      "index": 197,
+      "text": "화면위치\t지방보조금 → 보조사업선정 → 공모사업관리 → 공모사업신청접수 \t선행업무\t공모확정 → 하위 보조사업자 공모 신청",
+      "style": "Heading 3"
+    },
+    {
+      "index": 198,
+      "text": "작업시기\t하위 보조사업자가 공모신청서를 신청받은 후 \t후속업무\t공모심사",
+      "style": "Normal"
+    },
+    {
+      "index": 203,
+      "text": "① 조회하고 싶은 검색조건을 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 204,
+      "text": "사업연도, 대상사업명, 진행상태(전체/공고확정/접수진행중/접수완료), 공모명으로 조회 가능.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 205,
+      "text": "② [초기화] 버튼을 클릭해 검색조건을 초기화 하고 [조회] 버튼을 클릭하여 검색조건에 맞는 공모를 조회합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 206,
+      "text": "③ 공고확정/접수진행중/접수완료 등 검색 조건에 맞는 공모를 확인합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 207,
+      "text": "전체신청건수 : 해당 공모에 민간기관(단체)에서 신청한 전체 건수",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 208,
+      "text": "접수결과",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 209,
+      "text": "▸ 접수대기중 : 아직 접수가 이루어지지 않은 상태인 건수",
+      "style": "Body Text"
+    },
+    {
+      "index": 210,
+      "text": "▸ 보완요청 : 신청한 민간(단체) 중 보완요청 상태인 건수",
+      "style": "Body Text"
+    },
+    {
+      "index": 211,
+      "text": "▸ 접수 : 신청한 민간(단체) 중에서 접수가 된 건수",
+      "style": "Body Text"
+    },
+    {
+      "index": 214,
+      "text": "▸ 접수제외 : 신청한 민간(단체) 중에서 접수가 거절된 건수",
+      "style": "Body Text"
+    },
+    {
+      "index": 215,
+      "text": "④ 목록에서 접수완료 상태로 만들 공모대상 선택 후 [접수완료] 버튼 클릭 시 접수완료여부 확인 창을 확인할 수 있습니다. 접수건수가 없으면 먼저 ⑦[접수목록] 버튼을 클릭해 민간단체의 모든 신청서 를 접수한 후 [접수완료] 버튼을 클릭해 진행할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 216,
+      "text": "⑤ [접수완료취소] 버튼을 클릭하면 접수완료 상태를 취소하고 접수대기중 상태로 수정됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 217,
+      "text": "⑥ [접수완료]가 된 공모에 대해 [심사요청] 버튼을 클릭 시 심사요청 상태로 변경되고 공모사업선정심 사메뉴에서 심사를 진행할수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 218,
+      "text": "⑦ [접수목록] 버튼을 클릭해 공모신청서 목록을 보여주는 화면으로 이동할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 251,
+      "text": "3. 공모사업신청접수(공모신청자관리목록)",
+      "style": "Heading 2"
+    },
+    {
+      "index": 252,
+      "text": "화면위치\t지방보조금 → 보조사업선정 → 공모사업관리 → 공모사업신청접수 → 접수목록 클릭",
+      "style": "Body Text"
+    },
+    {
+      "index": 253,
+      "text": "선행업무\t공모확정 → 하위 보조사업자가 공모 신청",
+      "style": "Normal"
+    },
+    {
+      "index": 254,
+      "text": "작업시기\t하위 보조사업자로부터 공모신청서를 신청받은후 접수",
+      "style": "Body Text"
+    },
+    {
+      "index": 255,
+      "text": "후속업무\t공모사업신청접수 메뉴에서 접수완료 → 심사요청",
+      "style": "Body Text"
+    },
+    {
+      "index": 259,
+      "text": "① 기관단체구분, 수행배제대상여부, 접수결과, 검색조건 등을 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 260,
+      "text": "② [초기화] 버튼을 클릭하여 검색조건을 초기할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 261,
+      "text": "[조회] 버튼을 클릭하여 검색조건에 맞는 공모신청목록을 조회합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 262,
+      "text": "③ 지방보조금 → 보조사업선정 → 공모사업관리 → 공모사업신청접수인 이전 메뉴로 이동하는 버튼입 니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 263,
+      "text": "④ 입력한 검색조건에 맞는 공모신청 목록을 확인 가능합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 264,
+      "text": "⑤ [접수]을 클릭하면 공모신청서 내용이 들어 있는 접수진행 화면으로 이동합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 265,
+      "text": "⑥ [상세내역]버튼으로 해당 민간(단체)에서 신청한 공모신청서 내용에 대해 조회가 가능합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 269,
+      "text": "공모사업신청접수(공모신청상세 – 수행기관)",
+      "style": "Heading 2"
+    },
+    {
+      "index": 272,
+      "text": "화면위치",
+      "style": "Heading 3"
+    },
+    {
+      "index": 273,
+      "text": "지방보조금 → 보조사업선정 → 공모사업관리 → 공모사업신청접수 → 공모신청자관리목록 → 상세화면(탭) - 수행기관",
+      "style": "Body Text"
+    },
+    {
+      "index": 275,
+      "text": "선행업무\t공모확정 → 민간보조사업자가 공모신청서 신청",
+      "style": "Body Text"
+    },
+    {
+      "index": 276,
+      "text": "작업시기\t하위 보조사업자로부터 공모신청서를 신청받은후 접수",
+      "style": "Body Text"
+    },
+    {
+      "index": 277,
+      "text": "후속업무\t공모사업신청접수 메뉴에서 접수완료 → 심사요청",
+      "style": "Body Text"
+    },
+    {
+      "index": 281,
+      "text": "① 수행기관탭에서 내용을 확인합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 282,
+      "text": "② 모든 탭을 확인한 후 담당자메모를 작성합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 283,
+      "text": "③ 이전목록인 공모신청자관리목록으로 이동하는 버튼입니다. 수행기관부터 수행배제여부 까지의 모든 탭에서 내용을 확인 후 [저장]버튼을 클릭하고 이전목록으로 이동하도록 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 284,
+      "text": "④ 접수결과등록 내용을 [저장] 버튼을 클릭하여 저장합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 289,
+      "text": "① 기본신청서 내용을 확인합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 290,
+      "text": "② 모든 탭을 확인한 후 담당자메모를 작성합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 291,
+      "text": "③ 이전목록인 공모신청자관리목록으로 이동하는 버튼입니다. 수행기관부터 수행배제여부 까지의 모든 탭에서 내용을 확인 후 [저장]버튼을 클릭하고 이전목록으로 이동하도록 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 292,
+      "text": "④ 접수결과등록 내용을 [저장] 버튼을 클릭하여 저장합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 300,
+      "text": "① 상세신청정보 내용을 확인합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 301,
+      "text": "② 모든 탭을 확인한 후 담당자메모를 작성합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 302,
+      "text": "③ 이전목록인 공모신청자관리목록으로 이동하는 버튼입니다. 수행기관부터 수행배제여부 까지의 모든 탭에서 내용을 확인 후 [저장]버튼을 클릭하고 이전목록으로 이동하도록 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 303,
+      "text": "④ 접수결과등록 내용을 [저장] 버튼을 클릭하여 저장합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 307,
+      "text": "① 세부추진계획 내용을 확인합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 308,
+      "text": "② 모든 탭을 확인한 후 담당자메모를 작성합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 309,
+      "text": "③ 이전목록인 공모신청자관리목록으로 이동하는 버튼입니다. 수행기관부터 수행배제여부 까지의 모든 탭에서 내용을 확인 후 [저장]버튼을 클릭하고 이전목록으로 이동하도록 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 310,
+      "text": "④ 접수결과등록 내용을 [저장] 버튼을 클릭하여 저장합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 315,
+      "text": "① 재원조달계획 내용을 확인합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 316,
+      "text": "② 모든 탭을 확인한 후 담당자메모를 작성합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 317,
+      "text": "③ 이전목록인 공모신청자관리목록으로 이동하는 버튼입니다. 수행기관부터 수행배제여부 까지의 모든 탭에서 내용을 확인 후 [저장]버튼을 클릭하고 이전목록으로 이동하도록 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 318,
+      "text": "④ 접수결과등록 내용을 [저장] 버튼을 클릭하여 저장합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 323,
+      "text": "① 예산집행계획 내용을 확인합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 324,
+      "text": "② 모든 탭을 확인한 후 담당자메모를 작성합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 325,
+      "text": "③ 이전목록인 공모신청자관리목록으로 이동하는 버튼입니다. 수행기관부터 수행배제여부 까지의 모든 탭에서 내용을 확인 후 [저장]버튼을 클릭하고 이전목록으로 이동하도록 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 326,
+      "text": "④ 접수결과등록 내용을 [저장] 버튼을 클릭하여 저장합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 331,
+      "text": "① 자격요건 내용을 확인합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 332,
+      "text": "② 모든 탭을 확인한 후 담당자메모를 작성합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 333,
+      "text": "③ 이전목록인 공모신청자관리목록으로 이동하는 버튼입니다. 수행기관부터 수행배제여부 까지의 모든 탭에서 내용을 확인 후 [저장]버튼을 클릭하고 이전목록으로 이동하도록 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 334,
+      "text": "④ 접수결과등록 내용을 [저장] 버튼을 클릭하여 저장합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 339,
+      "text": "① 제출서류 내용을 확인합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 340,
+      "text": "② 담당자메모를 작성합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 341,
+      "text": "③ 이전목록인 공모신청자관리목록으로 이동할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 342,
+      "text": "④ [저장] 버튼을 클릭하여 접수결과등록 내용을 저장합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 347,
+      "text": "① 수행배제여부 내용을 확인합니다. 다른 탭에 대한 내용도 확인되었으면 접수대기중/보완요청/접수/접수제외 중 접수결과를 선택합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 348,
+      "text": "② 담당자메모를 작성합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 349,
+      "text": "③ [저장]버튼을 클릭하고 이전목록으로 이동하도록 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 350,
+      "text": "④ [저장] 버튼을 클릭하여 접수결과등록 내용을 저장합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 356,
+      "text": "공모사업선정심사",
+      "style": "Heading 2"
+    },
+    {
+      "index": 357,
+      "text": "화면위치\t지방보조금 → 보조사업선정 → 공모사업관리 → 공모사업선정심사",
+      "style": "Body Text"
+    },
+    {
+      "index": 358,
+      "text": "선행업무\t심사요청",
+      "style": "Normal"
+    },
+    {
+      "index": 359,
+      "text": "작업시기\t심사요청 받은후",
+      "style": "Normal"
+    },
+    {
+      "index": 360,
+      "text": "후속업무\t심의요청 또는 선정요청",
+      "style": "Normal"
+    },
+    {
+      "index": 363,
+      "text": "① 검색조건에서 필요한 내용 사업연도, 대상사업명, 심사완료상태, 공모명을 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 364,
+      "text": "② [초기화] 버튼을 클릭하여 검색조건을 초기화 할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 365,
+      "text": "[조회] 버튼을 클릭하여 검색조건에 맞는 심사목록 결과를 조회합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 366,
+      "text": "③ 검색조건에 맞는 심사를 처리할 공모 목록을 확인합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 367,
+      "text": "④ [심사완료] 버튼입니다. 목록에서 각 공모는 [심사대상목록] 화면으로 이동하여 심사 진행 후 체크박 스에서 공모를 선택하고 [심사완료]버튼을 클릭하여 심사완료 처리할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 368,
+      "text": "⑤ [심사완료취소] 버튼을 클릭하여 심사완료를 취소할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 369,
+      "text": "⑥ [심의요청] 버튼을 클릭하여 심의를 진행할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 370,
+      "text": "⑦ [선정요청] 버튼을 클릭하여 선정을 진행할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 371,
+      "text": "⑧ [심사대상목록] 버튼을 클릭하여 공모심사대상목록 메뉴로 이동하고 심사를 진행할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 377,
+      "text": "① 검색조건으로 필요한 내용 심사결과상태, 공모명을 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 378,
+      "text": "② [초기화] 버튼을 클릭하여 검색조건을 초기화할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 379,
+      "text": "[조회] 버튼을 클릭하여 검색조건에 맞는 심사목록 결과를 조회합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 380,
+      "text": "③ 검색조건에 맞는 심사를 처리할 공모신청목록을 확인합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 381,
+      "text": "④ [상세내역] 버튼을 클릭하여 공모신청상세내용을 볼 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 382,
+      "text": "⑤ [심사] 버튼을 클릭하여 공모신청심사 상세화면으로 이동하여 심사를 진행할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 385,
+      "text": "① 각 탭의 내용을 확인 후 자격검증결과 탭에서 자격검증에 대한 내용을 입력 합니다. 자격검증 종합검토결과 중 적합/부적합을 선택하고 담당자 메모를 작성해 저장합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 386,
+      "text": "② [저장] 버튼을 클릭하여 자격검증 종합검토 결과를 저장할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 387,
+      "text": "③ 심사결과를 선택할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 388,
+      "text": "- 심사결과( 선정대상/선정제외 )를 선택한다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 391,
+      "text": "④ 담당자 메모 칸으로 검토의견을 입력할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 392,
+      "text": "⑤ [이전목록] 버튼을 클릭하여 이전 화면인 [공모심사대상관리목록]으로 이동할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 393,
+      "text": "⑥ [저장] 버튼을 클릭하여 심사결과를 등록할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 399,
+      "text": "공모사업선정결과",
+      "style": "Heading 2"
+    },
+    {
+      "index": 400,
+      "text": "화면위치\t지방보조금 → 보조사업선정 → 공모사업관리 → 공모사업선정결과",
+      "style": "Body Text"
+    },
+    {
+      "index": 401,
+      "text": "선행업무\t공모사업선정심사(91038) 또는 공모사업선정심의(91039)",
+      "style": "Body Text"
+    },
+    {
+      "index": 402,
+      "text": "작업시기\t등록한 공모의 신청접수건에 대한 심사 이후 신청사업을 선정하고자 할 경우",
+      "style": "Body Text"
+    },
+    {
+      "index": 403,
+      "text": "후속업무",
+      "style": "Heading 3"
+    },
+    {
+      "index": 407,
+      "text": "① 공모사업선정을 위한 대상 공모목록을 조회하기 위해 검색조건을 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 408,
+      "text": "사업연도: 필수선택 사항이며, 공모의 사업연도이다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 409,
+      "text": "대상사업명: 로그인한 담당자의 권한에 해당하는 사업목록이 조회되며 선택하여 검색할 수 있다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 410,
+      "text": "진행상태: 선정요청, 선정완료, 선정기안진행중, 최종확정 상태를 조회할 수 있다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 411,
+      "text": "공모명: 검색하고자 하는 공모명을 조건으로 조회하고자 하는 경우 입력한다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 412,
+      "text": "② 리셋버튼(왼쪽)으로 검색조건을 초기화 할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 413,
+      "text": "③ 공모명, 대상사업명, 진행상태, 신청수, 선정수 등의 상태정보를 확인할 수 있는 목록입니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 414,
+      "text": "신청건수: 해당 공모에 신청한 업체(단체)가 있는 경우 그 건수가 표시된다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 415,
+      "text": "선정수: 최종 선정이 완료된 업체(단체)의 건수가 표시된다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 416,
+      "text": "④ [선정] 버튼을 클릭하면 공모사업선정처리를 할 수 있는 상세화면으로 이동합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 421,
+      "text": "① 선정대상공모의 상위지방보조사업명, 지방보조사업명, 공모명입니다. 공모명 클릭 시 해당 공모의 상 세정보를 확인할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 422,
+      "text": "공모명: 클릭 → 공모상세정보화면 연결",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 423,
+      "text": "② 선정대상 기관(단체) 정보 목록입니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 424,
+      "text": "③ 선정완료시 담당자가 메모할 사항을 기재하는 부분입니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 425,
+      "text": "④ [선정완료] 버튼을 클릭해해 ②번의 최종선정 목록에서 체크된 기관(단체)를 선정할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 426,
+      "text": "⑤ 선정완료시 선정완료일시가 나타나며 최종확정일시는 최종확정시에 등록됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 432,
+      "text": "지정사업 관리",
+      "style": "Heading 1"
+    },
+    {
+      "index": 436,
+      "text": "지정사업등록",
+      "style": "Heading 2"
+    },
+    {
+      "index": 437,
+      "text": "화면위치\t지방보조금 → 보조사업선정→ 지정사업관리 → 지정사업등록",
+      "style": "Body Text"
+    },
+    {
+      "index": 438,
+      "text": "선행업무\t-",
+      "style": "Normal"
+    },
+    {
+      "index": 439,
+      "text": "작업시기\t수시",
+      "style": "Normal"
+    },
+    {
+      "index": 440,
+      "text": "후속업무\t지정사업선정결과(91041)",
+      "style": "Normal"
+    },
+    {
+      "index": 444,
+      "text": "① 회계연도 등의 조회조건을 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 445,
+      "text": "② [조회] 버튼을 클릭하여 입력한 조건에 해당하는 지정사업 자료를 조회합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 446,
+      "text": "③ 조회된 지정사업 자료에서 상세 조회하고자 하는 행을 선택합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 447,
+      "text": "④ [상세] 버튼을 클릭하여 지정사업 상세 정보로 이동할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 448,
+      "text": "⑤ [신규] 버튼을 클릭하여 지정사업 생성 화면으로 이동할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 453,
+      "text": "① 사업정보 탭을 선택합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 454,
+      "text": "② 회계연도를 선택합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 455,
+      "text": "③ 대상사업을 선택합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 456,
+      "text": "전년도사업연계여부 ‘연계’ 선택시 회계연도의 전연도 사업목록이 보여짐.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 457,
+      "text": "상위 사업이 있을 경우 상위 사업 정보가 상위대상사업목록에 표시됨.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 458,
+      "text": "④,⑤,⑥,⑦,⑧ 항목은 보조사업에 등록된 기본정보를 표기하며 필요시 수정하도록 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 459,
+      "text": "⑨ 지정사업에 보조금 지원 가능 금액을 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 460,
+      "text": "보조사업지원보조금금액 : 총 지원금액",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 461,
+      "text": "보조금지원금액 : 광역 자치단체/시군구\t보조금지원 합계금액",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 462,
+      "text": "※ 사업지원금액은 대상사업의 보조사업정보에 등록된 예산집행계획에 [30702]민간경상사업보조, [40202]민간자본사업보조 항목의 금액이 있어야 하며 해당 금액이 총사업비 입력의 최대 가능 금 액입니다.",
+      "style": "Heading 4"
+    },
+    {
+      "index": 467,
+      "text": "① 기본정보 탭을 선택합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 468,
+      "text": "② 공모사업명을 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 469,
+      "text": "③ 지정사업 담당자를 변경하고자 하는 경우 담당자정보의 [돋보기] 버튼을 클릭하여 지정사업담당자를 변경할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 475,
+      "text": "① 선정정보 탭을 선택합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 476,
+      "text": "② [행추가] 버튼을 클릭합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 477,
+      "text": "기관단체기업조회 팝업을 통해 공공민간 단체를 조회하고 선택하여 추가",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 478,
+      "text": "③ 기관단체기업조회 팝업의 조회조건 입력하고 [조회] 버튼 클릭합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 479,
+      "text": "④ 기관/단체목록에서 추가하고자 하는 기관/단체를 선택합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 480,
+      "text": "⑤ [적용] 버튼을 클릭하면 이전 화면의 선정기관내역목록에 추가됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 486,
+      "text": "① 신청정보 탭을 선택합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 487,
+      "text": "② 비예치형사업신청가능여부를 선택합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 488,
+      "text": "예치형 : 보조사업의 보조금을 하위 사업자에게 교부 신청시 지급하는 것이 아니고 자치단체 보조금 관리 계좌에서 집행등록하여 이체 요청시에 지급하는 거래형.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 489,
+      "text": "비예치형 : 보조사업의 보조금을 하위 사업자가 교부 신청시 교부 승인 후 바로 하위 사업자 자부담 계좌로 교부 신청 금액을 이체 지급하는 거래형.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 490,
+      "text": "③ 보조금최대신청가능금액을 입력(원단위)합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 491,
+      "text": "하위 보조사업자가 사업정보 등록시 해당 금액이 0보단 큰 경우만 검증합니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 492,
+      "text": "④ 자부담최소신청가능금액을 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 493,
+      "text": "하위 보조사업자가 사업정보 등록시 해당 금액이 0보단 큰 경우만 검증합니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 502,
+      "text": "① 제출정보 탭을 선택합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 503,
+      "text": "② 필수인 사업계획서의 [파일추가] 버튼을 클릭합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 504,
+      "text": "사업계획서는 필수이며 관련 양식 파일을 등록한다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 505,
+      "text": "③ [행추가] 버튼을 클릭합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 506,
+      "text": "상위보조사업자는 필요한 경우 사업계획서외에 추가 서류를 요청할 수 있으며 이에 대한 양식을 등록할 때 사용함.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 507,
+      "text": "④,⑤,⑥ 제출서류의 필수 여부를 선택하고 제출서류명을 입력, 해당 제출서류의 양식 파일을 추가합니 다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 508,
+      "text": "⑦ [저장] 버튼을 클릭하여 저장합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 514,
+      "text": "(화면: 지정사업확정)",
+      "style": "Body Text"
+    },
+    {
+      "index": 517,
+      "text": "① 지정사업관리 메뉴에서 확정 등록할 지정사업을 선택하여 상세 화면으로 이동합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 518,
+      "text": "② 등록된 지정사업정보를 수정하고 [저장] 버튼 클릭합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 519,
+      "text": "③ 수정할 내용이 없으면 [확정] 버튼 클릭합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 520,
+      "text": "선정정보에 등록된 보조사업자로 선정 완료 등록됩니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 521,
+      "text": "④ 확정 등록 전에 삭제하고자 하는 경우 [삭제] 버튼 클릭하여 삭제할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 522,
+      "text": "⑤ 저장된 지정사업의 정보와 유사한 지정사업을 등록하고자 하는 경우 [공모복제] 버튼을 클릭하여 지 정사업 복사 등록할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 527,
+      "text": "지정사업선정결과",
+      "style": "Heading 2"
+    },
+    {
+      "index": 528,
+      "text": "화면위치\t지방보조금 → 보조사업선정→ 지정사업관리 → 지정사업선정결과",
+      "style": "Body Text"
+    },
+    {
+      "index": 529,
+      "text": "선행업무\t지정사업등록(91033)",
+      "style": "Normal"
+    },
+    {
+      "index": 530,
+      "text": "작업시기\t지정사업등록 업무 이후",
+      "style": "Normal"
+    },
+    {
+      "index": 531,
+      "text": "후속업무",
+      "style": "Heading 3"
+    },
+    {
+      "index": 535,
+      "text": "① 선정대상 지정사업목록을 조회하기 위한 검색조건을 입력하고 [조회]버튼을 클릭합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 536,
+      "text": "사업연도: 필수선택 사항이며, 공모의 사업연도이다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 537,
+      "text": "대상사업명: 로그인한 담당자의 권한에 해당하는 사업목록이 조회되며 선택하여 검색할 수 있다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 538,
+      "text": "진행상태: 공고확정, 선정기안진행중, 최종확정 세가지 상태에 대해 검색 가능",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 539,
+      "text": "공모명: 대상 공모명을 입력 후 조회 가능",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 540,
+      "text": "② 선정대상 지정사업공고의 공고명, 지방보조사업명, 진행상태 및 기안/결재여부 등의 내용을 확인합 니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 541,
+      "text": "③ 확정 버튼 클릭시 지정사업관리상세 화면으로 이동합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 547,
+      "text": "① 선정대상공모의 상위지방보조사업명, 대상사업명(공모명)이 표시되며, 대상사업명을 클릭하면 해당 공모의 상세정보를 확인할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 548,
+      "text": "공모명 : 클릭 → 공모상세정보화면 연결",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 549,
+      "text": "② 선정대상 기관(단체) 정보 목록을 확인할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 550,
+      "text": "최종확정이 된 경우 해당목록은 조회만 가능한 상태가 된다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 551,
+      "text": "③ 최종확정일시는 최종확정시에 등록되고 표시됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 552,
+      "text": "④ 최종확정 : 결재가 완료된 경우 활성화 되며, 해당 기관(단체)이 신청한 사업이 수행사업으로 결정 됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 555,
+      "text": "자체사업 관리",
+      "style": "Heading 1"
+    },
+    {
+      "index": 559,
+      "text": "자체공모사업등록",
+      "style": "Heading 2"
+    },
+    {
+      "index": 560,
+      "text": "화면위치\t지방보조금 → 보조사업선정→ 자체공모사업관리 → 자체공모사업등록",
+      "style": "Body Text"
+    },
+    {
+      "index": 561,
+      "text": "선행업무\t-",
+      "style": "Normal"
+    },
+    {
+      "index": 562,
+      "text": "작업시기\t수시",
+      "style": "Normal"
+    },
+    {
+      "index": 563,
+      "text": "후속업무\t자체공모사업선정결과(91042)",
+      "style": "Normal"
+    },
+    {
+      "index": 567,
+      "text": "① 조회 조건 입력하고 [조회] 버튼을 클릭합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 568,
+      "text": "② 조회된 자체공모사업 정보에서 자체사업을 선택합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 569,
+      "text": "③ [상세] 버튼을 클릭하고 상세조회 화면으로 이동할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 570,
+      "text": "④ [신규] 버튼을 클릭하여 자체공모사업 등록 화면으로 이동할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 573,
+      "text": "사업정보",
+      "style": "Body Text"
+    },
+    {
+      "index": 576,
+      "text": "① 사업정보 탭을 선택합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 577,
+      "text": "② 회계연도를 선택합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 578,
+      "text": "③ 대상사업을 선택합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 579,
+      "text": "전년도사업연계여부 ‘연계’ 선택시 회계연도의 전연도 사업목록이 보여짐.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 580,
+      "text": "상위 사업이 있을 경우 상위 사업 정보가 상위대상사업목록에 표시됨.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 581,
+      "text": "④,⑤,⑥,⑦,⑧,⑨ 항목은 보조사업에 등록된 기본정보를 표기하며 필요시 수정하도록 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 582,
+      "text": "⑩ 지정사업에 보조금 지원 가능 금액을 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 583,
+      "text": "보조사업지원보조금금액 : 총 지원금액",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 584,
+      "text": "보조금금액 : 광역/기초 자치단체 지원금액",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 585,
+      "text": "※ 사업지원금액은 대상사업의 보조사업정보에 등록된 예산집행계획에 [30702]민간경상사업보조, [40202]민간자본사업보조 항목의 금액이 있어야 하며 해당 금액이 총사업비 입력의 최대 가능 금 액입니다.",
+      "style": "Heading 4"
+    },
+    {
+      "index": 588,
+      "text": "기본정보",
+      "style": "Body Text"
+    },
+    {
+      "index": 590,
+      "text": "① 기본정보 탭을 선택합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 591,
+      "text": "② 공모사업명을 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 592,
+      "text": "③ 자체공모사업의 공모기간의 시작일자와 종료일자를 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 593,
+      "text": "④ 자체공모사업의 공모게시일자를 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 594,
+      "text": "⑤ 자체공모사업의 담당자가 사용자와 다를 경우 [사용자 조회] 파업을 통해 사용자를 선택하여 변경할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 597,
+      "text": "선정정보",
+      "style": "Body Text"
+    },
+    {
+      "index": 601,
+      "text": "① 선정정보 탭을 선택합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 602,
+      "text": "② 선정기준안내 정보를 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 603,
+      "text": "③ 자체공모사업에 지원하는 공공민간보조사업의 제외대상 기준 정보를 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 604,
+      "text": "④ 자체공모사업의 선정결과에 대한 공공민간보조사업자 통보 방법에 대한 안내를 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 605,
+      "text": "⑤ 자체공모사업의 공모와 선정까지의 추진철자에 대한 안내 정보를 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 608,
+      "text": "⑥ 자체공모사업의 공공민간 보조사업자 선정일자를 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 609,
+      "text": "⑦ 자체공모사업의 공공민간 보조사업자 선정 후 선정 결과 통보 일자를 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 610,
+      "text": "⑨ 자체공모사업에 선정된 공공민간보조사업자를 추가하기 위해 [행추가] 버튼을 클릭합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 611,
+      "text": "- 선정된 공공민간 보조사업자가 다수일 경우 아래 ⑨, ⑩ 반복",
+      "style": "Body Text"
+    },
+    {
+      "index": 612,
+      "text": "⑨ 기관단체기업조회의 조회조건을 입력하고 조회버튼을 클릭합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 613,
+      "text": "⑩ 선정된 공곰민간보조사업자를 선택하고 [적용] 버튼을 클릭합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 617,
+      "text": "신청정보",
+      "style": "Body Text"
+    },
+    {
+      "index": 619,
+      "text": "① 신청정보 탭을 선택합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 620,
+      "text": "② 비예치형사업신청가능여부를 선택합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 621,
+      "text": "③ 보조금최대신청가능금액을 입력합니다.(원단위).",
+      "style": "Body Text"
+    },
+    {
+      "index": 622,
+      "text": "공공민간 보조사업자 사업정도 등록시 해당 금액이 0보단 큰 경우만 검증함",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 623,
+      "text": "④ 자부담최소신청가능금액을 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 624,
+      "text": "공공민간 보조사업자 사업정도 등록시 해당 금액이 0보단 큰 경우만 검증함",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 625,
+      "text": "⑤ 자체공모사업의 접수 시작일자와 종료일자, 접수종료 시간을 선택 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 626,
+      "text": "⑥ 자체공모사업에 대한 민간공공 보조사업자 신청 접수 방법을 선택합니다,",
+      "style": "Body Text"
+    },
+    {
+      "index": 627,
+      "text": "⑦ 공모사업에 대한 신청자 유의 사항을 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 628,
+      "text": "⑧ 공모사업에 대한 문의에 대한 안내처와 설명을 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 632,
+      "text": "제출서류",
+      "style": "Body Text"
+    },
+    {
+      "index": 634,
+      "text": "① 제출정보 탭을 선택합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 635,
+      "text": "② 필수인 사업계획서의 [파일추가] 버튼을 클릭합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 636,
+      "text": "사업계획서는 필수이며 관련 양식 파일을 등록한다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 637,
+      "text": "③ [행추가] 버튼을 클릭합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 638,
+      "text": "상위보조사업자는 필요한 경우 사업계획서외에 추가 서류를 요청할 수 있으며 이에 대한 양식을 등록할 때 사용함.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 639,
+      "text": "④,⑤,⑥ 제출서류의 필수여부를 선택하고 제출서류명을 입력, 해당 제출서류의 양식 파일을 추가합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 640,
+      "text": "⑦ [저장] 버튼을 클릭하여 저장합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 644,
+      "text": "(화면: 자체공모사업등록 지정사업확정)",
+      "style": "Body Text"
+    },
+    {
+      "index": 645,
+      "text": "상위보조사업자가 저장된 지정사업에 대해 온나라 연계기안 신청 후 기안 승인이 완료되면 확정등록을 통해 지정사업을 확정 등록",
+      "style": "Body Text"
+    },
+    {
+      "index": 646,
+      "text": "① 자체공모사업관리 메뉴에서 확정 등록할 자체공모사업을 선택하고 상세 화면으로 이동합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 647,
+      "text": "② 등록된 자체공모사업정보를 수정하고 [저장] 버튼을 클릭합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 648,
+      "text": "③ 확정 등록 전에 삭제하고자 하는 경우 [삭제] 버튼 클릭하여 삭제할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 649,
+      "text": "④ 자체공모사업을 확정등록하고자 할 경우 [확정] 버튼을 클릭하여 확정 등록할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 650,
+      "text": "선정정보에 등록된 공공민간보조사업자에 대한 공모선정 등록.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 651,
+      "text": "⑤ 저장된 자체공모사업의 정보와 유사한 사업을 등록하고자 하는 경우 [공모복제] 버튼을 클릭하여 자 체공모사업 정보를 복사 등록할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 658,
+      "text": "자체공모사업선정결과",
+      "style": "Heading 2"
+    },
+    {
+      "index": 659,
+      "text": "화면위치\t지방보조금 → 보조사업선정→ 자체사업관리 → 자체공모사업선정결과",
+      "style": "Body Text"
+    },
+    {
+      "index": 660,
+      "text": "선행업무\t자체공모사업등록(91034)",
+      "style": "Normal"
+    },
+    {
+      "index": 661,
+      "text": "작업시기\t자체공모사업등록 업무 이후",
+      "style": "Normal"
+    },
+    {
+      "index": 662,
+      "text": "후속업무",
+      "style": "Heading 3"
+    },
+    {
+      "index": 666,
+      "text": "① 선정대상 자체공모사업목록을 조회하기 위한 검색조건을 입력 후 조회 버튼을 클릭합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 667,
+      "text": "사업연도: 필수선택 사항이며, 공모의 사업연도이다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 668,
+      "text": "대상사업명: 로그인한 담당자에 해당하는 사업목록이 조회되며 선택하여 검색할 수 있다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 669,
+      "text": "진행상태: 공고확정, 최종확정 세가지 상태에 대해 검색 가능하다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 670,
+      "text": "공모명: 대상 공모명을 입력 후 조회 할 수 있다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 671,
+      "text": "② 선정대상 자체공모사업공고의 공고명, 지방보조사업명, 진행상태를 확인할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 672,
+      "text": "③ 확정 버튼 클릭시 기관자체공모사업선정관리상세 화면으로 이동합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 678,
+      "text": "① 선정대상공모의 상위지방보조사업명, 대상사업명(지방보조사업명), 공모명이 표시되며, 공모명을 클릭 하면 해당 공모의 상세정보를 확인할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 679,
+      "text": "공모명: 클릭 → 공모상세정보화면 연결",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 680,
+      "text": "② 선정대상 기관(단체) 정보 목록이 표시됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 681,
+      "text": "③ 최종확정일시는 최종확정시에 등록된 이후부터 표시됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 682,
+      "text": "④ 최종확정: 해당 기관(단체)이 신청한 사업이 수행사업으로 결정됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 685,
+      "text": "공모신청 관리",
+      "style": "Heading 1"
+    },
+    {
+      "index": 689,
+      "text": "민간보조사업공모현황",
+      "style": "Heading 2"
+    },
+    {
+      "index": 690,
+      "text": "화면위치\t지방보조금 → 공모신청관리 → 공모현황관리 → 민간보조사업공모현황",
+      "style": "Body Text"
+    },
+    {
+      "index": 691,
+      "text": "선행업무\t상위 보조사업자 공모사업등록 후 공모확정",
+      "style": "Normal"
+    },
+    {
+      "index": 692,
+      "text": "작업시기\t공모가 등록되고 공고확정, 접수진행이며 접수기간내인 경우",
+      "style": "Body Text"
+    },
+    {
+      "index": 695,
+      "text": "후속업무",
+      "style": "Heading 3"
+    },
+    {
+      "index": 696,
+      "text": "수정필요시 My보조사업신청현황에서 접수상태 전까지 수정가능합니다. 선정이 된 경우 민간보조사업등록합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 702,
+      "text": "① 검색 조건을 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 703,
+      "text": "사업년도 선택",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 704,
+      "text": "공모기관 선택 :전체/법인사업자/개인사업자/지방자치단체/내국인(개인)/외국인(개인) 선택, 필요 시 선택한 공모기관의 기관명 입력",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 705,
+      "text": "기간 선택 : 전체/공모기간/접수기간 중 선택, 시작날짜와 종료날짜 선택",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 706,
+      "text": "접수신청 가능한 목록보기 : 진행상태가 공고확정/접수진행중이고 접수기간내인 목록 보여준다",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 707,
+      "text": "공모명 : 공모명 입력한다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 710,
+      "text": "② [초기화] 버튼을 클릭해 검색조건 초기화할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 711,
+      "text": "[조회] 버튼을 클릭해 입력한 조회 조건에 해당하는 자료 조회할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 712,
+      "text": "③ [조회] 버튼을 클릭해 입력한 조회 조건에 해당하는 자료 조회된 목록을 확인 가능합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 713,
+      "text": "④ [신청] 버튼을 클릭해 선택한 공모를 신청할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 714,
+      "text": "진행상태가 공고확정/접수진행중이고 접수기간내이니 경우에만 신청 가능",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 719,
+      "text": "My보조사업신청현황",
+      "style": "Heading 2"
+    },
+    {
+      "index": 720,
+      "text": "화면위치\t지방보조금 → 공모신청관리 → 공모현황관리 → My보조사업신청현황",
+      "style": "Body Text"
+    },
+    {
+      "index": 721,
+      "text": "선행업무\t[민간보조사업공모현황] 메뉴에서 공모신청",
+      "style": "Normal"
+    },
+    {
+      "index": 722,
+      "text": "작업시기\t공모신청 수정 및 공모신청서 상세내용 확인",
+      "style": "Normal"
+    },
+    {
+      "index": 723,
+      "text": "후속업무",
+      "style": "Heading 3"
+    },
+    {
+      "index": 727,
+      "text": "① 검색조건 - 사업연도, 최종체줄일자, 신청상태(전체/작성중/제출완료), 접수상태(전체/접수대기중/보 완요청/접수/접수제외), 공모명, 신청사업명로 조회할수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 728,
+      "text": "② [초기화] 버튼을 클릭하여 검색조건을 초기화할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 729,
+      "text": "[조회] 버튼을 클릭하여 검색조건에 맞는 보조사업신청현황을 조회할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 730,
+      "text": "③ 보조사업신청현황목록을 확인합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 731,
+      "text": "④ [회수] 버튼을 클릭하면 작성하던 신청서 또는 제출완료한 신청서를 회수할 수 있습니다. 다만, 접수 완료 이후의 단계가 되었을시에는 회수할 수 없습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 732,
+      "text": "⑤ [공모명]을 클릭하면 공모상세에 대한 내용을 볼 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 733,
+      "text": "⑥ [상세/수정] 버튼 클릭 시 접수기간내인 경우 공모신청서를 수정할수 있는 [공모신청서작성 - 수행 기관등록 작성/기본신청서등록/상세신청정보등록/세부추진계획등록/재원조달계획/예상집행계획등록/",
+      "style": "Body Text"
+    },
+    {
+      "index": 736,
+      "text": "자격요건확인/제출서류등록/공모사업신청서제출] 화면이 보여집니다. 접수시간이 마감되었을 경우에 는 조회만 할 수 있는 공모신청서 화면이 보여집니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 737,
+      "text": "⑦ [삭제]를 클릭해 공모신청서를 삭제할 수 있습니다.. 제출완료상태에서는 삭제가 되지 않습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 738,
+      "text": "⑧ 상위 보조사업담당자가 접수할 때 [보완요청]/[접수제외]를 한 경우 [사유] 버튼이 표시되며 그 사유 에 대하여 팝업으로 보여줍니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 742,
+      "text": "① 공모상세정보를 확인 가능합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 745,
+      "text": "사업정보 관리",
+      "style": "Heading 1"
+    },
+    {
+      "index": 749,
+      "text": "보조사업정보등록",
+      "style": "Heading 2"
+    },
+    {
+      "index": 750,
+      "text": "화면위치\t지방보조금 → 사업계획정보 → 사업정보관리 → 보조사업계획서관리",
+      "style": "Body Text"
+    },
+    {
+      "index": 751,
+      "text": "선행업무",
+      "style": "Heading 3"
+    },
+    {
+      "index": 754,
+      "text": "작업시기",
+      "style": "Normal"
+    },
+    {
+      "index": 755,
+      "text": "지차체 공모담당자 또는 민간보조사업담당자(n차 공모인 경우)가 공모선정을 완료 (사업선정여부를 통보 받은 이후)",
+      "style": "Body Text"
+    },
+    {
+      "index": 757,
+      "text": "후속업무\t수행사업정보 등록(탭)",
+      "style": "Normal"
+    },
+    {
+      "index": 761,
+      "text": "① 민간보조사업등록을 위한 대상목록을 조회하기 위한 검색조건입니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 762,
+      "text": "사업연도: 필수선택 사항이며, 공모의 사업연도이다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 763,
+      "text": "진행상태: 미제출은 작성중인 상태, 제출은 정보를 작성 후 제출한 상태를 말하며 접수는 제출된 사업정보내역에 대해 담당자가 검토하기 위해 접수처리를 한 상태이다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 764,
+      "text": "수행중 포함: 사업정보를 등록 후 검토 승인 받은 경우 수행중인 상태가 되는데 이 경우 진행상 태에 포함되지 않으므로 조회되지 않는다. 수행중인 상태의 건을 조회하고자 하는 경우 체크 후 조 회 버튼을 클릭한다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 765,
+      "text": "② 수행사업명, 기관/단체, 사업기간, 진행상태 등의 정보가 표시되는 목록을 확인 가능합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 766,
+      "text": "③ [등록] 버튼을 클릭하면 대상 수행건에 대한 세부내역을 등록하는 화면으로 이동합니다..",
+      "style": "Body Text"
+    },
+    {
+      "index": 767,
+      "text": "④ [조회] 표시된 버튼을 클릭하면 담당자 검토의견(사유확인팝업)을 조회할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 770,
+      "text": "⑤ 수행사업정보가 제출된 상태에서 수정해야 할 내용이 있는 경우 해당 건을 체크 후 [회수] 처리를 할 수 있습니다. 단, 진행상태는 제출 상태에서만 가능합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 771,
+      "text": "(화면 : 검토의견 – 사유확인창)",
+      "style": "Body Text"
+    },
+    {
+      "index": 774,
+      "text": "(화면 : 회수 처리 시 메시지)",
+      "style": "Body Text"
+    },
+    {
+      "index": 781,
+      "text": "① 대상 수행사업에 대한 사업연도와 수행사업명입니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 782,
+      "text": "② 민간보조사업정보를 등록하는 대상 기관(단체) 목록입니다..",
+      "style": "Body Text"
+    },
+    {
+      "index": 783,
+      "text": "③ 컨소시엄 기관(단체)를 추가로 입력하는 경우 클릭해서 진행하도록 합니다. 이는 하단 상세정보를 초기화 하며 정보를 입력할 수 있는 상태가 됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 784,
+      "text": "④ 추가한 컨소시엄 기관(단체)를 삭제할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 785,
+      "text": "⑤ 수행기관(단체)의 기본정보를 조회/입력/수정할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 786,
+      "text": "기관(단체) 검색 팝업을 이용하여 기관을 선택할 수 있다.(주사업자 제외)",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 787,
+      "text": "주소 검색팝업을 이용할 수 있다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 788,
+      "text": "⑥ 기관(단체) 검색시 미리 등록되어 있는 직원수와 회원수가 입력되며 수정 가능합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 791,
+      "text": "⑦ 기관(단체) 검색시 등록된 정보가 표시됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 792,
+      "text": "⑧ 기관(단체) 담당자 검색 팝업을 통해 담당자를 선택할 수 있습니다. 단, 상단에서 선택한 기관(단체) 에 속한 담당자만 선택 가능합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 793,
+      "text": "⑨ 설립목적, 주요사업, 연혁 등의 정보를 입력합니다. 추가로 기구표가 있을 경우 파일을 추가/삭제 및 다운로드 할수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 794,
+      "text": "ⓐ 사업수행을 위한 금액을 교부받기 위한 자부담금계좌를 등록합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 795,
+      "text": "은행명: 자부담금계좌 가능 은행목록이 표시되며 그중에서 선택한다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 796,
+      "text": "계좌번호를 입력한다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 797,
+      "text": "계좌실명확인유형을 선택한다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 798,
+      "text": "계좌실명확인 버튼을 클릭하면 계좌의 실명확인 여부를 조회하여 결과를 표시해준다.(정상 또는 확인불가)",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 799,
+      "text": "ⓑ 기관(단체)정보를 모두 입력하였으면 저장 버튼을 클릭합니다. 만약, 입력 중에 기존 정보를 조회하 고 다시 등록하고 싶으면 초기화를 클릭합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 804,
+      "text": "(화면 : 기관(단체) 검색창)",
+      "style": "Body Text"
+    },
+    {
+      "index": 808,
+      "text": "(화면 : 주소 검색창)",
+      "style": "Body Text"
+    },
+    {
+      "index": 811,
+      "text": "(화면 : 담당자 검색창)",
+      "style": "Body Text"
+    },
+    {
+      "index": 819,
+      "text": "① 대상 수행사업에 대한 사업연도와 수행사업명입니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 820,
+      "text": "② 수행기관 탭에서 등록한 대상 기관(단체) 정보가 표시됩니다.(조회)",
+      "style": "Body Text"
+    },
+    {
+      "index": 821,
+      "text": "③ 입력 부분으로 최근 5년간 사업이력과 신청현황으로 구성되어 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 822,
+      "text": "최근 5년간 사업이력: 연도, 교부기관, 사업명, 신청액, 지원액 항목은 필수 등록항목으로 한 항 목이라도 입력하는 경우 해당 항목을 비워놓으면 안된다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 823,
+      "text": "신청현황: 사업명, 기간, 목적 등의 사업개요와 사업비내용을 입력한다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 824,
+      "text": "④ 사업비의 경우 보조금과 자부담 금액을 입력하면 합계는 자동 산출됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 825,
+      "text": "⑤ ④번의 보조금입력시 최대신청가능금액과 자부담금 최소신청금액을 표시합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 826,
+      "text": "⑥ 작성한 지원신청서를 PDF 로 저장하는 버튼이며 옵션 설정창이 실행됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 827,
+      "text": "⑦ [저장] 클릭시 수행사업의 기본신청내역(개요, 사업비 등)이 저장됩니다. 추가로 재원조달계획도 기본 신청서의 보조금, 자부담금과 동일하게 자동 저장됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 830,
+      "text": "(화면 : PDF 저장 옵션창)",
+      "style": "Body Text"
+    },
+    {
+      "index": 835,
+      "text": "① 특정지역인 경우 해당 사업시행지역을 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 836,
+      "text": "② 전국이나 해당사항 없음인 경우 입력할 수 없는 상태가 됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 837,
+      "text": "③ 보조사업 자산정보(자산액, 부채액)을 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 838,
+      "text": "④ 수입내용이 있는 경우 해당 내용과 금액을 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 839,
+      "text": "⑤ 보조사업을 수행함으로써 생기는 기대효과를 기재합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 840,
+      "text": "⑥ 지원근거와 그에 따른 내용을 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 841,
+      "text": "⑦ 지방보조금 이외 경비에 대한 부담내용 입력항목입니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 842,
+      "text": "⑧ 보조금표지판 대상인 경우 종류를 선택할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 843,
+      "text": "⑨ [저장] 클릭시 입력한 정보를 저장합니다. 저장하기전에 [초기화] 버튼을 클릭하면 입력했던 데이터 가 원복되니 주의해서 사용합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 844,
+      "text": "(화면 : 사업시행지역 구분 변경 메시지)",
+      "style": "Body Text"
+    },
+    {
+      "index": 850,
+      "text": "① 수행기관에서 등록한 기관(단체) 목록입니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 851,
+      "text": "② 기관(단체)별 세부사업내용을 추가하여 입력할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 852,
+      "text": "- 사업명, 추진계획, 시작/종료일, 사업예산",
+      "style": "Body Text"
+    },
+    {
+      "index": 853,
+      "text": "③ [저장] 클릭 시 입력한 세부추진계획 정보를 저장합니다. 저장하기전에 [초기화] 버튼을 클릭하면 입 력했던 데이터가 원복되니 주의해서 사용합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 856,
+      "text": "① 기본신청서에서 등록한 보조금이며 최대신청가능금액 이하로 신청할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 857,
+      "text": "② 기본신청서에서 등록한 자부담금이며 최소신청가능금액 이상으로 입력됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 858,
+      "text": "③ 비율(%)은 기본신청서에서 입력되진 않으나 금액에 따라 계산되어 표시됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 859,
+      "text": "④ 기본신청서 등록내용과 동일하다는 안내문구입니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 861,
+      "text": "① 수행기관에서 등록한 기관(단체) 목록입니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 862,
+      "text": "② 기관(단체)별 지분율에 따른 재원 현황이 각각 표시됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 863,
+      "text": "③ 예산집행계획을 입력하는 부분으로 보조세목(비세목), 보조금, 수익자부담금(자부담), 근거 및 전용카 드사용계획금액을 입력합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 866,
+      "text": "④ 비세목을 먼저 선택한 후 [행추가] 버튼을 클릭하면 항목을 추가할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 867,
+      "text": "⑤ 보조세목(비세목)은 중복해서 입력할 수 없습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 868,
+      "text": "⑥ [저장] 클릭시 입력한 세부추진계획 정보를 저장합니다. 저장하기전에 [초기화] 버튼을 클릭하면 입력했던 데이터가 원복되니 주의해서 사용합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 869,
+      "text": "(화면 : 비세목 중복 메시지)",
+      "style": "Body Text"
+    },
+    {
+      "index": 875,
+      "text": "① 제공되는 양식이 있는 경우 ‘다운로드’ 가 표시됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 876,
+      "text": "② 사용자가 첨부한 파일의 명칭이 표시됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 877,
+      "text": "- 첨부파일크기 단위는 Kbyte이다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 878,
+      "text": "③ 첨부한 파일을 삭제하는 버튼입니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 879,
+      "text": "④ 파일을 변경해서 첨부하는 경우 사용합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 880,
+      "text": "⑤ 첨부파일 작업이 완료되면 반드시 [서류제출완료] 버튼을 클릭하도록 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 884,
+      "text": "① 개인정보수집, 제3자 제공, 금융정보 활용 등 필수 동의 내역에 대한 동의를 체크합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 885,
+      "text": "② 활용 동의에 대한 상세내용을 조회할 수 있는 팝업창이 실행됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 886,
+      "text": "③ 해당 지방보조사업의 정보(사업명, 기관, 담당자 등)가 표시됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 887,
+      "text": "④ 계속사업인 경우 대상을 체크하고 계속사업구분 및 사업명을 선택할 수 있습니다. 계속사업여부 대 상인 경우 사업명은 필수입니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 888,
+      "text": "- 계속사업여부를 선택하면 사업명을 조회할 수 있는 검색버튼이 나타난다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 889,
+      "text": "⑤ 이전 탭에서 입력 후 저장을 완료했는지의 여부가 표시됩니다. 한가지라도 항목이 미완료이면 [제 출]을 할 수 없습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 890,
+      "text": "⑥ [제출] 클릭시 작성한 수행사업정보가 제출되며 검토자(담당자)가 확인하고 접수/검토할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 891,
+      "text": "(화면 : 계속사업대상인 경우 사업검색창)",
+      "style": "Body Text"
+    },
+    {
+      "index": 896,
+      "text": "보조사업정보 검토",
+      "style": "Heading 1"
+    },
+    {
+      "index": 900,
+      "text": "1. 보조사업정보검토",
+      "style": "Heading 2"
+    },
+    {
+      "index": 901,
+      "text": "화면위치\t지방보조금 → 민간사업정보 → 사업정보관리 → 사업계획검토등록",
+      "style": "Body Text"
+    },
+    {
+      "index": 902,
+      "text": "선행업무",
+      "style": "Heading 3"
+    },
+    {
+      "index": 903,
+      "text": "작업시기\t민간보조사업담당자의 수행사업정보 제출 이후",
+      "style": "Normal"
+    },
+    {
+      "index": 904,
+      "text": "후속업무",
+      "style": "Heading 3"
+    },
+    {
+      "index": 908,
+      "text": "① 민간보조사업담당자가 제출한 수행사업정보목록을 조회하기 위한 검색조건 및 조회 버튼입니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 909,
+      "text": "사업연도: 필수선택 사항이며, 공모의 사업연도이다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 910,
+      "text": "대상사업명: 해당하는 공모 목록이 조회되며 선택하여 검색할 수 있다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 911,
+      "text": "② 공모명, 수행사업명, 예산, 기간 등이 표시되며 [접수] 이전에는 검토를 진행할 수 없는 상태입니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 912,
+      "text": "③ 접수를 진행할 건을 체크하고 [접수] 버튼을 클릭하면 알림메시지 후 접수상태로 변경됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 913,
+      "text": "④ 진행상태가 접수상태인 경우 [검토]가 활성화됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 915,
+      "text": "(화면 : 접수시 상태 확인 메시지)",
+      "style": "Body Text"
+    },
+    {
+      "index": 919,
+      "text": "(화면 : 접수완료 메시지)",
+      "style": "Body Text"
+    },
+    {
+      "index": 923,
+      "text": "① 민간보조사업담당자가 제출한 기관(단체)정보에 대해 조회/검토한 이후 승인 또는 반려를 선택합니 다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 924,
+      "text": "검토의견: 검토의견을 입력하면 제출자가 확인할 수 있다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 925,
+      "text": "② [저장] 버튼을 클릭하면 검토결과 및 검토의견이 저장되며 승인인 경우 수행중으로 진행상태가 변경 됩니다. 반려인 경우 제출자는 다시 작성 후 제출해야 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 926,
+      "text": "검토결과를 등록(저장)하면 수정할 수 없으니 유의",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 931,
+      "text": "① 민간보조사업담당자가 제출한 기본신청서 정보에 대해 조회/검토한 이후 승인 또는 반려를 선택합니 다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 932,
+      "text": "검토의견: 검토의견을 입력하면 제출자가 확인할 수 있다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 933,
+      "text": "② [저장] 버튼을 클릭하면 검토결과 및 검토의견이 저장되며 승인인 경우 수행중으로 진행상태가 변경 됩니다. 반려인 경우 제출자는 다시 작성 후 제출해야 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 934,
+      "text": "검토결과를 등록(저장)하면 수정할 수 없으니 유의",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 939,
+      "text": "① 민간보조사업담당자가 제출한 상세신청내역에 대해 조회/검토한 이후 승인 또는 반려를 선택합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 940,
+      "text": "검토의견: 검토의견을 입력하면 제출자가 확인할 수 있다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 941,
+      "text": "② [저장] 버튼을 클릭하면 검토결과 및 검토의견이 저장되며 승인인 경우 수행중으로 진행상태가 변경 됩니다. 반려인 경우 제출자는 다시 작성 후 제출해야 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 942,
+      "text": "검토결과를 등록(저장)하면 수정할 수 없으니 유의",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 947,
+      "text": "① 민간보조사업담당자가 제출한 세부추진계획내역에 대해 조회/검토한 이후 승인 또는 반려를 선택합 니다",
+      "style": "Body Text"
+    },
+    {
+      "index": 948,
+      "text": "검토의견: 검토의견을 입력하면 제출자는 [보조사업계획서관리] 메뉴에서 검토의견을 확인할 수 있습니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 949,
+      "text": "② [저장] 버튼을 클릭하면 검토결과 및 검토의견이 저장되며 승인인 경우 수행중으로 진행상태가 변경 됩니다. 반려인 경우 제출자는 다시 작성 후 제출해야 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 950,
+      "text": "검토결과를 등록(저장)하면 수정할 수 없으니 유의하십시오.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 955,
+      "text": "① 민간보조사업담당자가 제출한 세부추진계획내역에 대해 조회/검토한 이후 승인 또는 반려를 선택합 니다",
+      "style": "Body Text"
+    },
+    {
+      "index": 956,
+      "text": "검토의견: 검토의견을 입력하면 제출자는 [보조사업계획서관리] 메뉴에서 검토의견을 확인할 수 있습니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 957,
+      "text": "② [저장] 버튼을 클릭하면 검토결과 및 검토의견이 저장되며 승인인 경우 수행중으로 진행상태가 변경 됩니다. 반려인 경우 제출자는 다시 작성 후 제출해야 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 958,
+      "text": "검토결과를 등록(저장)하면 수정할 수 없으니 유의",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 963,
+      "text": "① 민간보조사업담당자가 제출한 세부추진계획내역에 대해 조회/검토한 이후 승인 또는 반려를 선택합 니다",
+      "style": "Body Text"
+    },
+    {
+      "index": 964,
+      "text": "검토의견: 검토의견을 입력하면 제출자는 [보조사업계획서관리] 메뉴에서 검토의견을 확인할 수 있습니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 965,
+      "text": "② [저장] 버튼을 클릭하면 검토결과 및 검토의견이 저장되며 승인인 경우 수행중으로 진행상태가 변경 됩니다. 반려인 경우 제출자는 다시 작성 후 제출해야 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 966,
+      "text": "검토결과를 등록(저장)하면 수정할 수 없으니 유의하여 입력하십시오.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 971,
+      "text": "① 민간보조사업담당자가 제출한 세부추진계획내역에 대해 조회/검토한 이후 승인 또는 반려를 선택합 니다",
+      "style": "Body Text"
+    },
+    {
+      "index": 972,
+      "text": "검토의견: 검토의견을 입력하면 제출자는 [보조사업계획서관리] 메뉴에서 검토의견을 확인할 수 있습니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 973,
+      "text": "② [저장] 버튼을 클릭하면 검토결과 및 검토의견이 저장되며 승인인 경우 수행중으로 진행상태가 변경 됩니다. 반려인 경우 제출자는 다시 작성 후 제출해야 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 974,
+      "text": "검토결과를 등록(저장)하면 수정할 수 없으니 유의하십시오.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 979,
+      "text": "① 대상 지방보조사업명, 교부기관이 조회됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 980,
+      "text": "② 공모명입니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 981,
+      "text": "③ 수행사업명, 기간, 사업예산 정보입니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 982,
+      "text": "④ 제출완료탭에서 입력한 계속사업 관련정보가 출력됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 983,
+      "text": "⑤ 민간보조사업담당자가 제출한 내역에 대한 요약정보를 조회/검토한 이후 승인 또는 반려를 선택합니 다",
+      "style": "Body Text"
+    },
+    {
+      "index": 984,
+      "text": "검토의견: 검토의견을 입력하면 제출자가 확인할 수 있습니다..",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 985,
+      "text": "⑥ [저장] 버튼을 클릭하면 검토결과 및 검토의견이 저장되며 승인인 경우 수행중으로 진행상태가 변경됩니다. 반려인 경우 제출자는 다시 작성 후 제출해야 합니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 986,
+      "text": "검토결과를 등록(저장)하면 수정할 수 없으니 유의하십시오.",
+      "style": "List Paragraph"
+    }
+  ],
+  "tables": [],
+  "full_text": "보조금포털 사용방법 (보조사업 선정)\nG 행정안전부\t!!;1(1_10 만국지역정보개발언\n보조사업선정 방법\n공모사업 관리\n공모신청 업무처리 흐름도\t\t1\n공모사업등록(91032) \t2\n공모사업신청접수(91037)  10\n공모사업선정심사(91038)  22\n공모사업선정결과(91040)  26\n지정사업관리\n지정사업등록(91033)  25\n성질별코드관리(91041)  35\n자체사업관리\n자체공모사업등록(91034)  37\n자체공모사업선정결과(91042)  44\n공모사업신청관리\n민간보조사업공모현황(91035)  46\nMy보조사업정보등록(91036)  48\n사업정보관리\n보조사업정보등록(91043)  50\n사엄정보검토\n보조사업정보검토(91044)  61\n공모사업 관리\n1. 공모사업등록\n화면위치\t지방보조금 → 보조사업선정 → 공모사업관리 → 공모사업등록 \t선행업무\t-\n작업시기\t수시\n후속업무\t공모사업등록\n① “회계년도”, “대상사업명”, “공모명”, “기간”, “보조사업선정진행상태”의 조회조건을 입력합니다.\n② [조회] 버튼을 클릭하여 입력한 조회조건에 해당하는 공모사업 목록을 조회합니다.\n③ 조회된 목록을 선택 후 [상세] 버튼을 클릭하거나, [공모명]을 클릭하여 공모사업을 조회할 수 있습니다.\n① [신규] 버튼을 클릭하여 공모사업 등록 화면으로 이동합니다.\n① 사업정보 Tab을 선택한 후 내용을 작성합니다.\n회계연도 선택.\n전년도사업연계여부 선택.\n공모사업을 진행할 대상 사업을 선택.\n관리사업에 기본 등록된 “사업개요”, “사업목적”, “지원내용”, “기대효과“, ”사업기간“을 확인하고 수정 가능.\n보조사업지원예산금액을 확인하고 보조사업지원금액을 입력\n※ 사업지원금액은 대상사업의 보조사업정보에 등록된 예산집행계획에 [30702]민간경상사업보조, [40202]민간자본사업보조 항목의 금액이 있어야 하며 해당 금액이 총사업비 입력의 최대 가능 금 액입니다.\n① 기본정보 Tab을 선택한 후 내용을 작성합니다.\n② 기본정보를 작성합니다.\n공모명\n공모기간\n공모게시일\n③ 담당자 정보를 작성합니다.\n등록하는 보조사업 담당자 이외 담당자로 변경하고자 할 경우 조회 버튼을 클릭하고 사용자정보 를 조회하여 선택 변경 가능\n① 선정정보 Tab을 선택한 후 내용을 작성합니다.\n② 공모사업의 민간보조사업자 선정과 관련된 선정정보를 입력합니다.\n선정수, 선정기준안내, 제외대상, 결과통보방법, 공모사업 추진절차, 선정일자, 통보일자\n① 신청정보 Tab을 선택한 후 내용을 작성합니다.\n② 신청정보를 입력 합니다.\n보조금의 비예치형 신청가능 여부\n▸ 비예치형사업신청가능여부를 불가능으로 할 경우 보조사업자는 비예치형으로 선택할 수 없음.\n하위 민간보조사업자 신청시 입력 가능한 최대 사업비\n자부담 최소 금액\n▸ 자부담최소신청가능금액을 입력할 경우 민간보조사업자는 공모사업 신청 시 자부담금액을 자 부담최소신청가능금액 이상을 입력해야 합니다.\n※ 비예치형이란?\n보조사업의 보조금은 기본적으로 상위사업자의 계좌에서 교부 신청한 금액내에서 집행 요청시 마다 지급하는 것을 예치형이라 하며 이와 상반되게 교부 신청시 신청한 보조금액을 상위 사업자의 관리 계좌에서 하위 사업자의 자부담 계좌로 교부 신청 승인 후 일괄 지급되는 형태를 말합니다.\n③ 접수정보를 입력합니다.\n접수기간, 접수종료시각, 유의사항, 문의 안내관련 입력\n④ 보조사업안내서류내역목록에 안내서류를 추가합니다.\n[행추가] 버튼 클릭하여 행을 추가한 후 [파일추가]를 클릭하여 안내서류 파일 추가\n⑤ 상세신청정보목록을 확인할 수 있습니다.\n⑥ 신청정보간소화 여부를 선택할 수 있습니다.\n하위 민간보조사업자의 공모사업 신청시 신청서 간소화를 통해 필수적인 내용만으로 신청할 수 있는 기능입니다.\n신청정보간소화를 미사용으로 선택할 경우 민간보조사업자는 사업정보등록 시 입력하는 세부추진 계획, 재원조달계획, 예산집행계획 등을 모두 입력해야 합니다.\n① 자격검증 Tab을 선택한 후 내용을 작성합니다.\n② 자격검증 및 중복수급불가사업 검증여부를 선택합니다.\n반드시 온라인자격검증, 오프라인자격검증 중 선택 필수\n중복수급불가사업검증여부는 필요한 경우만 선택\n③ 온라인자격검증, 오프라인자격 검증 선택 후 [행추가] 추가 버튼 클릭\n온라인자격검증\n▸ 온라인자격검증항목선택 팝업 창을 통해 자격검증기관 선택 후 조회. 기관별 자격검증정보목록 중 대상을 [선택] 버튼 클릭\n오프라인자격검증\n▸ 필수여부 선택하고 검증항목을 입력, 연산자를 선택하고 기준값을 입력. “설명 및 비고” 항목에 해당 설명을 간략하게 입력.\n④ 중복수급불가사업정보를 추가합니다.\n[행추가] 버튼 클릭\n중복수급불가사업선택 팝업에서 [조회] 버튼 클릭하여 사업목록 조회\n중복수급불가사업 선택하고 [선택] 버튼 클릭하여 추가\n① 제출서류 Tab을 선택한 후 내용을 작성합니다.\n② [파일추가] 버튼을 클릭하고 등록한 서류 양식 파일을 등록합니다.\n③ [행추가] 버튼을 클릭합니다.\n추가할 제출 서류가 있을 경우 추가하며 행 추가후 필수여부, 제출서류명을 입력하고 [파일추가] 버튼을 클릭하여 양식 파일을 등록\n④ 임시저장 기능을 사용할 수 있습니다.\n공모사업 사업 등록 중간에 임시 저장하는 기능입니다.\n⑤ [저장] 버튼을 클릭하고 공모사업 등록 정보를 저장합니다.\n저장 후 공모사업등록 메뉴에서 등록한 공모사업을 클릭하여 상세화면으로 이동 후 하단의 [ 모 사업연계기안] 버튼을 클릭하여 연계기안 승인 요청을 작성합니다.\n연계기안 승인 후 [공모확정] 버튼을 클릭하여 공모사업 최종 확정 등록합니다.\n공모사업신청접수\n화면위치\t지방보조금 → 보조사업선정 → 공모사업관리 → 공모사업신청접수 \t선행업무\t공모확정 → 하위 보조사업자 공모 신청\n작업시기\t하위 보조사업자가 공모신청서를 신청받은 후 \t후속업무\t공모심사\n① 조회하고 싶은 검색조건을 입력합니다.\n사업연도, 대상사업명, 진행상태(전체/공고확정/접수진행중/접수완료), 공모명으로 조회 가능.\n② [초기화] 버튼을 클릭해 검색조건을 초기화 하고 [조회] 버튼을 클릭하여 검색조건에 맞는 공모를 조회합니다.\n③ 공고확정/접수진행중/접수완료 등 검색 조건에 맞는 공모를 확인합니다.\n전체신청건수 : 해당 공모에 민간기관(단체)에서 신청한 전체 건수\n접수결과\n▸ 접수대기중 : 아직 접수가 이루어지지 않은 상태인 건수\n▸ 보완요청 : 신청한 민간(단체) 중 보완요청 상태인 건수\n▸ 접수 : 신청한 민간(단체) 중에서 접수가 된 건수\n▸ 접수제외 : 신청한 민간(단체) 중에서 접수가 거절된 건수\n④ 목록에서 접수완료 상태로 만들 공모대상 선택 후 [접수완료] 버튼 클릭 시 접수완료여부 확인 창을 확인할 수 있습니다. 접수건수가 없으면 먼저 ⑦[접수목록] 버튼을 클릭해 민간단체의 모든 신청서 를 접수한 후 [접수완료] 버튼을 클릭해 진행할 수 있습니다.\n⑤ [접수완료취소] 버튼을 클릭하면 접수완료 상태를 취소하고 접수대기중 상태로 수정됩니다.\n⑥ [접수완료]가 된 공모에 대해 [심사요청] 버튼을 클릭 시 심사요청 상태로 변경되고 공모사업선정심 사메뉴에서 심사를 진행할수 있습니다.\n⑦ [접수목록] 버튼을 클릭해 공모신청서 목록을 보여주는 화면으로 이동할 수 있습니다.\n3. 공모사업신청접수(공모신청자관리목록)\n화면위치\t지방보조금 → 보조사업선정 → 공모사업관리 → 공모사업신청접수 → 접수목록 클릭\n선행업무\t공모확정 → 하위 보조사업자가 공모 신청\n작업시기\t하위 보조사업자로부터 공모신청서를 신청받은후 접수\n후속업무\t공모사업신청접수 메뉴에서 접수완료 → 심사요청\n① 기관단체구분, 수행배제대상여부, 접수결과, 검색조건 등을 입력합니다.\n② [초기화] 버튼을 클릭하여 검색조건을 초기할 수 있습니다.\n[조회] 버튼을 클릭하여 검색조건에 맞는 공모신청목록을 조회합니다.\n③ 지방보조금 → 보조사업선정 → 공모사업관리 → 공모사업신청접수인 이전 메뉴로 이동하는 버튼입 니다.\n④ 입력한 검색조건에 맞는 공모신청 목록을 확인 가능합니다.\n⑤ [접수]을 클릭하면 공모신청서 내용이 들어 있는 접수진행 화면으로 이동합니다.\n⑥ [상세내역]버튼으로 해당 민간(단체)에서 신청한 공모신청서 내용에 대해 조회가 가능합니다.\n공모사업신청접수(공모신청상세 – 수행기관)\n화면위치\n지방보조금 → 보조사업선정 → 공모사업관리 → 공모사업신청접수 → 공모신청자관리목록 → 상세화면(탭) - 수행기관\n선행업무\t공모확정 → 민간보조사업자가 공모신청서 신청\n작업시기\t하위 보조사업자로부터 공모신청서를 신청받은후 접수\n후속업무\t공모사업신청접수 메뉴에서 접수완료 → 심사요청\n① 수행기관탭에서 내용을 확인합니다.\n② 모든 탭을 확인한 후 담당자메모를 작성합니다.\n③ 이전목록인 공모신청자관리목록으로 이동하는 버튼입니다. 수행기관부터 수행배제여부 까지의 모든 탭에서 내용을 확인 후 [저장]버튼을 클릭하고 이전목록으로 이동하도록 합니다.\n④ 접수결과등록 내용을 [저장] 버튼을 클릭하여 저장합니다.\n① 기본신청서 내용을 확인합니다.\n② 모든 탭을 확인한 후 담당자메모를 작성합니다.\n③ 이전목록인 공모신청자관리목록으로 이동하는 버튼입니다. 수행기관부터 수행배제여부 까지의 모든 탭에서 내용을 확인 후 [저장]버튼을 클릭하고 이전목록으로 이동하도록 합니다.\n④ 접수결과등록 내용을 [저장] 버튼을 클릭하여 저장합니다.\n① 상세신청정보 내용을 확인합니다.\n② 모든 탭을 확인한 후 담당자메모를 작성합니다.\n③ 이전목록인 공모신청자관리목록으로 이동하는 버튼입니다. 수행기관부터 수행배제여부 까지의 모든 탭에서 내용을 확인 후 [저장]버튼을 클릭하고 이전목록으로 이동하도록 합니다.\n④ 접수결과등록 내용을 [저장] 버튼을 클릭하여 저장합니다.\n① 세부추진계획 내용을 확인합니다.\n② 모든 탭을 확인한 후 담당자메모를 작성합니다.\n③ 이전목록인 공모신청자관리목록으로 이동하는 버튼입니다. 수행기관부터 수행배제여부 까지의 모든 탭에서 내용을 확인 후 [저장]버튼을 클릭하고 이전목록으로 이동하도록 합니다.\n④ 접수결과등록 내용을 [저장] 버튼을 클릭하여 저장합니다.\n① 재원조달계획 내용을 확인합니다.\n② 모든 탭을 확인한 후 담당자메모를 작성합니다.\n③ 이전목록인 공모신청자관리목록으로 이동하는 버튼입니다. 수행기관부터 수행배제여부 까지의 모든 탭에서 내용을 확인 후 [저장]버튼을 클릭하고 이전목록으로 이동하도록 합니다.\n④ 접수결과등록 내용을 [저장] 버튼을 클릭하여 저장합니다.\n① 예산집행계획 내용을 확인합니다.\n② 모든 탭을 확인한 후 담당자메모를 작성합니다.\n③ 이전목록인 공모신청자관리목록으로 이동하는 버튼입니다. 수행기관부터 수행배제여부 까지의 모든 탭에서 내용을 확인 후 [저장]버튼을 클릭하고 이전목록으로 이동하도록 합니다.\n④ 접수결과등록 내용을 [저장] 버튼을 클릭하여 저장합니다.\n① 자격요건 내용을 확인합니다.\n② 모든 탭을 확인한 후 담당자메모를 작성합니다.\n③ 이전목록인 공모신청자관리목록으로 이동하는 버튼입니다. 수행기관부터 수행배제여부 까지의 모든 탭에서 내용을 확인 후 [저장]버튼을 클릭하고 이전목록으로 이동하도록 합니다.\n④ 접수결과등록 내용을 [저장] 버튼을 클릭하여 저장합니다.\n① 제출서류 내용을 확인합니다.\n② 담당자메모를 작성합니다.\n③ 이전목록인 공모신청자관리목록으로 이동할 수 있습니다.\n④ [저장] 버튼을 클릭하여 접수결과등록 내용을 저장합니다.\n① 수행배제여부 내용을 확인합니다. 다른 탭에 대한 내용도 확인되었으면 접수대기중/보완요청/접수/접수제외 중 접수결과를 선택합니다.\n② 담당자메모를 작성합니다.\n③ [저장]버튼을 클릭하고 이전목록으로 이동하도록 합니다.\n④ [저장] 버튼을 클릭하여 접수결과등록 내용을 저장합니다.\n공모사업선정심사\n화면위치\t지방보조금 → 보조사업선정 → 공모사업관리 → 공모사업선정심사\n선행업무\t심사요청\n작업시기\t심사요청 받은후\n후속업무\t심의요청 또는 선정요청\n① 검색조건에서 필요한 내용 사업연도, 대상사업명, 심사완료상태, 공모명을 입력합니다.\n② [초기화] 버튼을 클릭하여 검색조건을 초기화 할 수 있습니다.\n[조회] 버튼을 클릭하여 검색조건에 맞는 심사목록 결과를 조회합니다.\n③ 검색조건에 맞는 심사를 처리할 공모 목록을 확인합니다.\n④ [심사완료] 버튼입니다. 목록에서 각 공모는 [심사대상목록] 화면으로 이동하여 심사 진행 후 체크박 스에서 공모를 선택하고 [심사완료]버튼을 클릭하여 심사완료 처리할 수 있습니다.\n⑤ [심사완료취소] 버튼을 클릭하여 심사완료를 취소할 수 있습니다.\n⑥ [심의요청] 버튼을 클릭하여 심의를 진행할 수 있습니다.\n⑦ [선정요청] 버튼을 클릭하여 선정을 진행할 수 있습니다.\n⑧ [심사대상목록] 버튼을 클릭하여 공모심사대상목록 메뉴로 이동하고 심사를 진행할 수 있습니다.\n① 검색조건으로 필요한 내용 심사결과상태, 공모명을 입력합니다.\n② [초기화] 버튼을 클릭하여 검색조건을 초기화할 수 있습니다.\n[조회] 버튼을 클릭하여 검색조건에 맞는 심사목록 결과를 조회합니다.\n③ 검색조건에 맞는 심사를 처리할 공모신청목록을 확인합니다.\n④ [상세내역] 버튼을 클릭하여 공모신청상세내용을 볼 수 있습니다.\n⑤ [심사] 버튼을 클릭하여 공모신청심사 상세화면으로 이동하여 심사를 진행할 수 있습니다.\n① 각 탭의 내용을 확인 후 자격검증결과 탭에서 자격검증에 대한 내용을 입력 합니다. 자격검증 종합검토결과 중 적합/부적합을 선택하고 담당자 메모를 작성해 저장합니다.\n② [저장] 버튼을 클릭하여 자격검증 종합검토 결과를 저장할 수 있습니다.\n③ 심사결과를 선택할 수 있습니다.\n- 심사결과( 선정대상/선정제외 )를 선택한다.\n④ 담당자 메모 칸으로 검토의견을 입력할 수 있습니다.\n⑤ [이전목록] 버튼을 클릭하여 이전 화면인 [공모심사대상관리목록]으로 이동할 수 있습니다.\n⑥ [저장] 버튼을 클릭하여 심사결과를 등록할 수 있습니다.\n공모사업선정결과\n화면위치\t지방보조금 → 보조사업선정 → 공모사업관리 → 공모사업선정결과\n선행업무\t공모사업선정심사(91038) 또는 공모사업선정심의(91039)\n작업시기\t등록한 공모의 신청접수건에 대한 심사 이후 신청사업을 선정하고자 할 경우\n후속업무\n① 공모사업선정을 위한 대상 공모목록을 조회하기 위해 검색조건을 입력합니다.\n사업연도: 필수선택 사항이며, 공모의 사업연도이다.\n대상사업명: 로그인한 담당자의 권한에 해당하는 사업목록이 조회되며 선택하여 검색할 수 있다.\n진행상태: 선정요청, 선정완료, 선정기안진행중, 최종확정 상태를 조회할 수 있다.\n공모명: 검색하고자 하는 공모명을 조건으로 조회하고자 하는 경우 입력한다.\n② 리셋버튼(왼쪽)으로 검색조건을 초기화 할 수 있습니다.\n③ 공모명, 대상사업명, 진행상태, 신청수, 선정수 등의 상태정보를 확인할 수 있는 목록입니다.\n신청건수: 해당 공모에 신청한 업체(단체)가 있는 경우 그 건수가 표시된다.\n선정수: 최종 선정이 완료된 업체(단체)의 건수가 표시된다.\n④ [선정] 버튼을 클릭하면 공모사업선정처리를 할 수 있는 상세화면으로 이동합니다.\n① 선정대상공모의 상위지방보조사업명, 지방보조사업명, 공모명입니다. 공모명 클릭 시 해당 공모의 상 세정보를 확인할 수 있습니다.\n공모명: 클릭 → 공모상세정보화면 연결\n② 선정대상 기관(단체) 정보 목록입니다.\n③ 선정완료시 담당자가 메모할 사항을 기재하는 부분입니다.\n④ [선정완료] 버튼을 클릭해해 ②번의 최종선정 목록에서 체크된 기관(단체)를 선정할 수 있습니다.\n⑤ 선정완료시 선정완료일시가 나타나며 최종확정일시는 최종확정시에 등록됩니다.\n지정사업 관리\n지정사업등록\n화면위치\t지방보조금 → 보조사업선정→ 지정사업관리 → 지정사업등록\n선행업무\t-\n작업시기\t수시\n후속업무\t지정사업선정결과(91041)\n① 회계연도 등의 조회조건을 입력합니다.\n② [조회] 버튼을 클릭하여 입력한 조건에 해당하는 지정사업 자료를 조회합니다.\n③ 조회된 지정사업 자료에서 상세 조회하고자 하는 행을 선택합니다.\n④ [상세] 버튼을 클릭하여 지정사업 상세 정보로 이동할 수 있습니다.\n⑤ [신규] 버튼을 클릭하여 지정사업 생성 화면으로 이동할 수 있습니다.\n① 사업정보 탭을 선택합니다.\n② 회계연도를 선택합니다.\n③ 대상사업을 선택합니다.\n전년도사업연계여부 ‘연계’ 선택시 회계연도의 전연도 사업목록이 보여짐.\n상위 사업이 있을 경우 상위 사업 정보가 상위대상사업목록에 표시됨.\n④,⑤,⑥,⑦,⑧ 항목은 보조사업에 등록된 기본정보를 표기하며 필요시 수정하도록 합니다.\n⑨ 지정사업에 보조금 지원 가능 금액을 입력합니다.\n보조사업지원보조금금액 : 총 지원금액\n보조금지원금액 : 광역 자치단체/시군구\t보조금지원 합계금액\n※ 사업지원금액은 대상사업의 보조사업정보에 등록된 예산집행계획에 [30702]민간경상사업보조, [40202]민간자본사업보조 항목의 금액이 있어야 하며 해당 금액이 총사업비 입력의 최대 가능 금 액입니다.\n① 기본정보 탭을 선택합니다.\n② 공모사업명을 입력합니다.\n③ 지정사업 담당자를 변경하고자 하는 경우 담당자정보의 [돋보기] 버튼을 클릭하여 지정사업담당자를 변경할 수 있습니다.\n① 선정정보 탭을 선택합니다.\n② [행추가] 버튼을 클릭합니다.\n기관단체기업조회 팝업을 통해 공공민간 단체를 조회하고 선택하여 추가\n③ 기관단체기업조회 팝업의 조회조건 입력하고 [조회] 버튼 클릭합니다.\n④ 기관/단체목록에서 추가하고자 하는 기관/단체를 선택합니다.\n⑤ [적용] 버튼을 클릭하면 이전 화면의 선정기관내역목록에 추가됩니다.\n① 신청정보 탭을 선택합니다.\n② 비예치형사업신청가능여부를 선택합니다.\n예치형 : 보조사업의 보조금을 하위 사업자에게 교부 신청시 지급하는 것이 아니고 자치단체 보조금 관리 계좌에서 집행등록하여 이체 요청시에 지급하는 거래형.\n비예치형 : 보조사업의 보조금을 하위 사업자가 교부 신청시 교부 승인 후 바로 하위 사업자 자부담 계좌로 교부 신청 금액을 이체 지급하는 거래형.\n③ 보조금최대신청가능금액을 입력(원단위)합니다.\n하위 보조사업자가 사업정보 등록시 해당 금액이 0보단 큰 경우만 검증합니다.\n④ 자부담최소신청가능금액을 입력합니다.\n하위 보조사업자가 사업정보 등록시 해당 금액이 0보단 큰 경우만 검증합니다.\n① 제출정보 탭을 선택합니다.\n② 필수인 사업계획서의 [파일추가] 버튼을 클릭합니다.\n사업계획서는 필수이며 관련 양식 파일을 등록한다.\n③ [행추가] 버튼을 클릭합니다.\n상위보조사업자는 필요한 경우 사업계획서외에 추가 서류를 요청할 수 있으며 이에 대한 양식을 등록할 때 사용함.\n④,⑤,⑥ 제출서류의 필수 여부를 선택하고 제출서류명을 입력, 해당 제출서류의 양식 파일을 추가합니 다.\n⑦ [저장] 버튼을 클릭하여 저장합니다.\n(화면: 지정사업확정)\n① 지정사업관리 메뉴에서 확정 등록할 지정사업을 선택하여 상세 화면으로 이동합니다.\n② 등록된 지정사업정보를 수정하고 [저장] 버튼 클릭합니다.\n③ 수정할 내용이 없으면 [확정] 버튼 클릭합니다.\n선정정보에 등록된 보조사업자로 선정 완료 등록됩니다.\n④ 확정 등록 전에 삭제하고자 하는 경우 [삭제] 버튼 클릭하여 삭제할 수 있습니다.\n⑤ 저장된 지정사업의 정보와 유사한 지정사업을 등록하고자 하는 경우 [공모복제] 버튼을 클릭하여 지 정사업 복사 등록할 수 있습니다.\n지정사업선정결과\n화면위치\t지방보조금 → 보조사업선정→ 지정사업관리 → 지정사업선정결과\n선행업무\t지정사업등록(91033)\n작업시기\t지정사업등록 업무 이후\n후속업무\n① 선정대상 지정사업목록을 조회하기 위한 검색조건을 입력하고 [조회]버튼을 클릭합니다.\n사업연도: 필수선택 사항이며, 공모의 사업연도이다.\n대상사업명: 로그인한 담당자의 권한에 해당하는 사업목록이 조회되며 선택하여 검색할 수 있다.\n진행상태: 공고확정, 선정기안진행중, 최종확정 세가지 상태에 대해 검색 가능\n공모명: 대상 공모명을 입력 후 조회 가능\n② 선정대상 지정사업공고의 공고명, 지방보조사업명, 진행상태 및 기안/결재여부 등의 내용을 확인합 니다.\n③ 확정 버튼 클릭시 지정사업관리상세 화면으로 이동합니다.\n① 선정대상공모의 상위지방보조사업명, 대상사업명(공모명)이 표시되며, 대상사업명을 클릭하면 해당 공모의 상세정보를 확인할 수 있습니다.\n공모명 : 클릭 → 공모상세정보화면 연결\n② 선정대상 기관(단체) 정보 목록을 확인할 수 있습니다.\n최종확정이 된 경우 해당목록은 조회만 가능한 상태가 된다.\n③ 최종확정일시는 최종확정시에 등록되고 표시됩니다.\n④ 최종확정 : 결재가 완료된 경우 활성화 되며, 해당 기관(단체)이 신청한 사업이 수행사업으로 결정 됩니다.\n자체사업 관리\n자체공모사업등록\n화면위치\t지방보조금 → 보조사업선정→ 자체공모사업관리 → 자체공모사업등록\n선행업무\t-\n작업시기\t수시\n후속업무\t자체공모사업선정결과(91042)\n① 조회 조건 입력하고 [조회] 버튼을 클릭합니다.\n② 조회된 자체공모사업 정보에서 자체사업을 선택합니다.\n③ [상세] 버튼을 클릭하고 상세조회 화면으로 이동할 수 있습니다.\n④ [신규] 버튼을 클릭하여 자체공모사업 등록 화면으로 이동할 수 있습니다.\n사업정보\n① 사업정보 탭을 선택합니다.\n② 회계연도를 선택합니다.\n③ 대상사업을 선택합니다.\n전년도사업연계여부 ‘연계’ 선택시 회계연도의 전연도 사업목록이 보여짐.\n상위 사업이 있을 경우 상위 사업 정보가 상위대상사업목록에 표시됨.\n④,⑤,⑥,⑦,⑧,⑨ 항목은 보조사업에 등록된 기본정보를 표기하며 필요시 수정하도록 합니다.\n⑩ 지정사업에 보조금 지원 가능 금액을 입력합니다.\n보조사업지원보조금금액 : 총 지원금액\n보조금금액 : 광역/기초 자치단체 지원금액\n※ 사업지원금액은 대상사업의 보조사업정보에 등록된 예산집행계획에 [30702]민간경상사업보조, [40202]민간자본사업보조 항목의 금액이 있어야 하며 해당 금액이 총사업비 입력의 최대 가능 금 액입니다.\n기본정보\n① 기본정보 탭을 선택합니다.\n② 공모사업명을 입력합니다.\n③ 자체공모사업의 공모기간의 시작일자와 종료일자를 입력합니다.\n④ 자체공모사업의 공모게시일자를 입력합니다.\n⑤ 자체공모사업의 담당자가 사용자와 다를 경우 [사용자 조회] 파업을 통해 사용자를 선택하여 변경할 수 있습니다.\n선정정보\n① 선정정보 탭을 선택합니다.\n② 선정기준안내 정보를 입력합니다.\n③ 자체공모사업에 지원하는 공공민간보조사업의 제외대상 기준 정보를 입력합니다.\n④ 자체공모사업의 선정결과에 대한 공공민간보조사업자 통보 방법에 대한 안내를 입력합니다.\n⑤ 자체공모사업의 공모와 선정까지의 추진철자에 대한 안내 정보를 입력합니다.\n⑥ 자체공모사업의 공공민간 보조사업자 선정일자를 입력합니다.\n⑦ 자체공모사업의 공공민간 보조사업자 선정 후 선정 결과 통보 일자를 입력합니다.\n⑨ 자체공모사업에 선정된 공공민간보조사업자를 추가하기 위해 [행추가] 버튼을 클릭합니다.\n- 선정된 공공민간 보조사업자가 다수일 경우 아래 ⑨, ⑩ 반복\n⑨ 기관단체기업조회의 조회조건을 입력하고 조회버튼을 클릭합니다.\n⑩ 선정된 공곰민간보조사업자를 선택하고 [적용] 버튼을 클릭합니다.\n신청정보\n① 신청정보 탭을 선택합니다.\n② 비예치형사업신청가능여부를 선택합니다.\n③ 보조금최대신청가능금액을 입력합니다.(원단위).\n공공민간 보조사업자 사업정도 등록시 해당 금액이 0보단 큰 경우만 검증함\n④ 자부담최소신청가능금액을 입력합니다.\n공공민간 보조사업자 사업정도 등록시 해당 금액이 0보단 큰 경우만 검증함\n⑤ 자체공모사업의 접수 시작일자와 종료일자, 접수종료 시간을 선택 입력합니다.\n⑥ 자체공모사업에 대한 민간공공 보조사업자 신청 접수 방법을 선택합니다,\n⑦ 공모사업에 대한 신청자 유의 사항을 입력합니다.\n⑧ 공모사업에 대한 문의에 대한 안내처와 설명을 입력합니다.\n제출서류\n① 제출정보 탭을 선택합니다.\n② 필수인 사업계획서의 [파일추가] 버튼을 클릭합니다.\n사업계획서는 필수이며 관련 양식 파일을 등록한다.\n③ [행추가] 버튼을 클릭합니다.\n상위보조사업자는 필요한 경우 사업계획서외에 추가 서류를 요청할 수 있으며 이에 대한 양식을 등록할 때 사용함.\n④,⑤,⑥ 제출서류의 필수여부를 선택하고 제출서류명을 입력, 해당 제출서류의 양식 파일을 추가합니다.\n⑦ [저장] 버튼을 클릭하여 저장합니다.\n(화면: 자체공모사업등록 지정사업확정)\n상위보조사업자가 저장된 지정사업에 대해 온나라 연계기안 신청 후 기안 승인이 완료되면 확정등록을 통해 지정사업을 확정 등록\n① 자체공모사업관리 메뉴에서 확정 등록할 자체공모사업을 선택하고 상세 화면으로 이동합니다.\n② 등록된 자체공모사업정보를 수정하고 [저장] 버튼을 클릭합니다.\n③ 확정 등록 전에 삭제하고자 하는 경우 [삭제] 버튼 클릭하여 삭제할 수 있습니다.\n④ 자체공모사업을 확정등록하고자 할 경우 [확정] 버튼을 클릭하여 확정 등록할 수 있습니다.\n선정정보에 등록된 공공민간보조사업자에 대한 공모선정 등록.\n⑤ 저장된 자체공모사업의 정보와 유사한 사업을 등록하고자 하는 경우 [공모복제] 버튼을 클릭하여 자 체공모사업 정보를 복사 등록할 수 있습니다.\n자체공모사업선정결과\n화면위치\t지방보조금 → 보조사업선정→ 자체사업관리 → 자체공모사업선정결과\n선행업무\t자체공모사업등록(91034)\n작업시기\t자체공모사업등록 업무 이후\n후속업무\n① 선정대상 자체공모사업목록을 조회하기 위한 검색조건을 입력 후 조회 버튼을 클릭합니다.\n사업연도: 필수선택 사항이며, 공모의 사업연도이다.\n대상사업명: 로그인한 담당자에 해당하는 사업목록이 조회되며 선택하여 검색할 수 있다.\n진행상태: 공고확정, 최종확정 세가지 상태에 대해 검색 가능하다.\n공모명: 대상 공모명을 입력 후 조회 할 수 있다.\n② 선정대상 자체공모사업공고의 공고명, 지방보조사업명, 진행상태를 확인할 수 있습니다.\n③ 확정 버튼 클릭시 기관자체공모사업선정관리상세 화면으로 이동합니다.\n① 선정대상공모의 상위지방보조사업명, 대상사업명(지방보조사업명), 공모명이 표시되며, 공모명을 클릭 하면 해당 공모의 상세정보를 확인할 수 있습니다.\n공모명: 클릭 → 공모상세정보화면 연결\n② 선정대상 기관(단체) 정보 목록이 표시됩니다.\n③ 최종확정일시는 최종확정시에 등록된 이후부터 표시됩니다.\n④ 최종확정: 해당 기관(단체)이 신청한 사업이 수행사업으로 결정됩니다.\n공모신청 관리\n민간보조사업공모현황\n화면위치\t지방보조금 → 공모신청관리 → 공모현황관리 → 민간보조사업공모현황\n선행업무\t상위 보조사업자 공모사업등록 후 공모확정\n작업시기\t공모가 등록되고 공고확정, 접수진행이며 접수기간내인 경우\n후속업무\n수정필요시 My보조사업신청현황에서 접수상태 전까지 수정가능합니다. 선정이 된 경우 민간보조사업등록합니다.\n① 검색 조건을 입력합니다.\n사업년도 선택\n공모기관 선택 :전체/법인사업자/개인사업자/지방자치단체/내국인(개인)/외국인(개인) 선택, 필요 시 선택한 공모기관의 기관명 입력\n기간 선택 : 전체/공모기간/접수기간 중 선택, 시작날짜와 종료날짜 선택\n접수신청 가능한 목록보기 : 진행상태가 공고확정/접수진행중이고 접수기간내인 목록 보여준다\n공모명 : 공모명 입력한다.\n② [초기화] 버튼을 클릭해 검색조건 초기화할 수 있습니다.\n[조회] 버튼을 클릭해 입력한 조회 조건에 해당하는 자료 조회할 수 있습니다.\n③ [조회] 버튼을 클릭해 입력한 조회 조건에 해당하는 자료 조회된 목록을 확인 가능합니다.\n④ [신청] 버튼을 클릭해 선택한 공모를 신청할 수 있습니다.\n진행상태가 공고확정/접수진행중이고 접수기간내이니 경우에만 신청 가능\nMy보조사업신청현황\n화면위치\t지방보조금 → 공모신청관리 → 공모현황관리 → My보조사업신청현황\n선행업무\t[민간보조사업공모현황] 메뉴에서 공모신청\n작업시기\t공모신청 수정 및 공모신청서 상세내용 확인\n후속업무\n① 검색조건 - 사업연도, 최종체줄일자, 신청상태(전체/작성중/제출완료), 접수상태(전체/접수대기중/보 완요청/접수/접수제외), 공모명, 신청사업명로 조회할수 있습니다.\n② [초기화] 버튼을 클릭하여 검색조건을 초기화할 수 있습니다.\n[조회] 버튼을 클릭하여 검색조건에 맞는 보조사업신청현황을 조회할 수 있습니다.\n③ 보조사업신청현황목록을 확인합니다.\n④ [회수] 버튼을 클릭하면 작성하던 신청서 또는 제출완료한 신청서를 회수할 수 있습니다. 다만, 접수 완료 이후의 단계가 되었을시에는 회수할 수 없습니다.\n⑤ [공모명]을 클릭하면 공모상세에 대한 내용을 볼 수 있습니다.\n⑥ [상세/수정] 버튼 클릭 시 접수기간내인 경우 공모신청서를 수정할수 있는 [공모신청서작성 - 수행 기관등록 작성/기본신청서등록/상세신청정보등록/세부추진계획등록/재원조달계획/예상집행계획등록/\n자격요건확인/제출서류등록/공모사업신청서제출] 화면이 보여집니다. 접수시간이 마감되었을 경우에 는 조회만 할 수 있는 공모신청서 화면이 보여집니다.\n⑦ [삭제]를 클릭해 공모신청서를 삭제할 수 있습니다.. 제출완료상태에서는 삭제가 되지 않습니다.\n⑧ 상위 보조사업담당자가 접수할 때 [보완요청]/[접수제외]를 한 경우 [사유] 버튼이 표시되며 그 사유 에 대하여 팝업으로 보여줍니다.\n① 공모상세정보를 확인 가능합니다.\n사업정보 관리\n보조사업정보등록\n화면위치\t지방보조금 → 사업계획정보 → 사업정보관리 → 보조사업계획서관리\n선행업무\n작업시기\n지차체 공모담당자 또는 민간보조사업담당자(n차 공모인 경우)가 공모선정을 완료 (사업선정여부를 통보 받은 이후)\n후속업무\t수행사업정보 등록(탭)\n① 민간보조사업등록을 위한 대상목록을 조회하기 위한 검색조건입니다.\n사업연도: 필수선택 사항이며, 공모의 사업연도이다.\n진행상태: 미제출은 작성중인 상태, 제출은 정보를 작성 후 제출한 상태를 말하며 접수는 제출된 사업정보내역에 대해 담당자가 검토하기 위해 접수처리를 한 상태이다.\n수행중 포함: 사업정보를 등록 후 검토 승인 받은 경우 수행중인 상태가 되는데 이 경우 진행상 태에 포함되지 않으므로 조회되지 않는다. 수행중인 상태의 건을 조회하고자 하는 경우 체크 후 조 회 버튼을 클릭한다.\n② 수행사업명, 기관/단체, 사업기간, 진행상태 등의 정보가 표시되는 목록을 확인 가능합니다.\n③ [등록] 버튼을 클릭하면 대상 수행건에 대한 세부내역을 등록하는 화면으로 이동합니다..\n④ [조회] 표시된 버튼을 클릭하면 담당자 검토의견(사유확인팝업)을 조회할 수 있습니다.\n⑤ 수행사업정보가 제출된 상태에서 수정해야 할 내용이 있는 경우 해당 건을 체크 후 [회수] 처리를 할 수 있습니다. 단, 진행상태는 제출 상태에서만 가능합니다.\n(화면 : 검토의견 – 사유확인창)\n(화면 : 회수 처리 시 메시지)\n① 대상 수행사업에 대한 사업연도와 수행사업명입니다.\n② 민간보조사업정보를 등록하는 대상 기관(단체) 목록입니다..\n③ 컨소시엄 기관(단체)를 추가로 입력하는 경우 클릭해서 진행하도록 합니다. 이는 하단 상세정보를 초기화 하며 정보를 입력할 수 있는 상태가 됩니다.\n④ 추가한 컨소시엄 기관(단체)를 삭제할 수 있습니다.\n⑤ 수행기관(단체)의 기본정보를 조회/입력/수정할 수 있습니다.\n기관(단체) 검색 팝업을 이용하여 기관을 선택할 수 있다.(주사업자 제외)\n주소 검색팝업을 이용할 수 있다.\n⑥ 기관(단체) 검색시 미리 등록되어 있는 직원수와 회원수가 입력되며 수정 가능합니다.\n⑦ 기관(단체) 검색시 등록된 정보가 표시됩니다.\n⑧ 기관(단체) 담당자 검색 팝업을 통해 담당자를 선택할 수 있습니다. 단, 상단에서 선택한 기관(단체) 에 속한 담당자만 선택 가능합니다.\n⑨ 설립목적, 주요사업, 연혁 등의 정보를 입력합니다. 추가로 기구표가 있을 경우 파일을 추가/삭제 및 다운로드 할수 있습니다.\nⓐ 사업수행을 위한 금액을 교부받기 위한 자부담금계좌를 등록합니다.\n은행명: 자부담금계좌 가능 은행목록이 표시되며 그중에서 선택한다.\n계좌번호를 입력한다.\n계좌실명확인유형을 선택한다.\n계좌실명확인 버튼을 클릭하면 계좌의 실명확인 여부를 조회하여 결과를 표시해준다.(정상 또는 확인불가)\nⓑ 기관(단체)정보를 모두 입력하였으면 저장 버튼을 클릭합니다. 만약, 입력 중에 기존 정보를 조회하 고 다시 등록하고 싶으면 초기화를 클릭합니다.\n(화면 : 기관(단체) 검색창)\n(화면 : 주소 검색창)\n(화면 : 담당자 검색창)\n① 대상 수행사업에 대한 사업연도와 수행사업명입니다.\n② 수행기관 탭에서 등록한 대상 기관(단체) 정보가 표시됩니다.(조회)\n③ 입력 부분으로 최근 5년간 사업이력과 신청현황으로 구성되어 있습니다.\n최근 5년간 사업이력: 연도, 교부기관, 사업명, 신청액, 지원액 항목은 필수 등록항목으로 한 항 목이라도 입력하는 경우 해당 항목을 비워놓으면 안된다.\n신청현황: 사업명, 기간, 목적 등의 사업개요와 사업비내용을 입력한다.\n④ 사업비의 경우 보조금과 자부담 금액을 입력하면 합계는 자동 산출됩니다.\n⑤ ④번의 보조금입력시 최대신청가능금액과 자부담금 최소신청금액을 표시합니다.\n⑥ 작성한 지원신청서를 PDF 로 저장하는 버튼이며 옵션 설정창이 실행됩니다.\n⑦ [저장] 클릭시 수행사업의 기본신청내역(개요, 사업비 등)이 저장됩니다. 추가로 재원조달계획도 기본 신청서의 보조금, 자부담금과 동일하게 자동 저장됩니다.\n(화면 : PDF 저장 옵션창)\n① 특정지역인 경우 해당 사업시행지역을 입력합니다.\n② 전국이나 해당사항 없음인 경우 입력할 수 없는 상태가 됩니다.\n③ 보조사업 자산정보(자산액, 부채액)을 입력합니다.\n④ 수입내용이 있는 경우 해당 내용과 금액을 입력합니다.\n⑤ 보조사업을 수행함으로써 생기는 기대효과를 기재합니다.\n⑥ 지원근거와 그에 따른 내용을 입력합니다.\n⑦ 지방보조금 이외 경비에 대한 부담내용 입력항목입니다.\n⑧ 보조금표지판 대상인 경우 종류를 선택할 수 있습니다.\n⑨ [저장] 클릭시 입력한 정보를 저장합니다. 저장하기전에 [초기화] 버튼을 클릭하면 입력했던 데이터 가 원복되니 주의해서 사용합니다.\n(화면 : 사업시행지역 구분 변경 메시지)\n① 수행기관에서 등록한 기관(단체) 목록입니다.\n② 기관(단체)별 세부사업내용을 추가하여 입력할 수 있습니다.\n- 사업명, 추진계획, 시작/종료일, 사업예산\n③ [저장] 클릭 시 입력한 세부추진계획 정보를 저장합니다. 저장하기전에 [초기화] 버튼을 클릭하면 입 력했던 데이터가 원복되니 주의해서 사용합니다.\n① 기본신청서에서 등록한 보조금이며 최대신청가능금액 이하로 신청할 수 있습니다.\n② 기본신청서에서 등록한 자부담금이며 최소신청가능금액 이상으로 입력됩니다.\n③ 비율(%)은 기본신청서에서 입력되진 않으나 금액에 따라 계산되어 표시됩니다.\n④ 기본신청서 등록내용과 동일하다는 안내문구입니다.\n① 수행기관에서 등록한 기관(단체) 목록입니다.\n② 기관(단체)별 지분율에 따른 재원 현황이 각각 표시됩니다.\n③ 예산집행계획을 입력하는 부분으로 보조세목(비세목), 보조금, 수익자부담금(자부담), 근거 및 전용카 드사용계획금액을 입력합니다.\n④ 비세목을 먼저 선택한 후 [행추가] 버튼을 클릭하면 항목을 추가할 수 있습니다.\n⑤ 보조세목(비세목)은 중복해서 입력할 수 없습니다.\n⑥ [저장] 클릭시 입력한 세부추진계획 정보를 저장합니다. 저장하기전에 [초기화] 버튼을 클릭하면 입력했던 데이터가 원복되니 주의해서 사용합니다.\n(화면 : 비세목 중복 메시지)\n① 제공되는 양식이 있는 경우 ‘다운로드’ 가 표시됩니다.\n② 사용자가 첨부한 파일의 명칭이 표시됩니다.\n- 첨부파일크기 단위는 Kbyte이다.\n③ 첨부한 파일을 삭제하는 버튼입니다.\n④ 파일을 변경해서 첨부하는 경우 사용합니다.\n⑤ 첨부파일 작업이 완료되면 반드시 [서류제출완료] 버튼을 클릭하도록 합니다.\n① 개인정보수집, 제3자 제공, 금융정보 활용 등 필수 동의 내역에 대한 동의를 체크합니다.\n② 활용 동의에 대한 상세내용을 조회할 수 있는 팝업창이 실행됩니다.\n③ 해당 지방보조사업의 정보(사업명, 기관, 담당자 등)가 표시됩니다.\n④ 계속사업인 경우 대상을 체크하고 계속사업구분 및 사업명을 선택할 수 있습니다. 계속사업여부 대 상인 경우 사업명은 필수입니다.\n- 계속사업여부를 선택하면 사업명을 조회할 수 있는 검색버튼이 나타난다.\n⑤ 이전 탭에서 입력 후 저장을 완료했는지의 여부가 표시됩니다. 한가지라도 항목이 미완료이면 [제 출]을 할 수 없습니다.\n⑥ [제출] 클릭시 작성한 수행사업정보가 제출되며 검토자(담당자)가 확인하고 접수/검토할 수 있습니다.\n(화면 : 계속사업대상인 경우 사업검색창)\n보조사업정보 검토\n1. 보조사업정보검토\n화면위치\t지방보조금 → 민간사업정보 → 사업정보관리 → 사업계획검토등록\n선행업무\n작업시기\t민간보조사업담당자의 수행사업정보 제출 이후\n후속업무\n① 민간보조사업담당자가 제출한 수행사업정보목록을 조회하기 위한 검색조건 및 조회 버튼입니다.\n사업연도: 필수선택 사항이며, 공모의 사업연도이다.\n대상사업명: 해당하는 공모 목록이 조회되며 선택하여 검색할 수 있다.\n② 공모명, 수행사업명, 예산, 기간 등이 표시되며 [접수] 이전에는 검토를 진행할 수 없는 상태입니다.\n③ 접수를 진행할 건을 체크하고 [접수] 버튼을 클릭하면 알림메시지 후 접수상태로 변경됩니다.\n④ 진행상태가 접수상태인 경우 [검토]가 활성화됩니다.\n(화면 : 접수시 상태 확인 메시지)\n(화면 : 접수완료 메시지)\n① 민간보조사업담당자가 제출한 기관(단체)정보에 대해 조회/검토한 이후 승인 또는 반려를 선택합니 다.\n검토의견: 검토의견을 입력하면 제출자가 확인할 수 있다.\n② [저장] 버튼을 클릭하면 검토결과 및 검토의견이 저장되며 승인인 경우 수행중으로 진행상태가 변경 됩니다. 반려인 경우 제출자는 다시 작성 후 제출해야 합니다.\n검토결과를 등록(저장)하면 수정할 수 없으니 유의\n① 민간보조사업담당자가 제출한 기본신청서 정보에 대해 조회/검토한 이후 승인 또는 반려를 선택합니 다.\n검토의견: 검토의견을 입력하면 제출자가 확인할 수 있다.\n② [저장] 버튼을 클릭하면 검토결과 및 검토의견이 저장되며 승인인 경우 수행중으로 진행상태가 변경 됩니다. 반려인 경우 제출자는 다시 작성 후 제출해야 합니다.\n검토결과를 등록(저장)하면 수정할 수 없으니 유의\n① 민간보조사업담당자가 제출한 상세신청내역에 대해 조회/검토한 이후 승인 또는 반려를 선택합니다.\n검토의견: 검토의견을 입력하면 제출자가 확인할 수 있다.\n② [저장] 버튼을 클릭하면 검토결과 및 검토의견이 저장되며 승인인 경우 수행중으로 진행상태가 변경 됩니다. 반려인 경우 제출자는 다시 작성 후 제출해야 합니다.\n검토결과를 등록(저장)하면 수정할 수 없으니 유의\n① 민간보조사업담당자가 제출한 세부추진계획내역에 대해 조회/검토한 이후 승인 또는 반려를 선택합 니다\n검토의견: 검토의견을 입력하면 제출자는 [보조사업계획서관리] 메뉴에서 검토의견을 확인할 수 있습니다.\n② [저장] 버튼을 클릭하면 검토결과 및 검토의견이 저장되며 승인인 경우 수행중으로 진행상태가 변경 됩니다. 반려인 경우 제출자는 다시 작성 후 제출해야 합니다.\n검토결과를 등록(저장)하면 수정할 수 없으니 유의하십시오.\n① 민간보조사업담당자가 제출한 세부추진계획내역에 대해 조회/검토한 이후 승인 또는 반려를 선택합 니다\n검토의견: 검토의견을 입력하면 제출자는 [보조사업계획서관리] 메뉴에서 검토의견을 확인할 수 있습니다.\n② [저장] 버튼을 클릭하면 검토결과 및 검토의견이 저장되며 승인인 경우 수행중으로 진행상태가 변경 됩니다. 반려인 경우 제출자는 다시 작성 후 제출해야 합니다.\n검토결과를 등록(저장)하면 수정할 수 없으니 유의\n① 민간보조사업담당자가 제출한 세부추진계획내역에 대해 조회/검토한 이후 승인 또는 반려를 선택합 니다\n검토의견: 검토의견을 입력하면 제출자는 [보조사업계획서관리] 메뉴에서 검토의견을 확인할 수 있습니다.\n② [저장] 버튼을 클릭하면 검토결과 및 검토의견이 저장되며 승인인 경우 수행중으로 진행상태가 변경 됩니다. 반려인 경우 제출자는 다시 작성 후 제출해야 합니다.\n검토결과를 등록(저장)하면 수정할 수 없으니 유의하여 입력하십시오.\n① 민간보조사업담당자가 제출한 세부추진계획내역에 대해 조회/검토한 이후 승인 또는 반려를 선택합 니다\n검토의견: 검토의견을 입력하면 제출자는 [보조사업계획서관리] 메뉴에서 검토의견을 확인할 수 있습니다.\n② [저장] 버튼을 클릭하면 검토결과 및 검토의견이 저장되며 승인인 경우 수행중으로 진행상태가 변경 됩니다. 반려인 경우 제출자는 다시 작성 후 제출해야 합니다.\n검토결과를 등록(저장)하면 수정할 수 없으니 유의하십시오.\n① 대상 지방보조사업명, 교부기관이 조회됩니다.\n② 공모명입니다.\n③ 수행사업명, 기간, 사업예산 정보입니다.\n④ 제출완료탭에서 입력한 계속사업 관련정보가 출력됩니다.\n⑤ 민간보조사업담당자가 제출한 내역에 대한 요약정보를 조회/검토한 이후 승인 또는 반려를 선택합니 다\n검토의견: 검토의견을 입력하면 제출자가 확인할 수 있습니다..\n⑥ [저장] 버튼을 클릭하면 검토결과 및 검토의견이 저장되며 승인인 경우 수행중으로 진행상태가 변경됩니다. 반려인 경우 제출자는 다시 작성 후 제출해야 합니다.\n검토결과를 등록(저장)하면 수정할 수 없으니 유의하십시오."
+}

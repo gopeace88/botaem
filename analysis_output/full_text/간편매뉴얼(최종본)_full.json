@@ -1,0 +1,3385 @@
+{
+  "filename": "간편매뉴얼(최종본).docx",
+  "total_chars": 6865,
+  "total_paragraphs": 367,
+  "total_tables": 20,
+  "paragraphs": [
+    {
+      "index": 3,
+      "text": "신규사용자를 위한 보탬e 사용법",
+      "style": "Normal"
+    },
+    {
+      "index": 12,
+      "text": "보탬e는 지방보조사업에 대한 계획부터 사후관리까지 업무처리 전 과정을 정보화",
+      "style": "Heading 6"
+    },
+    {
+      "index": 13,
+      "text": "전자증빙을 활용한 온라인 집행·정산관리 도입 및 예치계좌를 통해",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 14,
+      "text": "보조금 집행 업무의 효율성 강화",
+      "style": "Normal"
+    },
+    {
+      "index": 16,
+      "text": "자격검증, 중복수급 등의 온라인 자격검증의 도입과 부정 모니터링 도입을 통해 이상 징후 예방체계 도입",
+      "style": "Heading 6"
+    },
+    {
+      "index": 17,
+      "text": "지방보조금 운영 전반을 시스템으로 관리하여, 지자체별 보조사업·수급자 정보를 통합 관리하여 보조금 관리 사각지대 해소",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 19,
+      "text": "목차",
+      "style": "Heading 4"
+    },
+    {
+      "index": 23,
+      "text": "목차",
+      "style": "Normal"
+    },
+    {
+      "index": 51,
+      "text": "부록. 보탬e 필수 용어 / 193p",
+      "style": "Body Text"
+    },
+    {
+      "index": 57,
+      "text": "기 본 소 개",
+      "style": "Body Text"
+    },
+    {
+      "index": 61,
+      "text": "지방보조금관리",
+      "style": "Heading 1"
+    },
+    {
+      "index": 62,
+      "text": "시스템(보탬e) 소개",
+      "style": "Normal"
+    },
+    {
+      "index": 64,
+      "text": "개인정보 취급자 개인정보보호 교육",
+      "style": "Heading 4"
+    },
+    {
+      "index": 93,
+      "text": "기 본 소 개",
+      "style": "Body Text"
+    },
+    {
+      "index": 125,
+      "text": "기 본 소 개",
+      "style": "Body Text"
+    },
+    {
+      "index": 127,
+      "text": "여기 QR코드를 촬영하여",
+      "style": "Normal"
+    },
+    {
+      "index": 128,
+      "text": "1\t유튜브 온라인 영상으로도",
+      "style": "Normal"
+    },
+    {
+      "index": 129,
+      "text": "사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 131,
+      "text": "잠깐!",
+      "style": "Normal"
+    },
+    {
+      "index": 132,
+      "text": "보조사업자님! 보탬e을",
+      "style": "Normal"
+    },
+    {
+      "index": 133,
+      "text": "시작하기 전에 보탬e",
+      "style": "Normal"
+    },
+    {
+      "index": 134,
+      "text": "준비사항부터",
+      "style": "Normal"
+    },
+    {
+      "index": 135,
+      "text": "알아볼까요?",
+      "style": "Normal"
+    },
+    {
+      "index": 140,
+      "text": "보탬e 사전 준비사항 절차",
+      "style": "Body Text"
+    },
+    {
+      "index": 141,
+      "text": "신규 사용자들은 보탬e을 사용하기 위해 다음 순서 및 안내에 따라",
+      "style": "Normal"
+    },
+    {
+      "index": 142,
+      "text": "사전 준비사항을 체크합니다.",
+      "style": "Normal"
+    },
+    {
+      "index": 146,
+      "text": "Windows 10 이상",
+      "style": "Normal"
+    },
+    {
+      "index": 147,
+      "text": "운영 체제",
+      "style": "Normal"
+    },
+    {
+      "index": 150,
+      "text": "브라 우저",
+      "style": "Normal"
+    },
+    {
+      "index": 152,
+      "text": "Microsoft Edge 최신",
+      "style": "Normal"
+    },
+    {
+      "index": 153,
+      "text": "Chrome 최신",
+      "style": "Normal"
+    },
+    {
+      "index": 154,
+      "text": "본인 명의 휴대폰",
+      "style": "Normal"
+    },
+    {
+      "index": 155,
+      "text": "본인 인증",
+      "style": "Normal"
+    },
+    {
+      "index": 159,
+      "text": "브라 우저 인증",
+      "style": "Normal"
+    },
+    {
+      "index": 160,
+      "text": "브라우저 인증 설치 프로그램",
+      "style": "Normal"
+    },
+    {
+      "index": 162,
+      "text": "보탬e 사전 준비사항 안내\t기",
+      "style": "Body Text"
+    },
+    {
+      "index": 163,
+      "text": "소",
+      "style": "Body Text"
+    },
+    {
+      "index": 164,
+      "text": "먼저, 보탬e를 사용할 수 있는 Windows 10 이상의 운영 체제 여부를\t개",
+      "style": "Normal"
+    },
+    {
+      "index": 165,
+      "text": "운영\t확인합니다. 확인 방법은 내 PC ≫ 우측 마우스 클릭 ≫ 속성 항목을 클릭하여",
+      "style": "Normal"
+    },
+    {
+      "index": 166,
+      "text": "체제",
+      "style": "Normal"
+    },
+    {
+      "index": 167,
+      "text": "확인할 수 있습니다.",
+      "style": "Normal"
+    },
+    {
+      "index": 170,
+      "text": "보탬e은 프로그램 설치 없이 브라우저를 통해 진행됩니다. 사용자는 아래 버전 확인 방법을 참고하여 최신 버전으로 사용하시기 바랍니다.",
+      "style": "Normal"
+    },
+    {
+      "index": 171,
+      "text": "추가로 보탬e 사용 시, 팝업이 원활하게 조회될 수 있도록 팝업 허용을 추가합니다. 브라우저 버전 확인 및 팝업 허용 방법은 아래와 같습니다.",
+      "style": "Normal"
+    },
+    {
+      "index": 172,
+      "text": "Microsoft Edge 버전 확인 설정 ≫ Microsoft Edge 정보에서 확인",
+      "style": "Normal"
+    },
+    {
+      "index": 173,
+      "text": "브라",
+      "style": "Normal"
+    },
+    {
+      "index": 174,
+      "text": "우저\t팝업 허용 설정 ≫ 인터넷 옵션 ≫ 개인 정보 ≫ 팝업",
+      "style": "Normal"
+    },
+    {
+      "index": 175,
+      "text": "차단 설정 클릭 ≫ www.losims.go.kr 추가",
+      "style": "Normal"
+    },
+    {
+      "index": 176,
+      "text": "Chrome 버전 확인 설정 ≫ 도움말 ≫ Chrome 정보에서 확인 팝업 허용 설정 ≫ 개인정보 및 보안 ≫ 사이트 설정 ≫",
+      "style": "Normal"
+    },
+    {
+      "index": 177,
+      "text": "팝업 및 리디렉션 ≫ 허용 ≫ www.losims.go.kr 추가",
+      "style": "Normal"
+    },
+    {
+      "index": 181,
+      "text": "다음은 보탬e을 사용하기 위해 회원가입 시 본인 인증에 대해 알아보겠습니다.",
+      "style": "Normal"
+    },
+    {
+      "index": 182,
+      "text": "본인\t회원가입 시 필요한 본인 인증은 본인 명의로 된 휴대폰 인증으로 진행할 수 있습니다.",
+      "style": "Normal"
+    },
+    {
+      "index": 184,
+      "text": "보안프로그램 설치 없이 보탬e 시스템 이용 가능, 인증서의 경우",
+      "style": "Normal"
+    },
+    {
+      "index": 185,
+      "text": "브라",
+      "style": "Normal"
+    },
+    {
+      "index": 186,
+      "text": "우저\t1. 하드/이동식 디스크 인증서 사용 시 프로그램 추가 설치",
+      "style": "Normal"
+    },
+    {
+      "index": 187,
+      "text": "인증",
+      "style": "Normal"
+    },
+    {
+      "index": 188,
+      "text": "2. 브라우저 인증서 추가",
+      "style": "Normal"
+    },
+    {
+      "index": 190,
+      "text": "2",
+      "style": "Heading 7"
+    },
+    {
+      "index": 194,
+      "text": "보조사업자님! 보탬e 준비사항은 확인하셨죠?",
+      "style": "Body Text"
+    },
+    {
+      "index": 195,
+      "text": "사업은 신청 방식에 따라 다양한 사업 유형으로 나누어져요! 내가 담당하는 사업이 신청 방식에 따라 어떤 사업 유형에 해당 하는지 반드시 알고 진행해야겠죠?",
+      "style": "Body Text"
+    },
+    {
+      "index": 196,
+      "text": "사업 유형",
+      "style": "Body Text"
+    },
+    {
+      "index": 197,
+      "text": "보조사업의 신청 방식은 공모 방식과 지정 방식으로 나뉩니다. 아래 그림을 참고하여 나의 사업 방식을 확인해 보세요.",
+      "style": "Normal"
+    },
+    {
+      "index": 200,
+      "text": "공모",
+      "style": "Normal"
+    },
+    {
+      "index": 201,
+      "text": "공사모업형",
+      "style": "Normal"
+    },
+    {
+      "index": 202,
+      "text": "지정",
+      "style": "Normal"
+    },
+    {
+      "index": 203,
+      "text": "지사정업형",
+      "style": "Normal"
+    },
+    {
+      "index": 218,
+      "text": "지자체담당자가 해당 사업을 공개하고 참여하고자 하는 사업자의 신청서를 받아 자격검증 후 보조사업자로 선정하는 유형입니다.",
+      "style": "Normal"
+    },
+    {
+      "index": 219,
+      "text": "비공모를 통해 보조사업자를 선정하는",
+      "style": "Normal"
+    },
+    {
+      "index": 220,
+      "text": "경우 사용합니다.",
+      "style": "Normal"
+    },
+    {
+      "index": 222,
+      "text": "기",
+      "style": "Body Text"
+    },
+    {
+      "index": 223,
+      "text": "공공모모형\t본",
+      "style": "Normal"
+    },
+    {
+      "index": 224,
+      "text": "개",
+      "style": "Body Text"
+    },
+    {
+      "index": 235,
+      "text": "공모형",
+      "style": "Body Text"
+    },
+    {
+      "index": 236,
+      "text": "지자체담당자가 보탬e을 통해 사업을 공모한 유형으로 보조사업자는 보탬e에서 공모를 확인하고 사업 신청서를 제출합니다.",
+      "style": "Normal"
+    },
+    {
+      "index": 243,
+      "text": "공지모정형",
+      "style": "Normal"
+    },
+    {
+      "index": 244,
+      "text": "자체공모형",
+      "style": "Body Text"
+    },
+    {
+      "index": 255,
+      "text": "지정형",
+      "style": "Body Text"
+    },
+    {
+      "index": 256,
+      "text": "지자체담당자가 보탬e이 아닌 자체 홈페이지 또는 오프라인 공모를 통해 보조사업자를 선정한 유형으로 지자체담당자는 보탬e에 진행된 자체 공모 결과를 등록하고 보조사업자는 수행사업계획신청을 진행합니다.",
+      "style": "Normal"
+    },
+    {
+      "index": 267,
+      "text": "지자체담당자가 해당 사업에 적합한 사업자를 지정하는 유형으로 보조사업자는 보탬e에서 수행사업계획신청을 진행합니다.",
+      "style": "Normal"
+    },
+    {
+      "index": 269,
+      "text": "3",
+      "style": "Normal"
+    },
+    {
+      "index": 275,
+      "text": "MEMO",
+      "style": "Heading 2"
+    },
+    {
+      "index": 277,
+      "text": "4",
+      "style": "Heading 7"
+    },
+    {
+      "index": 279,
+      "text": "기 본 소 개",
+      "style": "Body Text"
+    },
+    {
+      "index": 281,
+      "text": "5",
+      "style": "Heading 7"
+    },
+    {
+      "index": 283,
+      "text": "기 본 소 개",
+      "style": "Body Text"
+    },
+    {
+      "index": 285,
+      "text": "6",
+      "style": "Normal"
+    },
+    {
+      "index": 307,
+      "text": "챗봇기능 활용",
+      "style": "Normal"
+    },
+    {
+      "index": 309,
+      "text": "MEMO",
+      "style": "Heading 2"
+    },
+    {
+      "index": 315,
+      "text": "사 용 자 지 원",
+      "style": "Body Text"
+    },
+    {
+      "index": 318,
+      "text": "2 사용자지원 이용안내",
+      "style": "Heading 1"
+    },
+    {
+      "index": 320,
+      "text": "여기 QR코드를 촬영하여 유튜브 온라인 영상으로도 사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 323,
+      "text": "사 용 자 지 원",
+      "style": "Body Text"
+    },
+    {
+      "index": 325,
+      "text": "여기 QR코드를 촬영하여",
+      "style": "Normal"
+    },
+    {
+      "index": 326,
+      "text": "2\t유튜브 온라인 영상으로도",
+      "style": "Normal"
+    },
+    {
+      "index": 327,
+      "text": "사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 329,
+      "text": "보조사업자님! 사용자정보관리에서 회원가입 하는 방법과",
+      "style": "Body Text"
+    },
+    {
+      "index": 330,
+      "text": "인증서 등록하는 방법을 알아보고",
+      "style": "Body Text"
+    },
+    {
+      "index": 331,
+      "text": "기관/단체소속으로 가입하는 방법에 대해서 알아볼까요?",
+      "style": "Body Text"
+    },
+    {
+      "index": 334,
+      "text": "사 용 자 지 원",
+      "style": "Body Text"
+    },
+    {
+      "index": 339,
+      "text": "사 용 자 지 원",
+      "style": "Body Text"
+    },
+    {
+      "index": 344,
+      "text": "사 용 자 지 원",
+      "style": "Body Text"
+    },
+    {
+      "index": 348,
+      "text": "여기 QR코드를 촬영하여",
+      "style": "Normal"
+    },
+    {
+      "index": 349,
+      "text": "3\t유튜브 온라인 영상으로도",
+      "style": "Normal"
+    },
+    {
+      "index": 350,
+      "text": "사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 352,
+      "text": "보조사업자님!\t사",
+      "style": "Body Text"
+    },
+    {
+      "index": 353,
+      "text": "단체정보담당자가 기관 정보에 대한 부가세 여부나 개요정보 등\t용",
+      "style": "Body Text"
+    },
+    {
+      "index": 354,
+      "text": "상세내용을 관리하고 가입신청을 승인하는 방법과 해당 단체의\t\t자 수행보조사업 담당자를 지정하고 단체/기관 구성원에게\t\t지 업무 권한을 부여하는 방법에 대해 알아볼까요?\t원",
+      "style": "Body Text"
+    },
+    {
+      "index": 375,
+      "text": "일반과세사업자의 경우 매입부가세는 환급 대상입니다.",
+      "style": "Heading 6"
+    },
+    {
+      "index": 376,
+      "text": "부가세 신고여부에 따라 과세사업자가 N을 선택할 수 있습니다. (*지자체에게 통보 필요)",
+      "style": "Normal"
+    },
+    {
+      "index": 381,
+      "text": "사 용 자 지 원",
+      "style": "Body Text"
+    },
+    {
+      "index": 394,
+      "text": "단체정보담당자는 구성원 가입승인 + 민간보조사업담당자 지정 + 권한부여 필수입니다!",
+      "style": "Heading 5"
+    },
+    {
+      "index": 399,
+      "text": "사 용 자 지 원",
+      "style": "Body Text"
+    },
+    {
+      "index": 412,
+      "text": "사 업 선",
+      "style": "Body Text"
+    },
+    {
+      "index": 413,
+      "text": "3 공모형 사업 선정",
+      "style": "Heading 1"
+    },
+    {
+      "index": 417,
+      "text": "여기 QR코드를 촬영하여 유튜브 온라인 영상으로도 사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 424,
+      "text": "사 업 선 정",
+      "style": "Body Text"
+    },
+    {
+      "index": 428,
+      "text": "여기 QR코드를 촬영하여",
+      "style": "Normal"
+    },
+    {
+      "index": 429,
+      "text": "1\t유튜브 온라인 영상으로도",
+      "style": "Normal"
+    },
+    {
+      "index": 430,
+      "text": "사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 432,
+      "text": "보조사업자님!",
+      "style": "Body Text"
+    },
+    {
+      "index": 433,
+      "text": "보조사업자가 공모사업의 목록을 조회하거나 공모를 신청하는 방법과",
+      "style": "Body Text"
+    },
+    {
+      "index": 434,
+      "text": "공모 신청 시 신청사업자정보와 세부추진계획, 재원조달계획, 예산집행계획 등을 등록하고",
+      "style": "Body Text"
+    },
+    {
+      "index": 435,
+      "text": "공모신청시 자격요건을 확인하고 동의처리를 진행하여",
+      "style": "Body Text"
+    },
+    {
+      "index": 436,
+      "text": "공모사업신청서를 제출하는 방법에 대해 알아볼까요?\t사 업",
+      "style": "Body Text"
+    },
+    {
+      "index": 437,
+      "text": "선 정",
+      "style": "Body Text"
+    },
+    {
+      "index": 446,
+      "text": "사 업 선 정",
+      "style": "Body Text"
+    },
+    {
+      "index": 455,
+      "text": "사 업 선 정",
+      "style": "Body Text"
+    },
+    {
+      "index": 464,
+      "text": "사 업 선 정",
+      "style": "Body Text"
+    },
+    {
+      "index": 466,
+      "text": "예산집행계획등록",
+      "style": "Normal"
+    },
+    {
+      "index": 476,
+      "text": "민간 보조비목(편성목)·세목(통계목)",
+      "style": "Heading 4"
+    },
+    {
+      "index": 478,
+      "text": "보탬e",
+      "style": "Normal"
+    },
+    {
+      "index": 479,
+      "text": "보조비목/세목",
+      "style": "Heading 3"
+    },
+    {
+      "index": 484,
+      "text": "사 업 선 정",
+      "style": "Body Text"
+    },
+    {
+      "index": 486,
+      "text": "자격요건확인",
+      "style": "Normal"
+    },
+    {
+      "index": 493,
+      "text": "사 업 선 정",
+      "style": "Body Text"
+    },
+    {
+      "index": 495,
+      "text": "공모사업신청서제출",
+      "style": "Normal"
+    },
+    {
+      "index": 497,
+      "text": "여기 QR코드를 촬영하여 유튜브 온라인 영상으로도 사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 504,
+      "text": "사 업 선 정",
+      "style": "Body Text"
+    },
+    {
+      "index": 511,
+      "text": "선정된 보조사업자는 반드시 수행사업계획서 등록 필요",
+      "style": "Normal"
+    },
+    {
+      "index": 513,
+      "text": "여기 QR코드를 촬영하여",
+      "style": "Normal"
+    },
+    {
+      "index": 514,
+      "text": "2\t유튜브 온라인 영상으로도",
+      "style": "Normal"
+    },
+    {
+      "index": 515,
+      "text": "사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 518,
+      "text": "보조사업자님!",
+      "style": "Body Text"
+    },
+    {
+      "index": 522,
+      "text": "사 업 선 정",
+      "style": "Body Text"
+    },
+    {
+      "index": 546,
+      "text": "획신청",
+      "style": "Normal"
+    },
+    {
+      "index": 550,
+      "text": "사 업 선 정",
+      "style": "Body Text"
+    },
+    {
+      "index": 579,
+      "text": "사 업 선 정",
+      "style": "Body Text"
+    },
+    {
+      "index": 588,
+      "text": "사 업 선 정",
+      "style": "Body Text"
+    },
+    {
+      "index": 589,
+      "text": "지정형/자체공모형",
+      "style": "Heading 1"
+    },
+    {
+      "index": 590,
+      "text": "사업선정",
+      "style": "Normal"
+    },
+    {
+      "index": 599,
+      "text": "사 업 선 정",
+      "style": "Body Text"
+    },
+    {
+      "index": 606,
+      "text": "선정된 보조사업자는 반드시 수행사업계획서 등록 필요",
+      "style": "Normal"
+    },
+    {
+      "index": 608,
+      "text": "1",
+      "style": "Heading 7"
+    },
+    {
+      "index": 612,
+      "text": "보조사업자님!",
+      "style": "Body Text"
+    },
+    {
+      "index": 616,
+      "text": "사 업 선 정",
+      "style": "Body Text"
+    },
+    {
+      "index": 640,
+      "text": "계획신청",
+      "style": "Normal"
+    },
+    {
+      "index": 644,
+      "text": "사 업 선 정",
+      "style": "Body Text"
+    },
+    {
+      "index": 656,
+      "text": "자부담계좌 은행은 지자체 은행 확인 필요!",
+      "style": "Normal"
+    },
+    {
+      "index": 657,
+      "text": "(자부담이 있는 경우도 동일 계좌로 사용합니다!)",
+      "style": "Normal"
+    },
+    {
+      "index": 665,
+      "text": "교부관리\t교",
+      "style": "Heading 1"
+    },
+    {
+      "index": 666,
+      "text": "관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 679,
+      "text": "교 부 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 691,
+      "text": "보조금 교부신청시 신청금액은 지방자치단체에 꼭 확인 필요합니다.",
+      "style": "Heading 5"
+    },
+    {
+      "index": 693,
+      "text": "보탬e",
+      "style": "Normal"
+    },
+    {
+      "index": 694,
+      "text": "예치형 보조금 흐름",
+      "style": "Heading 3"
+    },
+    {
+      "index": 711,
+      "text": "보조금을 예치계좌로 교부 받아",
+      "style": "Heading 5"
+    },
+    {
+      "index": 712,
+      "text": "집행등록/요청 및 이체까지 보탬e를 통해 처리",
+      "style": "Normal"
+    },
+    {
+      "index": 714,
+      "text": "여기 QR코드를 촬영하여",
+      "style": "Normal"
+    },
+    {
+      "index": 715,
+      "text": "1\t유튜브 온라인 영상으로도",
+      "style": "Normal"
+    },
+    {
+      "index": 716,
+      "text": "사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 719,
+      "text": "보조사업자님! 보조사업자로 선정이 되었다면 보조사업의 상세 정보를 조회하여 보조사업비 교부신청을 할 수 있습니다. 교부신청금액을 입력하고 제출하는 방법과",
+      "style": "Body Text"
+    },
+    {
+      "index": 720,
+      "text": "보조금 교부신청서를 출력할 수 있는 방법을 알아볼까요?",
+      "style": "Body Text"
+    },
+    {
+      "index": 725,
+      "text": "교 부 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 727,
+      "text": "신규",
+      "style": "Normal"
+    },
+    {
+      "index": 735,
+      "text": "추가로 교부 신청을 할 경우 [추가] 버튼을 누릅니다.",
+      "style": "Heading 5"
+    },
+    {
+      "index": 754,
+      "text": "보조금 교부신청 시 사업유형 예치/비예치 확인 후 교부신청",
+      "style": "Normal"
+    },
+    {
+      "index": 760,
+      "text": "여기 QR코드를 촬영하여",
+      "style": "Normal"
+    },
+    {
+      "index": 761,
+      "text": "2\t유튜브 온라인 영상으로도",
+      "style": "Normal"
+    },
+    {
+      "index": 762,
+      "text": "사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 765,
+      "text": "보조사업자님! 교부신청에서 교부가 오 입금되었을 경우에는 지방자치단체에서 교부결정을 취소하게 됩니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 766,
+      "text": "교부결정의 취소 되었을 때 취소금액을 이체하는 방법을 알아볼까요?",
+      "style": "Body Text"
+    },
+    {
+      "index": 771,
+      "text": "교 부 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 773,
+      "text": "MEMO",
+      "style": "Heading 2"
+    },
+    {
+      "index": 775,
+      "text": "MEMO",
+      "style": "Normal"
+    },
+    {
+      "index": 783,
+      "text": "6 사업수행관리",
+      "style": "Normal"
+    },
+    {
+      "index": 784,
+      "text": "사 업 수 행",
+      "style": "Body Text"
+    },
+    {
+      "index": 788,
+      "text": "여기 QR코드를 촬영하여",
+      "style": "Normal"
+    },
+    {
+      "index": 789,
+      "text": "1\t유튜브 온라인 영상으로도",
+      "style": "Normal"
+    },
+    {
+      "index": 790,
+      "text": "사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 793,
+      "text": "보조사업자님! 보조사업에 대한 거래처계약관리와 신규 등록하는 방법을 알아볼까요?",
+      "style": "Body Text"
+    },
+    {
+      "index": 802,
+      "text": "신규",
+      "style": "Normal"
+    },
+    {
+      "index": 804,
+      "text": "사 업 수 행",
+      "style": "Body Text"
+    },
+    {
+      "index": 808,
+      "text": "여기 QR코드를 촬영하여",
+      "style": "Normal"
+    },
+    {
+      "index": 809,
+      "text": "2\t유튜브 온라인 영상으로도",
+      "style": "Normal"
+    },
+    {
+      "index": 810,
+      "text": "사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 813,
+      "text": "보조사업자님! 보조금으로 취득한 중요재산정보를 등록하는 방법을 알아볼까요?",
+      "style": "Body Text"
+    },
+    {
+      "index": 823,
+      "text": "사 업 수 행",
+      "style": "Body Text"
+    },
+    {
+      "index": 840,
+      "text": "사 업 수 행",
+      "style": "Body Text"
+    },
+    {
+      "index": 842,
+      "text": "여기 QR코드를 촬영하여",
+      "style": "Normal"
+    },
+    {
+      "index": 843,
+      "text": "3\t유튜브 온라인 영상으로도",
+      "style": "Normal"
+    },
+    {
+      "index": 844,
+      "text": "사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 846,
+      "text": "보조사업자님! 사업내용이 부득이하게 변경된다면 보조사업 담당자에게 사업내용에 대하여 변경신청 해야 합니다. 변경내용을 작성하는 순서를 알아볼까요?",
+      "style": "Body Text"
+    },
+    {
+      "index": 859,
+      "text": "변경신청 후 승인이 되어야 집행등록이 가능합니다!",
+      "style": "Heading 5"
+    },
+    {
+      "index": 874,
+      "text": "사 업 수 행",
+      "style": "Body Text"
+    },
+    {
+      "index": 876,
+      "text": "4",
+      "style": "Heading 7"
+    },
+    {
+      "index": 881,
+      "text": "보조사업자님! 수행상황 보고서를 작성하고",
+      "style": "Body Text"
+    },
+    {
+      "index": 882,
+      "text": "지자체 사업담당자가 확인할 수 있는 방법에 대해 알아볼까요?",
+      "style": "Body Text"
+    },
+    {
+      "index": 897,
+      "text": "사 업 수 행",
+      "style": "Body Text"
+    },
+    {
+      "index": 899,
+      "text": "여기 QR코드를 촬영하여",
+      "style": "Normal"
+    },
+    {
+      "index": 900,
+      "text": "5\t유튜브 온라인 영상으로도",
+      "style": "Normal"
+    },
+    {
+      "index": 901,
+      "text": "사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 903,
+      "text": "보조사업자님! 사업내용이 부득이하게 수행포기, 일시정지를 해야 한다면 보조사업 담당자에게 사업내용에 대하여 변경내용을 작성하는 순서를 알아볼까요?",
+      "style": "Body Text"
+    },
+    {
+      "index": 921,
+      "text": "수행포기신청을 하고자 하는 사업이라도 집행이 이루어진 적이 있다면 정산작업은 필수입니다.",
+      "style": "Normal"
+    },
+    {
+      "index": 923,
+      "text": "MEMO",
+      "style": "Heading 2"
+    },
+    {
+      "index": 931,
+      "text": "7 금융정보관리",
+      "style": "Normal"
+    },
+    {
+      "index": 935,
+      "text": "금 융 정 보",
+      "style": "Body Text"
+    },
+    {
+      "index": 939,
+      "text": "여기 QR코드를 촬영하여",
+      "style": "Normal"
+    },
+    {
+      "index": 940,
+      "text": "1\t유튜브 온라인 영상으로도",
+      "style": "Normal"
+    },
+    {
+      "index": 941,
+      "text": "사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 943,
+      "text": "보조사업자님! 금융기관에서 발급받은 보조금 전용카드가 있다면 보조금전용카드를 등록하실 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 944,
+      "text": "보조금 전용카드 등록하는 과정과 사용내역을 카드별로 조회하는 방법을 알아볼까요?",
+      "style": "Body Text"
+    },
+    {
+      "index": 958,
+      "text": "금 융 정 보",
+      "style": "Body Text"
+    },
+    {
+      "index": 963,
+      "text": "※ 카드 발급 다음날 등록 가능",
+      "style": "Heading 5"
+    },
+    {
+      "index": 964,
+      "text": "※ 보탬e에 카드 등록 후 사용(일부 신용카드 예외)",
+      "style": "Normal"
+    },
+    {
+      "index": 985,
+      "text": "금 융 정 보",
+      "style": "Body Text"
+    },
+    {
+      "index": 987,
+      "text": "여기 QR코드를 촬영하여",
+      "style": "Normal"
+    },
+    {
+      "index": 988,
+      "text": "2\t유튜브 온라인 영상으로도",
+      "style": "Normal"
+    },
+    {
+      "index": 989,
+      "text": "사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 991,
+      "text": "보조사업자님!",
+      "style": "Body Text"
+    },
+    {
+      "index": 992,
+      "text": "보조사업의 금융거래를 위해서는 이체인증서를 등록해야 합니다. 펌뱅킹이용신청 동의, 이체 비밀번호 등록과",
+      "style": "Body Text"
+    },
+    {
+      "index": 993,
+      "text": "보조사업자가 자주 사용하는 거래처 계좌정보 등을 등록하여 집행등록 시 거래처정보를 불러와 편리하게 집행하는 방법을 알아볼까요?",
+      "style": "Body Text"
+    },
+    {
+      "index": 998,
+      "text": "신규",
+      "style": "Normal"
+    },
+    {
+      "index": 1010,
+      "text": "금 융 정 보",
+      "style": "Body Text"
+    },
+    {
+      "index": 1023,
+      "text": "MEMO",
+      "style": "Normal"
+    },
+    {
+      "index": 1032,
+      "text": "집행관리",
+      "style": "Heading 1"
+    },
+    {
+      "index": 1033,
+      "text": "(집행등록 및 요청)",
+      "style": "Normal"
+    },
+    {
+      "index": 1042,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1044,
+      "text": "여기 QR코드를 촬영하여 유튜브 온라인 영상으로도 사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 1073,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1075,
+      "text": "여기 QR코드를 촬영하여",
+      "style": "Normal"
+    },
+    {
+      "index": 1076,
+      "text": "1\t유튜브 온라인 영상으로도",
+      "style": "Normal"
+    },
+    {
+      "index": 1077,
+      "text": "사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 1079,
+      "text": "보조사업자님! 전자세금계산서를 이용해 거래했을 경우에는 전자세금계산서 등록이 필요합니다.",
+      "style": "Heading 6"
+    },
+    {
+      "index": 1080,
+      "text": "전자세금계산서 집행정보를 등록하고 집행요청 하는 방법을 알아볼까요?",
+      "style": "Normal"
+    },
+    {
+      "index": 1089,
+      "text": "증빙자료등록",
+      "style": "Normal"
+    },
+    {
+      "index": 1102,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1151,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1175,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1177,
+      "text": "여기 QR코드를 촬영하여",
+      "style": "Normal"
+    },
+    {
+      "index": 1178,
+      "text": "2\t유튜브 온라인 영상으로도",
+      "style": "Normal"
+    },
+    {
+      "index": 1179,
+      "text": "사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 1181,
+      "text": "보조사업자님! 연계증빙 없이 거래한 경우에는 기타증빙으로 집행등록 할 수 있습니다.",
+      "style": "Body Text"
+    },
+    {
+      "index": 1182,
+      "text": "기타증빙 집행요청하는 방법을 알아볼까요?",
+      "style": "Body Text"
+    },
+    {
+      "index": 1189,
+      "text": "※ 금융사용자관리 > 자주쓰는 사업자계좌관리 메뉴에서 등록한 거래처정보를 불러내어 사용 가능합니다.",
+      "style": "Heading 5"
+    },
+    {
+      "index": 1201,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1205,
+      "text": "여기 QR코드를 촬영하여",
+      "style": "Normal"
+    },
+    {
+      "index": 1206,
+      "text": "3\t유튜브 온라인 영상으로도",
+      "style": "Normal"
+    },
+    {
+      "index": 1207,
+      "text": "사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 1209,
+      "text": "보조사업자님!",
+      "style": "Body Text"
+    },
+    {
+      "index": 1210,
+      "text": "보조금전용 신용카드 증빙의 경우일 때 집행등록 과정을 알아볼까요?",
+      "style": "Body Text"
+    },
+    {
+      "index": 1228,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1232,
+      "text": "4",
+      "style": "Heading 7"
+    },
+    {
+      "index": 1235,
+      "text": "보조사업자님!",
+      "style": "Body Text"
+    },
+    {
+      "index": 1236,
+      "text": "과세유형에 따라서 재원정보 입력을 다르게 해야 합니다. 부가세 신고여부에 따라 집행정보 등록하는 방법을 알아볼까요?",
+      "style": "Body Text"
+    },
+    {
+      "index": 1253,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1260,
+      "text": "집행관리",
+      "style": "Heading 1"
+    },
+    {
+      "index": 1261,
+      "text": "(인건비집행등록 및 요청)",
+      "style": "Normal"
+    },
+    {
+      "index": 1270,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1294,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1296,
+      "text": "1",
+      "style": "Heading 7"
+    },
+    {
+      "index": 1324,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1348,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1350,
+      "text": "보탬e",
+      "style": "Normal"
+    },
+    {
+      "index": 1351,
+      "text": "급여의 흐름",
+      "style": "Heading 3"
+    },
+    {
+      "index": 1376,
+      "text": "원천징수액이 없는 경우 기타증빙을 통해서 집행등록을 할 수 있습니다.",
+      "style": "Heading 5"
+    },
+    {
+      "index": 1378,
+      "text": "여기 QR코드를 촬영하여 유튜브 온라인 영상으로도 사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 1400,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1416,
+      "text": "원천징수액 계좌와 실지급액 계좌가 상이함을 확인 할 수 있습니다.",
+      "style": "Heading 5"
+    },
+    {
+      "index": 1420,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1433,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1440,
+      "text": "집행관리",
+      "style": "Heading 1"
+    },
+    {
+      "index": 1441,
+      "text": "(집행이체관리)",
+      "style": "Normal"
+    },
+    {
+      "index": 1450,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1454,
+      "text": "여기 QR코드를 촬영하여",
+      "style": "Normal"
+    },
+    {
+      "index": 1455,
+      "text": "1\t유튜브 온라인 영상으로도",
+      "style": "Normal"
+    },
+    {
+      "index": 1456,
+      "text": "사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 1478,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1481,
+      "text": "인건비집행 시 원천징수액 : 자부담계좌로 이체",
+      "style": "Heading 5"
+    },
+    {
+      "index": 1482,
+      "text": "인건비집행 시 실지급액 : 인건비 급여계좌로 이체",
+      "style": "Normal"
+    },
+    {
+      "index": 1506,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1530,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1555,
+      "text": "부분취소 불가능합니다. 전체취소후 금액 수정 하여 재집행",
+      "style": "Heading 5"
+    },
+    {
+      "index": 1557,
+      "text": "여기 QR코드를 촬영하여",
+      "style": "Normal"
+    },
+    {
+      "index": 1558,
+      "text": "2\t유튜브 온라인 영상으로도",
+      "style": "Normal"
+    },
+    {
+      "index": 1559,
+      "text": "사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 1581,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1593,
+      "text": "이체실행 시 자부담계좌의 금액이 예치계좌로 복원됩니다.",
+      "style": "Heading 5"
+    },
+    {
+      "index": 1603,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1627,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1629,
+      "text": "2",
+      "style": "Heading 7"
+    },
+    {
+      "index": 1657,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1666,
+      "text": "이체실행 시 자부담계좌의 금액이 예치계좌로 복원됩니다.",
+      "style": "Heading 5"
+    },
+    {
+      "index": 1678,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1704,
+      "text": "집 행 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1710,
+      "text": "MEMO",
+      "style": "Heading 2"
+    },
+    {
+      "index": 1718,
+      "text": "11 정산관리",
+      "style": "Normal"
+    },
+    {
+      "index": 1730,
+      "text": "정 산 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1758,
+      "text": "정 산 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1760,
+      "text": "여기 QR코드를 촬영하여",
+      "style": "Normal"
+    },
+    {
+      "index": 1761,
+      "text": "1\t유튜브 온라인 영상으로도",
+      "style": "Normal"
+    },
+    {
+      "index": 1762,
+      "text": "사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 1769,
+      "text": "보조사업자가 집행마감을 등록할 수 있으며 집행마감 후에는 집행이 불가합니다.",
+      "style": "Heading 5"
+    },
+    {
+      "index": 1785,
+      "text": "정 산 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1804,
+      "text": "정산검토 진행상태가 보완요청 상태인지 확인합니다.",
+      "style": "Heading 5"
+    },
+    {
+      "index": 1809,
+      "text": "정 산 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1827,
+      "text": "보안요청 건은 집행관리 메뉴로 이동하여 보조비세목, 첨부파일 등을 보완할 수 있습니다.",
+      "style": "Heading 5"
+    },
+    {
+      "index": 1853,
+      "text": "정 산 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1881,
+      "text": "정 산 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1883,
+      "text": "여기 QR코드를 촬영하여",
+      "style": "Normal"
+    },
+    {
+      "index": 1884,
+      "text": "2\t유튜브 온라인 영상으로도",
+      "style": "Normal"
+    },
+    {
+      "index": 1885,
+      "text": "사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 1902,
+      "text": "진행상태가 미작성, 작성중 이외 경우에는 [작성]버튼이 비활성화되어 있습니다.",
+      "style": "Heading 5"
+    },
+    {
+      "index": 1928,
+      "text": "정 산 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1950,
+      "text": "컨소사업의 경우 모든 수행기관의 집행자료를 재원,",
+      "style": "Heading 5"
+    },
+    {
+      "index": 1951,
+      "text": "비목, 지출 일 순으로 조회하며 집행된 자료만 조회됩니다.",
+      "style": "Normal"
+    },
+    {
+      "index": 1952,
+      "text": "정 산 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1971,
+      "text": "컨소사업의 경우 모든 수행기관의 사업 별 집행계획변경 내역을 조회할 수 있습니다.",
+      "style": "Heading 5"
+    },
+    {
+      "index": 1976,
+      "text": "정 산 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 1988,
+      "text": "지방보조금의 사업별 총 액이 3억원 이상의 경우에 외부기관 검증대상 입니다.",
+      "style": "Heading 5"
+    },
+    {
+      "index": 2014,
+      "text": "정 산 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 2042,
+      "text": "정 산 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 2046,
+      "text": "여기 QR코드를 촬영하여",
+      "style": "Normal"
+    },
+    {
+      "index": 2047,
+      "text": "3\t유튜브 온라인 영상으로도",
+      "style": "Normal"
+    },
+    {
+      "index": 2048,
+      "text": "사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 2067,
+      "text": "정산진행 상태가 정산마감 이후라면 세부내역 조회가 가능합니다.",
+      "style": "Heading 5"
+    },
+    {
+      "index": 2068,
+      "text": "정 산 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 2083,
+      "text": "자부담계좌에 있는 반환금액을 예치계좌로 반환이체실행합니다.",
+      "style": "Heading 5"
+    },
+    {
+      "index": 2109,
+      "text": "정 산 관 리",
+      "style": "Body Text"
+    },
+    {
+      "index": 2111,
+      "text": "여기 QR코드를 촬영하여",
+      "style": "Normal"
+    },
+    {
+      "index": 2112,
+      "text": "4\t유튜브 온라인 영상으로도",
+      "style": "Normal"
+    },
+    {
+      "index": 2113,
+      "text": "사용법을 볼 수 있습니다!",
+      "style": "Normal"
+    },
+    {
+      "index": 2139,
+      "text": "MEMO",
+      "style": "Heading 2"
+    },
+    {
+      "index": 2148,
+      "text": "부록 보탬e 필수 용어",
+      "style": "Normal"
+    },
+    {
+      "index": 2166,
+      "text": "부 록",
+      "style": "Body Text"
+    },
+    {
+      "index": 2201,
+      "text": "부 록",
+      "style": "Body Text"
+    },
+    {
+      "index": 2205,
+      "text": "부 록",
+      "style": "Body Text"
+    },
+    {
+      "index": 2240,
+      "text": "부",
+      "style": "Body Text"
+    },
+    {
+      "index": 2275,
+      "text": "부",
+      "style": "Body Text"
+    },
+    {
+      "index": 2279,
+      "text": "부 록",
+      "style": "Body Text"
+    },
+    {
+      "index": 2314,
+      "text": "부 록",
+      "style": "Body Text"
+    },
+    {
+      "index": 2349,
+      "text": "부",
+      "style": "Body Text"
+    },
+    {
+      "index": 2384,
+      "text": "부 록",
+      "style": "Body Text"
+    },
+    {
+      "index": 2419,
+      "text": "부 록",
+      "style": "Body Text"
+    },
+    {
+      "index": 2454,
+      "text": "부 록",
+      "style": "Body Text"
+    },
+    {
+      "index": 2459,
+      "text": "부 록",
+      "style": "Body Text"
+    },
+    {
+      "index": 2494,
+      "text": "부 록",
+      "style": "Body Text"
+    },
+    {
+      "index": 2529,
+      "text": "부 록",
+      "style": "Body Text"
+    },
+    {
+      "index": 2546,
+      "text": "신규 사용자를 위한",
+      "style": "Normal"
+    },
+    {
+      "index": 2547,
+      "text": "이렇게 하면 나도 전문가(보탬e) - 보조사업자(예치형) -",
+      "style": "Normal"
+    },
+    {
+      "index": 2548,
+      "text": "발행처 : 한국지역정보개발원",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 2549,
+      "text": "주\t소 : (04637) 서울특별시 마포구 성암로 301",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 2550,
+      "text": "보탬e 홈페이지 : https://www.losims.go.kr/",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 2551,
+      "text": "보탬e 문의사항 : 1660-1390",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 2552,
+      "text": "본 교재는 보탬e 신규 사용자를 위한 기초내용을 기반으로 한 교재입니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 2553,
+      "text": "[안내]",
+      "style": "Body Text"
+    },
+    {
+      "index": 2554,
+      "text": "교재의 내용 및 화면은 기능개선에 의해 실제 화면과 다를 수 있습니다.",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 2555,
+      "text": "최신 교재 및 상세 매뉴얼은 보탬e 홈페이지 내",
+      "style": "List Paragraph"
+    },
+    {
+      "index": 2556,
+      "text": "[사용자 매뉴얼]을 참고하시기 바랍니다.",
+      "style": "Body Text"
+    }
+  ],
+  "tables": [
+    {
+      "table_index": 0,
+      "rows": [
+        [
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          ""
+        ]
+      ]
+    },
+    {
+      "table_index": 1,
+      "rows": [
+        [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ]
+    },
+    {
+      "table_index": 2,
+      "rows": [
+        [
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          ""
+        ]
+      ]
+    },
+    {
+      "table_index": 3,
+      "rows": [
+        [
+          "",
+          "교부 결정 금액"
+        ],
+        [
+          "용어해설",
+          "지자체담당자가 보조사업자에게 교부하기로 결정한 금액"
+        ],
+        [
+          "사용 예",
+          "교부신청액의 단위 수정 후 교부 결정 금액 확인"
+        ],
+        [
+          "",
+          "가산금"
+        ],
+        [
+          "용어해설",
+          "부정수급자에게 반환금 또는 제재부가금을 가산한 금액"
+        ],
+        [
+          "사용 예",
+          "세금누락신고 건에 대해 가산금이 붙어 가산금 납부"
+        ],
+        [
+          "",
+          "감정가격"
+        ],
+        [
+          "용어해설",
+          "담보제공 자산의 시세 또는 감정액(원)"
+        ],
+        [
+          "사용 예",
+          "중요재산유형 기준의 현재액은 시장에서 형성된 가격이며 시장가격이 없는 경우에는 감정평가사 등 자산평가 업무에 전문성 있는 평가인의 평가에 의한 가격으로 처리"
+        ],
+        [
+          "",
+          "개별공시지가(토지)"
+        ],
+        [
+          "용어해설",
+          "표준지공시지가를 기준으로 산정한 개별토지에 대한 단위면적당 가격"
+        ],
+        [
+          "사용 예",
+          "현재액은 공시가격으로 토지는 개별공시지가, 주택은 공시가격 으로 한다."
+        ],
+        [
+          "",
+          "건축물대장 고유번호"
+        ],
+        [
+          "용어해설",
+          "건축물의 고유번호"
+        ],
+        [
+          "사용 예",
+          "보조금이 지원된 부동산에 지원받은 사항을 등기 시건축물대장 고유번호 확 인"
+        ],
+        [
+          "",
+          "검사금액"
+        ],
+        [
+          "용어해설",
+          "재화의 구매 또는 계약에 의한 납품 시 해당 재화의 물성, 치수, 외관 등 계약에 명시된 사항을 만족하는지 점검하는 행위에 대한 금액"
+        ],
+        [
+          "사용 예",
+          "나라장터에서 대금청구까지 진행된 상태로 추가 검사요청이 진행 될 경우 계약관리번호, 금액, 검사번호, 검사금액 등 변경의 주요정보와 나라장터 검사서 사본을 묻고 답하기로 질의"
+        ],
+        [
+          "",
+          "검증 후 불인정금액"
+        ],
+        [
+          "용어해설",
+          "검증기관의 검증 후 집행사항에 대한 불인정 금액"
+        ],
+        [
+          "사용 예",
+          "정산 중 검증기관이 검증한 불인정금액"
+        ]
+      ]
+    },
+    {
+      "table_index": 4,
+      "rows": [
+        [
+          "",
+          "계상신청번호"
+        ],
+        [
+          "용어해설",
+          "지자체 또는 교육청에서 송신된 예산계상신청 정보 중 부여된 신청번호"
+        ],
+        [
+          "사용 예",
+          "교육청의 예산 계상신청 중 사업조회가 되지 않아 예산계상신청번호 등 신청 정보 확인"
+        ],
+        [
+          "",
+          "계약금액"
+        ],
+        [
+          "용어해설",
+          "나라장터 또는 자체적으로 거래처를 선정하여 계약을 체결한 금액"
+        ],
+        [
+          "사용 예",
+          "총 계약금액이 1억 원 계약에서 재원이 변경되어 국비 60% 자부담 40%로 지자체담당자와 협의가 이뤄졌다면 계약서의 계약금액 비율도 변경 필요"
+        ],
+        [
+          "",
+          "계약단가"
+        ],
+        [
+          "용어해설",
+          "계약 물품 한 단위의 가격"
+        ],
+        [
+          "사용 예",
+          "계약확인(G2B)에서 계약확정 시 계약단가(G2B에서 실제 계약체결 되어 있는 금액이 표기되어 있음) 외 계약금액 입력 가능\n계약집행 시 계약단가 변경 처리"
+        ],
+        [
+          "",
+          "계정과목명"
+        ],
+        [
+          "용어해설",
+          "회계에서 단위가 되는 각 계정의 이름"
+        ],
+        [
+          "사용 예",
+          "사업 등록 계정과목 등록 후 계정과목명 변경"
+        ],
+        [
+          "",
+          "고용부담금"
+        ],
+        [
+          "용어해설",
+          "사업자가 근로자 수의 일정 비율 이상을 특정인으로 고용해야 하는 의무를 위반할 때 부과하는 금액"
+        ],
+        [
+          "사용 예",
+          "보조세목 등록 시 퇴직금의 경우 인건비 항목에 같이 편성 또는 민간이전-고 용부담금으로 편성 진행"
+        ],
+        [
+          "",
+          "고용장려금액"
+        ],
+        [
+          "용어해설",
+          "정부나 공공 단체가 고용을 장려하는 뜻으로 기업이나 개인에게 내어 주는 금액"
+        ],
+        [
+          "사용 예",
+          "고용장려금 내역사업 정보에 대하여 입력 데이터 수정 요청"
+        ]
+      ]
+    },
+    {
+      "table_index": 5,
+      "rows": [
+        [
+          "",
+          "공급가액"
+        ],
+        [
+          "용어해설",
+          "일반과세자에게 적용되는 것으로서 부가가치세가 포함되지 않은 물품 가격을 말하며 기업의 순수한 매출액과 같은 의미.공급가액은 제조업자의 경우 판매가격에 부가가치세를 제외한 가격이 되므로 물품대ㆍ특별소비세 또는 주세를 합친 가액이 되며 도매업자의 경우에는 물품대ㆍ개별소비세 또는 주 세 그리고 방위세까지 합친가액이 되는 것"
+        ],
+        [
+          "사용 예",
+          "전자세금계산서의 부가세를 제외한 공급가액만을 집행등록 진행\n집행등록 시 공급가액 및 부가세액을 잘못 입력하여 이체까지 완료한 경우\n수정 방법\n\t기집행건의 증빙변경을 위해 공급가액 및 부가세액이 집행정보와 일치 여부"
+        ],
+        [
+          "",
+          "공모 여부"
+        ],
+        [
+          "용어해설",
+          "해당 과제가 공모에 의한 사업인지, 비공모에 의한 사업인지 여부"
+        ],
+        [
+          "사용 예",
+          "자체공모로 결과등록 한 경우는 공모 여부가 비공모로 확인"
+        ],
+        [
+          "",
+          "공사예정금액"
+        ],
+        [
+          "용어해설",
+          "공사계약 시 체결하기로 한 예정 금액"
+        ],
+        [
+          "사용 예",
+          "총계약금액을 기준으로 계약요청 후 총공사예산 금액과 공사예정금액은 e나\n라도움 상에서 입력한 계약금 총액이 자동으로 입력 됨"
+        ],
+        [
+          "",
+          "공시가격"
+        ],
+        [
+          "용어해설",
+          "정보공시 대상자의 공시 가격"
+        ],
+        [
+          "사용 예",
+          "중요재산 변동 여부(현재액, 수량 증감액 등)를 공시하는데 공시가격으로 진 행 여부"
+        ],
+        [
+          "",
+          "과오납환급 확정일자"
+        ],
+        [
+          "용어해설",
+          "반환금 및 제재부가금 과오납에 대한 환급금을 환급하기로 한 일자"
+        ],
+        [
+          "사용 예",
+          "부정수급 입력내용 삭제 후 과오납환급 확정일자 처리"
+        ],
+        [
+          "",
+          "과오납환급금"
+        ],
+        [
+          "용어해설",
+          "반환금 및 제재부가금 과오납에 대한 환급금"
+        ],
+        [
+          "사용 예",
+          "부정수급자가 반납금액을 초과한 경우 과오납환급금 처리"
+        ]
+      ]
+    },
+    {
+      "table_index": 6,
+      "rows": [
+        [
+          "",
+          "광역 재원 교부 금액"
+        ],
+        [
+          "용어해설",
+          "광역자치단체 재원으로 교부한 금액"
+        ],
+        [
+          "사용 예",
+          "보조사업자가 지자체담당자에게 교부 신청하는 금액 중지방비 광역 재원 교부 금액"
+        ],
+        [
+          "",
+          "광역 재원 예산 금액"
+        ],
+        [
+          "용어해설",
+          "광역자치단체 재원의 예산 금액"
+        ],
+        [
+          "사용 예",
+          "교부신청 시 신청 광역 재원 금액과 광역 재원 예산 금액 상이"
+        ],
+        [
+          "",
+          "광역 재원 집행 금액"
+        ],
+        [
+          "용어해설",
+          "광역자치단체 재원으로 집행한 금액"
+        ],
+        [
+          "사용 예",
+          "보조사업 시행을 위해 필요한 금액을 산출하여 e나라도움에서 사용한 광역 재원 금액"
+        ],
+        [
+          "",
+          "광역 재원 피교부 금액"
+        ],
+        [
+          "용어해설",
+          "광역자치단체 재원으로 교부 받은 금액"
+        ],
+        [
+          "사용 예",
+          ""
+        ],
+        [
+          "",
+          "교부 일자"
+        ],
+        [
+          "용어해설",
+          "보조사업자가 보조금을 교부 받은 일자"
+        ],
+        [
+          "사용 예",
+          "e나라도움을 통해 교부한 일자와 보조사업자가 실제 교부 받은 교부 일자가 동일한지 확인"
+        ],
+        [
+          "",
+          "교부금액"
+        ],
+        [
+          "용어해설",
+          "지방재정법 제21조 제2항에 따라 국민투표·징병 등 중앙정부가 스스로 시행하여야 할 사무를 국민의 편리도모와 경비의 효율화 등을 이유로 지방자치단체 또는 그 기관에 위임하여 처리하는 경우에 이에 소요되는 경비 를 국가가 전액 부담하는 것 e나라도움에서는 지자체담당자가 보조사업자에 게 사업수행을 목적으로 지급하는 금액"
+        ],
+        [
+          "사용 예",
+          "보조사업자가 지자체담당자에게 교부 신청하는 금액은 전체교부금액을 신청, 또는 당월 지출 요청할 교부금액을 신청\n교부신청(최초) 시, 교부금액과 잔액 확인 후 교부신청서 제출"
+        ]
+      ]
+    },
+    {
+      "table_index": 7,
+      "rows": [
+        [
+          "",
+          "교부신청교부금액"
+        ],
+        [
+          "용어해설",
+          "보조사업 집행을 위하여 보조사업자가 지자체담당자에게 요청한 보조금액"
+        ],
+        [
+          "사용 예",
+          "동일 사업의 전체 교부신청교부금액 확인"
+        ],
+        [
+          "",
+          "교부신청금액"
+        ],
+        [
+          "용어해설",
+          "보조사업자가 지자체담당자에게 사업비 교부를 위해 신청하는 금액"
+        ],
+        [
+          "사용 예",
+          "보조사업자에게 교부 이체한 교부금액이 교부신청금액과 동일 여부"
+        ],
+        [
+          "",
+          "교부신청보조금합계금액"
+        ],
+        [
+          "용어해설",
+          "보조사업 집행을 위하여 보조사업자가 지자체담당자에게 요청한보조금액 합\n계(국고보조금, 지자체부담금)"
+        ],
+        [
+          "사용 예",
+          "교부신청금액과 집행정산등록의 교부신청보조금 합계금액이 상이한 경우 처리 절차"
+        ],
+        [
+          "",
+          "교부실적금액"
+        ],
+        [
+          "용어해설",
+          "내역사업별 교부한 실적의 금액"
+        ],
+        [
+          "사용 예",
+          "교부 이체처리를 위해 교부실적등록에서 교부 이체 정보 등록"
+        ],
+        [
+          "",
+          "교부요청금액"
+        ],
+        [
+          "용어해설",
+          "보조금의 지급을 신청한 액수"
+        ],
+        [
+          "사용 예",
+          "보조사업자에게 교부 이체한 교부금액이 교부요청금액과 동일 여부 확인"
+        ],
+        [
+          "",
+          "구성비"
+        ],
+        [
+          "용어해설",
+          "국고보조금, 광역보조금, 자체재원 구성비(사업비율)"
+        ],
+        [
+          "사용 예",
+          "국고보조금, 광역보조금, 자체재원 구성비 대로 e호조에 변경 요청"
+        ],
+        [
+          "",
+          "구성비율"
+        ],
+        [
+          "용어해설",
+          "재무계정별 구성비율"
+        ],
+        [
+          "사용 예",
+          "동일사업에 재원 구성비율이 변경된 경우 변경된 비율로 사업 진행"
+        ]
+      ]
+    },
+    {
+      "table_index": 8,
+      "rows": [
+        [
+          "",
+          "만기 일자"
+        ],
+        [
+          "용어해설",
+          "미리 정한 기한이 되는 날"
+        ],
+        [
+          "사용 예",
+          ""
+        ],
+        [
+          "",
+          "민간보조금액"
+        ],
+        [
+          "용어해설",
+          "민간·공공기관의 보조금 금액"
+        ],
+        [
+          "사용 예",
+          "보조사업자가 비공모형사업 등록 시 민간보조금액 처리 절차 확인"
+        ],
+        [
+          "",
+          "반납금액"
+        ],
+        [
+          "용어해설",
+          "정산금, 이자 금액 등 사업종료 후 발생한 반납해야 하는 비용의총 합계금액"
+        ],
+        [
+          "사용 예",
+          "정산 시 예탁계좌에서 발생한 이자를 포함하여 반납금액으로 확인"
+        ],
+        [
+          "",
+          "반납집계수익금"
+        ],
+        [
+          "용어해설",
+          "사업종료 후 발생한 반납 해야 하는 수익금 집계금액"
+        ],
+        [
+          "사용 예",
+          "반납집계금액 저장 후 반납집계수익금이 확인되지 않을 경우 처리절차 확인"
+        ],
+        [
+          "",
+          "반납집계이자금액"
+        ],
+        [
+          "용어해설",
+          "사업종료 후 발생한 반납해야 하는 이자의 집계금액"
+        ],
+        [
+          "사용 예",
+          "반납집계금액 저장 후 반납집계이자금액이 확인되지 않을 경우 처리절차 확\n인"
+        ],
+        [
+          "",
+          "반환금"
+        ],
+        [
+          "용어해설",
+          "사업종료 후 교부금 반환금액"
+        ],
+        [
+          "사용 예",
+          "부정수급자 의심자에 대해 반환금 징수 요청 가능 여부 확인"
+        ],
+        [
+          "",
+          "반환금금액"
+        ],
+        [
+          "용어해설",
+          "사업종료 후 교부금 반환금액"
+        ],
+        [
+          "사용 예",
+          "보조금 지급이 늦어져 전년도 지원금은 반환금으로 처리\n중도 퇴사로 발생한 반환금이 있는 경우 보조금계좌로 입금 후 집행취소로 처리"
+        ]
+      ]
+    },
+    {
+      "table_index": 9,
+      "rows": [
+        [
+          "",
+          "반환이자금액"
+        ],
+        [
+          "용어해설",
+          "반환금의 이자금액"
+        ],
+        [
+          "사용 예",
+          "정산 완료 후 반환이자금액 확인"
+        ],
+        [
+          "",
+          "발생이자금액"
+        ],
+        [
+          "용어해설",
+          "지급받은 보조금에 대하여 발생한 이자의 합"
+        ],
+        [
+          "사용 예",
+          "예탁계좌에서 발생된 이자금액 조회 및 이자 금액 반납 등록\n\t예치형 보조사업자가 예탁계좌에서 자체계좌에 옮겨 쓰는 과정에서 이자가 발생한 경우 해당 이자금액은 잡수입처리 가능"
+        ],
+        [
+          "",
+          "배당률"
+        ],
+        [
+          "용어해설",
+          "불입한 금액에 대한 배당금의 비율"
+        ],
+        [
+          "사용 예",
+          "비예치형사업비 중 이자등록 금액 배당률에 따라 재원별 배분"
+        ],
+        [
+          "",
+          "배정총액"
+        ],
+        [
+          "용어해설",
+          "국고보조금 예산 배정액의 총액"
+        ],
+        [
+          "사용 예",
+          "내역사업의 예산배정 중 내역사업 예산 배정총액이 0으로 나와 예산배정을\n할 수가 없는 상태로 조회"
+        ],
+        [
+          "",
+          "보조금"
+        ],
+        [
+          "용어해설",
+          "정부나 공공 단체가 기업이나 개인에게 교부하는 금액으로 특정 산업의 육성 이나 특정 시책의 장려 따위와 같이 일정한 행정 목적을 달성하기 위한 것"
+        ],
+        [
+          "사용 예",
+          ""
+        ],
+        [
+          "",
+          "보조금반환금"
+        ],
+        [
+          "용어해설",
+          "보조금 사업 완료 후 반환되는 금액"
+        ],
+        [
+          "사용 예",
+          "정산보고서 확정 후 보조금 반환금 처리 절차 확인"
+        ],
+        [
+          "",
+          "보조금반환액"
+        ],
+        [
+          "용어해설",
+          "정산 시 반납한 금액 합계"
+        ],
+        [
+          "사용 예",
+          "정산보고서 확정 후 보조금반환액 처리 절차 확인"
+        ]
+      ]
+    },
+    {
+      "table_index": 10,
+      "rows": [
+        [
+          "",
+          "보조금신청금액"
+        ],
+        [
+          "용어해설",
+          "보조사업자가 신청한 보조금 금액"
+        ],
+        [
+          "사용 예",
+          "보조사업자가 교부 신청한 보조금 신청금액 수정 절차"
+        ],
+        [
+          "",
+          "보조금유형명"
+        ],
+        [
+          "용어해설",
+          "보조금 유형은 다양한 기준에 따라 구분할 수 있음 (보조금 사용 용도의 제한성 유무, 보조금 지출 상 일정의 지방비부담 방식 차이, 정률 보조금 규모 에 대한 제한 여부 기준, 법령 근거 및 경비부담 기준, 보조율의 차등 기준, 보 조금의 교부조건 여부,보조금의 시행주체 기준, 보조금의 사전신청 여부, 보조 금 지원대상 및 지원내용에 따른 분류 등)"
+        ],
+        [
+          "사용 예",
+          "교부 중 내역사업정보의 보조금 유형명에 따라 교부 결정 처리"
+        ],
+        [
+          "",
+          "보조금합계금액"
+        ],
+        [
+          "용어해설",
+          "국고보조금, 자치단체(시, 도)보조금, 자부담금 보조금 합계 금액"
+        ],
+        [
+          "사용 예",
+          "부정수급 모니터링 소명 중 보조금합계금액 확인"
+        ],
+        [
+          "",
+          "보조비목명"
+        ],
+        [
+          "용어해설",
+          "보조비목*의 이름\n보조금 또는 간접보조금의 구성항목으로 인건비, 운영비, 여비,업무추진비, 직무수행경비, 연구개발비, 보전금, 민간이전,자치단체이전, 기타이전, 출연금, 토지매입비, 건설비, 유형자산,무형자산, 융자금, 출자금, 상환지출, 전출금, 반환금 등 기타로 구분한 것 보조사업정산보고서 작성지침의 보조비목, 보조세목 별 산정기준에 따라 보조금 기준 비목\n*보조비목 : 보조사업을 계획할 때 지출할 금액을 나누는 기준"
+        ],
+        [
+          "사용 예",
+          "보조사업자가 사업 등록, 사업 변경 등을 등록 시 예산집행계획의 보조비목명 확인"
+        ],
+        [
+          "",
+          "보조사업 자부담금"
+        ],
+        [
+          "용어해설",
+          "보조사업자가 또는 간접 보조사업자가 사업을 수행하기 위해 부담하는 금액"
+        ],
+        [
+          "사용 예",
+          "비예치형으로 사업 진행 시 국비는 국고보조금, 보조사업 자부담금은 자기부담 금으로 재원등록"
+        ],
+        [
+          "",
+          "보조사업 지자체부담금"
+        ],
+        [
+          "용어해설",
+          "광역자치단체부담금(=시도보조금)과 기초자치단체부담금(=시군구 보조금)을 말함"
+        ],
+        [
+          "사용 예",
+          "보조사업 중 국고, 지방비가 매칭되는 사업은 재원비율에 따라 보조사업 지자 체부담금 집행"
+        ]
+      ]
+    },
+    {
+      "table_index": 11,
+      "rows": [
+        [
+          "",
+          "복원부가가치세"
+        ],
+        [
+          "용어해설",
+          "보조금 집행 이체 실행 후 취소되어 복원하는 집행단위의 보조금 중부가가치 세액"
+        ],
+        [
+          "사용 예",
+          "집행 취소로 인해 복원된 증빙 건의 복원부가가치세 확인"
+        ],
+        [
+          "",
+          "복원합계금액"
+        ],
+        [
+          "용어해설",
+          "보조금 집행 이체 실행 후 취소되어 복원된 집행단위의 보조금 재원별합계 금 액"
+        ],
+        [
+          "사용 예",
+          "집행취소(이체) 실행 완료 후 복원합계금액 확인"
+        ],
+        [
+          "",
+          "본예산금액"
+        ],
+        [
+          "용어해설",
+          "당초 예산편성절차에 의해 정상적으로 성립된 예산(헌법 제54조, 국가재정법 제32조)"
+        ],
+        [
+          "사용 예",
+          "보조사업자가 교부신청 후 신청액과 본예산 금액 일치 여부 확인"
+        ],
+        [
+          "",
+          "부대비"
+        ],
+        [
+          "용어해설",
+          "중요재산대체상세의 부대비 정보 내 기본 비용에 덧붙여 드는 비용"
+        ],
+        [
+          "사용 예",
+          "시설 설치를 위해 구매계약으로 하고, 부대비로 별도 지출"
+        ],
+        [
+          "",
+          "부정수급 여부"
+        ],
+        [
+          "용어해설",
+          "보조금법 제30조에 따라 거짓 신청이나 부정한 방법으로 보조금을 교부 받은 경우, 보조금을 다른 용도에 사용한 경우, 법령 및 보조금교부 결정의 내용 또 는 법령에 따른 중앙관서의 장의 처분을 위반한 경우"
+        ],
+        [
+          "사용 예",
+          "부정수급의심자로 통보된 보조사업자의 부정수급 여부 확인"
+        ],
+        [
+          "",
+          "부정수급 확정일자"
+        ],
+        [
+          "용어해설",
+          "부정수급으로 확정된 일자"
+        ],
+        [
+          "사용 예",
+          "부정수급 점검결과관리 화면과 부정수급의심자 상세에서 중복수급검토내용 확인"
+        ],
+        [
+          "",
+          "부정합 유형내용"
+        ],
+        [
+          "용어해설",
+          "정보공시 마감 시 교부정보, 지출내역, 정산보고서 내용 등이 불일치할 경우 의 내용"
+        ],
+        [
+          "사용 예",
+          "지자체담당자가 검토한 사업계획서와 e나라도움에 제출된 사업계획서 내용 이 부정합한지 확인"
+        ]
+      ]
+    },
+    {
+      "table_index": 12,
+      "rows": [
+        [
+          "",
+          "사업배정금액"
+        ],
+        [
+          "용어해설",
+          "집행단위의 세목별로 사업 배정한 금액"
+        ],
+        [
+          "사용 예",
+          "사업배정금액 불일치로 지급불능일 처리 절차 확인"
+        ],
+        [
+          "",
+          "삭감결정금액"
+        ],
+        [
+          "용어해설",
+          "불성실공시 한 보조사업자에 대해 차기 보조사업의 교부금액을 삭감하기로 결정한 금액"
+        ],
+        [
+          "사용 예",
+          "사업 예산 삭감으로 인해 공공·민간 교부 결정액 수정 시삭감결정금액 확인"
+        ],
+        [
+          "",
+          "산식"
+        ],
+        [
+          "용어해설",
+          "계산식"
+        ],
+        [
+          "사용 예",
+          "보조세목별 예산집행계획 입력 시 산식을 사용하여 입력 가능"
+        ],
+        [
+          "",
+          "산출내역"
+        ],
+        [
+          "용어해설",
+          "보조비목별 집행금액의 산출내역"
+        ],
+        [
+          "사용 예",
+          "예산조정등록에서 산출내역 수정"
+        ],
+        [
+          "",
+          "상세내역사업명"
+        ],
+        [
+          "용어해설",
+          "중앙관서 내역사업의 하위사업으로써 보조금의 교부대상이 되는 사무 또는 사업(적용대상) 광역·기초 자치단체의 세부사업, 교육청의 세부사업, 공공·민 간기관의 각 보조사업의 이름"
+        ],
+        [
+          "사용 예",
+          "보조사업자에게 보조금 교부 시에 따른 처리를 위해 상세내역 사업명 확인"
+        ],
+        [
+          "",
+          "상위기관명"
+        ],
+        [
+          "용어해설",
+          "보조사업 수행기관의 지방자치단체"
+        ],
+        [
+          "사용 예",
+          "보조사업자의 사업기관명 변경 시 지자체담당자의 정보(지방자치단체명, 담\n당자명, 상위보조사업명 등) 확인"
+        ],
+        [
+          "",
+          "수익금"
+        ],
+        [
+          "용어해설",
+          "보조금사업을 수행하는 과정에서 수익으로 발생한 금액"
+        ],
+        [
+          "사용 예",
+          "보조사업 수행과정에서 수익금이 발생할 경우 반납 여부 확인\n예치형사업의 보조금계좌에서 발생한 이자 처리를 위한 수익금 등록"
+        ]
+      ]
+    },
+    {
+      "table_index": 13,
+      "rows": [
+        [
+          "",
+          "연체가산금"
+        ],
+        [
+          "용어해설",
+          "제재부가금(또는 반환금) 연체 시 발생하는 가산금"
+        ],
+        [
+          "사용 예",
+          ""
+        ],
+        [
+          "",
+          "예비비 여부"
+        ],
+        [
+          "용어해설",
+          "(예비비) 예산을 편성할 때 예측하기 어려운 예산 외의 지출이나 예산이 부족 할 때에 쓰려고 갖추어 두는 비용"
+        ],
+        [
+          "사용 예",
+          "예비비, 추경 등 교부가능액이 0원으로 교부 및 지출요청이 불가한 경우 처리\n절차 확인"
+        ],
+        [
+          "",
+          "예산배정금액"
+        ],
+        [
+          "용어해설",
+          "중앙관서 담당자가 예산을 배정한 금액"
+        ],
+        [
+          "사용 예",
+          "중앙관서 담당자는 내역사업별로 예산배정금액을 입력 후사업배정금액 입력"
+        ],
+        [
+          "",
+          "예산액"
+        ],
+        [
+          "용어해설",
+          "국가나 지방자치단체에서 한 회계 연도의 수입과 지출을 체계적으로 다룬 예산 금액"
+        ],
+        [
+          "사용 예",
+          ""
+        ],
+        [
+          "",
+          "원인 행위 금액"
+        ],
+        [
+          "용어해설",
+          "원인 행위란 그 원인이 되는 주체를 찾아서 행위의 본질을 조사하는 것으로 지출의 원인이 되는 계약 및 이미 법령 또는 계약으로 발생한지출 의무를 이 행하기 위하여 지출하기로 결정된 금액"
+        ],
+        [
+          "사용 예",
+          ""
+        ],
+        [
+          "",
+          "원천징수액"
+        ],
+        [
+          "용어해설",
+          "갑종근로소득, 용역 소득, 퇴직소득, 배당소득, 이자소득 등의 세액"
+        ],
+        [
+          "사용 예",
+          "인건비 집행 시 원천징수액 포함 여부 확인"
+        ],
+        [
+          "",
+          "이월액"
+        ],
+        [
+          "용어해설",
+          "이전의 회계 기간이나 회계 연도에서 넘겨진 잔액"
+        ],
+        [
+          "사용 예",
+          ""
+        ]
+      ]
+    },
+    {
+      "table_index": 14,
+      "rows": [
+        [
+          "",
+          "정산금 반납금액"
+        ],
+        [
+          "용어해설",
+          "사업종료 후 발생한 정산금을 반납해야 하는 금액"
+        ],
+        [
+          "사용 예",
+          "정산보고서 확정 후 보조사업자는 최종 정산금 반납금액을 확인하고 반납"
+        ],
+        [
+          "",
+          "정산금액"
+        ],
+        [
+          "용어해설",
+          "보조사업자가 보조사업 수행을 완료하고 정산한 금액"
+        ],
+        [
+          "사용 예",
+          "보조사업자의 집행내역을 검토 후 정산완료 처리하여 정산금액 계산을 완료"
+        ],
+        [
+          "",
+          "정산보고서 자부담금"
+        ],
+        [
+          "용어해설",
+          "정산보고서(사업이 종료되는 시점에 정산에 대해 작성하는 보고서)에 작성하\n는 보조사업자가 사업을 수행하기 위해 부담하는 금액"
+        ],
+        [
+          "사용 예",
+          "정보공시 진행 시 정산보고서 자부담금 금액이 일치한지 확인"
+        ],
+        [
+          "",
+          "정산보고서 집행잔액"
+        ],
+        [
+          "용어해설",
+          "정산보고서(사업이 종료되는 시점에 정산에 대해 작성하는 보고서)에 작성하 는 당기분 집행잔액 + 전기 이월잔액"
+        ],
+        [
+          "사용 예",
+          "보조사업 완료 후, 정산보고서 집행잔액 확인\n정산보고서 집행잔액과 실제 집행잔액이 상이한 경우 처리 방법확인"
+        ],
+        [
+          "",
+          "정산업무대행여부"
+        ],
+        [
+          "용어해설",
+          "정산업무대행자가 지정되어 있는지 여부"
+        ],
+        [
+          "사용 예",
+          "보조사업자가 사업장 내부의 개인적인 사유로 인해 남은 정산금을 반납처리 를 하지 않겠다고 하는 경우 정산업무대행으로 진행"
+        ],
+        [
+          "",
+          "정산확정일자"
+        ],
+        [
+          "용어해설",
+          "정산보고서 작성 완료 후 지자체담당자가 최종 확정 처리한 일자"
+        ],
+        [
+          "사용 예",
+          "정산보고서 제출 후 정산 반납을 위해 정산확정일자 확인"
+        ]
+      ]
+    },
+    {
+      "table_index": 15,
+      "rows": [
+        [
+          "",
+          "중요재산 여부"
+        ],
+        [
+          "용어해설",
+          "검사상세 정보의 중요재산 등록 여부"
+        ],
+        [
+          "사용 예",
+          "보조사업자는 검사요청서 작성 시 해당 계약 물품의 중요재산 여부를 확인"
+        ],
+        [
+          "",
+          "중요재산명"
+        ],
+        [
+          "용어해설",
+          "중앙관서에서 지정한 중요재산 기준에 해당되며, 교부 받은 보조금으로 취득 한 재산명"
+        ],
+        [
+          "사용 예",
+          "중요재산기준에 따라 중요재산명, 취득가액 등을 입력"
+        ],
+        [
+          "",
+          "증빙공급가액"
+        ],
+        [
+          "용어해설",
+          "증빙 자료로 검증된 공급가액"
+        ],
+        [
+          "사용 예",
+          "기타 증빙으로 집행 시 증빙공급가액을 계산하여 입력"
+        ],
+        [
+          "",
+          "증빙부가가치세"
+        ],
+        [
+          "용어해설",
+          "증빙 자료로 검증된 부가가치세"
+        ],
+        [
+          "사용 예",
+          "기타 증빙으로 집행 시 증빙부가가치세를 계산하여 입력"
+        ],
+        [
+          "",
+          "지급결정금액"
+        ],
+        [
+          "용어해설",
+          "거래처 또는 수령자에게 지출이 결정된 금액"
+        ],
+        [
+          "사용 예",
+          "계약집행을 일반집행으로 잘못 집행하였을 경우 계약관리의 대금(선금)청구 번호, 지급결정금액과 집행관리의 집행ID, 거래처명, 집행금액확인"
+        ],
+        [
+          "",
+          "지급금액"
+        ],
+        [
+          "용어해설",
+          "집행비목인력 정보의 인건비 지급금액"
+        ],
+        [
+          "사용 예",
+          "다수의 개인에게 집행되는 일반수용비 등록 시 지급금액 입력"
+        ],
+        [
+          "",
+          "지급요청금액"
+        ],
+        [
+          "용어해설",
+          "거래처의 선금청구나 대금청구 등에 의하여 발생하는 요청 금액"
+        ],
+        [
+          "사용 예",
+          "거래처에게 계약금을 지급하기 위해 지급요청금액 입력"
+        ]
+      ]
+    },
+    {
+      "table_index": 16,
+      "rows": [
+        [
+          "",
+          "지방보조금액"
+        ],
+        [
+          "용어해설",
+          "자치단체(광역, 기초)에서 보조하는 보조금 금액"
+        ],
+        [
+          "사용 예",
+          "보조사업 중 공사를 하거나 자본적 성격이 있는 민간자본사업보조는 지방보\n조금액을 선지급"
+        ],
+        [
+          "",
+          "지방자치단체 보조금액"
+        ],
+        [
+          "용어해설",
+          "자치단체(광역, 기초)에서 보조하는 보조금 금액"
+        ],
+        [
+          "사용 예",
+          "보조사업자는 보조사업 수행 시 지방자치단체 보조금액의 비율을 확인"
+        ],
+        [
+          "",
+          "지방자치단체보조 여부"
+        ],
+        [
+          "용어해설",
+          "총사업비에 지방비 포함 여부"
+        ],
+        [
+          "사용 예",
+          "보조사업자에게 직권교부 시 지방자치단체보조 여부 확인"
+        ],
+        [
+          "",
+          "지분금액"
+        ],
+        [
+          "용어해설",
+          "공유자 각자가 소유하는 몫의 금액"
+        ],
+        [
+          "사용 예",
+          "대금지급요청 시 지분 금액 보다 큰 금액은 입력이 가능"
+        ],
+        [
+          "",
+          "지출결의 건명"
+        ],
+        [
+          "용어해설",
+          "보조금을 사용하기 위해 지출하는 내용에 관해서 결정하는 건의 명칭"
+        ],
+        [
+          "사용 예",
+          ""
+        ],
+        [
+          "",
+          "지출결의금액"
+        ],
+        [
+          "용어해설",
+          "보조금을 지출하기 위해 결정하는 금액"
+        ],
+        [
+          "사용 예",
+          "원인 행위 금액과 지출결의금액이 상이한 경우 지출 반려\n지자체 반납금액 분할을 위해 지출결의금액 확인 필요."
+        ],
+        [
+          "",
+          "지출결의번호"
+        ],
+        [
+          "용어해설",
+          "보조금을 사용하기 위해 지출하는 내용에 대해서 결정한 번호"
+        ],
+        [
+          "사용 예",
+          "세부사업을 잘못 지정하여 지출이 이루어진 경우 지출결의번호 확인 필요"
+        ]
+      ]
+    },
+    {
+      "table_index": 17,
+      "rows": [
+        [
+          "",
+          "지출금액"
+        ],
+        [
+          "용어해설",
+          "용역이나 물품제공 대가로 지급한 금액"
+        ],
+        [
+          "사용 예",
+          "보조금을 지출하기 위한 지출금액"
+        ],
+        [
+          "",
+          "지출내용"
+        ],
+        [
+          "용어해설",
+          "어떤 목적을 위하여 지출했는지에 대한 내용"
+        ],
+        [
+          "사용 예",
+          ""
+        ],
+        [
+          "",
+          "직권교부 결정액"
+        ],
+        [
+          "용어해설",
+          "내역사업담당자가 교부신청 없이 직권으로 교부 결정 후 최종 결재한금액"
+        ],
+        [
+          "사용 예",
+          "보조사업자는 교부신청 없이 교부한 직권교부 결정액 확인"
+        ],
+        [
+          "",
+          "직접수행금액"
+        ],
+        [
+          "용어해설",
+          "사업수행 시 재교부하지 않고 직접 수행하는 금액"
+        ],
+        [
+          "사용 예",
+          "직접수행형의 경우 중앙에서 보조사업을 직접 수행하므로 직접수행금액을 확인"
+        ],
+        [
+          "",
+          "집행계획금액"
+        ],
+        [
+          "용어해설",
+          "사업계획등록 시 예산집행계획 한 재원 별 비목별 보조금 합계 금액"
+        ],
+        [
+          "사용 예",
+          "사업 등록 시 집행계획금액이 위탁금액보다 초과할 경우 메시지 확인"
+        ],
+        [
+          "",
+          "집행공급가액"
+        ],
+        [
+          "용어해설",
+          "보조사업의 사업비 집행 시 집행액에 포함된 공급가액"
+        ],
+        [
+          "사용 예",
+          "보조사업자 보조금 사용을 위해 집행공급가액을 등록"
+        ],
+        [
+          "",
+          "집행금액"
+        ],
+        [
+          "용어해설",
+          "보조사업자가 사업비를 지출하기 위해 집행정보등록, 요청 후 보조금집행 이체실행 한 금액"
+        ],
+        [
+          "사용 예",
+          "보조사업 시행을 위해 필요한 금액을 산출하여 e나라도움에 집행금액을 등록"
+        ]
+      ]
+    },
+    {
+      "table_index": 18,
+      "rows": [
+        [
+          "",
+          "집행잔액"
+        ],
+        [
+          "용어해설",
+          "승인 예산 중 계약 및 예산 집행 과정에서 발행한 차액"
+        ],
+        [
+          "사용 예",
+          "사업비 정산 중 집행잔액으로 인한 이자 발생 처리"
+        ],
+        [
+          "",
+          "징수요청금액"
+        ],
+        [
+          "용어해설",
+          "부정수급점검대상에게 징수 요청한 금액"
+        ],
+        [
+          "사용 예",
+          "부정수급자에게 반환금을 반납 받기 위해 징수요청금액을 입력"
+        ],
+        [
+          "",
+          "차기이월 금액"
+        ],
+        [
+          "용어해설",
+          "당해 회계연도에 지출을 다 하지 못하고 남은 것을 다음 연도로 넘겨서 다음 회계연도의 예산으로 사용할 금액"
+        ],
+        [
+          "사용 예",
+          "정산 시 전기이월액에 대한 집행잔액에 차기이월액을 포함"
+        ],
+        [
+          "",
+          "차기이월액"
+        ],
+        [
+          "용어해설",
+          "보조사업이 계속 사업인 경우 다음연도로 이월한 금액"
+        ],
+        [
+          "사용 예",
+          "정산 시 전기이월액에 대한 집행잔액에 차기이월액을 포함"
+        ],
+        [
+          "",
+          "철회 일자"
+        ],
+        [
+          "용어해설",
+          "효력이 발생하지 않은 법률행위에 관하여 그 법률행위의 효력이 장래에 대하 여 소멸되는 일자"
+        ],
+        [
+          "사용 예",
+          "교부 결정 후 보조금의 교부 신청 건을 철회한 철회 일자 확인"
+        ],
+        [
+          "",
+          "청구금액"
+        ],
+        [
+          "용어해설",
+          "계약에 의해 구매할 재산 또는 물품에 요구하는 금액"
+        ],
+        [
+          "사용 예",
+          "청구금액에 자동으로 입력되어 나오는 공급가액 및 부가세은 지출 대상"
+        ],
+        [
+          "",
+          "체납액"
+        ],
+        [
+          "용어해설",
+          "납세자가 결정된 조세액을 납부기한까지 납부하지 않은 체납액"
+        ],
+        [
+          "사용 예",
+          "보조사업자 선정 시 체납액이 있는지 여부 확인"
+        ]
+      ]
+    },
+    {
+      "table_index": 19,
+      "rows": [
+        [
+          "",
+          "출금계좌번호"
+        ],
+        [
+          "용어해설",
+          "이체내역을 관리할 때 출금이 되는 계좌번호"
+        ],
+        [
+          "사용 예",
+          "이체 확인증 출력 시 출금계좌번호 확인"
+        ],
+        [
+          "",
+          "카드매입집행금액"
+        ],
+        [
+          "용어해설",
+          "카드사로부터 수신된 카드매입내역에 대해 집행이체를 실행한 금액"
+        ],
+        [
+          "사용 예",
+          ""
+        ],
+        [
+          "",
+          "포상금"
+        ],
+        [
+          "용어해설",
+          "나라 발전에 뚜렷한 공로가 있는 사람에게 정부가 칭찬하고 장려하여 주는 금 액"
+        ],
+        [
+          "사용 예",
+          "부정수급 신고포상금 지급 건수 및 지급 금액"
+        ],
+        [
+          "",
+          "환수금액"
+        ],
+        [
+          "용어해설",
+          "부정수급 적발대상에 대한 보조금 지급액 환수금"
+        ],
+        [
+          "사용 예",
+          "중앙관서에서 [1원 단위]까지 환수금액을 작성하여 고지서 발급 요청"
+        ],
+        [
+          "",
+          "회계 연도"
+        ],
+        [
+          "용어해설",
+          "국가나 지방자치단체의 세입, 세출을 구분하기 위하여 설정된 일정한 기간 으로 예산은 이 기간을 단위로 하여 편성되고 예산의 집행 및 결산기간마다 구분 정리되는 것으로 회계연도는 보통 1년을 주기로 함"
+        ],
+        [
+          "사용 예",
+          "보조금을 당해 회계 연도에 1천만 원 이상 교부 받은 보조사업자는 정보공시 대상"
+        ],
+        [
+          "",
+          "회계 일자"
+        ],
+        [
+          "용어해설",
+          "세금계산서 또는 영수증의 작성 일자(거래일자)"
+        ],
+        [
+          "사용 예",
+          "수입결의 및 수납 완납 후 계정과목 변경을 위한 회계 일자 확인"
+        ]
+      ]
+    }
+  ],
+  "full_text": "신규사용자를 위한 보탬e 사용법\n보탬e는 지방보조사업에 대한 계획부터 사후관리까지 업무처리 전 과정을 정보화\n전자증빙을 활용한 온라인 집행·정산관리 도입 및 예치계좌를 통해\n보조금 집행 업무의 효율성 강화\n자격검증, 중복수급 등의 온라인 자격검증의 도입과 부정 모니터링 도입을 통해 이상 징후 예방체계 도입\n지방보조금 운영 전반을 시스템으로 관리하여, 지자체별 보조사업·수급자 정보를 통합 관리하여 보조금 관리 사각지대 해소\n목차\n목차\n부록. 보탬e 필수 용어 / 193p\n기 본 소 개\n지방보조금관리\n시스템(보탬e) 소개\n개인정보 취급자 개인정보보호 교육\n기 본 소 개\n기 본 소 개\n여기 QR코드를 촬영하여\n1\t유튜브 온라인 영상으로도\n사용법을 볼 수 있습니다!\n잠깐!\n보조사업자님! 보탬e을\n시작하기 전에 보탬e\n준비사항부터\n알아볼까요?\n보탬e 사전 준비사항 절차\n신규 사용자들은 보탬e을 사용하기 위해 다음 순서 및 안내에 따라\n사전 준비사항을 체크합니다.\nWindows 10 이상\n운영 체제\n브라 우저\nMicrosoft Edge 최신\nChrome 최신\n본인 명의 휴대폰\n본인 인증\n브라 우저 인증\n브라우저 인증 설치 프로그램\n보탬e 사전 준비사항 안내\t기\n소\n먼저, 보탬e를 사용할 수 있는 Windows 10 이상의 운영 체제 여부를\t개\n운영\t확인합니다. 확인 방법은 내 PC ≫ 우측 마우스 클릭 ≫ 속성 항목을 클릭하여\n체제\n확인할 수 있습니다.\n보탬e은 프로그램 설치 없이 브라우저를 통해 진행됩니다. 사용자는 아래 버전 확인 방법을 참고하여 최신 버전으로 사용하시기 바랍니다.\n추가로 보탬e 사용 시, 팝업이 원활하게 조회될 수 있도록 팝업 허용을 추가합니다. 브라우저 버전 확인 및 팝업 허용 방법은 아래와 같습니다.\nMicrosoft Edge 버전 확인 설정 ≫ Microsoft Edge 정보에서 확인\n브라\n우저\t팝업 허용 설정 ≫ 인터넷 옵션 ≫ 개인 정보 ≫ 팝업\n차단 설정 클릭 ≫ www.losims.go.kr 추가\nChrome 버전 확인 설정 ≫ 도움말 ≫ Chrome 정보에서 확인 팝업 허용 설정 ≫ 개인정보 및 보안 ≫ 사이트 설정 ≫\n팝업 및 리디렉션 ≫ 허용 ≫ www.losims.go.kr 추가\n다음은 보탬e을 사용하기 위해 회원가입 시 본인 인증에 대해 알아보겠습니다.\n본인\t회원가입 시 필요한 본인 인증은 본인 명의로 된 휴대폰 인증으로 진행할 수 있습니다.\n보안프로그램 설치 없이 보탬e 시스템 이용 가능, 인증서의 경우\n브라\n우저\t1. 하드/이동식 디스크 인증서 사용 시 프로그램 추가 설치\n인증\n2. 브라우저 인증서 추가\n2\n보조사업자님! 보탬e 준비사항은 확인하셨죠?\n사업은 신청 방식에 따라 다양한 사업 유형으로 나누어져요! 내가 담당하는 사업이 신청 방식에 따라 어떤 사업 유형에 해당 하는지 반드시 알고 진행해야겠죠?\n사업 유형\n보조사업의 신청 방식은 공모 방식과 지정 방식으로 나뉩니다. 아래 그림을 참고하여 나의 사업 방식을 확인해 보세요.\n공모\n공사모업형\n지정\n지사정업형\n지자체담당자가 해당 사업을 공개하고 참여하고자 하는 사업자의 신청서를 받아 자격검증 후 보조사업자로 선정하는 유형입니다.\n비공모를 통해 보조사업자를 선정하는\n경우 사용합니다.\n기\n공공모모형\t본\n개\n공모형\n지자체담당자가 보탬e을 통해 사업을 공모한 유형으로 보조사업자는 보탬e에서 공모를 확인하고 사업 신청서를 제출합니다.\n공지모정형\n자체공모형\n지정형\n지자체담당자가 보탬e이 아닌 자체 홈페이지 또는 오프라인 공모를 통해 보조사업자를 선정한 유형으로 지자체담당자는 보탬e에 진행된 자체 공모 결과를 등록하고 보조사업자는 수행사업계획신청을 진행합니다.\n지자체담당자가 해당 사업에 적합한 사업자를 지정하는 유형으로 보조사업자는 보탬e에서 수행사업계획신청을 진행합니다.\n3\nMEMO\n4\n기 본 소 개\n5\n기 본 소 개\n6\n챗봇기능 활용\nMEMO\n사 용 자 지 원\n2 사용자지원 이용안내\n여기 QR코드를 촬영하여 유튜브 온라인 영상으로도 사용법을 볼 수 있습니다!\n사 용 자 지 원\n여기 QR코드를 촬영하여\n2\t유튜브 온라인 영상으로도\n사용법을 볼 수 있습니다!\n보조사업자님! 사용자정보관리에서 회원가입 하는 방법과\n인증서 등록하는 방법을 알아보고\n기관/단체소속으로 가입하는 방법에 대해서 알아볼까요?\n사 용 자 지 원\n사 용 자 지 원\n사 용 자 지 원\n여기 QR코드를 촬영하여\n3\t유튜브 온라인 영상으로도\n사용법을 볼 수 있습니다!\n보조사업자님!\t사\n단체정보담당자가 기관 정보에 대한 부가세 여부나 개요정보 등\t용\n상세내용을 관리하고 가입신청을 승인하는 방법과 해당 단체의\t\t자 수행보조사업 담당자를 지정하고 단체/기관 구성원에게\t\t지 업무 권한을 부여하는 방법에 대해 알아볼까요?\t원\n일반과세사업자의 경우 매입부가세는 환급 대상입니다.\n부가세 신고여부에 따라 과세사업자가 N을 선택할 수 있습니다. (*지자체에게 통보 필요)\n사 용 자 지 원\n단체정보담당자는 구성원 가입승인 + 민간보조사업담당자 지정 + 권한부여 필수입니다!\n사 용 자 지 원\n사 업 선\n3 공모형 사업 선정\n여기 QR코드를 촬영하여 유튜브 온라인 영상으로도 사용법을 볼 수 있습니다!\n사 업 선 정\n여기 QR코드를 촬영하여\n1\t유튜브 온라인 영상으로도\n사용법을 볼 수 있습니다!\n보조사업자님!\n보조사업자가 공모사업의 목록을 조회하거나 공모를 신청하는 방법과\n공모 신청 시 신청사업자정보와 세부추진계획, 재원조달계획, 예산집행계획 등을 등록하고\n공모신청시 자격요건을 확인하고 동의처리를 진행하여\n공모사업신청서를 제출하는 방법에 대해 알아볼까요?\t사 업\n선 정\n사 업 선 정\n사 업 선 정\n사 업 선 정\n예산집행계획등록\n민간 보조비목(편성목)·세목(통계목)\n보탬e\n보조비목/세목\n사 업 선 정\n자격요건확인\n사 업 선 정\n공모사업신청서제출\n여기 QR코드를 촬영하여 유튜브 온라인 영상으로도 사용법을 볼 수 있습니다!\n사 업 선 정\n선정된 보조사업자는 반드시 수행사업계획서 등록 필요\n여기 QR코드를 촬영하여\n2\t유튜브 온라인 영상으로도\n사용법을 볼 수 있습니다!\n보조사업자님!\n사 업 선 정\n획신청\n사 업 선 정\n사 업 선 정\n사 업 선 정\n지정형/자체공모형\n사업선정\n사 업 선 정\n선정된 보조사업자는 반드시 수행사업계획서 등록 필요\n1\n보조사업자님!\n사 업 선 정\n계획신청\n사 업 선 정\n자부담계좌 은행은 지자체 은행 확인 필요!\n(자부담이 있는 경우도 동일 계좌로 사용합니다!)\n교부관리\t교\n관 리\n교 부 관 리\n보조금 교부신청시 신청금액은 지방자치단체에 꼭 확인 필요합니다.\n보탬e\n예치형 보조금 흐름\n보조금을 예치계좌로 교부 받아\n집행등록/요청 및 이체까지 보탬e를 통해 처리\n여기 QR코드를 촬영하여\n1\t유튜브 온라인 영상으로도\n사용법을 볼 수 있습니다!\n보조사업자님! 보조사업자로 선정이 되었다면 보조사업의 상세 정보를 조회하여 보조사업비 교부신청을 할 수 있습니다. 교부신청금액을 입력하고 제출하는 방법과\n보조금 교부신청서를 출력할 수 있는 방법을 알아볼까요?\n교 부 관 리\n신규\n추가로 교부 신청을 할 경우 [추가] 버튼을 누릅니다.\n보조금 교부신청 시 사업유형 예치/비예치 확인 후 교부신청\n여기 QR코드를 촬영하여\n2\t유튜브 온라인 영상으로도\n사용법을 볼 수 있습니다!\n보조사업자님! 교부신청에서 교부가 오 입금되었을 경우에는 지방자치단체에서 교부결정을 취소하게 됩니다.\n교부결정의 취소 되었을 때 취소금액을 이체하는 방법을 알아볼까요?\n교 부 관 리\nMEMO\nMEMO\n6 사업수행관리\n사 업 수 행\n여기 QR코드를 촬영하여\n1\t유튜브 온라인 영상으로도\n사용법을 볼 수 있습니다!\n보조사업자님! 보조사업에 대한 거래처계약관리와 신규 등록하는 방법을 알아볼까요?\n신규\n사 업 수 행\n여기 QR코드를 촬영하여\n2\t유튜브 온라인 영상으로도\n사용법을 볼 수 있습니다!\n보조사업자님! 보조금으로 취득한 중요재산정보를 등록하는 방법을 알아볼까요?\n사 업 수 행\n사 업 수 행\n여기 QR코드를 촬영하여\n3\t유튜브 온라인 영상으로도\n사용법을 볼 수 있습니다!\n보조사업자님! 사업내용이 부득이하게 변경된다면 보조사업 담당자에게 사업내용에 대하여 변경신청 해야 합니다. 변경내용을 작성하는 순서를 알아볼까요?\n변경신청 후 승인이 되어야 집행등록이 가능합니다!\n사 업 수 행\n4\n보조사업자님! 수행상황 보고서를 작성하고\n지자체 사업담당자가 확인할 수 있는 방법에 대해 알아볼까요?\n사 업 수 행\n여기 QR코드를 촬영하여\n5\t유튜브 온라인 영상으로도\n사용법을 볼 수 있습니다!\n보조사업자님! 사업내용이 부득이하게 수행포기, 일시정지를 해야 한다면 보조사업 담당자에게 사업내용에 대하여 변경내용을 작성하는 순서를 알아볼까요?\n수행포기신청을 하고자 하는 사업이라도 집행이 이루어진 적이 있다면 정산작업은 필수입니다.\nMEMO\n7 금융정보관리\n금 융 정 보\n여기 QR코드를 촬영하여\n1\t유튜브 온라인 영상으로도\n사용법을 볼 수 있습니다!\n보조사업자님! 금융기관에서 발급받은 보조금 전용카드가 있다면 보조금전용카드를 등록하실 수 있습니다.\n보조금 전용카드 등록하는 과정과 사용내역을 카드별로 조회하는 방법을 알아볼까요?\n금 융 정 보\n※ 카드 발급 다음날 등록 가능\n※ 보탬e에 카드 등록 후 사용(일부 신용카드 예외)\n금 융 정 보\n여기 QR코드를 촬영하여\n2\t유튜브 온라인 영상으로도\n사용법을 볼 수 있습니다!\n보조사업자님!\n보조사업의 금융거래를 위해서는 이체인증서를 등록해야 합니다. 펌뱅킹이용신청 동의, 이체 비밀번호 등록과\n보조사업자가 자주 사용하는 거래처 계좌정보 등을 등록하여 집행등록 시 거래처정보를 불러와 편리하게 집행하는 방법을 알아볼까요?\n신규\n금 융 정 보\nMEMO\n집행관리\n(집행등록 및 요청)\n집 행 관 리\n여기 QR코드를 촬영하여 유튜브 온라인 영상으로도 사용법을 볼 수 있습니다!\n집 행 관 리\n여기 QR코드를 촬영하여\n1\t유튜브 온라인 영상으로도\n사용법을 볼 수 있습니다!\n보조사업자님! 전자세금계산서를 이용해 거래했을 경우에는 전자세금계산서 등록이 필요합니다.\n전자세금계산서 집행정보를 등록하고 집행요청 하는 방법을 알아볼까요?\n증빙자료등록\n집 행 관 리\n집 행 관 리\n집 행 관 리\n여기 QR코드를 촬영하여\n2\t유튜브 온라인 영상으로도\n사용법을 볼 수 있습니다!\n보조사업자님! 연계증빙 없이 거래한 경우에는 기타증빙으로 집행등록 할 수 있습니다.\n기타증빙 집행요청하는 방법을 알아볼까요?\n※ 금융사용자관리 > 자주쓰는 사업자계좌관리 메뉴에서 등록한 거래처정보를 불러내어 사용 가능합니다.\n집 행 관 리\n여기 QR코드를 촬영하여\n3\t유튜브 온라인 영상으로도\n사용법을 볼 수 있습니다!\n보조사업자님!\n보조금전용 신용카드 증빙의 경우일 때 집행등록 과정을 알아볼까요?\n집 행 관 리\n4\n보조사업자님!\n과세유형에 따라서 재원정보 입력을 다르게 해야 합니다. 부가세 신고여부에 따라 집행정보 등록하는 방법을 알아볼까요?\n집 행 관 리\n집행관리\n(인건비집행등록 및 요청)\n집 행 관 리\n집 행 관 리\n1\n집 행 관 리\n집 행 관 리\n보탬e\n급여의 흐름\n원천징수액이 없는 경우 기타증빙을 통해서 집행등록을 할 수 있습니다.\n여기 QR코드를 촬영하여 유튜브 온라인 영상으로도 사용법을 볼 수 있습니다!\n집 행 관 리\n원천징수액 계좌와 실지급액 계좌가 상이함을 확인 할 수 있습니다.\n집 행 관 리\n집 행 관 리\n집행관리\n(집행이체관리)\n집 행 관 리\n여기 QR코드를 촬영하여\n1\t유튜브 온라인 영상으로도\n사용법을 볼 수 있습니다!\n집 행 관 리\n인건비집행 시 원천징수액 : 자부담계좌로 이체\n인건비집행 시 실지급액 : 인건비 급여계좌로 이체\n집 행 관 리\n집 행 관 리\n부분취소 불가능합니다. 전체취소후 금액 수정 하여 재집행\n여기 QR코드를 촬영하여\n2\t유튜브 온라인 영상으로도\n사용법을 볼 수 있습니다!\n집 행 관 리\n이체실행 시 자부담계좌의 금액이 예치계좌로 복원됩니다.\n집 행 관 리\n집 행 관 리\n2\n집 행 관 리\n이체실행 시 자부담계좌의 금액이 예치계좌로 복원됩니다.\n집 행 관 리\n집 행 관 리\nMEMO\n11 정산관리\n정 산 관 리\n정 산 관 리\n여기 QR코드를 촬영하여\n1\t유튜브 온라인 영상으로도\n사용법을 볼 수 있습니다!\n보조사업자가 집행마감을 등록할 수 있으며 집행마감 후에는 집행이 불가합니다.\n정 산 관 리\n정산검토 진행상태가 보완요청 상태인지 확인합니다.\n정 산 관 리\n보안요청 건은 집행관리 메뉴로 이동하여 보조비세목, 첨부파일 등을 보완할 수 있습니다.\n정 산 관 리\n정 산 관 리\n여기 QR코드를 촬영하여\n2\t유튜브 온라인 영상으로도\n사용법을 볼 수 있습니다!\n진행상태가 미작성, 작성중 이외 경우에는 [작성]버튼이 비활성화되어 있습니다.\n정 산 관 리\n컨소사업의 경우 모든 수행기관의 집행자료를 재원,\n비목, 지출 일 순으로 조회하며 집행된 자료만 조회됩니다.\n정 산 관 리\n컨소사업의 경우 모든 수행기관의 사업 별 집행계획변경 내역을 조회할 수 있습니다.\n정 산 관 리\n지방보조금의 사업별 총 액이 3억원 이상의 경우에 외부기관 검증대상 입니다.\n정 산 관 리\n정 산 관 리\n여기 QR코드를 촬영하여\n3\t유튜브 온라인 영상으로도\n사용법을 볼 수 있습니다!\n정산진행 상태가 정산마감 이후라면 세부내역 조회가 가능합니다.\n정 산 관 리\n자부담계좌에 있는 반환금액을 예치계좌로 반환이체실행합니다.\n정 산 관 리\n여기 QR코드를 촬영하여\n4\t유튜브 온라인 영상으로도\n사용법을 볼 수 있습니다!\nMEMO\n부록 보탬e 필수 용어\n부 록\n부 록\n부 록\n부\n부\n부 록\n부 록\n부\n부 록\n부 록\n부 록\n부 록\n부 록\n부 록\n신규 사용자를 위한\n이렇게 하면 나도 전문가(보탬e) - 보조사업자(예치형) -\n발행처 : 한국지역정보개발원\n주\t소 : (04637) 서울특별시 마포구 성암로 301\n보탬e 홈페이지 : https://www.losims.go.kr/\n보탬e 문의사항 : 1660-1390\n본 교재는 보탬e 신규 사용자를 위한 기초내용을 기반으로 한 교재입니다.\n[안내]\n교재의 내용 및 화면은 기능개선에 의해 실제 화면과 다를 수 있습니다.\n최신 교재 및 상세 매뉴얼은 보탬e 홈페이지 내\n[사용자 매뉴얼]을 참고하시기 바랍니다."
+}
