@@ -1,0 +1,23 @@
+{
+  "name": "@botame/player",
+  "version": "2.1.0",
+  "description": "Playbook execution engine for 보탬e",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest"
+  },
+  "keywords": ["botame", "player", "playbook"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@botame/types": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "vitest": "^2.0.0"
+  }
+}
