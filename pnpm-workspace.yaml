@@ -1,0 +1,4 @@
+packages:
+  - 'packages/*'
+  - 'botame-admin'
+  - 'botame-guide-app'
