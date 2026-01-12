@@ -1,7 +1,10 @@
 /**
  * Playbook Runner Service - Executes and validates playbooks using Playwright
  * v2: 자가 치유 엔진 통합
- * v3: @botame/player 통합
+ * v3: @botame/player PlaybookEngine 통합
+ *
+ * This service now uses PlaybookEngine from @botame/player for execution flow,
+ * while preserving admin-specific features (self-healing, highlighting, picking).
  */
 
 import { Page } from "playwright";
@@ -12,7 +15,8 @@ import {
   SemanticStep,
 } from "../../shared/types";
 import { BrowserService } from "./browser.service";
-import { AdminBrowserAdapter } from "./admin-browser-adapter";
+import { PlaybookEngine, StepExecutor } from "@botame/player";
+import { ExecutionContext } from "@botame/types";
 import { SelfHealingAdapter } from "../core/self-healing-adapter";
 import { Highlighter } from "../core/highlighter";
 import { configLoader } from "../../shared/config";
@@ -70,24 +74,267 @@ export class PlaybookRunnerService {
   private browserService: BrowserService;
   private selfHealingAdapter: SelfHealingAdapter;
   private highlighter: Highlighter;
-  // AdminBrowserAdapter for future @botame/player integration
-  // Currently keeping admin-specific self-healing implementation
-  private adminBrowserAdapter: AdminBrowserAdapter;
+  // PlaybookEngine from @botame/player handles execution flow
+  private engine: PlaybookEngine;
   private state: RunnerState = {
     isRunning: false,
     currentStepIndex: -1,
     totalSteps: 0,
     results: [],
   };
-  private isPaused = false;
-  private shouldStop = false;
   private eventListeners: EventCallback[] = [];
 
   constructor(browserService: BrowserService) {
     this.browserService = browserService;
     this.selfHealingAdapter = new SelfHealingAdapter();
     this.highlighter = new Highlighter();
-    this.adminBrowserAdapter = new AdminBrowserAdapter(browserService);
+    this.engine = new PlaybookEngine();
+
+    // Set up step executor with admin-specific self-healing logic
+    this.engine.setStepExecutor(this.createStepExecutor());
+
+    // Wire up engine events to runner events
+    this.setupEngineEventHandlers();
+  }
+
+  /**
+   * Create step executor that uses admin's self-healing logic
+   * This is called by PlaybookEngine for each step
+   */
+  private createStepExecutor(): StepExecutor {
+    return async (step: PlaybookStep, context: ExecutionContext) => {
+      const startTime = Date.now();
+      const page = this.browserService.getPage();
+
+      const result: StepResult = {
+        stepId: step.id,
+        stepIndex: context.currentStepIndex,
+        status: "running",
+      };
+
+      try {
+        if (!page) {
+          throw new Error("페이지가 없습니다.");
+        }
+
+        // Show status bar
+        await this.highlighter.showStatusBar(
+          `Step ${context.currentStepIndex + 1}: ${step.message || step.action}`,
+          "info",
+        );
+
+        // Execute step with self-healing
+        await this.executeStepAction(step, page);
+
+        result.status = "success";
+        result.duration = Date.now() - startTime;
+
+        // Add healing info if applicable
+        if (this.lastHealingInfo?.healed) {
+          result.healed = true;
+          result.healedSelector = this.lastHealingInfo.healedSelector;
+          result.originalSelector = this.lastHealingInfo.originalSelector;
+          result.healMethod = this.lastHealingInfo.healMethod;
+        }
+
+        // Success highlight
+        await this.highlighter.showSuccess(result.message || "완료");
+
+        console.log(
+          `[PlaybookRunner] Step ${context.currentStepIndex + 1} success: ${result.message}${result.healed ? " (healed)" : ""}`,
+        );
+
+        // Return in format expected by PlaybookEngine
+        return {
+          success: true,
+          duration: result.duration,
+        };
+      } catch (error) {
+        result.status = step.optional ? "skipped" : "failed";
+        result.error =
+          error instanceof Error ? error.message : "알 수 없는 오류";
+        result.duration = Date.now() - startTime;
+
+        // Failure highlight
+        await this.highlighter.showError(result.error);
+
+        console.error(
+          `[PlaybookRunner] Step ${context.currentStepIndex + 1} failed:`,
+          result.error,
+        );
+
+        // Capture screenshot on failure
+        try {
+          if (page) {
+            const screenshot = await page.screenshot({
+              type: "png",
+              fullPage: false,
+            });
+            result.screenshot = screenshot.toString("base64");
+          }
+        } catch {
+          // Screenshot error is not critical
+        }
+
+        // Return in format expected by PlaybookEngine
+        return {
+          success: false,
+          error: result.error,
+        };
+      }
+    };
+  }
+
+  /**
+   * Execute a step action with self-healing
+   */
+  private async executeStepAction(
+    step: PlaybookStep,
+    page: Page,
+  ): Promise<void> {
+    switch (step.action) {
+      case "navigate":
+        if (!step.value) throw new Error("URL이 필요합니다.");
+        await page.goto(step.value, {
+          waitUntil: "networkidle",
+          timeout: step.timeout || 30000,
+        });
+        this.lastStepMessage = `${step.value}로 이동`;
+        break;
+
+      case "click":
+        await this.executeClickWithHealing(step as SemanticStep, page);
+        this.lastStepMessage = step.message || "클릭 완료";
+        break;
+
+      case "type":
+        if (step.value === undefined) throw new Error("입력 값이 필요합니다.");
+        await this.executeTypeWithHealing(
+          step as SemanticStep,
+          step.value,
+          page,
+        );
+        this.lastStepMessage = step.message || `"${step.value}" 입력`;
+        break;
+
+      case "select":
+        if (!step.value) throw new Error("선택 값이 필요합니다.");
+        await this.executeSelectWithHealing(
+          step as SemanticStep,
+          step.value,
+          page,
+        );
+        this.lastStepMessage = step.message || `${step.value} 선택`;
+        break;
+
+      case "wait":
+        const waitTime = step.timeout || 1000;
+        await this.sleep(waitTime);
+        this.lastStepMessage = `${waitTime}ms 대기`;
+        break;
+
+      case "scroll":
+        if (step.selector || (step as SemanticStep).smartSelector) {
+          const healingResult = await this.selfHealingAdapter.findElement(
+            step as SemanticStep,
+          );
+          if (healingResult.success && healingResult.locator) {
+            await healingResult.locator.scrollIntoViewIfNeeded({
+              timeout: step.timeout || 5000,
+            });
+          }
+        } else {
+          await page.evaluate(() => window.scrollBy(0, 300));
+        }
+        this.lastStepMessage = "스크롤 완료";
+        break;
+
+      case "hover":
+        const hoverResult = await this.selfHealingAdapter.findElement(
+          step as SemanticStep,
+        );
+        if (hoverResult.success && hoverResult.locator) {
+          await hoverResult.locator.hover({ timeout: step.timeout || 5000 });
+        }
+        this.lastStepMessage = step.message || "호버 완료";
+        break;
+
+      case "guide":
+        this.lastStepMessage = step.message || "가이드 단계";
+        break;
+
+      default:
+        throw new Error(`알 수 없는 액션: ${step.action}`);
+    }
+  }
+
+  /**
+   * Set up event handlers to bridge PlaybookEngine events to RunnerEvents
+   */
+  private setupEngineEventHandlers(): void {
+    this.engine.on("started", () => {
+      this.emit({ type: "started", state: this.state });
+    });
+
+    this.engine.on("step_started", (data: any) => {
+      // Convert engine event to runner event
+      const result: StepResult = {
+        stepId: data.step.id,
+        stepIndex: data.stepIndex,
+        status: "running",
+      };
+      this.emit({
+        type: "step_started",
+        state: this.state,
+        stepResult: result,
+      });
+    });
+
+    this.engine.on("step_completed", (data: any) => {
+      // Map engine result to runner result
+      const result: StepResult = {
+        stepId: data.result.stepId || data.step?.id,
+        stepIndex: data.stepIndex,
+        status: data.result.success ? "success" : "failed",
+        message: this.lastStepMessage,
+        error: data.result.error,
+        duration: data.result.duration,
+        healed: this.lastHealingInfo?.healed,
+        healedSelector: this.lastHealingInfo?.healedSelector,
+        originalSelector: this.lastHealingInfo?.originalSelector,
+        healMethod: this.lastHealingInfo?.healMethod,
+      };
+
+      this.state.results.push(result);
+      this.emit({
+        type: "step_completed",
+        state: this.state,
+        stepResult: result,
+      });
+    });
+
+    this.engine.on("completed", () => {
+      this.state.isRunning = false;
+      this.state.endTime = Date.now();
+      this.emit({ type: "completed", state: this.state });
+    });
+
+    this.engine.on("error", (data: any) => {
+      this.state.isRunning = false;
+      this.emit({
+        type: "error",
+        state: this.state,
+        error: data.error?.message || "실행 오류",
+      });
+    });
+
+    this.engine.on("paused", () => {
+      this.emit({ type: "paused", state: this.state });
+    });
+
+    this.engine.on("resumed", () => {
+      this.emit({ type: "resumed", state: this.state });
+    });
   }
 
   /**
@@ -95,14 +342,6 @@ export class PlaybookRunnerService {
    */
   onEvent(callback: EventCallback): void {
     this.eventListeners.push(callback);
-  }
-
-  /**
-   * Get the browser adapter (for @botame/player integration)
-   * @internal
-   */
-  getBrowserAdapter(): AdminBrowserAdapter {
-    return this.adminBrowserAdapter;
   }
 
   private emit(event: RunnerEvent): void {
@@ -117,7 +356,7 @@ export class PlaybookRunnerService {
   }
 
   /**
-   * Run a playbook
+   * Run a playbook using PlaybookEngine
    */
   async runPlaybook(
     playbook: Playbook,
@@ -223,10 +462,6 @@ export class PlaybookRunnerService {
         results: [],
         startTime: Date.now(),
       };
-      this.isPaused = false;
-      this.shouldStop = false;
-
-      this.emit({ type: "started", state: this.state });
 
       console.log(`[PlaybookRunner] Started: ${playbook.metadata.name}`);
 
@@ -241,45 +476,11 @@ export class PlaybookRunnerService {
         await runnerPage.goto(startUrl, { waitUntil: "networkidle" });
       }
 
-      // Execute each step
-      for (let i = 0; i < playbook.steps.length; i++) {
-        if (this.shouldStop) {
-          break;
-        }
+      // Load playbook into engine and start execution
+      this.engine.load(playbook);
 
-        // Wait if paused
-        while (this.isPaused && !this.shouldStop) {
-          await this.sleep(100);
-        }
-
-        if (this.shouldStop) {
-          break;
-        }
-
-        const step = playbook.steps[i];
-        this.state.currentStepIndex = i;
-
-        const result = await this.executeStep(step, i);
-        this.state.results.push(result);
-
-        this.emit({
-          type: "step_completed",
-          state: this.state,
-          stepResult: result,
-        });
-
-        // If step failed and not optional, stop execution
-        if (result.status === "failed" && !step.optional) {
-          console.log(
-            `[PlaybookRunner] Step ${i + 1} failed, stopping execution`,
-          );
-          break;
-        }
-
-        // Wait after step if specified (default 300ms for visibility)
-        const waitTime = step.waitAfter || 300;
-        await this.sleep(waitTime);
-      }
+      // Start execution (this will use the step executor we set up)
+      await this.engine.start();
 
       // Show completion in browser
       await runnerPage
@@ -292,12 +493,6 @@ export class PlaybookRunnerService {
           }
         })
         .catch(() => {});
-
-      // Complete
-      this.state.isRunning = false;
-      this.state.endTime = Date.now();
-
-      this.emit({ type: "completed", state: this.state });
 
       const successCount = this.state.results.filter(
         (r) => r.status === "success",
@@ -335,155 +530,6 @@ export class PlaybookRunnerService {
   }
 
   /**
-   * Execute a single step (v2: 자가 치유 적용)
-   */
-  private async executeStep(
-    step: PlaybookStep,
-    index: number,
-  ): Promise<StepResult> {
-    const startTime = Date.now();
-    const page = this.browserService.getPage();
-
-    const result: StepResult = {
-      stepId: step.id,
-      stepIndex: index,
-      status: "running",
-    };
-
-    this.emit({ type: "step_started", state: this.state, stepResult: result });
-
-    try {
-      if (!page) {
-        throw new Error("페이지가 없습니다.");
-      }
-
-      // 상태 표시
-      await this.highlighter.showStatusBar(
-        `Step ${index + 1}: ${step.message || step.action}`,
-        "info",
-      );
-
-      switch (step.action) {
-        case "navigate":
-          if (!step.value) throw new Error("URL이 필요합니다.");
-          await page.goto(step.value, {
-            waitUntil: "networkidle",
-            timeout: step.timeout || 30000,
-          });
-          result.message = `${step.value}로 이동`;
-          break;
-
-        case "click":
-          await this.executeClickWithHealing(step as SemanticStep, page);
-          result.message = step.message || "클릭 완료";
-          break;
-
-        case "type":
-          if (step.value === undefined)
-            throw new Error("입력 값이 필요합니다.");
-          await this.executeTypeWithHealing(
-            step as SemanticStep,
-            step.value,
-            page,
-          );
-          result.message = step.message || `"${step.value}" 입력`;
-          break;
-
-        case "select":
-          if (!step.value) throw new Error("선택 값이 필요합니다.");
-          await this.executeSelectWithHealing(
-            step as SemanticStep,
-            step.value,
-            page,
-          );
-          result.message = step.message || `${step.value} 선택`;
-          break;
-
-        case "wait":
-          const waitTime = step.timeout || 1000;
-          await this.sleep(waitTime);
-          result.message = `${waitTime}ms 대기`;
-          break;
-
-        case "scroll":
-          if (step.selector || (step as SemanticStep).smartSelector) {
-            const healingResult = await this.selfHealingAdapter.findElement(
-              step as SemanticStep,
-            );
-            if (healingResult.success && healingResult.locator) {
-              await healingResult.locator.scrollIntoViewIfNeeded({
-                timeout: step.timeout || 5000,
-              });
-            }
-          } else {
-            await page.evaluate(() => window.scrollBy(0, 300));
-          }
-          result.message = "스크롤 완료";
-          break;
-
-        case "hover":
-          const hoverResult = await this.selfHealingAdapter.findElement(
-            step as SemanticStep,
-          );
-          if (hoverResult.success && hoverResult.locator) {
-            await hoverResult.locator.hover({ timeout: step.timeout || 5000 });
-          }
-          result.message = step.message || "호버 완료";
-          break;
-
-        case "guide":
-          result.message = step.message || "가이드 단계";
-          break;
-
-        default:
-          throw new Error(`알 수 없는 액션: ${step.action}`);
-      }
-
-      result.status = "success";
-      result.duration = Date.now() - startTime;
-
-      // 자동 고침 정보 추가
-      if (this.lastHealingInfo?.healed) {
-        result.healed = true;
-        result.healedSelector = this.lastHealingInfo.healedSelector;
-        result.originalSelector = this.lastHealingInfo.originalSelector;
-        result.healMethod = this.lastHealingInfo.healMethod;
-      }
-
-      // 성공 하이라이트
-      await this.highlighter.showSuccess(result.message || "완료");
-
-      console.log(
-        `[PlaybookRunner] Step ${index + 1} success: ${result.message}${result.healed ? " (healed)" : ""}`,
-      );
-    } catch (error) {
-      result.status = step.optional ? "skipped" : "failed";
-      result.error = error instanceof Error ? error.message : "알 수 없는 오류";
-      result.duration = Date.now() - startTime;
-
-      // 실패 하이라이트
-      await this.highlighter.showError(result.error);
-
-      console.error(`[PlaybookRunner] Step ${index + 1} failed:`, result.error);
-
-      // 스크린샷 캡처
-      try {
-        if (page) {
-          const screenshot = await page.screenshot({
-            type: "png",
-            fullPage: false,
-          });
-          result.screenshot = screenshot.toString("base64");
-        }
-      } catch {
-        // 스크린샷 오류 무시
-      }
-    }
-
-    return result;
-  }
-
-  /**
    * 자가 치유 결과 정보
    */
   private lastHealingInfo: {
@@ -492,6 +538,11 @@ export class PlaybookRunnerService {
     originalSelector?: string;
     healMethod?: "fallback" | "text" | "aria" | "dynamic" | "manual";
   } | null = null;
+
+  /**
+   * Last step message (for event reporting)
+   */
+  private lastStepMessage: string = "";
 
   /**
    * 자가 치유를 적용한 클릭 실행
@@ -756,30 +807,23 @@ export class PlaybookRunnerService {
    * Pause execution
    */
   pause(): void {
-    if (this.state.isRunning && !this.isPaused) {
-      this.isPaused = true;
-      this.emit({ type: "paused", state: this.state });
-      console.log("[PlaybookRunner] Paused");
-    }
+    this.engine.pause();
+    console.log("[PlaybookRunner] Paused");
   }
 
   /**
    * Resume execution
    */
   resume(): void {
-    if (this.state.isRunning && this.isPaused) {
-      this.isPaused = false;
-      this.emit({ type: "resumed", state: this.state });
-      console.log("[PlaybookRunner] Resumed");
-    }
+    this.engine.resume();
+    console.log("[PlaybookRunner] Resumed");
   }
 
   /**
    * Stop execution
    */
   stop(): void {
-    this.shouldStop = true;
-    this.isPaused = false;
+    this.engine.stop();
     console.log("[PlaybookRunner] Stop requested");
   }
 
@@ -836,9 +880,33 @@ export class PlaybookRunnerService {
     await this.selfHealingAdapter.initialize(page);
     this.highlighter.setPage(page);
 
-    // Execute the step
-    const result = await this.executeStep(step, stepIndex);
-    return result;
+    // Execute the step directly
+    const startTime = Date.now();
+    const result: StepResult = {
+      stepId: step.id,
+      stepIndex,
+      status: "running",
+    };
+
+    try {
+      await this.executeStepAction(step, page);
+      result.status = "success";
+      result.duration = Date.now() - startTime;
+
+      if (this.lastHealingInfo?.healed) {
+        result.healed = true;
+        result.healedSelector = this.lastHealingInfo.healedSelector;
+        result.originalSelector = this.lastHealingInfo.originalSelector;
+        result.healMethod = this.lastHealingInfo.healMethod;
+      }
+
+      return result;
+    } catch (error) {
+      result.status = step.optional ? "skipped" : "failed";
+      result.error = error instanceof Error ? error.message : "알 수 없는 오류";
+      result.duration = Date.now() - startTime;
+      return result;
+    }
   }
 
   /**
@@ -1060,5 +1128,13 @@ export class PlaybookRunnerService {
         highlightBox?.remove();
       })
       .catch(() => {});
+  }
+
+  /**
+   * Clean up resources
+   */
+  dispose(): void {
+    this.engine.dispose();
+    this.eventListeners = [];
   }
 }
