@@ -1,0 +1,74 @@
+{
+  "id": "losims",
+  "name": "보탬e (지방보조금시스템)",
+  "description": "한국 지방자치단체 보조금 관리 시스템",
+  "urls": {
+    "home": "https://www.losims.go.kr/lss.do",
+    "login": "https://www.losims.go.kr/lss.do"
+  },
+  "locale": {
+    "primary": "ko",
+    "fallback": "en"
+  },
+  "selectorConfig": {
+    "stopWords": [
+      "클릭", "입력", "선택", "메뉴", "버튼", "필드",
+      "링크", "탭", "이동", "완료", "대기", "확인",
+      "팝업", "창", "화면", "페이지", "폼", "항목"
+    ],
+    "keywordSuffixes": [
+      "으로", "에서", "까지", "부터", "에게", "에",
+      "을", "를", "이", "가", "은", "는", "과", "와"
+    ],
+    "translationMap": {
+      "로그인": ["Login", "Sign in", "Sign-in"],
+      "로그아웃": ["Logout", "Sign out", "Sign-out"],
+      "검색": ["Search", "Find"],
+      "조회": ["Search", "View", "Inquiry", "Query"],
+      "등록": ["Register", "Add", "Create", "New"],
+      "수정": ["Edit", "Update", "Modify"],
+      "삭제": ["Delete", "Remove"],
+      "저장": ["Save", "Submit"],
+      "취소": ["Cancel"],
+      "확인": ["OK", "Confirm", "Yes"],
+      "닫기": ["Close"],
+      "목록": ["List"],
+      "교부관리": ["Grant Management", "Disbursement Management"],
+      "집행관리": ["Execution Management", "Expenditure Management"],
+      "정산관리": ["Settlement Management", "Closing Management"],
+      "사업관리": ["Project Management", "Business Management"],
+      "사업선정": ["Project Selection", "Business Selection"],
+      "회원관리": ["Member Management", "User Management"],
+      "집행등록": ["Expense Registration", "Expenditure Entry"],
+      "집행이체": ["Execution Transfer", "Fund Transfer"],
+      "집행마감": ["Execution Closing", "Period Closing"],
+      "전자세금계산서": ["Electronic Tax Invoice", "E-Tax Invoice"],
+      "신용카드": ["Credit Card"],
+      "보조비세목": ["Subsidy Item", "Expense Category"],
+      "회계연도": ["Fiscal Year", "Accounting Year"]
+    }
+  },
+  "aiPrompt": {
+    "siteContext": "한국 정부 보조금 관리 시스템 (보탬e). 한국어 UI를 사용하며, aria-label과 텍스트 기반 셀렉터가 안정적입니다.",
+    "selectorPriority": ["aria-label", "role", "text", "data-testid", "name", "placeholder"]
+  },
+  "categories": [
+    "교부관리",
+    "집행관리",
+    "정산관리",
+    "사업관리",
+    "기타"
+  ],
+  "auth": {
+    "type": "form",
+    "formSelectors": {
+      "tabSelector": "[role=\"tab\"]:has-text(\"아이디 로그인\")",
+      "usernameField": "input[aria-label=\"로그인 ID\"]",
+      "passwordField": "input[type=\"password\"]",
+      "submitButton": "a[role=\"button\"][aria-label=\"로그인 버튼\"]"
+    }
+  },
+  "browser": {
+    "timeout": 30000
+  }
+}

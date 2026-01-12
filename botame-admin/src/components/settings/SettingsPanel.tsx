@@ -8,7 +8,6 @@ interface SettingsPanelProps {
 
 export function SettingsPanel({ onBack }: SettingsPanelProps) {
   const {
-    configured,
     connected,
     url,
     anonKey,

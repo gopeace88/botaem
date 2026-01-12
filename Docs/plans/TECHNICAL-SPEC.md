@@ -486,7 +486,93 @@ export class PlaywrightController {
 }
 ```
 
-#### 2.4.2 StepVerifier (Interactive Watch & Guide)
+#### 2.4.2 자동 고침 (Self-Healing) 엔진
+
+플레이북 실행 중 셀렉터가 실패하면 자동으로 대체 셀렉터를 탐색하고, 실패 시 수동 고침을 지원합니다.
+
+```typescript
+// electron/services/playbook-runner.service.ts
+
+export interface StepResult {
+  stepId: string;
+  stepIndex: number;
+  status: 'pending' | 'running' | 'success' | 'failed' | 'skipped';
+  message?: string;
+  error?: string;
+  duration?: number;
+  screenshot?: string;
+  // 자동 고침 결과
+  healed?: boolean;
+  healedSelector?: string;
+  originalSelector?: string;
+  healMethod?: 'fallback' | 'text' | 'aria' | 'dynamic' | 'manual';
+}
+
+// 자동 고침 정보 추적
+private lastHealingInfo: {
+  healed: boolean;
+  healedSelector?: string;
+  originalSelector?: string;
+  healMethod?: 'fallback' | 'text' | 'aria' | 'dynamic' | 'manual';
+} | null = null;
+
+// 동적 텍스트 탐색 (step.message 기반)
+private async tryDynamicTextSearch(
+  step: PlaybookStep,
+  page: Page
+): Promise<{ success: boolean; locator?: Locator; selector?: string }> {
+  if (!step.message) return { success: false };
+
+  const keywords = this.extractKeywords(step.message);
+
+  for (const keyword of keywords) {
+    // 1. 정확한 텍스트 매칭: text="키워드"
+    // 2. 부분 텍스트 매칭: text=키워드
+    // 3. aria-label 부분 매칭: [aria-label*="키워드"]
+  }
+  return { success: false };
+}
+
+// 한국어 메시지에서 키워드 추출
+private extractKeywords(message: string): string[] {
+  const exactStopWords = ['클릭', '입력', '선택', '메뉴', '버튼', '필드', '링크', '탭', '이동', '완료'];
+  const suffixStopWords = ['으로', '에서', '까지', '부터'];
+
+  return message.split(/\s+/).filter(word => {
+    const cleaned = word.trim();
+    if (cleaned.length < 2) return false;
+    if (exactStopWords.includes(cleaned)) return false;
+    for (const suffix of suffixStopWords) {
+      if (cleaned.endsWith(suffix) && cleaned.length > suffix.length) {
+        return false;
+      }
+    }
+    return true;
+  });
+}
+```
+
+**자동 고침 전략 우선순위:**
+
+1. **폴백 셀렉터** (`fallback`)
+   - `smartSelector.fallback` 배열의 셀렉터를 순차적으로 시도
+   - `self-healing.ts`의 `findElement()` 메서드 활용
+
+2. **동적 텍스트 탐색** (`dynamic`)
+   - `step.message`에서 키워드 추출 ("교부관리 클릭" → "교부관리")
+   - `text="키워드"` (정확), `text=키워드` (부분), `[aria-label*="키워드"]` 순서로 시도
+
+3. **수동 고침** (`manual`)
+   - 자동 고침 실패 시 사용자가 브라우저에서 직접 요소 클릭
+   - `pickElement()` IPC 핸들러로 셀렉터 추출
+
+**관련 파일:**
+- [playbook-runner.service.ts](../../botame-admin/electron/services/playbook-runner.service.ts) - 자동 고침 로직
+- [self-healing.ts](../../botame-admin/electron/core/self-healing.ts) - 폴백 셀렉터 엔진
+- [runner.store.ts](../../botame-admin/src/stores/runner.store.ts) - StepResult 타입 정의
+- [RunnerPanel.tsx](../../botame-admin/src/components/runner/RunnerPanel.tsx) - 고침 UI 표시
+
+#### 2.4.3 StepVerifier (Interactive Watch & Guide)
 
 사용자 작업 완료 후 결과를 검증하는 서비스. DOM 검증을 우선 사용하고, 실패 시 Vision API를 폴백으로 사용하여 비용을 최적화합니다.
 

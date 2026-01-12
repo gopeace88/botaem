@@ -3,9 +3,7 @@
  */
 
 import { chromium, Browser, Page, BrowserContext } from 'playwright';
-
-// Default login URL for LOSIMS system
-const DEFAULT_BOTAME_URL = 'https://www.losims.go.kr/lss.do';
+import { configLoader } from '../../shared/config';
 
 export class BrowserService {
   private browser: Browser | null = null;
@@ -15,7 +13,8 @@ export class BrowserService {
   private isInitialized = false;
 
   constructor(targetUrl?: string) {
-    this.targetUrl = targetUrl || process.env.VITE_BOTAME_URL || DEFAULT_BOTAME_URL;
+    // configLoader.getUrl()은 환경변수도 확인함 (하위 호환성)
+    this.targetUrl = targetUrl || configLoader.getUrl('home');
   }
 
   /**

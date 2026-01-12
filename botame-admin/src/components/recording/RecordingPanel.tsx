@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 import { useRecordingStore } from '../../stores/recording.store';
 import { PlaybookStep, Category, Difficulty } from '../../../shared/types';
 
@@ -7,6 +7,21 @@ interface RecordingPanelProps {
 }
 
 export function RecordingPanel({ onComplete }: RecordingPanelProps) {
+  const [saveError, setSaveError] = useState<string | null>(null);
+  const [isSaving, setIsSaving] = useState(false);
+  const [defaultStartUrl, setDefaultStartUrl] = useState('');
+  const [categories, setCategories] = useState<Category[]>([]);
+
+  // 기본 URL 및 카테고리 로드 (설정에서)
+  useEffect(() => {
+    window.electron.invoke('config:getUrl', 'home').then((url: string) => {
+      setDefaultStartUrl(url);
+    });
+    window.electron.invoke('config:getCategories').then((cats: string[]) => {
+      setCategories(cats as Category[]);
+    });
+  }, []);
+
   const {
     state,
     steps,
@@ -44,10 +59,20 @@ export function RecordingPanel({ onComplete }: RecordingPanelProps) {
   }, [state, pauseRecording, resumeRecording]);
 
   const handleSave = useCallback(async () => {
-    const success = await savePlaybook();
-    if (success) {
-      closeModal();
-      onComplete();
+    setSaveError(null);
+    setIsSaving(true);
+    try {
+      const success = await savePlaybook();
+      if (success) {
+        closeModal();
+        onComplete();
+      } else {
+        setSaveError('플레이북 저장에 실패했습니다. ID와 이름을 확인해주세요.');
+      }
+    } catch (error) {
+      setSaveError(error instanceof Error ? error.message : '저장 중 오류가 발생했습니다.');
+    } finally {
+      setIsSaving(false);
     }
   }, [savePlaybook, closeModal, onComplete]);
 
@@ -89,22 +114,26 @@ export function RecordingPanel({ onComplete }: RecordingPanelProps) {
     }
   };
 
-  const categories: Category[] = ['교부관리', '집행관리', '정산관리', '사업관리', '기타'];
   const difficulties: Difficulty[] = ['쉬움', '보통', '어려움'];
 
   return (
     <div className="h-full flex flex-col">
       {/* URL Input */}
       <div className="px-6 py-4 border-b">
-        <label className="text-sm text-muted-foreground block mb-2">시작 URL (선택사항)</label>
+        <label className="text-sm text-muted-foreground block mb-2">
+          시작 URL (선택사항 - 비워두면 기본 URL 사용)
+        </label>
         <input
           type="url"
           value={targetUrl}
           onChange={(e) => setTargetUrl(e.target.value)}
-          placeholder="https://example.com"
+          placeholder={defaultStartUrl}
           className="w-full px-3 py-2 border rounded text-sm"
           disabled={state !== 'idle'}
         />
+        <p className="text-xs text-muted-foreground mt-1">
+          기본: {defaultStartUrl}
+        </p>
       </div>
 
       {/* Recording Controls */}
@@ -279,21 +308,69 @@ export function RecordingPanel({ onComplete }: RecordingPanelProps) {
                   className="w-full px-3 py-2 border rounded text-sm resize-none"
                 />
               </div>
+
+              <div>
+                <label className="text-sm text-muted-foreground block mb-1">시작 URL</label>
+                <input
+                  type="url"
+                  value={metadata.startUrl || ''}
+                  onChange={(e) => setMetadata({ startUrl: e.target.value })}
+                  placeholder={`${defaultStartUrl} (녹화 시 자동 설정)`}
+                  className="w-full px-3 py-2 border rounded text-sm"
+                />
+                <p className="text-xs text-muted-foreground mt-1">
+                  비워두면 기본 URL 사용
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="text-sm text-muted-foreground block mb-1">버전</label>
+                  <input
+                    type="text"
+                    value={metadata.version || '1.0.0'}
+                    onChange={(e) => setMetadata({ version: e.target.value })}
+                    placeholder="1.0.0"
+                    className="w-full px-3 py-2 border rounded text-sm"
+                  />
+                </div>
+                <div>
+                  <label className="text-sm text-muted-foreground block mb-1">키워드</label>
+                  <input
+                    type="text"
+                    value={(metadata.keywords || []).join(', ')}
+                    onChange={(e) => setMetadata({ keywords: e.target.value.split(',').map(k => k.trim()).filter(k => k) })}
+                    placeholder="로그인, 인증, 보안"
+                    className="w-full px-3 py-2 border rounded text-sm"
+                  />
+                </div>
+              </div>
             </div>
+
+            {/* 에러 메시지 */}
+            {saveError && (
+              <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded text-red-700 text-sm">
+                {saveError}
+              </div>
+            )}
 
             <div className="flex gap-3 mt-6">
               <button
-                onClick={closeModal}
-                className="flex-1 py-2 px-4 rounded bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm"
+                onClick={() => {
+                  setSaveError(null);
+                  closeModal();
+                }}
+                disabled={isSaving}
+                className="flex-1 py-2 px-4 rounded bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm disabled:opacity-50"
               >
                 취소
               </button>
               <button
                 onClick={handleSave}
-                disabled={!metadata.id || !metadata.name}
+                disabled={!metadata.id || !metadata.name || isSaving}
                 className="flex-1 py-2 px-4 rounded bg-primary hover:bg-primary/90 text-primary-foreground text-sm disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                저장
+                {isSaving ? '저장 중...' : '저장'}
               </button>
             </div>
           </div>

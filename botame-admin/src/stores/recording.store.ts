@@ -33,6 +33,8 @@ export const useRecordingStore = create<RecordingStoreState>((set, get) => ({
     description: '',
     category: '기타',
     difficulty: '보통',
+    version: '1.0.0',
+    keywords: [],
   },
   targetUrl: '',
   isModalOpen: false,
@@ -92,6 +94,8 @@ export const useRecordingStore = create<RecordingStoreState>((set, get) => ({
         description: '',
         category: '기타',
         difficulty: '보통',
+        version: '1.0.0',
+        keywords: [],
       },
     });
   },
@@ -113,7 +117,7 @@ export const useRecordingStore = create<RecordingStoreState>((set, get) => ({
   closeModal: () => set({ isModalOpen: false }),
 
   savePlaybook: async () => {
-    const { metadata, steps } = get();
+    const { metadata } = get();
 
     if (!metadata.id || !metadata.name) {
       return false;
@@ -138,6 +142,8 @@ export const useRecordingStore = create<RecordingStoreState>((set, get) => ({
               description: '',
               category: '기타',
               difficulty: '보통',
+              version: '1.0.0',
+              keywords: [],
             },
           });
 

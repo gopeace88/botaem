@@ -23,5 +23,6 @@
     }
   },
   "include": ["src", "electron", "shared"],
+  "exclude": ["**/__tests__/**", "**/*.test.ts", "**/*.spec.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

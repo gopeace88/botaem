@@ -579,168 +579,165 @@ CREATE TABLE playbook_executions (
 
 ---
 
-## 12. Bottom-up 플레이북 설계 원칙 ★★★
+## 12. 플레이북 설계 원칙 ★★★
+
+> **2026-01-08 업데이트**: 4레벨 계층 → 2~3레벨로 단순화  
+> 상세: [REFACTORING_PLAN.md](./REFACTORING_PLAN.md) 섹션 7 참조
 
 ### 12.1 핵심 철학
 
 ```
-사용자의 자연어 요청 → LLM이 적절한 플레이북 체인을 찾아 실행
+사용자의 자연어 요청 → LLM이 적절한 시나리오를 찾아 실행
 
-이를 위해서는:
-1. 최하위 원자적 플레이북부터 만들고
-2. 이것들을 조합하여 상위 플레이북을 구성하고
-3. 최상위에서 자연어와 매핑해야 함
+원칙:
+1. 시나리오 단위로 플레이북 관리 (실행 가능한 완결 단위)
+2. 자연어 별칭으로 시나리오 매핑
+3. 재사용 필요시 템플릿으로 해결 (별도 레벨 아님)
 ```
 
-### 12.2 계층 구조 (4단계)
+### 12.2 계층 구조 (단순화: 2~3레벨)
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                     플레이북 계층 구조 (Bottom-up)                            │
+│                  플레이북 계층 구조 (단순화됨)                                 │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                             │
-│  Level 4: 자연어 인텐트 (Natural Language Intent)                            │
-│  ───────────────────────────────────────────────────────────────────────    │
-│  │ "세금계산서 처리해줘"                                                     │
-│  │ "이번 달 카드값 정리 좀"                                                  │
-│  │ "정산 마감해야 하는데"                                                    │
-│  │                                                                          │
-│  │  → LLM이 의도 파악 → Level 3 플레이북 선택                                │
-│  └──────────────────────────────────────────────────────────────────────    │
-│                                      │                                      │
-│                                      ▼                                      │
-│  Level 3: 업무 시나리오 (Business Scenario)                                  │
-│  ───────────────────────────────────────────────────────────────────────    │
-│  │ 전자세금계산서_집행등록_시나리오                                           │
-│  │ 카드사용내역_집행등록_시나리오                                            │
-│  │ 정산마감_시나리오                                                        │
-│  │                                                                          │
-│  │  구성: Level 2 플레이북들의 순차 조합                                     │
-│  │  예: 세금계산서_집행 = [로그인 → 메뉴이동 → 세금계산서조회 → 등록 → 저장]  │
-│  └──────────────────────────────────────────────────────────────────────    │
-│                                      │                                      │
-│                                      ▼                                      │
-│  Level 2: 기능 단위 (Functional Unit)                                       │
-│  ───────────────────────────────────────────────────────────────────────    │
-│  │ 로그인                    = [아이디입력 → 비밀번호입력 → 로그인버튼클릭]    │
-│  │ 메뉴이동_집행관리          = [집행관리클릭 → 집행등록클릭]                  │
-│  │ 전자세금계산서_조회        = [조회조건입력 → 조회버튼클릭 → 결과대기]       │
-│  │ 거래처정보_입력            = [사업자번호입력 → 확인클릭 → 계좌입력]         │
-│  │                                                                          │
-│  │  구성: Level 1 원자적 액션들의 조합                                       │
-│  │  특징: 재사용 가능한 기능 블록                                            │
-│  └──────────────────────────────────────────────────────────────────────    │
-│                                      │                                      │
-│                                      ▼                                      │
-│  Level 1: 원자적 액션 (Atomic Action) ★ 가장 중요                            │
-│  ───────────────────────────────────────────────────────────────────────    │
-│  │ click_button              selector: '[role="button"][aria-label="조회"]'│
-│  │ type_input                selector: '#userId', value: '{{user_id}}'     │
-│  │ select_dropdown           selector: '#yearSelect', value: '2024'        │
-│  │ wait_for_element          selector: '.loading-complete'                 │
-│  │ assert_text               selector: '.result-count', contains: '건'     │
+│  Level A: 시나리오 (Scenario) - 실제 실행 단위 ★                             │
+│  ─────────────────────────────────────────────────────────────────────────  │
+│  │ 전자세금계산서_집행등록                                                   │
+│  │ 카드사용내역_집행등록                                                     │
+│  │ 정산마감                                                                 │
 │  │                                                                          │
 │  │  특징:                                                                   │
-│  │  - 단일 DOM 조작                                                        │
-│  │  - 명확한 성공/실패 판단                                                 │
-│  │  - 녹화로 생성 가능                                                     │
-│  │  - 모든 상위 레벨의 기반                                                 │
-│  └──────────────────────────────────────────────────────────────────────    │
+│  │  - 사용자가 실제로 실행하는 단위                                          │
+│  │  - 모든 스텝이 직접 포함 (flat structure)                                │
+│  │  - 외부 의존 없이 완결적                                                  │
+│  └──────────────────────────────────────────────────────────────────────────│
+│                                      │                                      │
+│                                      ▼                                      │
+│  Level B: 자연어 별칭 (Aliases)                                              │
+│  ─────────────────────────────────────────────────────────────────────────  │
+│  │ "세금계산서 처리해줘" → 전자세금계산서_집행등록                            │
+│  │ "카드값 정리" → 카드사용내역_집행등록                                     │
+│  │ "정산 마감해야 해" → 정산마감                                             │
+│  │                                                                          │
+│  │  특징:                                                                   │
+│  │  - 시나리오당 5~10개 자연어 별칭                                          │
+│  │  - LLM 또는 키워드 매칭으로 시나리오 선택                                 │
+│  │  - playbooks 테이블의 aliases 컬럼에 저장                                │
+│  └──────────────────────────────────────────────────────────────────────────│
+│                                                                             │
+│  템플릿 (선택적): 재사용 필요시                                               │
+│  ─────────────────────────────────────────────────────────────────────────  │
+│  │ common/login.yaml → 시나리오에 인라인 확장                                │
+│  │                                                                          │
+│  │  특징:                                                                   │
+│  │  - 별도 레벨이 아님 (카탈로그에 표시 안됨)                                │
+│  │  - 독립 실행 불가                                                        │
+│  │  - 재사용 압력이 증명될 때만 도입                                         │
+│  └──────────────────────────────────────────────────────────────────────────│
+│                                                                             │
+│  ❌ 제거된 레벨:                                                             │
+│  - Level 1 (원자적 액션): 운영 부담 대비 효과 낮음                            │
+│  - Level 2 (기능 단위): includes 체인 디버깅 복잡                            │
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### 12.3 왜 Bottom-up인가?
+### 12.3 왜 단순화했는가?
 
 ```
-❌ Top-down 접근의 문제:
-   "집행등록" 이라는 큰 플레이북을 한번에 만들면
-   → 중간에 실패 시 전체 재작성 필요
-   → 재사용 불가 (로그인 부분만 다른 곳에서 쓸 수 없음)
-   → LLM이 부분 실행 불가
+❌ 4레벨 계층의 문제:
+   - 버전/마이그레이션 복잡도 증가
+   - 소유권 불명확 ("어디서 고쳐야 하지?")
+   - includes 체인 디버깅 어려움
+   - 운영 부담 대비 재사용 효과 미미
 
-✅ Bottom-up 접근의 장점:
-   최하위 원자적 액션부터 검증하며 쌓아올리면
-   → 실패 지점 명확히 특정 가능
-   → 조합으로 새로운 시나리오 쉽게 생성
-   → LLM이 상황에 맞게 체인 구성 가능
+✅ 2~3레벨 단순화의 장점:
+   - 시나리오 자체가 완결적 (외부 의존 없음)
+   - 수정 시 해당 시나리오만 변경
+   - 디버깅 단순
+   - 재사용 필요시 템플릿으로 충분
 ```
 
-### 12.4 플레이북 참조 구조
+### 12.4 플레이북 구조
 
 ```yaml
-# Level 1: 원자적 액션 (예: atomic/click-login-button.yaml)
-id: "atomic-click-login-button"
-level: 1
-steps:
-  - action: "click"
-    selector: '[role="button"][aria-label="로그인"]'
-    wait_for: "navigation"
-
----
-# Level 2: 기능 단위 (예: functions/login.yaml)
-id: "func-login"
-level: 2
-includes:                          # Level 1 참조
-  - "atomic-type-userid"
-  - "atomic-type-password"
-  - "atomic-click-login-button"
-
----
-# Level 3: 업무 시나리오 (예: scenarios/tax-invoice-register.yaml)
+# 시나리오 예시: scenario-tax-invoice-register.yaml
 id: "scenario-tax-invoice-register"
-level: 3
-includes:                          # Level 2 참조
-  - "func-login"
-  - "func-navigate-execution"
-  - "func-search-tax-invoice"
-  - "func-register-execution"
-  - "func-save-and-request"
+level: "scenario"
+start_url: "https://www.losims.go.kr/lss.do"
 
-aliases:                           # Level 4: 자연어 매핑
+# 자연어 별칭 (Level B)
+aliases:
   - "세금계산서 처리"
   - "전자세금계산서 집행"
   - "세금계산서 등록"
   - "집행등록 해줘"
+
+# 모든 스텝이 직접 포함 (flat structure)
+steps:
+  # 로그인 스텝들 (템플릿 사용 가능)
+  - template: "common/login"
+    variables:
+      user_id: "{{user_id}}"
+      password: "{{password}}"
+  
+  # 메뉴 이동
+  - action: "click"
+    selector: '[aria-label="집행관리"]'
+    message: "집행관리 메뉴 클릭"
+  
+  - action: "click"
+    selector: '[aria-label="집행등록"]'
+    message: "집행등록 서브메뉴 클릭"
+  
+  # 조회
+  - action: "select"
+    selector: "#yearSelect"
+    value: "{{year}}"
+    message: "연도 선택"
+  
+  # ... 이하 스텝들
 ```
 
-### 12.5 데이터베이스 스키마 확장
+```yaml
+# 템플릿 예시: common/login.yaml
+# 이 파일은 시나리오에 인라인 확장됨
+# 독립 실행 불가, 카탈로그에 표시 안됨
+
+steps:
+  - action: "navigate"
+    value: "https://www.losims.go.kr/lss.do"
+  - action: "type"
+    selector: "#userId"
+    value: "{{user_id}}"
+  - action: "type"
+    selector: "#password"
+    value: "{{password}}"
+  - action: "click"
+    selector: '[aria-label="로그인"]'
+```
+
+### 12.5 데이터베이스 스키마 (단순화됨)
 
 ```sql
--- 플레이북 레벨 추가
-ALTER TABLE playbooks ADD COLUMN level INT DEFAULT 2;
--- 1: atomic, 2: function, 3: scenario
+-- playbooks 테이블 (aliases 통합)
+-- level 컬럼은 모두 'scenario'로 통일
+ALTER TABLE playbooks ADD COLUMN aliases TEXT[] DEFAULT '{}';
 
--- 플레이북 참조 관계
-CREATE TABLE playbook_references (
-  id UUID PRIMARY KEY,
-  parent_playbook_id TEXT NOT NULL,   -- 상위 플레이북
-  child_playbook_id TEXT NOT NULL,    -- 하위 플레이북
-  execution_order INT NOT NULL,        -- 실행 순서
+-- 별칭 검색 인덱스
+CREATE INDEX idx_playbooks_aliases ON playbooks USING gin(aliases);
 
-  FOREIGN KEY (parent_playbook_id) REFERENCES playbooks(playbook_id),
-  FOREIGN KEY (child_playbook_id) REFERENCES playbooks(playbook_id)
-);
-
--- 자연어 별칭 테이블
-CREATE TABLE playbook_aliases (
-  id UUID PRIMARY KEY,
-  playbook_id TEXT NOT NULL,
-  alias TEXT NOT NULL,                 -- "세금계산서 처리해줘"
-  language TEXT DEFAULT 'ko',
-
-  FOREIGN KEY (playbook_id) REFERENCES playbooks(playbook_id)
-);
-
--- 인덱스 (LLM 검색용)
-CREATE INDEX idx_playbook_aliases_alias ON playbook_aliases USING gin(alias gin_trgm_ops);
+-- 별도 playbook_aliases 테이블 불필요 (제거)
+-- 별도 playbook_references 테이블 불필요 (제거)
 ```
 
-### 12.6 LLM 실행 흐름
+### 12.6 LLM 실행 흐름 (단순화됨)
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                     LLM 자연어 → 플레이북 실행 흐름                            │
+│                     LLM 자연어 → 시나리오 실행 흐름                            │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                             │
 │  사용자: "이번 달 세금계산서 좀 정리해줘"                                     │
@@ -752,73 +749,82 @@ CREATE INDEX idx_playbook_aliases_alias ON playbook_aliases USING gin(alias gin_
 │       └─ 범위: 이번 달                                                      │
 │             │                                                               │
 │             ▼                                                               │
-│  [2] 플레이북 검색                                                          │
+│  [2] 시나리오 검색                                                          │
 │       │                                                                     │
-│       ├─ playbook_aliases에서 "세금계산서", "집행", "정리" 검색              │
+│       ├─ playbooks.aliases에서 "세금계산서" 검색                            │
 │       ├─ 매칭: scenario-tax-invoice-register                                │
 │       └─ 신뢰도: 0.92                                                       │
 │             │                                                               │
 │             ▼                                                               │
-│  [3] 플레이북 체인 구성                                                      │
+│  [3] 시나리오 로드 (단순!)                                                   │
 │       │                                                                     │
 │       ├─ scenario-tax-invoice-register 로드                                 │
-│       ├─ includes 해석:                                                     │
-│       │   [func-login]                                                      │
-│       │      ├─ atomic-type-userid                                         │
-│       │      ├─ atomic-type-password                                       │
-│       │      └─ atomic-click-login-button                                  │
-│       │   [func-navigate-execution]                                        │
-│       │      ├─ atomic-click-menu-execution                                │
-│       │      └─ atomic-click-submenu-register                              │
-│       │   [func-search-tax-invoice]                                        │
-│       │      ├─ atomic-select-year                                         │
-│       │      ├─ atomic-select-month (이번 달로 설정)                        │
-│       │      └─ atomic-click-search                                        │
-│       │   ...                                                               │
-│       │                                                                     │
-│       └─ 실행 순서 확정: 12개 atomic 액션                                    │
+│       ├─ 템플릿 인라인 확장 (있다면)                                         │
+│       └─ 실행 순서 확정: flat steps                                          │
 │             │                                                               │
 │             ▼                                                               │
 │  [4] 순차 실행 & 검증                                                        │
 │       │                                                                     │
-│       └─ 각 atomic 액션별 실행 → 검증 → 다음                                 │
+│       └─ 각 스텝별 실행 → 검증 → 다음                                        │
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### 12.7 구현 우선순위
+### 12.7 계층 확장 조건
 
-```
-Phase 1: Level 1 원자적 액션 라이브러리 구축
-─────────────────────────────────────────
-□ 녹화 도구로 보탬e의 모든 버튼/입력/선택 액션 수집
-□ 셀렉터 정규화 (동적 UUID 대응)
-□ 각 액션별 검증 조건 정의
-□ 예상: 100~200개 원자적 액션
+4레벨 계층 재도입은 다음 조건이 **모두** 충족될 때만 검토:
 
-Phase 2: Level 2 기능 단위 조합
-─────────────────────────────────────────
-□ 자주 사용되는 기능 패턴 분석
-□ 원자적 액션 조합으로 기능 플레이북 생성
-□ 재사용성 검증
-□ 예상: 30~50개 기능 플레이북
+| 조건 | 기준 |
+|------|------|
+| 시나리오 수 | 50개 이상 |
+| 동일 스텝 시퀀스 반복 | 5개 이상 시나리오에서 동일 |
+| 다중 작성자 | 3명 이상 동시 작업 |
+| 거버넌스 요구 | 승인 워크플로우 필요 |
 
-Phase 3: Level 3 업무 시나리오 구성
-─────────────────────────────────────────
-□ 분석된 업무 흐름 기반 시나리오 작성
-□ 기능 플레이북 체인으로 구성
-□ 예상: 20~30개 시나리오
-
-Phase 4: Level 4 자연어 매핑
-─────────────────────────────────────────
-□ 각 시나리오에 자연어 별칭 추가
-□ 유사어/동의어 확장
-□ LLM 프롬프트 최적화
-□ 예상: 시나리오당 5~10개 별칭
-```
+**현재는 시나리오 + 템플릿으로 충분.**
 
 ### 12.8 플레이북 시작 페이지 (Start URL)
 
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                     플레이북 시작 페이지 원칙                                  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ★★★ 핵심 원칙 ★★★                                                        │
+│  ─────────────────                                                          │
+│  시나리오는 항상 특정 페이지에서 시작해야 한다.                                │
+│  어떤 페이지에서 시작하느냐에 따라 실행 결과가 달라질 수 있기 때문.            │
+│                                                                             │
+│  [시작 URL 결정 우선순위]                                                    │
+│  1. 시나리오에 명시된 start_url 필드 값                                      │
+│  2. 첫 번째 navigate 스텝의 URL                                             │
+│  3. 기본값: 홈페이지 (https://www.losims.go.kr/lss.do)                      │
+│                                                                             │
+│  [수동 실행 시]                                                              │
+│  사용자가 이미 특정 페이지에 있는 상태에서 시나리오를 실행하면                 │
+│  → 현재 페이지를 시작 페이지로 인식                                          │
+│  → 이 경우 시나리오의 start_url보다 사용자 지정 URL 우선                     │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+```yaml
+# 시나리오 예시
+id: "scenario-tax-invoice-register"
+level: "scenario"
+start_url: "https://www.losims.go.kr/lss.do"
+
+aliases:
+  - "세금계산서 처리"
+  - "집행등록 해줘"
+
+steps:
+  - action: "navigate"
+    value: "{{start_url}}"
+    message: "보탬e 업무시스템 접속"
+  - action: "click"
+    selector: '[aria-label="집행관리"]'
+    ...
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                     플레이북 시작 페이지 원칙                                  │

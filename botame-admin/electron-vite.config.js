@@ -6,14 +6,14 @@ export default defineConfig({
   main: {
     plugins: [externalizeDepsPlugin({
       exclude: [],
-      include: ['playwright', 'chromium-bidi', 'playwright-core'],
+      include: ['playwright', 'chromium-bidi', 'playwright-core', '@anthropic-ai/sdk'],
     })],
     build: {
       rollupOptions: {
         input: {
           main: resolve(__dirname, 'electron/main.ts'),
         },
-        external: ['playwright', 'playwright-core', 'chromium-bidi'],
+        external: ['playwright', 'playwright-core', 'chromium-bidi', '@anthropic-ai/sdk'],
       },
     },
     resolve: {

@@ -35,7 +35,6 @@ export function CatalogTreeView({ onSelectPlaybook, onRunPlaybook }: CatalogTree
     loadCatalog,
     selectCatalogItem,
     loadPlaybookFromCatalog,
-    runPlaybookFromCatalog,
   } = useSupabaseStore();
 
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());

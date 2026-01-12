@@ -2,6 +2,7 @@
  * Smart Selector Generator - 다중 선택자 체인 자동 생성
  *
  * 보탬e 특화: 한국 웹사이트에서 흔한 동적 ID, iframe 처리
+ * v2.1: Phase 1 Smart Algorithms (Parent Chaining, Stable Class Detection)
  */
 
 import {
@@ -84,12 +85,15 @@ export class SmartSelectorGenerator {
 
     // 4. ID (동적 ID 감지하여 신뢰도 조정)
     if (attrs['id']) {
-      const confidence = this.isStableId(attrs['id']) ? 85 : 35;
-      selectors.push({
-        strategy: 'css',
-        value: `#${attrs['id']}`,
-        confidence,
-      });
+      const isStable = this.isStableId(attrs['id']);
+      // 매우 불안정한 ID는 제외 (숫자만 있거나 너무 긴 랜덤 문자열)
+      if (isStable) {
+        selectors.push({
+          strategy: 'css',
+          value: `#${attrs['id']}`,
+          confidence: 85,
+        });
+      }
     }
 
     // 5. placeholder (입력 필드)
@@ -125,9 +129,10 @@ export class SmartSelectorGenerator {
       if (element.textContent && this.isTextBasedElement(element.tagName)) {
         const text = element.textContent.trim().slice(0, 50);
         if (text && text.length > 1) {
+          // Playwright :has-text 사용
           selectors.push({
             strategy: 'text',
-            value: text,
+            value: `text=${text}`,
             confidence: 65,
           });
         }
@@ -147,7 +152,11 @@ export class SmartSelectorGenerator {
       }
     }
 
-    // 10. XPath (최후의 수단)
+    // 10. Parent Chain (CSS Path 분석) - NEW in Phase 1
+    const parentSelectors = this.generateParentChainSelectors(element);
+    selectors.push(...parentSelectors);
+
+    // 11. XPath (최후의 수단)
     if (element.xpath) {
       selectors.push({
         strategy: 'xpath',
@@ -156,13 +165,65 @@ export class SmartSelectorGenerator {
       });
     }
 
-    // 11. 전체 CSS 경로 (가장 낮은 신뢰도)
+    // 12. 전체 CSS 경로 (가장 낮은 신뢰도)
     if (element.cssPath) {
       selectors.push({
         strategy: 'css',
         value: element.cssPath,
         confidence: 20,
       });
+    }
+
+    return selectors;
+  }
+
+  /**
+   * 부모 체인 선택자 생성 (cssPath 분석)
+   * 예: "body > div#app > div.content > button" -> "#app button"
+   */
+  private generateParentChainSelectors(element: ElementSnapshot): SelectorWithScore[] {
+    const selectors: SelectorWithScore[] = [];
+
+    if (!element.cssPath) return selectors;
+
+    const parts = element.cssPath.split(' > ');
+    if (parts.length < 2) return selectors;
+
+    // 현재 요소 자신을 제외
+    const mySelector = parts.pop()!;
+
+    // 부모들 중에서 ID가 있는 가장 가까운 부모 찾기
+    for (let i = parts.length - 1; i >= 0; i--) {
+      const part = parts[i];
+      if (part.includes('#')) {
+        const idMatch = part.match(/#([^.]+)/);
+        if (idMatch && this.isStableId(idMatch[1])) {
+          // 안정적인 ID를 가진 부모 발견
+          const parentId = idMatch[1];
+
+          // 1. Direct descendant (ID > Tag)
+          selectors.push({
+            strategy: 'css',
+            value: `#${parentId} ${mySelector}`,
+            confidence: 60, // 클래스 기반(45)보다 높고 텍스트(65)보다 낮음
+          });
+
+          // 2. 만약 현재 요소가 클래스가 있다면 더 강력한 조합
+          if (element.attributes['class']) {
+            const stableClasses = this.extractStableClasses(element.attributes['class']);
+            if (stableClasses.length > 0) {
+              selectors.push({
+                strategy: 'css',
+                value: `#${parentId} .${stableClasses.join('.')}`,
+                confidence: 62,
+              });
+            }
+          }
+
+          // 가장 가까운 부모만 사용하고 종료 (너무 상위 부모는 의미가 약함)
+          break;
+        }
+      }
     }
 
     return selectors;
@@ -177,44 +238,76 @@ export class SmartSelectorGenerator {
 
   /**
    * 안정적인 ID인지 확인 (동적 ID 감지)
+   * 개선: 더 많은 동적 패턴 필터링
    */
   private isStableId(id: string): boolean {
+    if (!id) return false;
+
     // 동적 ID 패턴 감지
     const dynamicPatterns = [
       /^[a-f0-9]{8}-[a-f0-9]{4}/i,  // UUID
-      /[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}/i,  // UUID anywhere in ID
+      /[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}/i,  // UUID anywhere
+      /^\d+$/,                       // 숫자로만 구성된 ID
       /^\d{10,}/,                    // 타임스탬프
-      /_\d+$/,                       // 숫자 접미사
+      /_\d+$/,                       // 숫자 접미사 (_123)
+      /-\d+$/,                       // 숫자 접미사 (-123)
       /^react-/i,                    // React 생성 ID
       /^ember/i,                     // Ember 생성 ID
       /^ng-/i,                       // Angular 생성 ID
       /^:r[0-9a-z]+:/i,             // React 18+ ID
       /^pt-/i,                       // 동적 pt- 접두사
       /^uuid-/i,                     // uuid 접두사
+      /^ext-gen/i,                   // ExtJS
+      /^yui-gen/i,                   // YUI
+      /^closure-lm/i,                // Google Closure
       /\//,                          // 슬래시 포함 (CSS 선택자에 문제)
+      /\./,                          // 점 포함 (CSS 선택자에 문제)
     ];
 
     return !dynamicPatterns.some(pattern => pattern.test(id));
   }
 
   /**
-   * 안정적인 클래스 추출 (동적 클래스 제외)
+   * 안정적인 클래스 추출 (동적 클래스 및 유틸리티 클래스 제외)
+   * 개선: Tailwind 등 유틸리티 클래스 필터링 강화
    */
   private extractStableClasses(classString: string): string[] {
     const classes = classString.split(/\s+/).filter(c => c.trim());
 
-    // 동적 클래스 패턴
-    const dynamicPatterns = [
+    // 동적 및 유틸리티 클래스 패턴
+    const ignoredPatterns = [
+      // Dynamic Frameworks
       /^css-[a-z0-9]+$/i,           // CSS-in-JS
       /^sc-[a-z]+$/i,               // Styled Components
       /^_[a-z0-9]{5,}$/i,           // CSS Modules
       /^emotion-/i,                  // Emotion
-      /--[a-z0-9]{6,}$/i,           // Tailwind variants
+      /--[a-z0-9]{6,}$/i,           // Tailwind variants specific
+
+      // Tailwind / Bootstrap Utility Classes (Layout/Spacing/Sizing)
+      /^(p|m)(t|b|l|r|x|y)?-\d+/,   // padding/margin (p-4, mt-2)
+      /^w-\d+|w-full|w-screen/,     // width
+      /^h-\d+|h-full|h-screen/,     // height
+      /^flex/, /^grid/,             // layout
+      /^items-/, /^justify-/,       // alignment
+      /^text-(xs|sm|base|lg|xl)/,   // text size
+      /^text-(left|center|right)/,  // text align
+      /^bg-(red|blue|green|gray|white|black)/, // colors
+      /^absolute|relative|fixed/,    // positioning
+      /^hidden|block|inline/,        // display
+      /^border/, /^rounded/,        // border
+      /^hover:/, /^focus:/,         // states
+      /^d-/,                        // Bootstrap (d-flex)
+      /^col-/, /^row-/,             // Grid
     ];
 
-    return classes
-      .filter(c => !dynamicPatterns.some(p => p.test(c)))
-      .slice(0, 2);  // 최대 2개
+    // 의미있는 비즈니스 클래스만 필터링 (e.g., 'btn-login', 'nav-item', 'header-logo')
+    // 너무 짧거나(2글자 이하) 너무 긴(40자 이상) 클래스도 제외
+    const stableClasses = classes
+      .filter(c => !ignoredPatterns.some(p => p.test(c)))
+      .filter(c => c.length > 2 && c.length < 40)
+      .slice(0, 2);  // 최대 2개까지만 사용 (과도한 구체화 방지)
+
+    return stableClasses;
   }
 
   /**

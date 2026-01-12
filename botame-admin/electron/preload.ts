@@ -48,6 +48,15 @@ const electronAPI = {
       'runner:stop',
       'runner:closeBrowser',
       'runner:getState',
+      'runner:runStep',
+      'runner:pickElement',
+      'runner:cancelPicking',
+      // Config (프로필 관리)
+      'config:getProfile',
+      'config:setProfile',
+      'config:listProfiles',
+      'config:getUrl',
+      'config:getCategories',
     ];
 
     if (validChannels.includes(channel)) {

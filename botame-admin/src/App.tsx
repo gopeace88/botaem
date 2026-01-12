@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { PlaybookList } from './components/playbook/PlaybookList';
-import { PlaybookEditor } from './components/playbook/PlaybookEditor';
 import { CatalogTreeView } from './components/playbook/CatalogTreeView';
 import { RecordingPanel } from './components/recording/RecordingPanel';
 import { SettingsPanel } from './components/settings/SettingsPanel';
@@ -9,22 +8,18 @@ import { usePlaybookStore } from './stores/playbook.store';
 import { useRecordingStore } from './stores/recording.store';
 import { useSupabaseStore } from './stores/supabase.store';
 
-type View = 'list' | 'catalog' | 'editor' | 'recording' | 'settings' | 'runner';
+type View = 'list' | 'catalog' | 'recording' | 'settings' | 'runner';
 
 function App() {
   const [currentView, setCurrentView] = useState<View>('list');
-  const [previousView, setPreviousView] = useState<View>('list'); // Track where we came from
+  const [previousView, setPreviousView] = useState<View>('list');
   const [runnerPlaybookId, setRunnerPlaybookId] = useState<string | null>(null);
-  const { selectedPlaybook: localSelectedPlaybook, clearSelection, selectPlaybook } = usePlaybookStore();
+  const { clearSelection, selectPlaybook } = usePlaybookStore();
   const { state: recordingState } = useRecordingStore();
   const {
     connected: supabaseConnected,
-    selectedPlaybook: catalogSelectedPlaybook,
     selectCatalogItem,
   } = useSupabaseStore();
-
-  // Use catalog playbook if available, otherwise local playbook
-  const selectedPlaybook = catalogSelectedPlaybook || localSelectedPlaybook;
 
   const handleNewPlaybook = () => {
     clearSelection();
@@ -32,34 +27,27 @@ function App() {
     setCurrentView('recording');
   };
 
-  const handleEditPlaybook = () => {
-    setPreviousView(currentView); // Remember where we came from
-    setCurrentView('editor');
-  };
-
   const handleBackToList = () => {
-    // Go back to the previous view (list or catalog)
     const targetView = previousView === 'catalog' ? 'catalog' : 'list';
-
     clearSelection();
     selectCatalogItem(null);
     setRunnerPlaybookId(null);
     setCurrentView(targetView);
-    setPreviousView('list'); // Reset
+    setPreviousView('list');
   };
 
   const handleRecordingComplete = () => {
     setCurrentView('list');
   };
 
-  const handlePlayPlaybook = async (id: string) => {
+  // 플레이북 선택 시 RunnerPanel로 이동 (편집+실행 통합)
+  const handleSelectPlaybook = async (id: string, fromCatalog: boolean = false) => {
     setRunnerPlaybookId(id);
-    await selectPlaybook(id);
+    setPreviousView(fromCatalog ? 'catalog' : 'list');
+    if (!fromCatalog) {
+      await selectPlaybook(id);
+    }
     setCurrentView('runner');
-  };
-
-  const handleRunnerToEdit = () => {
-    setCurrentView('editor');
   };
 
   return (
@@ -74,9 +62,8 @@ function App() {
           <span className="text-xs text-primary-foreground/60">
             {currentView === 'list' && '로컬 플레이북'}
             {currentView === 'catalog' && 'DB 카탈로그'}
-            {currentView === 'editor' && '플레이북 편집'}
             {currentView === 'recording' && '녹화 모드'}
-            {currentView === 'runner' && '플레이북 실행'}
+            {currentView === 'runner' && '플레이북 편집/실행'}
             {currentView === 'settings' && 'Supabase 설정'}
           </span>
         </div>
@@ -125,7 +112,10 @@ function App() {
       {/* Navigation */}
       <nav className="flex items-center gap-2 px-4 py-2 border-b bg-muted/30">
         <button
-          onClick={handleBackToList}
+          onClick={() => {
+            setPreviousView('list');
+            setCurrentView('list');
+          }}
           className={`px-3 py-1.5 text-sm rounded transition-colors ${
             currentView === 'list'
               ? 'bg-primary text-primary-foreground'
@@ -135,7 +125,10 @@ function App() {
           로컬
         </button>
         <button
-          onClick={() => setCurrentView('catalog')}
+          onClick={() => {
+            setPreviousView('catalog');
+            setCurrentView('catalog');
+          }}
           className={`px-3 py-1.5 text-sm rounded transition-colors flex items-center gap-1 ${
             currentView === 'catalog'
               ? 'bg-primary text-primary-foreground'
@@ -145,18 +138,6 @@ function App() {
           <span className={`w-2 h-2 rounded-full ${supabaseConnected ? 'bg-green-400' : 'bg-gray-400'}`} />
           카탈로그
         </button>
-        {selectedPlaybook && (
-          <button
-            onClick={handleEditPlaybook}
-            className={`px-3 py-1.5 text-sm rounded transition-colors ${
-              currentView === 'editor'
-                ? 'bg-primary text-primary-foreground'
-                : 'hover:bg-muted'
-            }`}
-          >
-            편집
-          </button>
-        )}
         <button
           onClick={handleNewPlaybook}
           className={`px-3 py-1.5 text-sm rounded transition-colors ${
@@ -191,28 +172,16 @@ function App() {
       <main className="flex-1 overflow-hidden">
         {currentView === 'list' && (
           <PlaybookList
-            onSelect={handleEditPlaybook}
+            onSelect={(id: string) => { handleSelectPlaybook(id, false); }}
             onNewRecording={handleNewPlaybook}
-            onPlay={handlePlayPlaybook}
+            onPlay={(id: string) => { handleSelectPlaybook(id, false); }}
           />
         )}
         {currentView === 'catalog' && (
           <CatalogTreeView
-            onSelectPlaybook={(playbookId) => {
-              console.log('[App] Selected playbook from catalog:', playbookId);
-              setPreviousView('catalog'); // Remember we came from catalog
-              setCurrentView('editor');
-            }}
-            onRunPlaybook={(playbookId) => {
-              console.log('[App] Running playbook from catalog:', playbookId);
-              setRunnerPlaybookId(playbookId);
-              setPreviousView('catalog');
-              setCurrentView('runner');
-            }}
+            onSelectPlaybook={(playbookId) => handleSelectPlaybook(playbookId, true)}
+            onRunPlaybook={(playbookId) => handleSelectPlaybook(playbookId, true)}
           />
-        )}
-        {currentView === 'editor' && selectedPlaybook && (
-          <PlaybookEditor onBack={handleBackToList} />
         )}
         {currentView === 'recording' && (
           <RecordingPanel onComplete={handleRecordingComplete} />
@@ -221,7 +190,6 @@ function App() {
           <RunnerPanel
             playbookId={runnerPlaybookId}
             onBack={handleBackToList}
-            onEdit={handleRunnerToEdit}
           />
         )}
         {currentView === 'settings' && (

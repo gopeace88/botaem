@@ -15,7 +15,7 @@ import {
   SemanticStep,
 } from "../../shared/types";
 import { BrowserService } from "./browser.service";
-import { PlaybookEngine, StepExecutor } from "@botame/player";
+import { PlaybookEngine, StepExecutor, EngineEvent } from "@botame/player";
 import { ExecutionContext } from "@botame/types";
 import { SelfHealingAdapter } from "../core/self-healing-adapter";
 import { Highlighter } from "../core/highlighter";
@@ -276,11 +276,15 @@ export class PlaybookRunnerService {
       this.emit({ type: "started", state: this.state });
     });
 
-    this.engine.on("step_started", (data: any) => {
+    this.engine.on("step_started", (data) => {
       // Convert engine event to runner event
+      const stepStartedEvent = data as Extract<
+        EngineEvent,
+        { type: "step_started" }
+      >;
       const result: StepResult = {
-        stepId: data.step.id,
-        stepIndex: data.stepIndex,
+        stepId: stepStartedEvent.step.id,
+        stepIndex: stepStartedEvent.stepIndex,
         status: "running",
       };
       this.emit({
@@ -290,15 +294,19 @@ export class PlaybookRunnerService {
       });
     });
 
-    this.engine.on("step_completed", (data: any) => {
+    this.engine.on("step_completed", (data) => {
       // Map engine result to runner result
+      const stepCompletedEvent = data as Extract<
+        EngineEvent,
+        { type: "step_completed" }
+      >;
       const result: StepResult = {
-        stepId: data.result.stepId || data.step?.id,
-        stepIndex: data.stepIndex,
-        status: data.result.success ? "success" : "failed",
+        stepId: stepCompletedEvent.result.stepId || "unknown",
+        stepIndex: stepCompletedEvent.stepIndex,
+        status: stepCompletedEvent.result.success ? "success" : "failed",
         message: this.lastStepMessage,
-        error: data.result.error,
-        duration: data.result.duration,
+        error: stepCompletedEvent.result.error,
+        duration: stepCompletedEvent.result.duration,
         healed: this.lastHealingInfo?.healed,
         healedSelector: this.lastHealingInfo?.healedSelector,
         originalSelector: this.lastHealingInfo?.originalSelector,
@@ -319,12 +327,13 @@ export class PlaybookRunnerService {
       this.emit({ type: "completed", state: this.state });
     });
 
-    this.engine.on("error", (data: any) => {
+    this.engine.on("error", (data) => {
+      const errorEvent = data as Extract<EngineEvent, { type: "error" }>;
       this.state.isRunning = false;
       this.emit({
         type: "error",
         state: this.state,
-        error: data.error?.message || "실행 오류",
+        error: errorEvent.error.message || "실행 오류",
       });
     });
 
@@ -1134,6 +1143,8 @@ export class PlaybookRunnerService {
    * Clean up resources
    */
   dispose(): void {
+    // Remove all event listeners to prevent memory leaks
+    this.engine.removeAllListeners();
     this.engine.dispose();
     this.eventListeners = [];
   }

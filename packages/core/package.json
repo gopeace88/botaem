@@ -1,0 +1,70 @@
+{
+  "name": "@botame/core",
+  "version": "1.0.0",
+  "description": "보탬e 공유 실행 코어",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./types": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/types/index.mjs",
+      "require": "./dist/types/index.js"
+    },
+    "./ipc": {
+      "types": "./dist/ipc/index.d.ts",
+      "import": "./dist/ipc/index.mjs",
+      "require": "./dist/ipc/index.js"
+    },
+    "./playbook": {
+      "types": "./dist/playbook/index.d.ts",
+      "import": "./dist/playbook/index.mjs",
+      "require": "./dist/playbook/index.js"
+    },
+    "./self-healing": {
+      "types": "./dist/self-healing/index.d.ts",
+      "import": "./dist/self-healing/index.mjs",
+      "require": "./dist/self-healing/index.js"
+    },
+    "./security": {
+      "types": "./dist/security/index.d.ts",
+      "import": "./dist/security/index.mjs",
+      "require": "./dist/security/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts",
+    "clean": "rm -rf dist",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "peerDependencies": {
+    "playwright": "^1.40.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.6",
+    "playwright": "^1.57.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "vitest": "^2.0.0"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "botame",
+    "automation",
+    "self-healing",
+    "playwright"
+  ],
+  "license": "MIT"
+}

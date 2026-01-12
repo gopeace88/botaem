@@ -3,7 +3,7 @@ import { usePlaybookStore } from '../../stores/playbook.store';
 import { PlaybookListItem, Category } from '../../../shared/types';
 
 interface PlaybookListProps {
-  onSelect: () => void;
+  onSelect: (id: string) => void;
   onNewRecording: () => void;
   onPlay?: (id: string) => void;
 }
@@ -86,7 +86,7 @@ export function PlaybookList({ onSelect, onNewRecording, onPlay }: PlaybookListP
 
   const handleSelect = async (id: string) => {
     await selectPlaybook(id);
-    onSelect();
+    onSelect(id);
   };
 
   const handleDelete = async (e: React.MouseEvent, id: string) => {
@@ -254,7 +254,6 @@ export function PlaybookList({ onSelect, onNewRecording, onPlay }: PlaybookListP
                 onSelect={handleSelect}
                 onDelete={handleDelete}
                 onPlay={handlePlay}
-                getCategoryColor={getCategoryColor}
                 getDifficultyColor={getDifficultyColor}
               />
             ))}
@@ -295,7 +294,6 @@ interface CategoryFolderProps {
   onSelect: (id: string) => void;
   onDelete: (e: React.MouseEvent, id: string) => void;
   onPlay: (e: React.MouseEvent, id: string) => void;
-  getCategoryColor: (category?: string) => string;
   getDifficultyColor: (difficulty?: string) => string;
 }
 
@@ -307,7 +305,6 @@ function CategoryFolder({
   onSelect,
   onDelete,
   onPlay,
-  getCategoryColor,
   getDifficultyColor,
 }: CategoryFolderProps) {
   const config = CATEGORY_CONFIG[category as Category] || CATEGORY_CONFIG['기타'];

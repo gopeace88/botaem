@@ -1,0 +1,14 @@
+{
+  "statusLine": {
+    "type": "command",
+    "command": "bash /home/jhkim/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "serena@claude-plugins-official": true
+  },
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "edb1d1b247fd48feb8835efb1e327ef0.Ic5g7NxRX3Zs1ppt",
+    "ANTHROPIC_BASE_URL": "https://api.z.ai/api/anthropic",
+    "API_TIMEOUT_MS": "3000000"
+  }
+}

@@ -25,6 +25,14 @@ export function PlaybookEditor({ onBack }: PlaybookEditorProps) {
   const [previewingStepIndex, setPreviewingStepIndex] = useState<number | null>(null);
   const [highlightError, setHighlightError] = useState<string | null>(null);
   const [isCatalogPlaybook, setIsCatalogPlaybook] = useState(false);
+  const [categories, setCategories] = useState<Category[]>([]);
+
+  // 카테고리 목록 로드 (설정에서)
+  useEffect(() => {
+    window.electron.invoke('config:getCategories').then((cats: string[]) => {
+      setCategories(cats as Category[]);
+    });
+  }, []);
 
   useEffect(() => {
     if (selectedPlaybook) {
@@ -150,7 +158,6 @@ export function PlaybookEditor({ onBack }: PlaybookEditorProps) {
     );
   }
 
-  const categories: Category[] = ['교부관리', '집행관리', '정산관리', '사업관리', '기타'];
   const difficulties: Difficulty[] = ['쉬움', '보통', '어려움'];
 
   return (

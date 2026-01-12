@@ -16,7 +16,16 @@ import {
   ElementSnapshot,
   ElementIdentity,
   SemanticStepV3,
+  SemanticStepV4,
   BoundingBox,
+  EnhancedFallbacks,
+  TextBasedSelector,
+  ParentChainSelector,
+  NearbyLabelSelector,
+  StructuralPosition,
+  ParentInfo,
+  TextPatterns,
+  TextVariation,
 } from '../../shared/types';
 import { BrowserService } from './browser.service';
 import { SnapshotService } from '../core/snapshot.service';
@@ -27,6 +36,8 @@ import {
 } from '../core/semantic-selector';
 import { AccessibilityService } from '../core/accessibility.service';
 import { SiteCacheService } from './site-cache.service';
+import { AISelectorService, getAISelectorService } from './ai-selector.service';
+import { configLoader } from '../../shared/config';
 
 type RecordingEventType =
   | 'started'
@@ -53,11 +64,13 @@ export class RecordingService {
   private semanticSelectorGenerator: SemanticSelectorGenerator;
   private accessibilityService: AccessibilityService;  // v3: Accessibility 서비스 추가
   private siteCacheService: SiteCacheService;
+  private aiSelectorService: AISelectorService;  // AI 폴백 셀렉터 생성
   private state: RecordingState = 'idle';
   private recordedActions: RecordedAction[] = [];
   private recordedSteps: SemanticStepV3[] = [];  // v3: SemanticStepV3로 변경
   private stepCounter = 0;
   private eventListeners: EventCallback[] = [];
+  private recordingStartUrl: string | null = null;  // 녹화 시작 시점의 URL
 
   constructor() {
     this.snapshotService = new SnapshotService();
@@ -65,6 +78,7 @@ export class RecordingService {
     this.semanticSelectorGenerator = new SemanticSelectorGenerator();
     this.accessibilityService = new AccessibilityService();  // v3
     this.siteCacheService = new SiteCacheService();
+    this.aiSelectorService = getAISelectorService();  // AI 셀렉터 서비스 초기화
   }
 
   /**
@@ -150,6 +164,10 @@ export class RecordingService {
       this.recordedSteps = [];
       this.stepCounter = 0;
       this.state = 'recording';
+
+      // 녹화 시작 시점의 URL 저장 (재생 시 이 URL로 이동)
+      this.recordingStartUrl = page.url();
+      console.log('[RecordingService] Recording start URL:', this.recordingStartUrl);
 
       // Add initial guide step
       this.addGuideStep('녹화를 시작합니다.');
@@ -264,6 +282,19 @@ export class RecordingService {
       return { success: false, error: '녹화된 단계가 없습니다.' };
     }
 
+    // startUrl 결정: 1) 메타데이터에서 전달된 값 2) 녹화 시작 시점 URL 3) 첫 번째 navigate 액션 4) 기본 URL
+    let startUrl = metadata.startUrl || this.recordingStartUrl;
+    if (!startUrl) {
+      // 첫 번째 navigate 액션에서 URL 추출 시도
+      const firstNavigate = this.recordedSteps.find(step => step.action === 'navigate');
+      if (firstNavigate?.value) {
+        startUrl = firstNavigate.value;
+      } else {
+        // 기본 시작 URL 사용 (설정에서 로드)
+        startUrl = configLoader.getUrl('home');
+      }
+    }
+
     const playbook: Playbook = {
       metadata: {
         id: metadata.id || `playbook-${Date.now()}`,
@@ -274,12 +305,15 @@ export class RecordingService {
         difficulty: metadata.difficulty || '보통',
         keywords: metadata.keywords || [metadata.name || ''],
         createdAt: new Date().toISOString(),
+        startUrl: startUrl || undefined,  // 녹화 시작 URL 포함
       },
       steps: this.recordedSteps.map((step, index) => ({
         ...step,
         id: `step${index + 1}`,
       })),
     };
+
+    console.log('[RecordingService] Generated playbook with startUrl:', startUrl);
 
     return { success: true, data: playbook };
   }
@@ -303,6 +337,7 @@ export class RecordingService {
     this.recordedSteps = [];
     this.stepCounter = 0;
     this.state = 'idle';
+    this.recordingStartUrl = null;
     console.log('[RecordingService] Full reset');
   }
 
@@ -318,10 +353,10 @@ export class RecordingService {
     this.emit({ type: 'action_recorded', action, step });
   }
 
-  private async convertActionToStep(action: RecordedAction): Promise<SemanticStepV3> {
+  private async convertActionToStep(action: RecordedAction): Promise<SemanticStepV4> {
     this.stepCounter++;
 
-    const step: SemanticStepV3 = {
+    const step: SemanticStepV4 = {
       id: `step${this.stepCounter}`,
       action: action.type,
       timeout: 5000,
@@ -344,7 +379,7 @@ export class RecordingService {
     // ========================================
     // v2 호환: 시맨틱 선택자 생성 (기존 로직 유지)
     // ========================================
-    const semanticResult = await this.generateSemanticSelector(action);
+    const { result: semanticResult, snapshot: capturedSnapshot } = await this.generateSemanticSelectorWithSnapshot(action);
     if (semanticResult) {
       // v3 identity가 없으면 semanticResult에서 selector 사용
       if (!step.selector) {
@@ -360,8 +395,8 @@ export class RecordingService {
         }));
       }
 
-      // 스마트 셀렉터 호환성 유지
-      step.smartSelector = this.convertToSmartSelector(semanticResult, action);
+      // 스마트 셀렉터 호환성 유지 (AI 폴백 포함)
+      step.smartSelector = await this.convertToSmartSelector(semanticResult, action, capturedSnapshot);
 
       console.log(`[RecordingService] Semantic selector: ${semanticResult.selector} (${semanticResult.strategy}, unique: ${semanticResult.isUnique})`);
     } else {
@@ -388,6 +423,37 @@ export class RecordingService {
     }
 
     step.message = this.generateStepMessage(action, identity);
+
+    // ========================================
+    // v4: Enhanced Self-Healing 정보 캡처
+    // 녹화 시 한 번만 계산하여 저장, 실행 시 AI 없이 로컬에서 활용
+    // ========================================
+    const page = this.browserService?.getPage();
+    if (page && capturedSnapshot) {
+      try {
+        // 병렬로 확장 정보 캡처 (성능 최적화)
+        const [enhancedFallbacks, structuralPosition] = await Promise.all([
+          this.captureEnhancedFallbacks(capturedSnapshot, page),
+          this.captureStructuralPosition(capturedSnapshot, page),
+        ]);
+
+        step.enhancedFallbacks = enhancedFallbacks;
+        step.structuralPosition = structuralPosition;
+        step.textPatterns = this.generateTextPatterns(capturedSnapshot);
+
+        const fallbackCount =
+          enhancedFallbacks.textSelectors.length +
+          enhancedFallbacks.parentChainSelectors.length +
+          enhancedFallbacks.nearbyLabelSelectors.length;
+
+        if (fallbackCount > 0) {
+          console.log(`[RecordingService] v4 Enhanced fallbacks: ${fallbackCount} selectors captured`);
+        }
+      } catch (error) {
+        // v4 캡처 실패는 무시 (핵심 기능 아님)
+        console.warn('[RecordingService] v4 enhanced capture failed:', error);
+      }
+    }
 
     return step;
   }
@@ -560,10 +626,14 @@ export class RecordingService {
   /**
    * v3: 시맨틱 선택자 생성 (페이지에서 고유성 검증)
    * CDP를 통해 정확한 요소 정보를 가져옴
+   * @returns 선택자 결과와 스냅샷을 함께 반환 (AI 셀렉터 생성용)
    */
-  private async generateSemanticSelector(action: RecordedAction): Promise<SemanticSelectorResult | null> {
+  private async generateSemanticSelectorWithSnapshot(action: RecordedAction): Promise<{
+    result: SemanticSelectorResult | null;
+    snapshot: ElementSnapshot | null;
+  }> {
     const page = this.browserService?.getPage();
-    if (!page) return null;
+    if (!page) return { result: null, snapshot: null };
 
     try {
       let snapshot: ElementSnapshot | null = null;
@@ -583,7 +653,7 @@ export class RecordingService {
         snapshot = this.createSnapshotFromElementInfo(action);
       }
 
-      if (!snapshot) return null;
+      if (!snapshot) return { result: null, snapshot: null };
 
       // 시맨틱 선택자 생성 (고유성 검증 포함)
       const result = await this.semanticSelectorGenerator.generateBestSelector(snapshot, page);
@@ -607,22 +677,27 @@ export class RecordingService {
         }
       }
 
-      return result;
+      return { result, snapshot };
     } catch (error) {
       const errorMsg = error instanceof Error ? error.message : '';
       // 페이지 이동 중 오류는 조용히 처리
       if (!errorMsg.includes('context was destroyed') && !errorMsg.includes('navigation')) {
         console.error('[RecordingService] Semantic selector error:', error);
       }
-      return null;
+      return { result: null, snapshot: null };
     }
   }
 
   /**
    * SemanticSelectorResult를 SmartSelector로 변환 (하위 호환)
+   * AI 폴백 셀렉터도 함께 생성 (API 키가 설정된 경우)
    */
-  private convertToSmartSelector(result: SemanticSelectorResult, _action: RecordedAction): SmartSelector {
-    return {
+  private async convertToSmartSelector(
+    result: SemanticSelectorResult,
+    action: RecordedAction,
+    snapshot?: ElementSnapshot | null
+  ): Promise<SmartSelector> {
+    const smartSelector: SmartSelector = {
       primary: {
         strategy: result.strategy,
         value: result.selector,
@@ -636,6 +711,35 @@ export class RecordingService {
       coordinates: { x: 0, y: 0, width: 0, height: 0 },
       elementHash: result.elementHash,
     };
+
+    // AI 폴백 셀렉터 생성 (비동기, API 키 있을 때만)
+    if (this.aiSelectorService.isEnabled() && snapshot) {
+      try {
+        const page = this.browserService?.getPage();
+        if (page && result.selector) {
+          const elementInfo = this.aiSelectorService.extractElementInfo(snapshot);
+          const message = this.generateStepMessage(action, null);
+
+          // AI 셀렉터 생성 (DOM 컨텍스트 포함)
+          const aiSelectors = await this.aiSelectorService.generateSelectorsForAction(
+            page,
+            elementInfo,
+            result.selector,
+            message
+          );
+
+          if (aiSelectors) {
+            smartSelector.aiGenerated = aiSelectors;
+            console.log(`[RecordingService] AI generated ${aiSelectors.selectors.length} fallback selectors (confidence: ${aiSelectors.confidence})`);
+          }
+        }
+      } catch (error) {
+        // AI 셀렉터 생성 실패는 무시 (핵심 기능 아님)
+        console.warn('[RecordingService] AI selector generation failed:', error);
+      }
+    }
+
+    return smartSelector;
   }
 
   /**
@@ -1287,5 +1391,512 @@ export class RecordingService {
 
     // Also inject on current page
     await page.evaluate(script);
+  }
+
+  // ============================================
+  // v4: Enhanced Self-Healing 정보 수집
+  // ============================================
+
+  /**
+   * 확장된 폴백 정보 캡처 (v4)
+   * 참고: 한글/영문 변환 맵은 이제 configLoader.getSelectorConfig().translationMap에서 로드
+   */
+  private async captureEnhancedFallbacks(
+    snapshot: ElementSnapshot,
+    page: Page
+  ): Promise<EnhancedFallbacks> {
+    const [textSelectors, parentChainSelectors, nearbyLabelSelectors] = await Promise.all([
+      this.generateTextSelectors(snapshot, page),
+      this.generateParentChainSelectors(snapshot, page),
+      this.generateNearbyLabelSelectors(snapshot, page),
+    ]);
+
+    return {
+      textSelectors,
+      parentChainSelectors,
+      nearbyLabelSelectors,
+    };
+  }
+
+  /**
+   * 텍스트 기반 셀렉터 생성
+   */
+  private async generateTextSelectors(
+    snapshot: ElementSnapshot,
+    page: Page
+  ): Promise<TextBasedSelector[]> {
+    const selectors: TextBasedSelector[] = [];
+    const text = snapshot.textContent?.trim();
+
+    // 텍스트가 없거나 너무 짧거나 길면 건너뜀
+    if (!text || text.length < 2 || text.length > 100) return selectors;
+
+    const tagName = snapshot.tagName.toLowerCase();
+
+    // INPUT 요소는 텍스트 셀렉터 사용 안함
+    if (['input', 'textarea', 'select'].includes(tagName)) return selectors;
+
+    try {
+      // 1. 정확한 텍스트 매칭
+      const exactSelector = `${tagName}:text("${this.escapeTextForSelector(text)}")`;
+      if (await this.isUniqueSelector(page, exactSelector)) {
+        selectors.push({
+          type: 'exact',
+          value: text,
+          selector: exactSelector,
+          confidence: 85,
+        });
+      }
+
+      // 2. has-text 매칭
+      const hasTextSelector = `${tagName}:has-text("${this.escapeTextForSelector(text)}")`;
+      if (await this.isUniqueSelector(page, hasTextSelector)) {
+        selectors.push({
+          type: 'contains',
+          value: text,
+          selector: hasTextSelector,
+          confidence: 80,
+        });
+      }
+
+      // 3. 정규식 패턴 (공백 유연하게)
+      const regexPattern = this.textToFlexibleRegex(text);
+      selectors.push({
+        type: 'regex',
+        value: text,
+        pattern: regexPattern,
+        selector: `${tagName}:text-matches("${regexPattern}", "i")`,
+        confidence: 70,
+      });
+    } catch (error) {
+      // 페이지 이동 등으로 인한 에러 무시
+    }
+
+    return selectors;
+  }
+
+  /**
+   * 부모 체인 기반 셀렉터 생성
+   */
+  private async generateParentChainSelectors(
+    snapshot: ElementSnapshot,
+    page: Page
+  ): Promise<ParentChainSelector[]> {
+    const selectors: ParentChainSelector[] = [];
+
+    try {
+      // 부모 체인 정보 가져오기
+      const parentChain = await page.evaluate((cssPath: string) => {
+        const el = document.querySelector(cssPath);
+        if (!el) return [];
+
+        const chain: Array<{
+          tagName: string;
+          id?: string;
+          role?: string;
+          ariaLabel?: string;
+          isLandmark: boolean;
+          isForm: boolean;
+        }> = [];
+
+        let current = el.parentElement;
+        let depth = 0;
+
+        while (current && current !== document.body && depth < 5) {
+          depth++;
+          chain.push({
+            tagName: current.tagName.toLowerCase(),
+            id: current.id || undefined,
+            role: current.getAttribute('role') || undefined,
+            ariaLabel: current.getAttribute('aria-label') || undefined,
+            isLandmark: ['HEADER', 'NAV', 'MAIN', 'ASIDE', 'FOOTER', 'SECTION', 'ARTICLE'].includes(current.tagName),
+            isForm: current.tagName === 'FORM',
+          });
+          current = current.parentElement;
+        }
+
+        return chain;
+      }, snapshot.cssPath);
+
+      // 부모 셀렉터 조합 생성
+      const childSelector = this.generateRelativeChildSelector(snapshot);
+
+      for (let i = 0; i < parentChain.length; i++) {
+        const parent = parentChain[i];
+        let parentSelector = '';
+
+        // 유용한 부모 셀렉터 생성
+        if (parent.id && !this.isDynamicId(parent.id)) {
+          parentSelector = `#${parent.id}`;
+        } else if (parent.role) {
+          parentSelector = `[role="${parent.role}"]`;
+        } else if (parent.isForm) {
+          parentSelector = 'form';
+        } else if (parent.isLandmark) {
+          parentSelector = parent.tagName;
+        } else {
+          continue; // 유용한 부모가 아니면 스킵
+        }
+
+        const fullSelector = `${parentSelector} >> ${childSelector}`;
+
+        if (await this.isUniqueSelector(page, fullSelector)) {
+          selectors.push({
+            parentSelector,
+            childSelector,
+            fullSelector,
+            depth: i + 1,
+            confidence: 90 - (i * 5), // 깊이가 깊을수록 낮은 신뢰도
+          });
+        }
+      }
+    } catch (error) {
+      // 페이지 이동 등으로 인한 에러 무시
+    }
+
+    return selectors;
+  }
+
+  /**
+   * 근처 라벨 기반 셀렉터 생성
+   */
+  private async generateNearbyLabelSelectors(
+    snapshot: ElementSnapshot,
+    page: Page
+  ): Promise<NearbyLabelSelector[]> {
+    const selectors: NearbyLabelSelector[] = [];
+    const tagName = snapshot.tagName.toLowerCase();
+
+    // INPUT/TEXTAREA/SELECT 요소만 라벨 기반 셀렉터 생성
+    if (!['input', 'textarea', 'select'].includes(tagName)) {
+      return selectors;
+    }
+
+    try {
+      const nearbyLabels = await page.evaluate((cssPath: string) => {
+        const el = document.querySelector(cssPath);
+        if (!el) return [];
+
+        const labels: Array<{
+          text: string;
+          relationship: 'for' | 'sibling' | 'preceding' | 'following' | 'parent';
+        }> = [];
+
+        // 1. for 속성으로 연결된 label
+        if (el.id) {
+          const label = document.querySelector(`label[for="${el.id}"]`);
+          if (label && label.textContent) {
+            labels.push({
+              text: label.textContent.trim(),
+              relationship: 'for',
+            });
+          }
+        }
+
+        // 2. 이전 형제 중 label 또는 span
+        let prev = el.previousElementSibling;
+        while (prev) {
+          if (prev.tagName === 'LABEL' ||
+              (prev.tagName === 'SPAN' && prev.textContent && prev.textContent.trim().length < 30)) {
+            labels.push({
+              text: prev.textContent?.trim() || '',
+              relationship: 'preceding',
+            });
+            break;
+          }
+          prev = prev.previousElementSibling;
+        }
+
+        // 3. 부모 label
+        const parentLabel = el.closest('label');
+        if (parentLabel && parentLabel !== el) {
+          const labelText = parentLabel.textContent?.trim().replace(el.textContent || '', '').trim();
+          if (labelText) {
+            labels.push({
+              text: labelText,
+              relationship: 'parent',
+            });
+          }
+        }
+
+        return labels;
+      }, snapshot.cssPath);
+
+      for (const label of nearbyLabels) {
+        if (!label.text || label.text.length < 2) continue;
+
+        const escapedText = this.escapeTextForSelector(label.text);
+        let targetSelector = '';
+
+        if (label.relationship === 'for') {
+          // label[for] + input 또는 label[for] ~ input
+          targetSelector = `label:has-text("${escapedText}") + ${tagName}, label:has-text("${escapedText}") ~ ${tagName}`;
+        } else if (label.relationship === 'preceding') {
+          // 이전 형제 텍스트 + 현재 요소
+          targetSelector = `:text("${escapedText}") + ${tagName}`;
+        } else if (label.relationship === 'parent') {
+          // 부모 라벨 내부의 요소
+          targetSelector = `label:has-text("${escapedText}") >> ${tagName}`;
+        }
+
+        if (targetSelector && await this.isUniqueSelector(page, targetSelector)) {
+          selectors.push({
+            labelText: label.text,
+            relationship: label.relationship,
+            targetSelector,
+            confidence: 85,
+          });
+        }
+      }
+    } catch (error) {
+      // 페이지 이동 등으로 인한 에러 무시
+    }
+
+    return selectors;
+  }
+
+  /**
+   * 구조적 위치 정보 캡처
+   */
+  private async captureStructuralPosition(
+    snapshot: ElementSnapshot,
+    page: Page
+  ): Promise<StructuralPosition | undefined> {
+    try {
+      const positionInfo = await page.evaluate((cssPath: string) => {
+        const el = document.querySelector(cssPath);
+        if (!el) return null;
+
+        // 부모 체인
+        const parentChain: ParentInfo[] = [];
+        let current = el.parentElement;
+        let depth = 0;
+
+        while (current && current !== document.body && depth < 5) {
+          const tagName = current.tagName.toLowerCase();
+          const id = current.id && !/^[a-f0-9]{8}-|^\d{10,}|_\d+$|^react-|^ember|^ng-|^:r[0-9a-z]+:/i.test(current.id)
+            ? current.id
+            : undefined;
+
+          // 안정적인 클래스만 추출
+          const stableClasses = current.className
+            ? current.className.split(' ')
+                .filter((c: string) => c.trim() && !/^(css-|sc-|_[a-z0-9]{5,}|emotion-)/i.test(c))
+                .slice(0, 2)
+                .join(' ')
+            : undefined;
+
+          // 셀렉터 생성
+          let selector = tagName;
+          if (id) {
+            selector = `#${id}`;
+          } else if (current.getAttribute('role')) {
+            selector = `[role="${current.getAttribute('role')}"]`;
+          } else if (stableClasses) {
+            selector = `${tagName}.${stableClasses.split(' ').join('.')}`;
+          }
+
+          parentChain.push({
+            tagName,
+            id,
+            role: current.getAttribute('role') || undefined,
+            ariaLabel: current.getAttribute('aria-label') || undefined,
+            className: stableClasses,
+            selector,
+            isLandmark: ['header', 'nav', 'main', 'aside', 'footer'].includes(tagName),
+            isForm: tagName === 'form',
+          });
+
+          current = current.parentElement;
+          depth++;
+        }
+
+        // 형제 정보
+        const parent = el.parentElement;
+        const siblings = parent ? Array.from(parent.children) : [];
+        const position = siblings.indexOf(el);
+
+        const prevSibling = el.previousElementSibling;
+        const nextSibling = el.nextElementSibling;
+
+        // nthChild, nthOfType 계산
+        const nthChild = position + 1;
+        const sameTagSiblings = siblings.filter(s => s.tagName === el.tagName);
+        const nthOfType = sameTagSiblings.indexOf(el) + 1;
+
+        // 폼 요소 인덱스
+        let formElementIndex: number | undefined;
+        const form = el.closest('form');
+        if (form && ['INPUT', 'TEXTAREA', 'SELECT'].includes(el.tagName)) {
+          const formElements = form.querySelectorAll('input, textarea, select');
+          formElementIndex = Array.from(formElements).indexOf(el) + 1;
+        }
+
+        return {
+          parentChain,
+          siblingInfo: {
+            prevSiblingText: prevSibling?.textContent?.trim().slice(0, 50),
+            nextSiblingText: nextSibling?.textContent?.trim().slice(0, 50),
+            prevSiblingTag: prevSibling?.tagName.toLowerCase(),
+            nextSiblingTag: nextSibling?.tagName.toLowerCase(),
+            totalSiblings: siblings.length,
+            position,
+          },
+          nthChild,
+          nthOfType,
+          formElementIndex,
+        };
+      }, snapshot.cssPath);
+
+      return positionInfo || undefined;
+    } catch (error) {
+      return undefined;
+    }
+  }
+
+  /**
+   * 텍스트 패턴 생성
+   */
+  private generateTextPatterns(snapshot: ElementSnapshot): TextPatterns | undefined {
+    const text = snapshot.textContent?.trim();
+    if (!text || text.length < 2 || text.length > 100) return undefined;
+
+    // INPUT 요소는 텍스트 패턴 사용 안함
+    if (['INPUT', 'TEXTAREA', 'SELECT'].includes(snapshot.tagName)) return undefined;
+
+    // 정규화
+    const normalized = text.replace(/\s+/g, ' ').trim();
+
+    // 변형 생성
+    const variations = this.generateTextVariations(text);
+
+    // 정규식 패턴
+    const regexPattern = this.textToFlexibleRegex(text);
+
+    // 키워드 추출
+    const keywords = this.extractKeywordsFromText(text);
+
+    return {
+      original: text,
+      normalized,
+      variations,
+      regexPattern,
+      keywords,
+    };
+  }
+
+  /**
+   * 텍스트 변형 생성 (한글/영문 변환)
+   */
+  private generateTextVariations(text: string): TextVariation[] {
+    const variations: TextVariation[] = [];
+
+    // 원본 한글
+    variations.push({
+      type: 'korean',
+      value: text,
+      pattern: this.escapeRegex(text),
+    });
+
+    // 영문 변형 찾기 (프로필 설정에서 번역 맵 로드)
+    const translationMap = configLoader.getSelectorConfig().translationMap || {};
+    for (const [korean, englishList] of Object.entries(translationMap)) {
+      if (text.includes(korean)) {
+        for (const english of englishList) {
+          variations.push({
+            type: 'english',
+            value: english,
+            pattern: english.replace(/\s+/g, '.?'),
+          });
+        }
+      }
+    }
+
+    // 공백 유연성 (공백 있으면 공백 없는 버전도 추가)
+    if (text.includes(' ')) {
+      variations.push({
+        type: 'mixed',
+        value: text.replace(/\s+/g, ''),
+        pattern: text.replace(/\s+/g, '.?'),
+      });
+    }
+
+    return variations;
+  }
+
+  /**
+   * 키워드 추출 (stopword 제외)
+   */
+  private extractKeywordsFromText(text: string): string[] {
+    const stopWords = ['을', '를', '이', '가', '은', '는', '의', '에', '에서', '으로', '로', '와', '과', '하다', '하기', '클릭', '입력', '선택'];
+
+    return text
+      .split(/\s+/)
+      .filter(word => word.length >= 2 && !stopWords.includes(word))
+      .slice(0, 5); // 최대 5개
+  }
+
+  /**
+   * 텍스트를 유연한 정규식으로 변환
+   */
+  private textToFlexibleRegex(text: string): string {
+    // 공백을 .?로 변환하고, 특수문자 이스케이프
+    return text
+      .split('')
+      .map(char => {
+        if (/\s/.test(char)) return '.?';
+        if (/[.*+?^${}()|[\]\\]/.test(char)) return '\\' + char;
+        return char;
+      })
+      .join('');
+  }
+
+  /**
+   * 정규식 특수문자 이스케이프
+   */
+  private escapeRegex(text: string): string {
+    return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  /**
+   * 셀렉터용 텍스트 이스케이프
+   */
+  private escapeTextForSelector(text: string): string {
+    return text.replace(/"/g, '\\"').replace(/'/g, "\\'");
+  }
+
+  /**
+   * 상대 자식 셀렉터 생성
+   */
+  private generateRelativeChildSelector(snapshot: ElementSnapshot): string {
+    const tagName = snapshot.tagName.toLowerCase();
+    const attrs = snapshot.attributes;
+
+    // 우선순위: name > aria-label > type > placeholder > tagName
+    if (attrs['name']) {
+      return `${tagName}[name="${attrs['name']}"]`;
+    }
+    if (attrs['aria-label']) {
+      return `${tagName}[aria-label="${this.escapeTextForSelector(attrs['aria-label'])}"]`;
+    }
+    if (attrs['type'] && ['password', 'email', 'tel', 'search', 'file'].includes(attrs['type'])) {
+      return `${tagName}[type="${attrs['type']}"]`;
+    }
+    if (attrs['placeholder']) {
+      return `${tagName}[placeholder="${this.escapeTextForSelector(attrs['placeholder'])}"]`;
+    }
+    return tagName;
+  }
+
+  /**
+   * 셀렉터가 고유한지 확인
+   */
+  private async isUniqueSelector(page: Page, selector: string): Promise<boolean> {
+    try {
+      const count = await page.locator(selector).count();
+      return count === 1;
+    } catch {
+      return false;
+    }
   }
 }

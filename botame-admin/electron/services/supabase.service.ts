@@ -8,6 +8,7 @@
 
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { Playbook } from '../../shared/types';
+import { configLoader } from '../../shared/config';
 
 export interface SyncResult {
   success: boolean;
@@ -129,19 +130,24 @@ export class SupabaseService {
       const { error } = await this.client
         .from('playbooks')
         .upsert({
-          id: playbook.metadata.id,
+          playbook_id: playbook.metadata.id,
           name: playbook.metadata.name,
           description: playbook.metadata.description,
           category: playbook.metadata.category,
           difficulty: playbook.metadata.difficulty,
           version: playbook.metadata.version,
+          keywords: playbook.metadata.keywords || [],
+          estimated_time: playbook.metadata.estimatedTime,
+          start_url: playbook.metadata.startUrl || configLoader.getUrl('home'),
+          author: 'admin',
+          is_published: false,  // 신규 업로드는 기본 비공개
+          status: 'draft',      // 신규 업로드는 기본 draft
+          steps: playbook.steps,
+          yaml_content: null,
           created_at: playbook.metadata.createdAt || new Date().toISOString(),
           updated_at: new Date().toISOString(),
-          steps: JSON.stringify(playbook.steps),
-          metadata: JSON.stringify(playbook.metadata),
-          yaml_content: null, // 필요시 YAML 원본 저장
         }, {
-          onConflict: 'id',
+          onConflict: 'playbook_id',
         });
 
       if (error) {
@@ -314,7 +320,7 @@ export class SupabaseService {
         updated_at: item.updated_at,
         step_count: Array.isArray(item.steps) ? item.steps.length : 0,
         level: item.level || 2,
-        start_url: item.start_url || 'https://www.losims.go.kr/lss.do',
+        start_url: item.start_url || configLoader.getUrl('home'),
       }));
 
       console.log(`[Supabase] Loaded ${playbooks.length} playbooks from catalog`);
@@ -372,7 +378,7 @@ export class SupabaseService {
         steps: data.steps || [],
       };
 
-      const startUrl = data.start_url || 'https://www.losims.go.kr/lss.do';
+      const startUrl = data.start_url || configLoader.getUrl('home');
       return { success: true, playbook, startUrl, message: '조회 성공' };
     } catch (error) {
       return {
@@ -399,8 +405,9 @@ export class SupabaseService {
           category: playbook.metadata.category,
           difficulty: playbook.metadata.difficulty,
           version: playbook.metadata.version,
-          keywords: playbook.metadata.keywords,
+          keywords: playbook.metadata.keywords || [],
           estimated_time: playbook.metadata.estimatedTime,
+          start_url: playbook.metadata.startUrl || configLoader.getUrl('home'),
           steps: playbook.steps,
           updated_at: new Date().toISOString(),
         })
@@ -417,6 +424,49 @@ export class SupabaseService {
       return {
         success: false,
         message: `저장 오류: ${error instanceof Error ? error.message : '알 수 없는 오류'}`
+      };
+    }
+  }
+
+  /**
+   * AI/Auto-Rescue 자동 복구 제안 제출
+   * Phase 3: Server Feedback Loop
+   */
+  async submitAutoFixProposal(
+    playbookId: string,
+    stepId: string,
+    originalSelector: string,
+    proposedSelector: string,
+    context?: string
+  ): Promise<{ success: boolean; message: string }> {
+    if (!this.client) {
+      return { success: false, message: 'Supabase가 설정되지 않았습니다' };
+    }
+
+    try {
+      const { error } = await this.client
+        .from('playbook_proposals')
+        .insert({
+          playbook_id: playbookId,
+          step_id: stepId,
+          original_selector: originalSelector,
+          proposed_selector: proposedSelector,
+          context_snapshot: context,
+          status: 'pending',
+          source: 'auto-rescue',
+          created_at: new Date().toISOString(),
+        });
+
+      if (error) {
+        console.error('[Supabase] Proposal submit error:', error);
+        return { success: false, message: `제안 제출 실패: ${error.message}` };
+      }
+
+      return { success: true, message: '자동 복구 제안이 제출되었습니다' };
+    } catch (error) {
+      return {
+        success: false,
+        message: `제안 오류: ${error instanceof Error ? error.message : '알 수 없는 오류'}`
       };
     }
   }
@@ -444,6 +494,7 @@ export class SupabaseService {
       };
     }
   }
+
 
   getStatus(): SyncStatus {
     return { ...this.syncStatus };

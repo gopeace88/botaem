@@ -11,9 +11,15 @@ import { SupabaseService } from './services/supabase.service';
 import { PlaybookRunnerService } from './services/playbook-runner.service';
 import { BrowserService } from './services/browser.service';
 import { Playbook } from '../shared/types';
+import { configLoader } from '../shared/config';
+import * as path from 'path';
 
 // Load .env file
 config();
+
+// 프로필 디렉토리 설정
+const profilesDir = path.join(app.getAppPath(), 'profiles');
+configLoader.initialize(profilesDir).catch(console.error);
 
 // Linux IME (fcitx) support
 app.commandLine.appendSwitch('enable-features', 'UseOzonePlatform');
@@ -332,6 +338,50 @@ function setupIpcHandlers() {
       success: true,
       state: runnerService.getState(),
     };
+  });
+
+  // 단일 스텝 실행 (스텝별 테스트용)
+  ipcMain.handle('runner:runStep', async (_event, step, stepIndex: number) => {
+    return await runnerService.runSingleStep(step, stepIndex);
+  });
+
+  // 요소 피킹 모드 시작 (셀렉터 수정용)
+  ipcMain.handle('runner:pickElement', async () => {
+    return await runnerService.startPickingMode();
+  });
+
+  // 요소 피킹 모드 취소
+  ipcMain.handle('runner:cancelPicking', async () => {
+    await runnerService.cancelPickingMode();
+    return { success: true };
+  });
+
+  // === Config (프로필 관리) ===
+
+  // 현재 활성 프로필 조회
+  ipcMain.handle('config:getProfile', () => {
+    return configLoader.getActiveProfile();
+  });
+
+  // 프로필 변경
+  ipcMain.handle('config:setProfile', (_event, profileId: string) => {
+    const success = configLoader.setActiveProfile(profileId);
+    return { success, profileId };
+  });
+
+  // 모든 프로필 목록
+  ipcMain.handle('config:listProfiles', () => {
+    return configLoader.listProfiles();
+  });
+
+  // 기본 URL 조회
+  ipcMain.handle('config:getUrl', (_event, key: 'home' | 'login') => {
+    return configLoader.getUrl(key);
+  });
+
+  // 카테고리 목록 조회
+  ipcMain.handle('config:getCategories', () => {
+    return configLoader.getCategories();
   });
 }
 
