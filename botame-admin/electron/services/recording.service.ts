@@ -3,7 +3,7 @@
  * v2: 스마트 셀렉터 통합
  */
 
-import { Page } from 'playwright';
+import { Page } from "playwright";
 import {
   RecordingState,
   RecordedAction,
@@ -11,7 +11,6 @@ import {
   Playbook,
   PlaybookMetadata,
   IpcResult,
-  SelectorInfo,
   SmartSelector,
   ElementSnapshot,
   ElementIdentity,
@@ -26,26 +25,27 @@ import {
   ParentInfo,
   TextPatterns,
   TextVariation,
-} from '../../shared/types';
-import { BrowserService } from './browser.service';
-import { SnapshotService } from '../core/snapshot.service';
-import { SmartSelectorGenerator } from '../core/smart-selector';
+} from "../../shared/types";
+import { BrowserService } from "./browser.service";
+import { SnapshotService } from "../core/snapshot.service";
+import { SmartSelectorGenerator } from "../core/smart-selector";
+import { generateSelectors } from "@botame/recorder";
 import {
   SemanticSelectorGenerator,
   SemanticSelectorResult,
-} from '../core/semantic-selector';
-import { AccessibilityService } from '../core/accessibility.service';
-import { SiteCacheService } from './site-cache.service';
-import { AISelectorService, getAISelectorService } from './ai-selector.service';
-import { configLoader } from '../../shared/config';
+} from "../core/semantic-selector";
+import { AccessibilityService } from "../core/accessibility.service";
+import { SiteCacheService } from "./site-cache.service";
+import { AISelectorService, getAISelectorService } from "./ai-selector.service";
+import { configLoader } from "../../shared/config";
 
 type RecordingEventType =
-  | 'started'
-  | 'stopped'
-  | 'paused'
-  | 'resumed'
-  | 'action_recorded'
-  | 'error';
+  | "started"
+  | "stopped"
+  | "paused"
+  | "resumed"
+  | "action_recorded"
+  | "error";
 
 interface RecordingEvent {
   type: RecordingEventType;
@@ -62,23 +62,23 @@ export class RecordingService {
   private snapshotService: SnapshotService;
   private selectorGenerator: SmartSelectorGenerator;
   private semanticSelectorGenerator: SemanticSelectorGenerator;
-  private accessibilityService: AccessibilityService;  // v3: Accessibility 서비스 추가
+  private accessibilityService: AccessibilityService; // v3: Accessibility 서비스 추가
   private siteCacheService: SiteCacheService;
-  private aiSelectorService: AISelectorService;  // AI 폴백 셀렉터 생성
-  private state: RecordingState = 'idle';
+  private aiSelectorService: AISelectorService; // AI 폴백 셀렉터 생성
+  private state: RecordingState = "idle";
   private recordedActions: RecordedAction[] = [];
-  private recordedSteps: SemanticStepV3[] = [];  // v3: SemanticStepV3로 변경
+  private recordedSteps: SemanticStepV3[] = []; // v3: SemanticStepV3로 변경
   private stepCounter = 0;
   private eventListeners: EventCallback[] = [];
-  private recordingStartUrl: string | null = null;  // 녹화 시작 시점의 URL
+  private recordingStartUrl: string | null = null; // 녹화 시작 시점의 URL
 
   constructor() {
     this.snapshotService = new SnapshotService();
     this.selectorGenerator = new SmartSelectorGenerator();
     this.semanticSelectorGenerator = new SemanticSelectorGenerator();
-    this.accessibilityService = new AccessibilityService();  // v3
+    this.accessibilityService = new AccessibilityService(); // v3
     this.siteCacheService = new SiteCacheService();
-    this.aiSelectorService = getAISelectorService();  // AI 셀렉터 서비스 초기화
+    this.aiSelectorService = getAISelectorService(); // AI 셀렉터 서비스 초기화
   }
 
   /**
@@ -110,12 +110,15 @@ export class RecordingService {
    * Start recording
    */
   async startRecording(targetUrl?: string): Promise<IpcResult> {
-    if (this.state !== 'idle') {
-      return { success: false, error: '이미 녹화 중입니다.' };
+    if (this.state !== "idle") {
+      return { success: false, error: "이미 녹화 중입니다." };
     }
 
     if (!this.browserService) {
-      return { success: false, error: '브라우저 서비스가 설정되지 않았습니다.' };
+      return {
+        success: false,
+        error: "브라우저 서비스가 설정되지 않았습니다.",
+      };
     }
 
     try {
@@ -125,31 +128,42 @@ export class RecordingService {
         // Browser not initialized, try to initialize
         const initResult = await this.browserService.initialize();
         if (!initResult.success) {
-          return { success: false, error: initResult.error || '브라우저를 시작할 수 없습니다.' };
+          return {
+            success: false,
+            error: initResult.error || "브라우저를 시작할 수 없습니다.",
+          };
         }
         page = this.browserService.getPage();
       }
 
       if (!page) {
-        return { success: false, error: '브라우저 페이지를 가져올 수 없습니다.' };
+        return {
+          success: false,
+          error: "브라우저 페이지를 가져올 수 없습니다.",
+        };
       }
 
       // 스냅샷 서비스 초기화
       await this.snapshotService.initialize(page);
-      console.log('[RecordingService] Snapshot service initialized');
+      console.log("[RecordingService] Snapshot service initialized");
 
       // v3: Accessibility 서비스 초기화
       await this.accessibilityService.initialize(page);
-      console.log('[RecordingService] Accessibility service initialized');
+      console.log("[RecordingService] Accessibility service initialized");
 
       // Expose recording function
-      await page.exposeFunction('__botameRecordAction', async (action: RecordedAction) => {
-        if (this.state === 'recording') {
-          await this.handleRecordedAction(action);
-        }
-      }).catch(() => {
-        // Function might already be exposed, ignore
-      });
+      await page
+        .exposeFunction(
+          "__botameRecordAction",
+          async (action: RecordedAction) => {
+            if (this.state === "recording") {
+              await this.handleRecordedAction(action);
+            }
+          },
+        )
+        .catch(() => {
+          // Function might already be exposed, ignore
+        });
 
       // Inject recording script
       await this.injectRecordingScript(page);
@@ -163,25 +177,28 @@ export class RecordingService {
       this.recordedActions = [];
       this.recordedSteps = [];
       this.stepCounter = 0;
-      this.state = 'recording';
+      this.state = "recording";
 
       // 녹화 시작 시점의 URL 저장 (재생 시 이 URL로 이동)
       this.recordingStartUrl = page.url();
-      console.log('[RecordingService] Recording start URL:', this.recordingStartUrl);
+      console.log(
+        "[RecordingService] Recording start URL:",
+        this.recordingStartUrl,
+      );
 
       // Add initial guide step
-      this.addGuideStep('녹화를 시작합니다.');
+      this.addGuideStep("녹화를 시작합니다.");
 
-      this.emit({ type: 'started' });
+      this.emit({ type: "started" });
 
-      console.log('[RecordingService] Started');
+      console.log("[RecordingService] Started");
 
-      return { success: true, message: '녹화가 시작되었습니다.' };
+      return { success: true, message: "녹화가 시작되었습니다." };
     } catch (error) {
-      console.error('[RecordingService] Failed to start:', error);
+      console.error("[RecordingService] Failed to start:", error);
       return {
         success: false,
-        error: error instanceof Error ? error.message : '녹화 시작 실패',
+        error: error instanceof Error ? error.message : "녹화 시작 실패",
       };
     }
   }
@@ -190,20 +207,20 @@ export class RecordingService {
    * Stop recording
    */
   async stopRecording(): Promise<IpcResult<PlaybookStep[]>> {
-    if (this.state === 'idle') {
-      return { success: false, error: '녹화 중이 아닙니다.' };
+    if (this.state === "idle") {
+      return { success: false, error: "녹화 중이 아닙니다." };
     }
 
     // Add final guide step
-    this.addGuideStep('녹화가 완료되었습니다.');
+    this.addGuideStep("녹화가 완료되었습니다.");
 
-    this.state = 'idle';
+    this.state = "idle";
     const steps = [...this.recordedSteps];
 
     // Close browser
     await this.cleanup();
 
-    this.emit({ type: 'stopped', steps });
+    this.emit({ type: "stopped", steps });
 
     console.log(`[RecordingService] Stopped. Total steps: ${steps.length}`);
 
@@ -218,10 +235,10 @@ export class RecordingService {
    * Pause recording
    */
   pauseRecording(): void {
-    if (this.state === 'recording') {
-      this.state = 'paused';
-      this.emit({ type: 'paused' });
-      console.log('[RecordingService] Paused');
+    if (this.state === "recording") {
+      this.state = "paused";
+      this.emit({ type: "paused" });
+      console.log("[RecordingService] Paused");
     }
   }
 
@@ -229,10 +246,10 @@ export class RecordingService {
    * Resume recording
    */
   resumeRecording(): void {
-    if (this.state === 'paused') {
-      this.state = 'recording';
-      this.emit({ type: 'resumed' });
-      console.log('[RecordingService] Resumed');
+    if (this.state === "paused") {
+      this.state = "recording";
+      this.emit({ type: "resumed" });
+      console.log("[RecordingService] Resumed");
     }
   }
 
@@ -279,33 +296,35 @@ export class RecordingService {
    */
   generatePlaybook(metadata: Partial<PlaybookMetadata>): IpcResult<Playbook> {
     if (this.recordedSteps.length === 0) {
-      return { success: false, error: '녹화된 단계가 없습니다.' };
+      return { success: false, error: "녹화된 단계가 없습니다." };
     }
 
     // startUrl 결정: 1) 메타데이터에서 전달된 값 2) 녹화 시작 시점 URL 3) 첫 번째 navigate 액션 4) 기본 URL
     let startUrl = metadata.startUrl || this.recordingStartUrl;
     if (!startUrl) {
       // 첫 번째 navigate 액션에서 URL 추출 시도
-      const firstNavigate = this.recordedSteps.find(step => step.action === 'navigate');
+      const firstNavigate = this.recordedSteps.find(
+        (step) => step.action === "navigate",
+      );
       if (firstNavigate?.value) {
         startUrl = firstNavigate.value;
       } else {
         // 기본 시작 URL 사용 (설정에서 로드)
-        startUrl = configLoader.getUrl('home');
+        startUrl = configLoader.getUrl("home");
       }
     }
 
     const playbook: Playbook = {
       metadata: {
         id: metadata.id || `playbook-${Date.now()}`,
-        name: metadata.name || '새 플레이북',
-        version: '1.0.0',
+        name: metadata.name || "새 플레이북",
+        version: "1.0.0",
         description: metadata.description,
-        category: metadata.category || '기타',
-        difficulty: metadata.difficulty || '보통',
-        keywords: metadata.keywords || [metadata.name || ''],
+        category: metadata.category || "기타",
+        difficulty: metadata.difficulty || "보통",
+        keywords: metadata.keywords || [metadata.name || ""],
         createdAt: new Date().toISOString(),
-        startUrl: startUrl || undefined,  // 녹화 시작 URL 포함
+        startUrl: startUrl || undefined, // 녹화 시작 URL 포함
       },
       steps: this.recordedSteps.map((step, index) => ({
         ...step,
@@ -313,7 +332,10 @@ export class RecordingService {
       })),
     };
 
-    console.log('[RecordingService] Generated playbook with startUrl:', startUrl);
+    console.log(
+      "[RecordingService] Generated playbook with startUrl:",
+      startUrl,
+    );
 
     return { success: true, data: playbook };
   }
@@ -325,8 +347,10 @@ export class RecordingService {
   async cleanup(): Promise<void> {
     // Only reset state - keep steps for generatePlaybook()
     // Browser is managed by BrowserService
-    this.state = 'idle';
-    console.log('[RecordingService] Recording state cleaned up (steps preserved)');
+    this.state = "idle";
+    console.log(
+      "[RecordingService] Recording state cleaned up (steps preserved)",
+    );
   }
 
   /**
@@ -336,9 +360,9 @@ export class RecordingService {
     this.recordedActions = [];
     this.recordedSteps = [];
     this.stepCounter = 0;
-    this.state = 'idle';
+    this.state = "idle";
     this.recordingStartUrl = null;
-    console.log('[RecordingService] Full reset');
+    console.log("[RecordingService] Full reset");
   }
 
   // Private methods
@@ -348,19 +372,23 @@ export class RecordingService {
     const step = await this.convertActionToStep(action);
     this.recordedSteps.push(step);
 
-    console.log(`[RecordingService] Action recorded: ${action.type} -> ${step.action}`);
+    console.log(
+      `[RecordingService] Action recorded: ${action.type} -> ${step.action}`,
+    );
 
-    this.emit({ type: 'action_recorded', action, step });
+    this.emit({ type: "action_recorded", action, step });
   }
 
-  private async convertActionToStep(action: RecordedAction): Promise<SemanticStepV4> {
+  private async convertActionToStep(
+    action: RecordedAction,
+  ): Promise<SemanticStepV4> {
     this.stepCounter++;
 
     const step: SemanticStepV4 = {
       id: `step${this.stepCounter}`,
       action: action.type,
       timeout: 5000,
-      onFailure: 'heal',  // 기본적으로 자가 치유 활성화
+      onFailure: "heal", // 기본적으로 자가 치유 활성화
     };
 
     // ========================================
@@ -370,7 +398,9 @@ export class RecordingService {
     const identity = await this.captureElementIdentity(action);
     if (identity) {
       step.identity = identity;
-      console.log(`[RecordingService] v3 Identity captured: role="${identity.axRole}", name="${identity.axName}"`);
+      console.log(
+        `[RecordingService] v3 Identity captured: role="${identity.axRole}", name="${identity.axName}"`,
+      );
 
       // v3에서도 selector 필드 설정 (하위 호환)
       step.selector = this.generateSelectorFromIdentity(identity);
@@ -379,7 +409,8 @@ export class RecordingService {
     // ========================================
     // v2 호환: 시맨틱 선택자 생성 (기존 로직 유지)
     // ========================================
-    const { result: semanticResult, snapshot: capturedSnapshot } = await this.generateSemanticSelectorWithSnapshot(action);
+    const { result: semanticResult, snapshot: capturedSnapshot } =
+      await this.generateSemanticSelectorWithSnapshot(action);
     if (semanticResult) {
       // v3 identity가 없으면 semanticResult에서 selector 사용
       if (!step.selector) {
@@ -396,9 +427,15 @@ export class RecordingService {
       }
 
       // 스마트 셀렉터 호환성 유지 (AI 폴백 포함)
-      step.smartSelector = await this.convertToSmartSelector(semanticResult, action, capturedSnapshot);
+      step.smartSelector = await this.convertToSmartSelector(
+        semanticResult,
+        action,
+        capturedSnapshot,
+      );
 
-      console.log(`[RecordingService] Semantic selector: ${semanticResult.selector} (${semanticResult.strategy}, unique: ${semanticResult.isUnique})`);
+      console.log(
+        `[RecordingService] Semantic selector: ${semanticResult.selector} (${semanticResult.strategy}, unique: ${semanticResult.isUnique})`,
+      );
     } else {
       // 폴백: 기존 방식
       if (!step.selector && action.selector) {
@@ -414,7 +451,19 @@ export class RecordingService {
       if (action.selectors && action.selectors.length > 0) {
         step.selectors = action.selectors;
       } else if (action.elementInfo) {
-        step.selectors = this.generateMultipleSelectors(action);
+        // Use @botame/recorder's generateSelectors function
+        step.selectors = generateSelectors({
+          tagName: action.elementInfo.tagName,
+          id: action.elementInfo.id,
+          className: action.elementInfo.className,
+          text: action.elementInfo.text,
+          placeholder: action.elementInfo.placeholder,
+          type: action.elementInfo.type,
+          role: action.elementInfo.role,
+          ariaLabel: action.elementInfo.ariaLabel,
+          name: action.elementInfo.name,
+          dataTestId: action.elementInfo.dataTestId,
+        });
       }
     }
 
@@ -447,11 +496,13 @@ export class RecordingService {
           enhancedFallbacks.nearbyLabelSelectors.length;
 
         if (fallbackCount > 0) {
-          console.log(`[RecordingService] v4 Enhanced fallbacks: ${fallbackCount} selectors captured`);
+          console.log(
+            `[RecordingService] v4 Enhanced fallbacks: ${fallbackCount} selectors captured`,
+          );
         }
       } catch (error) {
         // v4 캡처 실패는 무시 (핵심 기능 아님)
-        console.warn('[RecordingService] v4 enhanced capture failed:', error);
+        console.warn("[RecordingService] v4 enhanced capture failed:", error);
       }
     }
 
@@ -462,47 +513,58 @@ export class RecordingService {
    * v3: CDP Accessibility 기반 ElementIdentity 캡처
    * 클릭 좌표에서 정확한 요소의 role + name 획득
    */
-  private async captureElementIdentity(action: RecordedAction): Promise<ElementIdentity | null> {
+  private async captureElementIdentity(
+    action: RecordedAction,
+  ): Promise<ElementIdentity | null> {
     // 클릭 좌표가 없으면 캡처 불가
-    if (action.clickX === undefined || action.clickY === undefined ||
-        action.clickX <= 0 || action.clickY <= 0) {
+    if (
+      action.clickX === undefined ||
+      action.clickY === undefined ||
+      action.clickX <= 0 ||
+      action.clickY <= 0
+    ) {
       return null;
     }
 
     try {
       // 1. Accessibility 정보 가져오기 (핵심!)
-      const axInfo = await this.accessibilityService.getAccessibilityInfoAtPoint(
-        action.clickX,
-        action.clickY
-      );
+      const axInfo =
+        await this.accessibilityService.getAccessibilityInfoAtPoint(
+          action.clickX,
+          action.clickY,
+        );
 
       if (!axInfo) {
-        console.log('[RecordingService] No accessibility info at point');
+        console.log("[RecordingService] No accessibility info at point");
         return null;
       }
 
       // 2. DOM 속성도 가져오기 (보완 정보)
       const snapshot = await this.snapshotService.getElementAtPoint(
         action.clickX,
-        action.clickY
+        action.clickY,
       );
 
       // 3. ElementIdentity 구성
       const identity: ElementIdentity = {
         // 1순위: Accessibility 기반
-        axRole: axInfo.role !== 'generic' ? axInfo.role : undefined,
+        axRole: axInfo.role !== "generic" ? axInfo.role : undefined,
         axName: axInfo.name || undefined,
 
         // 2순위: 시맨틱 속성
-        ariaLabel: snapshot?.attributes['aria-label'],
-        dataTestId: snapshot?.attributes['data-testid'] || snapshot?.attributes['data-test-id'],
-        name: snapshot?.attributes['name'],
+        ariaLabel: snapshot?.attributes["aria-label"],
+        dataTestId:
+          snapshot?.attributes["data-testid"] ||
+          snapshot?.attributes["data-test-id"],
+        name: snapshot?.attributes["name"],
 
         // 3순위: 구조적 속성
-        tagName: snapshot?.tagName || 'unknown',
-        id: this.isStableId(snapshot?.attributes['id']) ? snapshot?.attributes['id'] : undefined,
-        type: snapshot?.attributes['type'],
-        placeholder: snapshot?.attributes['placeholder'],
+        tagName: snapshot?.tagName || "unknown",
+        id: this.isStableId(snapshot?.attributes["id"])
+          ? snapshot?.attributes["id"]
+          : undefined,
+        type: snapshot?.attributes["type"],
+        placeholder: snapshot?.attributes["placeholder"],
 
         // 4순위: 시각적 특성
         boundingBox: axInfo.boundingBox,
@@ -520,9 +582,12 @@ export class RecordingService {
 
       return identity;
     } catch (error) {
-      const msg = error instanceof Error ? error.message : '';
-      if (!msg.includes('context was destroyed') && !msg.includes('navigation')) {
-        console.error('[RecordingService] Identity capture error:', error);
+      const msg = error instanceof Error ? error.message : "";
+      if (
+        !msg.includes("context was destroyed") &&
+        !msg.includes("navigation")
+      ) {
+        console.error("[RecordingService] Identity capture error:", error);
       }
       return null;
     }
@@ -554,8 +619,8 @@ export class RecordingService {
     }
 
     // 5순위: type (unique types)
-    if (identity.tagName.toLowerCase() === 'input' && identity.type) {
-      const uniqueTypes = ['password', 'email', 'tel', 'search', 'file'];
+    if (identity.tagName.toLowerCase() === "input" && identity.type) {
+      const uniqueTypes = ["password", "email", "tel", "search", "file"];
       if (uniqueTypes.includes(identity.type)) {
         return `input[type="${identity.type}"]`;
       }
@@ -578,17 +643,20 @@ export class RecordingService {
   /**
    * v3: 시각적 해시 생성 (레이아웃 변경 대응)
    */
-  private generateVisualHash(box: BoundingBox, snapshot: ElementSnapshot | null): string {
+  private generateVisualHash(
+    box: BoundingBox,
+    snapshot: ElementSnapshot | null,
+  ): string {
     // 상대적 위치와 크기 기반 해시
     const hashParts = [
       Math.round(box.width),
       Math.round(box.height),
       // 화면 분할 위치 (9분할)
-      Math.floor(box.x / 400),  // 대략적인 x 위치
-      Math.floor(box.y / 300),  // 대략적인 y 위치
-      snapshot?.tagName || '',
+      Math.floor(box.x / 400), // 대략적인 x 위치
+      Math.floor(box.y / 300), // 대략적인 y 위치
+      snapshot?.tagName || "",
     ];
-    return hashParts.join('|');
+    return hashParts.join("|");
   }
 
   /**
@@ -598,22 +666,24 @@ export class RecordingService {
     if (!id) return false;
 
     const dynamicPatterns = [
-      /^[a-f0-9]{8}-[a-f0-9]{4}/i,  // UUID
-      /^\d{10,}/,                    // 타임스탬프
-      /_\d+$/,                       // 숫자 접미사
-      /^react-/i,                    // React 생성 ID
-      /^ember/i,                     // Ember 생성 ID
-      /^ng-/i,                       // Angular 생성 ID
-      /^:r[0-9a-z]+:/i,             // React 18+ ID
+      /^[a-f0-9]{8}-[a-f0-9]{4}/i, // UUID
+      /^\d{10,}/, // 타임스탬프
+      /_\d+$/, // 숫자 접미사
+      /^react-/i, // React 생성 ID
+      /^ember/i, // Ember 생성 ID
+      /^ng-/i, // Angular 생성 ID
+      /^:r[0-9a-z]+:/i, // React 18+ ID
     ];
-    return !dynamicPatterns.some(p => p.test(id));
+    return !dynamicPatterns.some((p) => p.test(id));
   }
 
   /**
    * 폼 요소인지 확인
    */
   private isFormElement(tagName: string): boolean {
-    return ['input', 'select', 'textarea', 'button'].includes(tagName.toLowerCase());
+    return ["input", "select", "textarea", "button"].includes(
+      tagName.toLowerCase(),
+    );
   }
 
   /**
@@ -628,7 +698,9 @@ export class RecordingService {
    * CDP를 통해 정확한 요소 정보를 가져옴
    * @returns 선택자 결과와 스냅샷을 함께 반환 (AI 셀렉터 생성용)
    */
-  private async generateSemanticSelectorWithSnapshot(action: RecordedAction): Promise<{
+  private async generateSemanticSelectorWithSnapshot(
+    action: RecordedAction,
+  ): Promise<{
     result: SemanticSelectorResult | null;
     snapshot: ElementSnapshot | null;
   }> {
@@ -639,12 +711,24 @@ export class RecordingService {
       let snapshot: ElementSnapshot | null = null;
 
       // 클릭 좌표가 있으면 CDP로 정확한 요소 조회
-      if (action.clickX !== undefined && action.clickY !== undefined && action.clickX > 0 && action.clickY > 0) {
-        console.log(`[RecordingService] Using CDP to get element at (${action.clickX}, ${action.clickY})`);
-        snapshot = await this.snapshotService.getElementAtPoint(action.clickX, action.clickY);
+      if (
+        action.clickX !== undefined &&
+        action.clickY !== undefined &&
+        action.clickX > 0 &&
+        action.clickY > 0
+      ) {
+        console.log(
+          `[RecordingService] Using CDP to get element at (${action.clickX}, ${action.clickY})`,
+        );
+        snapshot = await this.snapshotService.getElementAtPoint(
+          action.clickX,
+          action.clickY,
+        );
 
         if (snapshot) {
-          console.log(`[RecordingService] CDP element: ${snapshot.tagName}, aria-label: ${snapshot.attributes['aria-label']}, role: ${snapshot.attributes['role']}`);
+          console.log(
+            `[RecordingService] CDP element: ${snapshot.tagName}, aria-label: ${snapshot.attributes["aria-label"]}, role: ${snapshot.attributes["role"]}`,
+          );
         }
       }
 
@@ -656,7 +740,10 @@ export class RecordingService {
       if (!snapshot) return { result: null, snapshot: null };
 
       // 시맨틱 선택자 생성 (고유성 검증 포함)
-      const result = await this.semanticSelectorGenerator.generateBestSelector(snapshot, page);
+      const result = await this.semanticSelectorGenerator.generateBestSelector(
+        snapshot,
+        page,
+      );
 
       // 클라우드 캐시에 저장 (고유한 선택자만)
       if (result.isUnique && this.siteCacheService) {
@@ -669,20 +756,23 @@ export class RecordingService {
             url.pathname,
             pageHash,
             snapshot,
-            result
+            result,
           );
         } catch (cacheError) {
           // 캐싱 실패는 무시 (핵심 기능 아님)
-          console.error('[RecordingService] Cache error:', cacheError);
+          console.error("[RecordingService] Cache error:", cacheError);
         }
       }
 
       return { result, snapshot };
     } catch (error) {
-      const errorMsg = error instanceof Error ? error.message : '';
+      const errorMsg = error instanceof Error ? error.message : "";
       // 페이지 이동 중 오류는 조용히 처리
-      if (!errorMsg.includes('context was destroyed') && !errorMsg.includes('navigation')) {
-        console.error('[RecordingService] Semantic selector error:', error);
+      if (
+        !errorMsg.includes("context was destroyed") &&
+        !errorMsg.includes("navigation")
+      ) {
+        console.error("[RecordingService] Semantic selector error:", error);
       }
       return { result: null, snapshot: null };
     }
@@ -695,7 +785,7 @@ export class RecordingService {
   private async convertToSmartSelector(
     result: SemanticSelectorResult,
     action: RecordedAction,
-    snapshot?: ElementSnapshot | null
+    snapshot?: ElementSnapshot | null,
   ): Promise<SmartSelector> {
     const smartSelector: SmartSelector = {
       primary: {
@@ -703,7 +793,7 @@ export class RecordingService {
         value: result.selector,
         confidence: result.confidence,
       },
-      fallbacks: result.fallbacks.map(f => ({
+      fallbacks: result.fallbacks.map((f) => ({
         strategy: f.strategy,
         value: f.selector,
         confidence: f.confidence,
@@ -717,25 +807,32 @@ export class RecordingService {
       try {
         const page = this.browserService?.getPage();
         if (page && result.selector) {
-          const elementInfo = this.aiSelectorService.extractElementInfo(snapshot);
+          const elementInfo =
+            this.aiSelectorService.extractElementInfo(snapshot);
           const message = this.generateStepMessage(action, null);
 
           // AI 셀렉터 생성 (DOM 컨텍스트 포함)
-          const aiSelectors = await this.aiSelectorService.generateSelectorsForAction(
-            page,
-            elementInfo,
-            result.selector,
-            message
-          );
+          const aiSelectors =
+            await this.aiSelectorService.generateSelectorsForAction(
+              page,
+              elementInfo,
+              result.selector,
+              message,
+            );
 
           if (aiSelectors) {
             smartSelector.aiGenerated = aiSelectors;
-            console.log(`[RecordingService] AI generated ${aiSelectors.selectors.length} fallback selectors (confidence: ${aiSelectors.confidence})`);
+            console.log(
+              `[RecordingService] AI generated ${aiSelectors.selectors.length} fallback selectors (confidence: ${aiSelectors.confidence})`,
+            );
           }
         }
       } catch (error) {
         // AI 셀렉터 생성 실패는 무시 (핵심 기능 아님)
-        console.warn('[RecordingService] AI selector generation failed:', error);
+        console.warn(
+          "[RecordingService] AI selector generation failed:",
+          error,
+        );
       }
     }
 
@@ -746,7 +843,9 @@ export class RecordingService {
    * 스마트 셀렉터 생성 (스냅샷 기반)
    * 네비게이션 중에는 elementInfo 기반으로 폴백
    */
-  private async generateSmartSelector(action: RecordedAction): Promise<SmartSelector | undefined> {
+  private async generateSmartSelector(
+    action: RecordedAction,
+  ): Promise<SmartSelector | undefined> {
     if (!action.elementInfo) return undefined;
 
     try {
@@ -755,7 +854,9 @@ export class RecordingService {
       if (!page) {
         // 페이지 없으면 elementInfo에서 생성
         const snapshot = this.createSnapshotFromElementInfo(action);
-        return snapshot ? this.selectorGenerator.generateFromSnapshot(snapshot) : undefined;
+        return snapshot
+          ? this.selectorGenerator.generateFromSnapshot(snapshot)
+          : undefined;
       }
 
       let elementSnapshot: ElementSnapshot | null = null;
@@ -770,14 +871,19 @@ export class RecordingService {
             // 좌표로 요소 스냅샷 가져오기
             elementSnapshot = await this.snapshotService.getElementAtPoint(
               boundingBox.x + boundingBox.width / 2,
-              boundingBox.y + boundingBox.height / 2
+              boundingBox.y + boundingBox.height / 2,
             );
           }
         } catch (e) {
           // 네비게이션/타임아웃 - elementInfo 폴백
-          const errorMsg = e instanceof Error ? e.message : '';
-          if (errorMsg.includes('context was destroyed') || errorMsg.includes('navigation')) {
-            console.log('[RecordingService] Page navigated, using elementInfo fallback');
+          const errorMsg = e instanceof Error ? e.message : "";
+          if (
+            errorMsg.includes("context was destroyed") ||
+            errorMsg.includes("navigation")
+          ) {
+            console.log(
+              "[RecordingService] Page navigated, using elementInfo fallback",
+            );
           }
         }
       }
@@ -792,12 +898,17 @@ export class RecordingService {
       }
     } catch (error) {
       // 최종 폴백: elementInfo에서 스냅샷 생성
-      const errorMsg = error instanceof Error ? error.message : '';
-      if (!errorMsg.includes('context was destroyed')) {
-        console.error('[RecordingService] Failed to generate smart selector:', error);
+      const errorMsg = error instanceof Error ? error.message : "";
+      if (!errorMsg.includes("context was destroyed")) {
+        console.error(
+          "[RecordingService] Failed to generate smart selector:",
+          error,
+        );
       }
       const snapshot = this.createSnapshotFromElementInfo(action);
-      return snapshot ? this.selectorGenerator.generateFromSnapshot(snapshot) : undefined;
+      return snapshot
+        ? this.selectorGenerator.generateFromSnapshot(snapshot)
+        : undefined;
     }
 
     return undefined;
@@ -806,7 +917,9 @@ export class RecordingService {
   /**
    * elementInfo에서 가상 스냅샷 생성
    */
-  private createSnapshotFromElementInfo(action: RecordedAction): ElementSnapshot | null {
+  private createSnapshotFromElementInfo(
+    action: RecordedAction,
+  ): ElementSnapshot | null {
     const info = action.elementInfo;
     if (!info) return null;
 
@@ -815,218 +928,52 @@ export class RecordingService {
       backendNodeId: 0,
       tagName: info.tagName,
       attributes: {
-        id: info.id || '',
-        class: info.className || '',
-        name: info.name || '',
-        'aria-label': info.ariaLabel || '',
-        'data-testid': info.dataTestId || '',
-        placeholder: info.placeholder || '',
-        role: info.role || '',
-        type: info.type || '',
+        id: info.id || "",
+        class: info.className || "",
+        name: info.name || "",
+        "aria-label": info.ariaLabel || "",
+        "data-testid": info.dataTestId || "",
+        placeholder: info.placeholder || "",
+        role: info.role || "",
+        type: info.type || "",
       },
       textContent: info.text,
       boundingBox: { x: 0, y: 0, width: 0, height: 0 },
       isVisible: true,
       isInViewport: true,
-      xpath: '',
-      cssPath: action.selector || '',
+      xpath: "",
+      cssPath: action.selector || "",
       role: info.role,
       name: info.ariaLabel || info.name,
     };
   }
 
-  /**
-   * Generate multiple fallback selectors from element info
-   * 개선: INPUT 요소는 CSS 선택자 우선, text/label은 후순위
-   */
-  private generateMultipleSelectors(action: RecordedAction): SelectorInfo[] {
-    const selectors: SelectorInfo[] = [];
-    const info = action.elementInfo;
-    let priority = 0;
-
-    if (!info) {
-      // Fallback to primary selector
-      if (action.selector) {
-        selectors.push({
-          strategy: 'css',
-          value: action.selector,
-          priority: 0,
-        });
-      }
-      return selectors;
-    }
-
-    const isInputElement = ['INPUT', 'TEXTAREA', 'SELECT'].includes(info.tagName);
-    const isButtonElement = info.tagName === 'BUTTON' || (info.tagName === 'A' && info.role === 'button');
-
-    // === INPUT/TEXTAREA/SELECT 요소: CSS 속성 기반 선택자 최우선 ===
-    if (isInputElement) {
-      // 1. name 속성 (가장 안정적)
-      if (info.name) {
-        selectors.push({
-          strategy: 'css',
-          value: `${info.tagName.toLowerCase()}[name="${info.name}"]`,
-          priority: priority++,
-        });
-      }
-
-      // 2. aria-label 속성 (로그인 ID, 비밀번호 등 구분에 유용)
-      if (info.ariaLabel) {
-        selectors.push({
-          strategy: 'css',
-          value: `${info.tagName.toLowerCase()}[aria-label="${info.ariaLabel}"]`,
-          priority: priority++,
-        });
-      }
-
-      // 3. type 속성 (password, email 등)
-      if (info.type && ['password', 'email', 'tel', 'search', 'url', 'number', 'date', 'file'].includes(info.type)) {
-        selectors.push({
-          strategy: 'css',
-          value: `${info.tagName.toLowerCase()}[type="${info.type}"]`,
-          priority: priority++,
-        });
-      }
-
-      // 4. placeholder 속성
-      if (info.placeholder) {
-        selectors.push({
-          strategy: 'placeholder',
-          value: info.placeholder,
-          priority: priority++,
-        });
-      }
-    }
-
-    // === BUTTON 요소: type, class 기반 선택자 우선 ===
-    if (isButtonElement) {
-      // 1. type="submit" 버튼
-      if (info.type === 'submit') {
-        selectors.push({
-          strategy: 'css',
-          value: 'button[type="submit"]',
-          priority: priority++,
-        });
-      }
-
-      // 2. 로그인/제출 관련 클래스
-      if (info.className) {
-        const loginClasses = info.className.split(' ').filter((c: string) =>
-          /login|submit|btn-primary|btn-main|signin/i.test(c)
-        );
-        if (loginClasses.length) {
-          selectors.push({
-            strategy: 'css',
-            value: `button.${loginClasses[0]}`,
-            priority: priority++,
-          });
-        }
-      }
-    }
-
-    // === 공통: 안정적인 속성들 ===
-
-    // data-testid (가장 안정적)
-    if (info.dataTestId) {
-      selectors.push({
-        strategy: 'testId',
-        value: info.dataTestId,
-        priority: priority++,
-      });
-    }
-
-    // 안정적인 ID (동적 ID 제외)
-    if (info.id && !this.isDynamicId(info.id)) {
-      selectors.push({
-        strategy: 'css',
-        value: `#${info.id}`,
-        priority: priority++,
-      });
-    }
-
-    // 기본 CSS 선택자
-    if (action.selector) {
-      selectors.push({
-        strategy: 'css',
-        value: action.selector,
-        priority: priority++,
-      });
-    }
-
-    // === 후순위: text/label 기반 선택자 (INPUT에는 사용 안함) ===
-    if (!isInputElement) {
-      // ARIA label (버튼/링크에만)
-      if (info.ariaLabel && isButtonElement) {
-        selectors.push({
-          strategy: 'label',
-          value: info.ariaLabel,
-          priority: priority++,
-        });
-      }
-
-      // Role + name 조합
-      if (info.role && info.name) {
-        selectors.push({
-          strategy: 'role',
-          value: `${info.role}[name="${info.name}"]`,
-          priority: priority++,
-        });
-      }
-
-      // Text content (가장 후순위 - 버튼에만)
-      if (info.text && isButtonElement) {
-        const trimmedText = info.text.trim().slice(0, 30);
-        if (trimmedText && trimmedText.length >= 2) {
-          selectors.push({
-            strategy: 'text',
-            value: trimmedText,
-            priority: priority++,
-          });
-        }
-      }
-    }
-
-    return selectors;
-  }
-
-  /**
-   * 동적 ID인지 확인
-   */
-  private isDynamicId(id: string): boolean {
-    const dynamicPatterns = [
-      /^[a-f0-9]{8}-[a-f0-9]{4}/i,  // UUID
-      /^\d{10,}/,                    // 타임스탬프
-      /_\d+$/,                       // 숫자 접미사
-      /^react-/i,                    // React 생성 ID
-      /^ember/i,                     // Ember 생성 ID
-      /^ng-/i,                       // Angular 생성 ID
-      /^:r[0-9a-z]+:/i,             // React 18+ ID
-    ];
-    return dynamicPatterns.some(p => p.test(id));
-  }
-
-  private generateStepMessage(action: RecordedAction, identity?: ElementIdentity | null): string {
+  private generateStepMessage(
+    action: RecordedAction,
+    identity?: ElementIdentity | null,
+  ): string {
     // v3: identity 우선 사용
     if (identity) {
       switch (action.type) {
-        case 'click':
+        case "click":
           if (identity.axName) return `${identity.axName} 클릭`;
           if (identity.ariaLabel) return `${identity.ariaLabel} 클릭`;
-          if (identity.textContent) return `${identity.textContent.slice(0, 30)} 클릭`;
+          if (identity.textContent)
+            return `${identity.textContent.slice(0, 30)} 클릭`;
           if (identity.placeholder) return `${identity.placeholder} 필드 클릭`;
-          return `${identity.tagName || '요소'} 클릭`;
+          return `${identity.tagName || "요소"} 클릭`;
 
-        case 'type':
+        case "type":
           if (identity.placeholder) return `${identity.placeholder} 입력`;
           if (identity.axName) return `${identity.axName} 입력`;
           if (identity.ariaLabel) return `${identity.ariaLabel} 입력`;
-          return '텍스트 입력';
+          return "텍스트 입력";
 
-        case 'select':
-          return `${action.value || '옵션'} 선택`;
+        case "select":
+          return `${action.value || "옵션"} 선택`;
 
-        case 'navigate':
-          return `${action.value?.slice(0, 50) || 'URL'}로 이동`;
+        case "navigate":
+          return `${action.value?.slice(0, 50) || "URL"}로 이동`;
 
         default:
           return `${action.type} 액션`;
@@ -1037,22 +984,22 @@ export class RecordingService {
     const info = action.elementInfo;
 
     switch (action.type) {
-      case 'click':
+      case "click":
         if (info?.ariaLabel) return `${info.ariaLabel} 클릭`;
         if (info?.text) return `${info.text.slice(0, 30)} 클릭`;
         if (info?.placeholder) return `${info.placeholder} 필드 클릭`;
-        return `${info?.tagName || '요소'} 클릭`;
+        return `${info?.tagName || "요소"} 클릭`;
 
-      case 'type':
+      case "type":
         if (info?.placeholder) return `${info.placeholder} 입력`;
         if (info?.ariaLabel) return `${info.ariaLabel} 입력`;
-        return '텍스트 입력';
+        return "텍스트 입력";
 
-      case 'select':
-        return `${action.value || '옵션'} 선택`;
+      case "select":
+        return `${action.value || "옵션"} 선택`;
 
-      case 'navigate':
-        return `${action.value?.slice(0, 50) || 'URL'}로 이동`;
+      case "navigate":
+        return `${action.value?.slice(0, 50) || "URL"}로 이동`;
 
       default:
         return `${action.type} 액션`;
@@ -1063,11 +1010,11 @@ export class RecordingService {
     this.stepCounter++;
     const step: PlaybookStep = {
       id: `step${this.stepCounter}`,
-      action: 'guide',
+      action: "guide",
       message,
     };
     this.recordedSteps.push(step);
-    this.emit({ type: 'action_recorded', step });
+    this.emit({ type: "action_recorded", step });
   }
 
   private async injectRecordingScript(page: Page): Promise<void> {
@@ -1403,13 +1350,14 @@ export class RecordingService {
    */
   private async captureEnhancedFallbacks(
     snapshot: ElementSnapshot,
-    page: Page
+    page: Page,
   ): Promise<EnhancedFallbacks> {
-    const [textSelectors, parentChainSelectors, nearbyLabelSelectors] = await Promise.all([
-      this.generateTextSelectors(snapshot, page),
-      this.generateParentChainSelectors(snapshot, page),
-      this.generateNearbyLabelSelectors(snapshot, page),
-    ]);
+    const [textSelectors, parentChainSelectors, nearbyLabelSelectors] =
+      await Promise.all([
+        this.generateTextSelectors(snapshot, page),
+        this.generateParentChainSelectors(snapshot, page),
+        this.generateNearbyLabelSelectors(snapshot, page),
+      ]);
 
     return {
       textSelectors,
@@ -1423,7 +1371,7 @@ export class RecordingService {
    */
   private async generateTextSelectors(
     snapshot: ElementSnapshot,
-    page: Page
+    page: Page,
   ): Promise<TextBasedSelector[]> {
     const selectors: TextBasedSelector[] = [];
     const text = snapshot.textContent?.trim();
@@ -1434,14 +1382,14 @@ export class RecordingService {
     const tagName = snapshot.tagName.toLowerCase();
 
     // INPUT 요소는 텍스트 셀렉터 사용 안함
-    if (['input', 'textarea', 'select'].includes(tagName)) return selectors;
+    if (["input", "textarea", "select"].includes(tagName)) return selectors;
 
     try {
       // 1. 정확한 텍스트 매칭
       const exactSelector = `${tagName}:text("${this.escapeTextForSelector(text)}")`;
       if (await this.isUniqueSelector(page, exactSelector)) {
         selectors.push({
-          type: 'exact',
+          type: "exact",
           value: text,
           selector: exactSelector,
           confidence: 85,
@@ -1452,7 +1400,7 @@ export class RecordingService {
       const hasTextSelector = `${tagName}:has-text("${this.escapeTextForSelector(text)}")`;
       if (await this.isUniqueSelector(page, hasTextSelector)) {
         selectors.push({
-          type: 'contains',
+          type: "contains",
           value: text,
           selector: hasTextSelector,
           confidence: 80,
@@ -1462,7 +1410,7 @@ export class RecordingService {
       // 3. 정규식 패턴 (공백 유연하게)
       const regexPattern = this.textToFlexibleRegex(text);
       selectors.push({
-        type: 'regex',
+        type: "regex",
         value: text,
         pattern: regexPattern,
         selector: `${tagName}:text-matches("${regexPattern}", "i")`,
@@ -1480,7 +1428,7 @@ export class RecordingService {
    */
   private async generateParentChainSelectors(
     snapshot: ElementSnapshot,
-    page: Page
+    page: Page,
   ): Promise<ParentChainSelector[]> {
     const selectors: ParentChainSelector[] = [];
 
@@ -1507,10 +1455,18 @@ export class RecordingService {
           chain.push({
             tagName: current.tagName.toLowerCase(),
             id: current.id || undefined,
-            role: current.getAttribute('role') || undefined,
-            ariaLabel: current.getAttribute('aria-label') || undefined,
-            isLandmark: ['HEADER', 'NAV', 'MAIN', 'ASIDE', 'FOOTER', 'SECTION', 'ARTICLE'].includes(current.tagName),
-            isForm: current.tagName === 'FORM',
+            role: current.getAttribute("role") || undefined,
+            ariaLabel: current.getAttribute("aria-label") || undefined,
+            isLandmark: [
+              "HEADER",
+              "NAV",
+              "MAIN",
+              "ASIDE",
+              "FOOTER",
+              "SECTION",
+              "ARTICLE",
+            ].includes(current.tagName),
+            isForm: current.tagName === "FORM",
           });
           current = current.parentElement;
         }
@@ -1523,15 +1479,29 @@ export class RecordingService {
 
       for (let i = 0; i < parentChain.length; i++) {
         const parent = parentChain[i];
-        let parentSelector = '';
+        let parentSelector = "";
 
         // 유용한 부모 셀렉터 생성
-        if (parent.id && !this.isDynamicId(parent.id)) {
+        // Local helper: check if ID is dynamic
+        const isDynamicId = (id: string) => {
+          const dynamicPatterns = [
+            /^[a-f0-9]{8}-[a-f0-9]{4}/i, // UUID
+            /^\d{10,}/, // 타임스탬프
+            /_\d+$/, // 숫자 접미사
+            /^react-/i, // React 생성 ID
+            /^ember/i, // Ember 생성 ID
+            /^ng-/i, // Angular 생성 ID
+            /^:r[0-9a-z]+:/i, // React 18+ ID
+          ];
+          return dynamicPatterns.some((p) => p.test(id));
+        };
+
+        if (parent.id && !isDynamicId(parent.id)) {
           parentSelector = `#${parent.id}`;
         } else if (parent.role) {
           parentSelector = `[role="${parent.role}"]`;
         } else if (parent.isForm) {
-          parentSelector = 'form';
+          parentSelector = "form";
         } else if (parent.isLandmark) {
           parentSelector = parent.tagName;
         } else {
@@ -1546,7 +1516,7 @@ export class RecordingService {
             childSelector,
             fullSelector,
             depth: i + 1,
-            confidence: 90 - (i * 5), // 깊이가 깊을수록 낮은 신뢰도
+            confidence: 90 - i * 5, // 깊이가 깊을수록 낮은 신뢰도
           });
         }
       }
@@ -1562,13 +1532,13 @@ export class RecordingService {
    */
   private async generateNearbyLabelSelectors(
     snapshot: ElementSnapshot,
-    page: Page
+    page: Page,
   ): Promise<NearbyLabelSelector[]> {
     const selectors: NearbyLabelSelector[] = [];
     const tagName = snapshot.tagName.toLowerCase();
 
     // INPUT/TEXTAREA/SELECT 요소만 라벨 기반 셀렉터 생성
-    if (!['input', 'textarea', 'select'].includes(tagName)) {
+    if (!["input", "textarea", "select"].includes(tagName)) {
       return selectors;
     }
 
@@ -1579,7 +1549,12 @@ export class RecordingService {
 
         const labels: Array<{
           text: string;
-          relationship: 'for' | 'sibling' | 'preceding' | 'following' | 'parent';
+          relationship:
+            | "for"
+            | "sibling"
+            | "preceding"
+            | "following"
+            | "parent";
         }> = [];
 
         // 1. for 속성으로 연결된 label
@@ -1588,7 +1563,7 @@ export class RecordingService {
           if (label && label.textContent) {
             labels.push({
               text: label.textContent.trim(),
-              relationship: 'for',
+              relationship: "for",
             });
           }
         }
@@ -1596,11 +1571,15 @@ export class RecordingService {
         // 2. 이전 형제 중 label 또는 span
         let prev = el.previousElementSibling;
         while (prev) {
-          if (prev.tagName === 'LABEL' ||
-              (prev.tagName === 'SPAN' && prev.textContent && prev.textContent.trim().length < 30)) {
+          if (
+            prev.tagName === "LABEL" ||
+            (prev.tagName === "SPAN" &&
+              prev.textContent &&
+              prev.textContent.trim().length < 30)
+          ) {
             labels.push({
-              text: prev.textContent?.trim() || '',
-              relationship: 'preceding',
+              text: prev.textContent?.trim() || "",
+              relationship: "preceding",
             });
             break;
           }
@@ -1608,13 +1587,16 @@ export class RecordingService {
         }
 
         // 3. 부모 label
-        const parentLabel = el.closest('label');
+        const parentLabel = el.closest("label");
         if (parentLabel && parentLabel !== el) {
-          const labelText = parentLabel.textContent?.trim().replace(el.textContent || '', '').trim();
+          const labelText = parentLabel.textContent
+            ?.trim()
+            .replace(el.textContent || "", "")
+            .trim();
           if (labelText) {
             labels.push({
               text: labelText,
-              relationship: 'parent',
+              relationship: "parent",
             });
           }
         }
@@ -1626,20 +1608,23 @@ export class RecordingService {
         if (!label.text || label.text.length < 2) continue;
 
         const escapedText = this.escapeTextForSelector(label.text);
-        let targetSelector = '';
+        let targetSelector = "";
 
-        if (label.relationship === 'for') {
+        if (label.relationship === "for") {
           // label[for] + input 또는 label[for] ~ input
           targetSelector = `label:has-text("${escapedText}") + ${tagName}, label:has-text("${escapedText}") ~ ${tagName}`;
-        } else if (label.relationship === 'preceding') {
+        } else if (label.relationship === "preceding") {
           // 이전 형제 텍스트 + 현재 요소
           targetSelector = `:text("${escapedText}") + ${tagName}`;
-        } else if (label.relationship === 'parent') {
+        } else if (label.relationship === "parent") {
           // 부모 라벨 내부의 요소
           targetSelector = `label:has-text("${escapedText}") >> ${tagName}`;
         }
 
-        if (targetSelector && await this.isUniqueSelector(page, targetSelector)) {
+        if (
+          targetSelector &&
+          (await this.isUniqueSelector(page, targetSelector))
+        ) {
           selectors.push({
             labelText: label.text,
             relationship: label.relationship,
@@ -1660,7 +1645,7 @@ export class RecordingService {
    */
   private async captureStructuralPosition(
     snapshot: ElementSnapshot,
-    page: Page
+    page: Page,
   ): Promise<StructuralPosition | undefined> {
     try {
       const positionInfo = await page.evaluate((cssPath: string) => {
@@ -1674,37 +1659,47 @@ export class RecordingService {
 
         while (current && current !== document.body && depth < 5) {
           const tagName = current.tagName.toLowerCase();
-          const id = current.id && !/^[a-f0-9]{8}-|^\d{10,}|_\d+$|^react-|^ember|^ng-|^:r[0-9a-z]+:/i.test(current.id)
-            ? current.id
-            : undefined;
+          const id =
+            current.id &&
+            !/^[a-f0-9]{8}-|^\d{10,}|_\d+$|^react-|^ember|^ng-|^:r[0-9a-z]+:/i.test(
+              current.id,
+            )
+              ? current.id
+              : undefined;
 
           // 안정적인 클래스만 추출
           const stableClasses = current.className
-            ? current.className.split(' ')
-                .filter((c: string) => c.trim() && !/^(css-|sc-|_[a-z0-9]{5,}|emotion-)/i.test(c))
+            ? current.className
+                .split(" ")
+                .filter(
+                  (c: string) =>
+                    c.trim() && !/^(css-|sc-|_[a-z0-9]{5,}|emotion-)/i.test(c),
+                )
                 .slice(0, 2)
-                .join(' ')
+                .join(" ")
             : undefined;
 
           // 셀렉터 생성
           let selector = tagName;
           if (id) {
             selector = `#${id}`;
-          } else if (current.getAttribute('role')) {
-            selector = `[role="${current.getAttribute('role')}"]`;
+          } else if (current.getAttribute("role")) {
+            selector = `[role="${current.getAttribute("role")}"]`;
           } else if (stableClasses) {
-            selector = `${tagName}.${stableClasses.split(' ').join('.')}`;
+            selector = `${tagName}.${stableClasses.split(" ").join(".")}`;
           }
 
           parentChain.push({
             tagName,
             id,
-            role: current.getAttribute('role') || undefined,
-            ariaLabel: current.getAttribute('aria-label') || undefined,
+            role: current.getAttribute("role") || undefined,
+            ariaLabel: current.getAttribute("aria-label") || undefined,
             className: stableClasses,
             selector,
-            isLandmark: ['header', 'nav', 'main', 'aside', 'footer'].includes(tagName),
-            isForm: tagName === 'form',
+            isLandmark: ["header", "nav", "main", "aside", "footer"].includes(
+              tagName,
+            ),
+            isForm: tagName === "form",
           });
 
           current = current.parentElement;
@@ -1721,14 +1716,16 @@ export class RecordingService {
 
         // nthChild, nthOfType 계산
         const nthChild = position + 1;
-        const sameTagSiblings = siblings.filter(s => s.tagName === el.tagName);
+        const sameTagSiblings = siblings.filter(
+          (s) => s.tagName === el.tagName,
+        );
         const nthOfType = sameTagSiblings.indexOf(el) + 1;
 
         // 폼 요소 인덱스
         let formElementIndex: number | undefined;
-        const form = el.closest('form');
-        if (form && ['INPUT', 'TEXTAREA', 'SELECT'].includes(el.tagName)) {
-          const formElements = form.querySelectorAll('input, textarea, select');
+        const form = el.closest("form");
+        if (form && ["INPUT", "TEXTAREA", "SELECT"].includes(el.tagName)) {
+          const formElements = form.querySelectorAll("input, textarea, select");
           formElementIndex = Array.from(formElements).indexOf(el) + 1;
         }
 
@@ -1757,15 +1754,18 @@ export class RecordingService {
   /**
    * 텍스트 패턴 생성
    */
-  private generateTextPatterns(snapshot: ElementSnapshot): TextPatterns | undefined {
+  private generateTextPatterns(
+    snapshot: ElementSnapshot,
+  ): TextPatterns | undefined {
     const text = snapshot.textContent?.trim();
     if (!text || text.length < 2 || text.length > 100) return undefined;
 
     // INPUT 요소는 텍스트 패턴 사용 안함
-    if (['INPUT', 'TEXTAREA', 'SELECT'].includes(snapshot.tagName)) return undefined;
+    if (["INPUT", "TEXTAREA", "SELECT"].includes(snapshot.tagName))
+      return undefined;
 
     // 정규화
-    const normalized = text.replace(/\s+/g, ' ').trim();
+    const normalized = text.replace(/\s+/g, " ").trim();
 
     // 변형 생성
     const variations = this.generateTextVariations(text);
@@ -1793,31 +1793,32 @@ export class RecordingService {
 
     // 원본 한글
     variations.push({
-      type: 'korean',
+      type: "korean",
       value: text,
       pattern: this.escapeRegex(text),
     });
 
     // 영문 변형 찾기 (프로필 설정에서 번역 맵 로드)
-    const translationMap = configLoader.getSelectorConfig().translationMap || {};
+    const translationMap =
+      configLoader.getSelectorConfig().translationMap || {};
     for (const [korean, englishList] of Object.entries(translationMap)) {
       if (text.includes(korean)) {
         for (const english of englishList) {
           variations.push({
-            type: 'english',
+            type: "english",
             value: english,
-            pattern: english.replace(/\s+/g, '.?'),
+            pattern: english.replace(/\s+/g, ".?"),
           });
         }
       }
     }
 
     // 공백 유연성 (공백 있으면 공백 없는 버전도 추가)
-    if (text.includes(' ')) {
+    if (text.includes(" ")) {
       variations.push({
-        type: 'mixed',
-        value: text.replace(/\s+/g, ''),
-        pattern: text.replace(/\s+/g, '.?'),
+        type: "mixed",
+        value: text.replace(/\s+/g, ""),
+        pattern: text.replace(/\s+/g, ".?"),
       });
     }
 
@@ -1828,11 +1829,30 @@ export class RecordingService {
    * 키워드 추출 (stopword 제외)
    */
   private extractKeywordsFromText(text: string): string[] {
-    const stopWords = ['을', '를', '이', '가', '은', '는', '의', '에', '에서', '으로', '로', '와', '과', '하다', '하기', '클릭', '입력', '선택'];
+    const stopWords = [
+      "을",
+      "를",
+      "이",
+      "가",
+      "은",
+      "는",
+      "의",
+      "에",
+      "에서",
+      "으로",
+      "로",
+      "와",
+      "과",
+      "하다",
+      "하기",
+      "클릭",
+      "입력",
+      "선택",
+    ];
 
     return text
       .split(/\s+/)
-      .filter(word => word.length >= 2 && !stopWords.includes(word))
+      .filter((word) => word.length >= 2 && !stopWords.includes(word))
       .slice(0, 5); // 최대 5개
   }
 
@@ -1842,20 +1862,20 @@ export class RecordingService {
   private textToFlexibleRegex(text: string): string {
     // 공백을 .?로 변환하고, 특수문자 이스케이프
     return text
-      .split('')
-      .map(char => {
-        if (/\s/.test(char)) return '.?';
-        if (/[.*+?^${}()|[\]\\]/.test(char)) return '\\' + char;
+      .split("")
+      .map((char) => {
+        if (/\s/.test(char)) return ".?";
+        if (/[.*+?^${}()|[\]\\]/.test(char)) return "\\" + char;
         return char;
       })
-      .join('');
+      .join("");
   }
 
   /**
    * 정규식 특수문자 이스케이프
    */
   private escapeRegex(text: string): string {
-    return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   }
 
   /**
@@ -1873,17 +1893,20 @@ export class RecordingService {
     const attrs = snapshot.attributes;
 
     // 우선순위: name > aria-label > type > placeholder > tagName
-    if (attrs['name']) {
-      return `${tagName}[name="${attrs['name']}"]`;
+    if (attrs["name"]) {
+      return `${tagName}[name="${attrs["name"]}"]`;
     }
-    if (attrs['aria-label']) {
-      return `${tagName}[aria-label="${this.escapeTextForSelector(attrs['aria-label'])}"]`;
+    if (attrs["aria-label"]) {
+      return `${tagName}[aria-label="${this.escapeTextForSelector(attrs["aria-label"])}"]`;
     }
-    if (attrs['type'] && ['password', 'email', 'tel', 'search', 'file'].includes(attrs['type'])) {
-      return `${tagName}[type="${attrs['type']}"]`;
+    if (
+      attrs["type"] &&
+      ["password", "email", "tel", "search", "file"].includes(attrs["type"])
+    ) {
+      return `${tagName}[type="${attrs["type"]}"]`;
     }
-    if (attrs['placeholder']) {
-      return `${tagName}[placeholder="${this.escapeTextForSelector(attrs['placeholder'])}"]`;
+    if (attrs["placeholder"]) {
+      return `${tagName}[placeholder="${this.escapeTextForSelector(attrs["placeholder"])}"]`;
     }
     return tagName;
   }
@@ -1891,7 +1914,10 @@ export class RecordingService {
   /**
    * 셀렉터가 고유한지 확인
    */
-  private async isUniqueSelector(page: Page, selector: string): Promise<boolean> {
+  private async isUniqueSelector(
+    page: Page,
+    selector: string,
+  ): Promise<boolean> {
     try {
       const count = await page.locator(selector).count();
       return count === 1;

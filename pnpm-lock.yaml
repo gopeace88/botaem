@@ -23,6 +23,9 @@ importers:
       '@botame/player':
         specifier: workspace:*
         version: link:../packages/@botame/player
+      '@botame/recorder':
+        specifier: workspace:*
+        version: link:../packages/@botame/recorder
       '@botame/types':
         specifier: workspace:*
         version: link:../packages/@botame/types
