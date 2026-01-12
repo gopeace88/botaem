@@ -41,7 +41,7 @@ export class StepExecutor {
     } catch (error) {
       return {
         success: false,
-        error: error as Error,
+        error: error instanceof Error ? error.message : String(error),
         duration: Date.now() - startTime,
       };
     }
@@ -107,7 +107,7 @@ export class StepExecutor {
 
     return {
       success: result.success,
-      error: result.error,
+      error: result.error?.message,
     };
   }
 
@@ -125,7 +125,7 @@ export class StepExecutor {
 
     return {
       success: result.success,
-      error: result.error,
+      error: result.error?.message,
     };
   }
 
@@ -143,7 +143,7 @@ export class StepExecutor {
 
     return {
       success: result.success,
-      error: result.error,
+      error: result.error?.message,
     };
   }
 
@@ -156,19 +156,19 @@ export class StepExecutor {
         const elementResult = await this.pageController!.waitForElement(step.selector, {
           timeout: step.timeout,
         });
-        return { success: elementResult.success, error: elementResult.error };
+        return { success: elementResult.success, error: elementResult.error?.message };
 
       case 'navigation':
         const navResult = await this.pageController!.waitForNavigation({
           timeout: step.timeout,
         });
-        return { success: navResult.success, error: navResult.error };
+        return { success: navResult.success, error: navResult.error?.message };
 
       case 'network':
         const networkResult = await this.pageController!.waitForNetworkIdle({
           timeout: step.timeout,
         });
-        return { success: networkResult.success, error: networkResult.error };
+        return { success: networkResult.success, error: networkResult.error?.message };
 
       case 'user':
         // Wait for user action
@@ -196,7 +196,7 @@ export class StepExecutor {
 
     return {
       success: result.success,
-      error: result.error,
+      error: result.error?.message,
     };
   }
 
@@ -211,7 +211,7 @@ export class StepExecutor {
     });
 
     if (!result.success) {
-      return { success: false, error: result.error };
+      return { success: false, error: result.error?.message };
     }
 
     // If wait_for is 'user', return waitForUser flag
@@ -237,8 +237,8 @@ export class StepExecutor {
   }
 
   private async executeCondition(
-    step: PlaybookStep,
-    context: ExecutionContext
+    _step: PlaybookStep,
+    _context: ExecutionContext
   ): Promise<Omit<StepResult, 'duration'>> {
     // Condition handling is done by PlaybookEngine
     // This is a placeholder for direct condition execution
@@ -246,8 +246,8 @@ export class StepExecutor {
   }
 
   private async executeLoop(
-    step: PlaybookStep,
-    context: ExecutionContext
+    _step: PlaybookStep,
+    _context: ExecutionContext
   ): Promise<Omit<StepResult, 'duration'>> {
     // Loop handling is done by PlaybookEngine
     // This is a placeholder for direct loop execution

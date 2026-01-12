@@ -1,10 +1,15 @@
 /**
  * Variable Interpolator
+ * @module @botame/player/interpolator
+ */
+
+/**
+ * Variable Interpolator
  * Handles template variable substitution and condition evaluation
  */
 export class VariableInterpolator {
   // Regex pattern for matching {{variable}} or {{object.property}} syntax
-  private readonly variablePattern = /\{\{([a-zA-Z_][a-zA-Z0-9_]*(?:\.[a-zA-Z_][a-zA-Z0-9_]*)*)\}\}/g;
+  private readonly variablePattern = /\{\{([a-zA-Z_][a-zA-Z0-9_]*(\.[a-zA-Z_][a-zA-Z0-9_]*)*)\}\}/g;
 
   /**
    * Interpolate variables in a template string

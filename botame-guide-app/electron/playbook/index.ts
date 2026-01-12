@@ -11,4 +11,5 @@ export * from './types';
 export { PlaybookParser } from './parser';
 export { PlaybookValidator } from './validator';
 export { VariableInterpolator } from './interpolator';
-export { PlaybookEngine, StepExecutor } from './engine';
+export { PlaybookEngine } from './engine';
+export type { StepExecutor } from './engine';

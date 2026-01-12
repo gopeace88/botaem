@@ -59,7 +59,7 @@ export interface BrowserAdapter {
   waitFor(selector: string, timeout?: number): Promise<ActionResult>;
 
   getUrl(): string;
-  getTitle(): string;
+  getTitle(): Promise<string>;
 
   getTextContent(selector: string): Promise<string>;
   getAriaLabel(selector: string): Promise<string>;

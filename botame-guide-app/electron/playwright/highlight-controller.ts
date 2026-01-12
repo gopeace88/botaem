@@ -73,7 +73,7 @@ export class HighlightController {
     try {
       await this.ensureStyleInjected();
 
-      const { selector, message, position = 'auto', style = {} } = options;
+      const { selector, message, position: _position = 'auto', style = {} } = options;
       const mergedStyle = { ...DEFAULT_STYLE, ...style };
 
       // Get element position
@@ -128,7 +128,7 @@ export class HighlightController {
             const msgEl = document.createElement('div');
             msgEl.className = 'botame-highlight-message';
             msgEl.textContent = message;
-            msgEl.style.backgroundColor = style.color;
+            msgEl.style.backgroundColor = style.color || '#FF6B35';
 
             // Position calculation - default below the element
             let msgX = info.x;

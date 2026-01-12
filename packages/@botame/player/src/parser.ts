@@ -1,6 +1,11 @@
+/**
+ * Playbook Parser
+ * @module @botame/player/parser
+ */
+
 import yaml from 'js-yaml';
 import { readFileSync } from 'fs';
-import { Playbook, VariableDefinition } from './types';
+import { Playbook, VariableDefinition } from '@botame/types';
 
 export class PlaybookParser {
   /**
@@ -34,7 +39,7 @@ export class PlaybookParser {
 
     // Validate metadata fields
     const metadata = data.metadata as Record<string, unknown>;
-    const requiredMetadataFields = ['id', 'name', 'version', 'category', 'difficulty'];
+    const requiredMetadataFields = ['id', 'name', 'version'];
 
     for (const field of requiredMetadataFields) {
       if (!metadata[field]) {
@@ -51,10 +56,39 @@ export class PlaybookParser {
         description: metadata.description ? String(metadata.description) : undefined,
         category: metadata.category as Playbook['metadata']['category'],
         difficulty: metadata.difficulty as Playbook['metadata']['difficulty'],
-        estimated_time: metadata.estimated_time ? String(metadata.estimated_time) : undefined,
+        estimatedTime: metadata.estimated_time
+          ? String(metadata.estimated_time)
+          : metadata.estimatedTime
+            ? String(metadata.estimatedTime)
+            : undefined,
+        estimated_time: metadata.estimated_time
+          ? String(metadata.estimated_time)
+          : metadata.estimatedTime
+            ? String(metadata.estimatedTime)
+            : undefined,
         keywords: metadata.keywords as string[] | undefined,
         author: metadata.author ? String(metadata.author) : undefined,
-        last_updated: metadata.last_updated ? String(metadata.last_updated) : undefined,
+        last_updated: metadata.last_updated
+          ? String(metadata.last_updated)
+          : metadata.updatedAt
+            ? String(metadata.updatedAt)
+            : undefined,
+        updatedAt: metadata.updatedAt
+          ? String(metadata.updatedAt)
+          : metadata.last_updated
+            ? String(metadata.last_updated)
+            : undefined,
+        startUrl: metadata.startUrl
+          ? String(metadata.startUrl)
+          : metadata.start_url
+            ? String(metadata.start_url)
+            : undefined,
+        start_url: metadata.start_url
+          ? String(metadata.start_url)
+          : metadata.startUrl
+            ? String(metadata.startUrl)
+            : undefined,
+        aliases: metadata.aliases as string[] | undefined,
       },
       steps: this.parseSteps(data.steps as unknown[]),
     };
@@ -116,6 +150,7 @@ export class PlaybookParser {
       if (step.wait_for) parsedStep.wait_for = step.wait_for as Playbook['steps'][0]['wait_for'];
       if (step.timeout) parsedStep.timeout = Number(step.timeout);
       if (step.optional !== undefined) parsedStep.optional = Boolean(step.optional);
+      if (step.waitAfter !== undefined) parsedStep.waitAfter = Number(step.waitAfter);
       if (step.condition) parsedStep.condition = String(step.condition);
       if (step.on_error) parsedStep.on_error = step.on_error as Playbook['steps'][0]['on_error'];
       if (step.variable) parsedStep.variable = String(step.variable);

@@ -106,13 +106,4 @@ contextBridge.exposeInMainWorld('electron', {
   },
 });
 
-// Type declarations for the renderer process
-declare global {
-  interface Window {
-    electron: {
-      invoke: (channel: IpcChannel, ...args: unknown[]) => Promise<unknown>;
-      on: (channel: IpcEventChannel, callback: (...args: unknown[]) => void) => () => void;
-      off: (channel: IpcEventChannel, callback: (...args: unknown[]) => void) => void;
-    };
-  }
-}
+// Type declarations for Window.electron are in src/electron.d.ts

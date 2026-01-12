@@ -1,6 +1,5 @@
 import { Page } from 'playwright';
 import {
-  ActionResult,
   ClickResult,
   TypeResult,
   SelectResult,
