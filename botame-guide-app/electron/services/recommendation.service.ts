@@ -7,8 +7,8 @@ import {
   RecommendationRequest,
   RecommendationResponse,
   PlaybookRecommendation,
-} from './api.types';
-import { Playbook } from '../playbook/types';
+} from "./api.types";
+import { Playbook } from "../playbook/types";
 
 const DEFAULT_LIMIT = 5;
 
@@ -54,7 +54,7 @@ export class RecommendationService {
     // Filter by category if specified
     if (category) {
       candidates = candidates.filter(
-        (item) => item.playbook.metadata.category === category
+        (item) => item.playbook.metadata.category === category,
       );
     }
 
@@ -68,7 +68,7 @@ export class RecommendationService {
     const recommendations: PlaybookRecommendation[] = limited.map((item) => ({
       playbookId: item.playbook.metadata.id,
       title: item.playbook.metadata.name,
-      description: item.playbook.metadata.description || '',
+      description: item.playbook.metadata.description || "",
       category: item.playbook.metadata.category,
       confidence: Math.min(item.score, 1),
       matchReason: this.getMatchReason(item.playbook, queryTerms),
@@ -85,9 +85,7 @@ export class RecommendationService {
    * Search playbook by ID
    */
   searchById(playbookId: string): PlaybookRecommendation | null {
-    const playbook = this.playbooks.find(
-      (p) => p.metadata.id === playbookId
-    );
+    const playbook = this.playbooks.find((p) => p.metadata.id === playbookId);
 
     if (!playbook) {
       return null;
@@ -96,7 +94,7 @@ export class RecommendationService {
     return {
       playbookId: playbook.metadata.id,
       title: playbook.metadata.name,
-      description: playbook.metadata.description || '',
+      description: playbook.metadata.description || "",
       category: playbook.metadata.category,
       confidence: 1,
     };
@@ -111,7 +109,7 @@ export class RecommendationService {
       .map((playbook) => ({
         playbookId: playbook.metadata.id,
         title: playbook.metadata.name,
-        description: playbook.metadata.description || '',
+        description: playbook.metadata.description || "",
         category: playbook.metadata.category,
         confidence: 1,
       }));
@@ -122,7 +120,9 @@ export class RecommendationService {
    */
   getAllCategories(): string[] {
     const categories = new Set(
-      this.playbooks.map((p) => p.metadata.category)
+      this.playbooks
+        .map((p) => p.metadata.category)
+        .filter((c): c is string => c !== undefined),
     );
     return Array.from(categories);
   }
@@ -133,13 +133,13 @@ export class RecommendationService {
   private calculateScore(
     playbook: Playbook,
     normalizedQuery: string,
-    queryTerms: string[]
+    queryTerms: string[],
   ): number {
     const metadata = playbook.metadata;
     let score = 0;
 
     const titleLower = metadata.name.toLowerCase();
-    const descLower = (metadata.description || '').toLowerCase();
+    const descLower = (metadata.description || "").toLowerCase();
     const keywordsLower = (metadata.keywords || []).map((k) => k.toLowerCase());
 
     // Exact title match
@@ -147,13 +147,16 @@ export class RecommendationService {
       score += WEIGHTS.titleExact;
     }
     // Partial title match
-    else if (titleLower.includes(normalizedQuery) || normalizedQuery.includes(titleLower)) {
+    else if (
+      titleLower.includes(normalizedQuery) ||
+      normalizedQuery.includes(titleLower)
+    ) {
       score += WEIGHTS.titlePartial;
     }
     // Title contains query terms
     else {
       const titleTermMatches = queryTerms.filter((term) =>
-        titleLower.includes(term)
+        titleLower.includes(term),
       ).length;
       if (titleTermMatches > 0) {
         score += WEIGHTS.titlePartial * (titleTermMatches / queryTerms.length);
@@ -162,7 +165,7 @@ export class RecommendationService {
 
     // Description match
     const descTermMatches = queryTerms.filter((term) =>
-      descLower.includes(term)
+      descLower.includes(term),
     ).length;
     if (descTermMatches > 0) {
       score += WEIGHTS.descriptionMatch * (descTermMatches / queryTerms.length);
@@ -170,7 +173,7 @@ export class RecommendationService {
 
     // Keyword match
     const keywordMatches = queryTerms.filter((term) =>
-      keywordsLower.some((k) => k.includes(term) || term.includes(k))
+      keywordsLower.some((k) => k.includes(term) || term.includes(k)),
     ).length;
     if (keywordMatches > 0) {
       score += WEIGHTS.keywordMatch * (keywordMatches / queryTerms.length);
@@ -192,19 +195,19 @@ export class RecommendationService {
     // Check title matches
     const titleMatches = queryTerms.filter((term) => titleLower.includes(term));
     if (titleMatches.length > 0) {
-      matchedTerms.push(`제목: "${titleMatches.join(', ')}"`);
+      matchedTerms.push(`제목: "${titleMatches.join(", ")}"`);
     }
 
     // Check keyword matches
     const keywordMatches = queryTerms.filter((term) =>
-      keywordsLower.some((k) => k.includes(term))
+      keywordsLower.some((k) => k.includes(term)),
     );
     if (keywordMatches.length > 0 && matchedTerms.length === 0) {
-      matchedTerms.push(`키워드: "${keywordMatches.join(', ')}"`);
+      matchedTerms.push(`키워드: "${keywordMatches.join(", ")}"`);
     }
 
     return matchedTerms.length > 0
-      ? `${matchedTerms.join(', ')} 매칭`
-      : '관련 콘텐츠';
+      ? `${matchedTerms.join(", ")} 매칭`
+      : "관련 콘텐츠";
   }
 }

@@ -11,6 +11,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@botame/core": "workspace:*",
+    "@botame/types": "workspace:*",
+    "@anthropic-ai/sdk": "^0.71.2",
     "@supabase/supabase-js": "^2.86.0",
     "clsx": "^2.1.0",
     "dotenv": "^17.2.3",

@@ -14,7 +14,7 @@ export interface ChatContext {
   activePlaybookId?: string;
   currentStep?: number;
   variables?: Record<string, unknown>;
-  history?: Array<{ role: 'user' | 'assistant'; content: string }>;
+  history?: Array<{ role: "user" | "assistant"; content: string }>;
 }
 
 export interface ChatResponse {
@@ -25,17 +25,18 @@ export interface ChatResponse {
 }
 
 export type UserIntent =
-  | 'ask_help'
-  | 'start_playbook'
-  | 'continue_playbook'
-  | 'cancel_playbook'
-  | 'clarify'
-  | 'confirm'
-  | 'reject'
-  | 'unknown';
+  | "greeting"
+  | "ask_help"
+  | "start_playbook"
+  | "continue_playbook"
+  | "cancel_playbook"
+  | "clarify"
+  | "confirm"
+  | "reject"
+  | "unknown";
 
 export interface SuggestedAction {
-  type: 'start_playbook' | 'continue' | 'wait' | 'confirm' | 'input_required';
+  type: "start_playbook" | "continue" | "wait" | "confirm" | "input_required";
   playbookId?: string;
   stepIndex?: number;
   requiredInput?: string[];
@@ -46,7 +47,7 @@ export interface PlaybookRecommendation {
   playbookId: string;
   title: string;
   description: string;
-  category: string;
+  category?: string; // Optional since playbook metadata category is optional
   confidence: number;
   matchReason?: string;
 }
@@ -110,5 +111,5 @@ export interface VisionConfig {
   apiKey: string;
   model?: string;
   maxTokens?: number;
-  imageDetail?: 'low' | 'high' | 'auto';
+  imageDetail?: "low" | "high" | "auto";
 }

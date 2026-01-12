@@ -4,7 +4,7 @@
   "description": "보탬e AI 가이드 어시스턴트",
   "main": "out/main/main.js",
   "scripts": {
-    "dev": "env -u ELECTRON_RUN_AS_NODE electron-vite dev -c electron-vite.config.js",
+    "dev": "electron-vite dev -c electron-vite.config.js",
     "build": "electron-vite build -c electron-vite.config.js",
     "preview": "electron-vite preview -c electron-vite.config.js",
     "test": "jest",
@@ -14,9 +14,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@botame/core": "workspace:*",
+    "@botame/types": "workspace:*",
     "@supabase/supabase-js": "^2.86.0",
     "ajv": "^8.12.0",
-    "better-sqlite3": "^9.2.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "dotenv": "^16.4.5",
@@ -34,7 +35,6 @@
     "@testing-library/jest-dom": "^6.2.0",
     "@testing-library/react": "^14.1.2",
     "@testing-library/user-event": "^14.6.1",
-    "@types/better-sqlite3": "^7.6.8",
     "@types/jest": "^29.5.11",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^20.10.6",
