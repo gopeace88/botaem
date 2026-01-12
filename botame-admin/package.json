@@ -13,6 +13,7 @@
   "dependencies": {
     "@botame/core": "workspace:*",
     "@botame/player": "workspace:*",
+    "@botame/recorder": "workspace:*",
     "@botame/types": "workspace:*",
     "@anthropic-ai/sdk": "^0.71.2",
     "@supabase/supabase-js": "^2.86.0",
