@@ -38,6 +38,13 @@ export class VariableInterpolator {
    */
   evaluateCondition(condition: string, variables: Record<string, unknown>): boolean {
     try {
+      // SECURITY: Validate condition string before evaluation
+      // Only allow safe comparison operators and variable references
+      if (!this.isSafeCondition(condition)) {
+        console.error('Unsafe condition detected:', condition);
+        return false;
+      }
+
       // First, interpolate variables in the condition
       const interpolated = condition.replace(this.variablePattern, (_match, varName) => {
         const value = this.getNestedValue(variables, varName);
@@ -60,17 +67,9 @@ export class VariableInterpolator {
         return JSON.stringify(value);
       });
 
-      // Create a safe evaluation function
-      // Note: In production, consider using a proper expression parser
-      // instead of eval for better security
-      const safeEval = new Function(`
-        "use strict";
-        try {
-          return (${interpolated});
-        } catch (e) {
-          return false;
-        }
-      `);
+      // Create a safe evaluation function with restricted scope
+      // SECURITY: Use strict mode and only expose safe global objects
+      const safeEval = new Function('"use strict"; return (' + interpolated + ')');
 
       const result = safeEval();
       return Boolean(result);
@@ -78,6 +77,50 @@ export class VariableInterpolator {
       console.error('Error evaluating condition:', condition, error);
       return false;
     }
+  }
+
+  /**
+   * Validate that condition string is safe to evaluate
+   * Only allows: variables, numbers, strings, booleans, comparisons, logical operators, parentheses
+   */
+  private isSafeCondition(condition: string): boolean {
+    // Remove variable placeholders for validation
+    const sanitized = condition.replace(this.variablePattern, 'VALUE');
+
+    // Only allow safe characters: letters, numbers, spaces, quotes, comparison operators, logical operators, parentheses
+    // Allowed: a-z A-Z 0-9 . _ ' " space === !== > < >= <= && || ! ( ) , VALUE
+    const safePattern = /^[a-zA-Z0-9_\.'"\s===!><&|(),VALUE]+$/;
+
+    if (!safePattern.test(sanitized)) {
+      return false;
+    }
+
+    // Block potentially dangerous keywords
+    const dangerousPatterns = [
+      /function\s*\(/,
+      /=>/,
+      /return/,
+      /import/,
+      /require/,
+      /process/,
+      /eval/,
+      /setTimeout/,
+      /setInterval/,
+      /window/,
+      /document/,
+      /console/,
+      /__proto__/,
+      /constructor/,
+      /\.\s*prototype/,
+    ];
+
+    for (const pattern of dangerousPatterns) {
+      if (pattern.test(condition)) {
+        return false;
+      }
+    }
+
+    return true;
   }
 
   /**

@@ -47,6 +47,7 @@ export class PlaybookEngine extends EventEmitter {
   private stepExecutor: StepExecutor | null = null;
   private isPaused = false;
   private isStopped = false;
+  private isExecuting = false; // Guard flag to prevent concurrent execution
 
   constructor() {
     super();
@@ -111,6 +112,11 @@ export class PlaybookEngine extends EventEmitter {
       throw new Error('No playbook loaded');
     }
 
+    // Guard against concurrent execution
+    if (this.isExecuting) {
+      throw new Error('Execution already in progress');
+    }
+
     // Apply default variable values
     if (this.playbook.variables) {
       for (const [name, definition] of Object.entries(this.playbook.variables)) {
@@ -133,13 +139,18 @@ export class PlaybookEngine extends EventEmitter {
 
     this.isStopped = false;
     this.isPaused = false;
+    this.isExecuting = true;
     this.context.status = 'executing';
     this.context.startedAt = new Date();
 
     this.emit('started', { type: 'started' });
 
-    // Start execution loop
-    await this.executeSteps();
+    try {
+      // Start execution loop
+      await this.executeSteps();
+    } finally {
+      this.isExecuting = false;
+    }
   }
 
   /**
@@ -162,10 +173,17 @@ export class PlaybookEngine extends EventEmitter {
       this.context.status = 'executing';
       this.emit('resumed', { type: 'resumed' });
 
-      // Continue execution
-      this.executeSteps().catch((error) => {
-        this.handleError(error);
-      });
+      // Continue execution - guard prevents multiple concurrent executions
+      if (!this.isExecuting) {
+        this.isExecuting = true;
+        this.executeSteps()
+          .catch((error) => {
+            this.handleError(error);
+          })
+          .finally(() => {
+            this.isExecuting = false;
+          });
+      }
     }
   }
 
@@ -175,9 +193,21 @@ export class PlaybookEngine extends EventEmitter {
   stop(): void {
     this.isStopped = true;
     this.isPaused = false;
+    this.isExecuting = false;
     this.context.status = 'idle';
     this.context.currentStepIndex = 0;
     this.emit('stopped', { type: 'stopped' });
+  }
+
+  /**
+   * Clean up resources and prevent memory leaks
+   * Call this when the engine is no longer needed
+   */
+  dispose(): void {
+    this.stop();
+    this.removeAllListeners();
+    this.playbook = null;
+    this.stepExecutor = null;
   }
 
   /**
@@ -370,7 +400,8 @@ export class PlaybookEngine extends EventEmitter {
 
     const stepsToExecute = conditionResult ? step.then : step.else;
 
-    if (stepsToExecute && stepsToExecute.length > 0) {
+    // Validate stepsToExecute is an array before iterating
+    if (stepsToExecute && Array.isArray(stepsToExecute) && stepsToExecute.length > 0) {
       for (const nestedStep of stepsToExecute) {
         const result = await this.executeStep(nestedStep);
         if (!result.success) {
@@ -396,6 +427,11 @@ export class PlaybookEngine extends EventEmitter {
     const items = this.context.variables[step.variable];
     if (!Array.isArray(items)) {
       return { success: false, error: `Variable ${step.variable} is not an array` };
+    }
+
+    // Validate step.steps is an array before iterating
+    if (!Array.isArray(step.steps)) {
+      return { success: false, error: 'Loop steps is not an array' };
     }
 
     for (const [index, item] of items.entries()) {
