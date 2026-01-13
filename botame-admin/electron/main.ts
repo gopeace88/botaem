@@ -8,6 +8,7 @@ import { config } from 'dotenv';
 import { PlaybookService } from './services/playbook.service';
 import { RecordingService } from './services/recording.service';
 import { SupabaseService } from './services/supabase.service';
+import { AISelectorService } from './services/ai-selector.service';
 import { PlaybookRunnerService } from './services/playbook-runner.service';
 import { BrowserService } from './services/browser.service';
 import { Playbook } from '../shared/types';
@@ -33,6 +34,7 @@ let recordingService: RecordingService;
 let supabaseService: SupabaseService;
 let runnerService: PlaybookRunnerService;
 let browserService: BrowserService;
+let aiSelectorService: AISelectorService;
 
 function createWindow() {
   const isDev = !app.isPackaged;
@@ -59,6 +61,7 @@ function createWindow() {
   supabaseService = new SupabaseService();
   browserService = new BrowserService();
   runnerService = new PlaybookRunnerService(browserService);
+  aiSelectorService = new AISelectorService();
 
   // Connect recording service to shared browser
   recordingService.setBrowserService(browserService);
@@ -268,6 +271,25 @@ function setupIpcHandlers() {
   ipcMain.handle('supabase:deleteRemote', async (_event, id: string) => {
     return await supabaseService.deleteRemotePlaybook(id);
   });
+
+  // [Remote Repair] 이슈 관리
+  ipcMain.handle('botame:get-issues', async (_event, status: string) => {
+    return await supabaseService.getFailureReports(status);
+  });
+
+  ipcMain.handle('botame:update-issue-status', async (_event, id: string, status: string, resolution?: any) => {
+    return await supabaseService.updateIssueStatus(id, status, resolution);
+  });
+
+  // [Phase 4] AI Analysis & Fix
+  ipcMain.handle('botame:analyze-issue', async (_event, issue) => {
+    return await aiSelectorService.repairIssue(issue);
+  });
+
+  ipcMain.handle('botame:apply-fix', async (_event, playbookId: string, stepIndex: number, newSelector: string) => {
+    return await playbookService.patchStepSelector(playbookId, stepIndex, newSelector);
+  });
+
 
   // Catalog - DB에서 전체 플레이북 목록 조회 (관리자용)
   ipcMain.handle('supabase:getCatalog', async () => {

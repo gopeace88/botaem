@@ -7,7 +7,7 @@
  */
 
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
-import { Playbook } from '../../shared/types';
+import { Playbook, PlaybookIssue } from '../../shared/types';
 import { configLoader } from '../../shared/config';
 
 export interface SyncResult {
@@ -507,4 +507,110 @@ export class SupabaseService {
   isConnected(): boolean {
     return this.syncStatus.connected;
   }
+
+  /**
+   * [Remote Repair] 실패 보고서 제출
+   */
+  async submitFailureReport(issue: PlaybookIssue): Promise<boolean> {
+    if (!this.client) return false;
+
+    console.log(`[SupabaseService] Remote Repair Request: ${issue.title}`);
+
+    try {
+      const { error } = await this.client.from('playbook_issues').insert({
+        id: issue.id,
+        title: issue.title,
+        description: issue.description,
+        status: issue.status,
+        playbook_id: issue.playbookId,
+        step_index: issue.stepIndex,
+        error_type: issue.errorType,
+        element_info: issue.elementInfo,
+        dom_snapshot: issue.domSnapshot, // Large text
+        environment: issue.environment,
+        created_at: new Date(issue.timestamp).toISOString(),
+      });
+
+      if (error) {
+        console.error('[SupabaseService] Failed to submit failure report:', error);
+        return false;
+      }
+
+      console.log('[SupabaseService] Failure report submitted successfully.');
+      return true;
+    } catch (e) {
+      console.error('[SupabaseService] Exception submitting report:', e);
+      return false;
+    }
+  }
+
+  /**
+   * [Remote Repair] 이슈 목록 조회
+   */
+  async getFailureReports(status: string = 'open'): Promise<PlaybookIssue[]> {
+    if (!this.client) return [];
+
+    try {
+      const { data, error } = await this.client
+        .from('playbook_issues')
+        .select('*')
+        .eq('status', status)
+        .order('created_at', { ascending: false });
+
+      if (error) throw error;
+
+      return (data || []).map((row: any) => ({
+        id: row.id,
+        title: row.title,
+        description: row.description,
+        status: row.status,
+        playbookId: row.playbook_id,
+        stepIndex: row.step_index,
+        errorType: row.error_type,
+        elementInfo: row.element_info,
+        domSnapshot: row.dom_snapshot,
+        environment: row.environment,
+        timestamp: new Date(row.created_at).getTime(),
+        screenshot: row.screenshot
+      }));
+    } catch (e) {
+      console.error('[SupabaseService] Failed to fetch issues:', e);
+      return [];
+    }
+  }
+
+  /**
+   * [Remote Repair] 이슈 상태 업데이트
+   */
+  async updateIssueStatus(id: string, status: string, resolution?: any): Promise<boolean> {
+    if (!this.client) return false;
+
+    try {
+      const updatePayload: any = { status };
+      if (resolution) {
+        updatePayload.resolution = resolution;
+      }
+
+      const { error } = await this.client
+        .from('playbook_issues')
+        .update(updatePayload)
+        .eq('id', id);
+
+      if (error) throw error;
+      return true;
+    } catch (e) {
+      console.error('[SupabaseService] Failed to update issue:', e);
+      return false;
+    }
+  }
+}
+
+// Singleton Instance
+let instance: SupabaseService | null = null;
+
+export function getSupabaseService(): SupabaseService {
+  if (!instance) {
+    instance = new SupabaseService();
+  }
+  return instance;
 }

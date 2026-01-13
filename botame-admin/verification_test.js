@@ -44,7 +44,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var smart_selector_1 = require("./electron/core/smart-selector");
+var recorder_1 = require("@botame/recorder");
 // Mock Element Snapshot
 var mockSnapshot = {
     nodeId: 1,
@@ -84,7 +84,7 @@ function runVerification() {
         var generator, result1, hasParentChain, hasStableClass, ignoresTailwind, result2, usedId;
         return __generator(this, function (_a) {
             console.log('=== Starting SmartSelector Verification ===');
-            generator = new smart_selector_1.SmartSelectorGenerator();
+            generator = new recorder_1.SmartSelectorGenerator();
             // Test 1: Parent Chaining & Class Filtering
             console.log('\n[Test 1] Generating selectors for Button inside #login-form...');
             result1 = generator.generateFromSnapshot(mockSnapshot);

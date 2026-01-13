@@ -28,8 +28,7 @@ import {
 } from "../../shared/types";
 import { BrowserService } from "./browser.service";
 import { SnapshotService } from "../core/snapshot.service";
-import { SmartSelectorGenerator } from "../core/smart-selector";
-import { generateSelectors } from "@botame/recorder";
+import { SmartSelectorGenerator, generateSelectors } from "@botame/recorder";
 import {
   SemanticSelectorGenerator,
   SemanticSelectorResult,
@@ -1550,11 +1549,11 @@ export class RecordingService {
         const labels: Array<{
           text: string;
           relationship:
-            | "for"
-            | "sibling"
-            | "preceding"
-            | "following"
-            | "parent";
+          | "for"
+          | "sibling"
+          | "preceding"
+          | "following"
+          | "parent";
         }> = [];
 
         // 1. for 속성으로 연결된 label
@@ -1661,22 +1660,22 @@ export class RecordingService {
           const tagName = current.tagName.toLowerCase();
           const id =
             current.id &&
-            !/^[a-f0-9]{8}-|^\d{10,}|_\d+$|^react-|^ember|^ng-|^:r[0-9a-z]+:/i.test(
-              current.id,
-            )
+              !/^[a-f0-9]{8}-|^\d{10,}|_\d+$|^react-|^ember|^ng-|^:r[0-9a-z]+:/i.test(
+                current.id,
+              )
               ? current.id
               : undefined;
 
           // 안정적인 클래스만 추출
           const stableClasses = current.className
             ? current.className
-                .split(" ")
-                .filter(
-                  (c: string) =>
-                    c.trim() && !/^(css-|sc-|_[a-z0-9]{5,}|emotion-)/i.test(c),
-                )
-                .slice(0, 2)
-                .join(" ")
+              .split(" ")
+              .filter(
+                (c: string) =>
+                  c.trim() && !/^(css-|sc-|_[a-z0-9]{5,}|emotion-)/i.test(c),
+              )
+              .slice(0, 2)
+              .join(" ")
             : undefined;
 
           // 셀렉터 생성

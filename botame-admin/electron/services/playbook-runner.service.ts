@@ -16,10 +16,12 @@ import {
 } from "../../shared/types";
 import { BrowserService } from "./browser.service";
 import { PlaybookEngine, StepExecutor, EngineEvent } from "@botame/player";
-import { ExecutionContext } from "@botame/types";
+import { ExecutionContext, PlaybookIssue } from "@botame/types";
 import { SelfHealingAdapter } from "../core/self-healing-adapter";
 import { Highlighter } from "../core/highlighter";
 import { configLoader } from "../../shared/config";
+import { getSupabaseService } from "./supabase.service";
+import { randomUUID } from "crypto";
 
 export type StepStatus =
   | "pending"
@@ -174,6 +176,15 @@ export class PlaybookRunnerService {
           }
         } catch {
           // Screenshot error is not critical
+        }
+
+        // [Remote Repair] Report failure
+        if (page && !step.optional) {
+          await this.captureAndReportFailure(
+            step as SemanticStep,
+            page,
+            error instanceof Error ? error : new Error(String(error))
+          );
         }
 
         // Return in format expected by PlaybookEngine
@@ -501,7 +512,7 @@ export class PlaybookRunnerService {
             setTimeout(() => indicator.remove(), 3000);
           }
         })
-        .catch(() => {});
+        .catch(() => { });
 
       const successCount = this.state.results.filter(
         (r) => r.status === "success",
@@ -662,7 +673,7 @@ export class PlaybookRunnerService {
             selector: exactSelector,
           };
         }
-      } catch {}
+      } catch { }
 
       // 2. 부분 텍스트 매칭
       try {
@@ -681,7 +692,7 @@ export class PlaybookRunnerService {
             selector: partialSelector,
           };
         }
-      } catch {}
+      } catch { }
 
       // 3. aria-label 부분 매칭
       try {
@@ -698,7 +709,7 @@ export class PlaybookRunnerService {
             selector: ariaSelector,
           };
         }
-      } catch {}
+      } catch { }
     }
 
     return { success: false };
@@ -1136,7 +1147,7 @@ export class PlaybookRunnerService {
         overlay?.remove();
         highlightBox?.remove();
       })
-      .catch(() => {});
+      .catch(() => { });
   }
 
   /**
@@ -1148,4 +1159,59 @@ export class PlaybookRunnerService {
     this.engine.dispose();
     this.eventListeners = [];
   }
+
+  /**
+   * [Remote Repair] 실패 및 컨텍스트 캡처
+   */
+  private async captureAndReportFailure(
+    step: SemanticStep,
+    page: Page,
+    error: Error
+  ): Promise<void> {
+    try {
+      console.log('[PlaybookRunner] Capturing failure context for Remote Repair...');
+      const supabaseService = getSupabaseService();
+
+      // 1. Capture DOM Snapshot (surrounding only)
+      const domSnapshot = await page.evaluate(() => {
+        return document.body.outerHTML.slice(0, 10000);
+      });
+
+      // 2. Create Issue
+      // Note: SemanticStep and PlaybookStep types might differ in this codebase.
+      // We cast step to any to access properties safely or use SemanticStep intersection
+      const smartStep = step as SemanticStep;
+
+      const issue: PlaybookIssue = {
+        id: randomUUID(),
+        title: `Step Failed: ${step.action} (Index: ${this.state.currentStepIndex})`,
+        description: error.message,
+        status: 'open',
+        playbookId: this.engine.getPlaybook()?.metadata.id || 'unknown',
+        stepIndex: this.state.currentStepIndex,
+        errorType: 'NotFound',
+        timestamp: Date.now(),
+        elementInfo: {
+          tagName: smartStep.smartSelector?.snapshot?.tagName || 'UNKNOWN',
+          text: smartStep.smartSelector?.snapshot?.textContent,
+          id: smartStep.smartSelector?.snapshot?.attributes?.id,
+          className: smartStep.smartSelector?.snapshot?.attributes?.class,
+          role: smartStep.smartSelector?.snapshot?.role
+        } as any,
+        domSnapshot,
+        environment: {
+          os: process.platform,
+          browser: 'chrome',
+          version: 'unknown'
+        }
+      };
+
+      // 3. Report
+      await supabaseService.submitFailureReport(issue);
+
+    } catch (captureError) {
+      console.error('[PlaybookRunner] Failed to capture failure context:', captureError);
+    }
+  }
+
 }

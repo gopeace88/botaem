@@ -11,29 +11,14 @@ import {
   SelectorStrategy,
   AIGeneratedSelectors,
   ElementSnapshot,
-  BoundingBox,
+  PlaybookIssue,
+  ElementInfo,
 } from '../../shared/types';
 import { configLoader } from '../../shared/config';
 
 // AI 모델 설정
 const AI_MODEL = 'claude-3-haiku-20240307';
 const MAX_TOKENS = 800;
-
-// 요소 정보 인터페이스
-interface ElementInfo {
-  tagName: string;
-  id?: string;
-  className?: string;
-  textContent?: string;
-  ariaLabel?: string;
-  placeholder?: string;
-  name?: string;
-  type?: string;
-  role?: string;
-  dataTestId?: string;
-  boundingBox?: BoundingBox;
-  parentPath?: string;
-}
 
 // AI 응답 파싱 결과
 interface ParsedAIResponse {
@@ -71,6 +56,27 @@ export class AISelectorService {
    */
   isEnabled(): boolean {
     return this.enabled && this.client !== null;
+  }
+
+  /**
+   * [Remote Repair] 이슈 상황을 분석하여 복구 셀렉터 제안
+   * 오프라인 스냅샷(PlaybookIssue)만으로 동작
+   */
+  async repairIssue(issue: PlaybookIssue): Promise<AIGeneratedSelectors | null> {
+    if (!this.isEnabled()) return null;
+
+    console.log(`[AISelectorService] Repairing issue: ${issue.title} (${issue.id})`);
+
+    // DOM 컨텍스트가 너무 길면 자름 (토큰 비용 절약)
+    const truncatedDom = issue.domSnapshot.length > 5000
+      ? issue.domSnapshot.slice(0, 5000) + '... (truncated)'
+      : issue.domSnapshot;
+
+    return this.generateSelectors(
+      issue.elementInfo,
+      truncatedDom,
+      `Error: ${issue.title}. Description: ${issue.description}`
+    );
   }
 
   /**
@@ -120,14 +126,14 @@ export class AISelectorService {
 - tagName: ${element.tagName}
 - id: ${element.id || '없음'}
 - className: ${element.className || '없음'}
-- text: ${element.textContent?.slice(0, 100) || '없음'}
+- text: ${element.text || '없음'}
 - aria-label: ${element.ariaLabel || '없음'}
 - placeholder: ${element.placeholder || '없음'}
 - name: ${element.name || '없음'}
 - type: ${element.type || '없음'}
 - role: ${element.role || '없음'}
 - data-testid: ${element.dataTestId || '없음'}
-${message ? `- 사용자 액션: ${message}` : ''}
+${message ? `- 사용자 액션/에러: ${message}` : ''}
 
 ## DOM 컨텍스트 (주변 HTML)
 \`\`\`html
@@ -273,14 +279,13 @@ ${configLoader.getAiPrompt()?.siteContext ? `- ${configLoader.getAiPrompt()?.sit
       tagName: snapshot.tagName,
       id: snapshot.attributes['id'],
       className: snapshot.attributes['class'],
-      textContent: snapshot.textContent,
+      text: snapshot.textContent,
       ariaLabel: snapshot.attributes['aria-label'],
       placeholder: snapshot.attributes['placeholder'],
       name: snapshot.attributes['name'],
       type: snapshot.attributes['type'],
       role: snapshot.role || snapshot.attributes['role'],
       dataTestId: snapshot.attributes['data-testid'],
-      boundingBox: snapshot.boundingBox,
     };
   }
 

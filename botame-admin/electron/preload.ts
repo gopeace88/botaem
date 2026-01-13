@@ -57,6 +57,11 @@ const electronAPI = {
       'config:listProfiles',
       'config:getUrl',
       'config:getCategories',
+      // [Remote Repair] 이슈 관리
+      'botame:get-issues',
+      'botame:update-issue-status',
+      'botame:analyze-issue',
+      'botame:apply-fix',
     ];
 
     if (validChannels.includes(channel)) {

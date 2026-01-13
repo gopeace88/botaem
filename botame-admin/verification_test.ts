@@ -8,8 +8,8 @@
  * 3. Dynamic ID Filtering
  */
 
-import { SmartSelectorGenerator } from './electron/core/smart-selector';
-import { ElementSnapshot } from './shared/types';
+import { SmartSelectorGenerator } from '@botame/recorder';
+import { ElementSnapshot } from '@botame/types';
 
 // Mock Element Snapshot
 const mockSnapshot: ElementSnapshot = {

@@ -5,3 +5,4 @@ export * from "./execution";
 export * from "./healing";
 export * from "./recording";
 export * from "./ipc";
+export * from "./issue";

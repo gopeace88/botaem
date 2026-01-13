@@ -207,4 +207,42 @@ export class PlaybookService {
   getPlaybooksDir(): string {
     return this.playbooksDir;
   }
+
+  /**
+   * [Remote Repair] Patch a specific step's selector in a playbook
+   */
+  async patchStepSelector(playbookId: string, stepIndex: number, newSelector: string): Promise<IpcResult<void>> {
+    try {
+      const result = await this.loadPlaybook(playbookId);
+      if (!result.success || !result.data) {
+        return { success: false, error: result.error || 'Playbook not found' };
+      }
+
+      const playbook = result.data;
+      if (!playbook.steps || !playbook.steps[stepIndex]) {
+        return { success: false, error: `Step not found at index ${stepIndex}` };
+      }
+
+      // Update the selector
+      playbook.steps[stepIndex].selector = newSelector;
+
+      // Clear smartSelector to force manual selector usage
+      // @ts-ignore
+      if (playbook.steps[stepIndex].smartSelector) {
+        // @ts-ignore
+        delete playbook.steps[stepIndex].smartSelector;
+      }
+
+      // Save changes
+      const saveResult = await this.savePlaybook(playbook);
+      if (!saveResult.success) {
+        return { success: false, error: saveResult.error };
+      }
+
+      return { success: true };
+    } catch (e) {
+      console.error('[PlaybookService] Failed to patch step:', e);
+      return { success: false, error: String(e) };
+    }
+  }
 }

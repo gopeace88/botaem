@@ -1,5 +1,5 @@
 export { SnapshotService } from './snapshot.service';
-export { SmartSelectorGenerator } from './smart-selector';
+
 export { Highlighter } from './highlighter';
 export type { HighlightOptions } from './highlighter';
 

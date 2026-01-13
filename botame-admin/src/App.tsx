@@ -4,11 +4,12 @@ import { CatalogTreeView } from './components/playbook/CatalogTreeView';
 import { RecordingPanel } from './components/recording/RecordingPanel';
 import { SettingsPanel } from './components/settings/SettingsPanel';
 import { RunnerPanel } from './components/runner/RunnerPanel';
+import { FailureInbox } from './pages/FailureInbox';
 import { usePlaybookStore } from './stores/playbook.store';
 import { useRecordingStore } from './stores/recording.store';
 import { useSupabaseStore } from './stores/supabase.store';
 
-type View = 'list' | 'catalog' | 'recording' | 'settings' | 'runner';
+type View = 'list' | 'catalog' | 'recording' | 'settings' | 'runner' | 'failures';
 
 function App() {
   const [currentView, setCurrentView] = useState<View>('list');
@@ -64,6 +65,7 @@ function App() {
             {currentView === 'catalog' && 'DB 카탈로그'}
             {currentView === 'recording' && '녹화 모드'}
             {currentView === 'runner' && '플레이북 편집/실행'}
+            {currentView === 'failures' && '장애 리포트 (Beta)'}
             {currentView === 'settings' && 'Supabase 설정'}
           </span>
         </div>
@@ -116,11 +118,10 @@ function App() {
             setPreviousView('list');
             setCurrentView('list');
           }}
-          className={`px-3 py-1.5 text-sm rounded transition-colors ${
-            currentView === 'list'
+          className={`px-3 py-1.5 text-sm rounded transition-colors ${currentView === 'list'
               ? 'bg-primary text-primary-foreground'
               : 'hover:bg-muted'
-          }`}
+            }`}
         >
           로컬
         </button>
@@ -129,22 +130,32 @@ function App() {
             setPreviousView('catalog');
             setCurrentView('catalog');
           }}
-          className={`px-3 py-1.5 text-sm rounded transition-colors flex items-center gap-1 ${
-            currentView === 'catalog'
+          className={`px-3 py-1.5 text-sm rounded transition-colors flex items-center gap-1 ${currentView === 'catalog'
               ? 'bg-primary text-primary-foreground'
               : 'hover:bg-muted'
-          }`}
+            }`}
         >
           <span className={`w-2 h-2 rounded-full ${supabaseConnected ? 'bg-green-400' : 'bg-gray-400'}`} />
           카탈로그
         </button>
         <button
+          onClick={() => {
+            setCurrentView('failures');
+          }}
+          className={`px-3 py-1.5 text-sm rounded transition-colors flex items-center gap-1 ${currentView === 'failures'
+              ? 'bg-primary text-primary-foreground'
+              : 'hover:bg-muted'
+            }`}
+        >
+          <span className="text-orange-500">⚠</span>
+          장애 리포트
+        </button>
+        <button
           onClick={handleNewPlaybook}
-          className={`px-3 py-1.5 text-sm rounded transition-colors ${
-            currentView === 'recording'
+          className={`px-3 py-1.5 text-sm rounded transition-colors ${currentView === 'recording'
               ? 'bg-red-500 text-white'
               : 'hover:bg-muted'
-          }`}
+            }`}
         >
           새 녹화
         </button>
@@ -152,16 +163,14 @@ function App() {
         <div className="ml-auto flex items-center gap-2">
           <button
             onClick={() => setCurrentView('settings')}
-            className={`px-3 py-1.5 text-sm rounded transition-colors flex items-center gap-1 ${
-              currentView === 'settings'
+            className={`px-3 py-1.5 text-sm rounded transition-colors flex items-center gap-1 ${currentView === 'settings'
                 ? 'bg-primary text-primary-foreground'
                 : 'hover:bg-muted'
-            }`}
+              }`}
           >
             <span
-              className={`w-2 h-2 rounded-full ${
-                supabaseConnected ? 'bg-green-500' : 'bg-gray-400'
-              }`}
+              className={`w-2 h-2 rounded-full ${supabaseConnected ? 'bg-green-500' : 'bg-gray-400'
+                }`}
             />
             Supabase
           </button>
@@ -182,6 +191,9 @@ function App() {
             onSelectPlaybook={(playbookId) => handleSelectPlaybook(playbookId, true)}
             onRunPlaybook={(playbookId) => handleSelectPlaybook(playbookId, true)}
           />
+        )}
+        {currentView === 'failures' && (
+          <FailureInbox />
         )}
         {currentView === 'recording' && (
           <RecordingPanel onComplete={handleRecordingComplete} />

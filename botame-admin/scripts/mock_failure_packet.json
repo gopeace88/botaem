@@ -1,0 +1,22 @@
+{
+  "id": "issue-1768248132750",
+  "title": "Button click failed: \"교부관리\"",
+  "description": "Element not found after 10s timeout. Primary selector \"#gnb-gyobu\" failed.",
+  "status": "open",
+  "elementInfo": {
+    "tagName": "BUTTON",
+    "text": "교부관리",
+    "className": "btn btn-primary",
+    "role": "button"
+  },
+  "domSnapshot": "\n<div class=\"gnb-menu\">\n    <ul>\n        <li><a href=\"#\">홈</a></li>\n        <li><a href=\"#\">사업관리</a></li>\n        <li>\n            <!-- The button structure changed slightly, ID is gone -->\n            <button class=\"btn btn-primary nav-item\" aria-label=\"교부관리\">\n                <span>교부관리</span>\n            </button>\n        </li>\n    </ul>\n</div>\n",
+  "playbookId": "pb-123",
+  "stepIndex": 5,
+  "errorType": "NotFound",
+  "timestamp": 1768248132750,
+  "environment": {
+    "os": "windows",
+    "browser": "chrome",
+    "version": "120.0"
+  }
+}

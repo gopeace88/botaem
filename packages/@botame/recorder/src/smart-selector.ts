@@ -1,10 +1,22 @@
 /**
  * Smart Selector Generator
- * Extracted from RecordingService.generateMultipleSelectors()
+ * Extracted from RecordingService and Refactored for Monorepo
  * @module @botame/recorder/smart-selector
  */
 
-import { SelectorInfo } from "@botame/types";
+import {
+  SelectorInfo,
+  ElementSnapshot,
+  SmartSelector,
+  SelectorWithScore
+} from "@botame/types";
+
+declare var require: any;
+
+// Node.js environment check
+const crypto = typeof require !== 'undefined' ? require('crypto') : {
+  createHash: () => ({ update: () => ({ digest: () => 'mock-hash' }) })
+};
 
 export interface ElementData {
   tagName: string;
@@ -20,169 +32,354 @@ export interface ElementData {
 }
 
 /**
- * Generate multiple fallback selectors from element info
- * Extracted from RecordingService.generateMultipleSelectors()
- * 개선: INPUT 요소는 CSS 선택자 우선, text/label은 후순위
+ * Legacy compatibility function
+ * Wraps SmartSelectorGenerator to provide SelectorInfo[]
  */
 export function generateSelectors(element: ElementData): SelectorInfo[] {
+  const generator = new SmartSelectorGenerator();
+  const mockSnapshot: ElementSnapshot = {
+    nodeId: 0,
+    backendNodeId: 0,
+    tagName: element.tagName,
+    attributes: {
+      id: element.id || '',
+      class: element.className || '',
+      name: element.name || '',
+      type: element.type || '',
+      placeholder: element.placeholder || '',
+      'aria-label': element.ariaLabel || '',
+      'data-testid': element.dataTestId || '',
+    },
+    textContent: element.text,
+    boundingBox: { x: 0, y: 0, width: 0, height: 0 },
+    isVisible: true,
+    isInViewport: true,
+    xpath: '',
+    cssPath: ''
+  };
+
+  const result = generator.generateFromSnapshot(mockSnapshot);
+
   const selectors: SelectorInfo[] = [];
-  let priority = 0;
 
-  const isInputElement = ["INPUT", "TEXTAREA", "SELECT"].includes(
-    element.tagName,
-  );
-  const isButtonElement =
-    element.tagName === "BUTTON" ||
-    (element.tagName === "A" && element.role === "button");
-
-  // === INPUT/TEXTAREA/SELECT 요소: CSS 속성 기반 선택자 최우선 ===
-  if (isInputElement) {
-    // 1. name 속성 (가장 안정적)
-    if (element.name) {
-      selectors.push({
-        strategy: "css",
-        value: `${element.tagName.toLowerCase()}[name="${element.name}"]`,
-        priority: priority++,
-      });
-    }
-
-    // 2. aria-label 속성 (로그인 ID, 비밀번호 등 구분에 유용)
-    if (element.ariaLabel) {
-      selectors.push({
-        strategy: "css",
-        value: `${element.tagName.toLowerCase()}[aria-label="${element.ariaLabel}"]`,
-        priority: priority++,
-      });
-    }
-
-    // 3. type 속성 (password, email 등)
-    if (
-      element.type &&
-      [
-        "password",
-        "email",
-        "tel",
-        "search",
-        "url",
-        "number",
-        "date",
-        "file",
-      ].includes(element.type)
-    ) {
-      selectors.push({
-        strategy: "css",
-        value: `${element.tagName.toLowerCase()}[type="${element.type}"]`,
-        priority: priority++,
-      });
-    }
-
-    // 4. placeholder 속성
-    if (element.placeholder) {
-      selectors.push({
-        strategy: "placeholder",
-        value: element.placeholder,
-        priority: priority++,
-      });
-    }
-  }
-
-  // === BUTTON 요소: type, class 기반 선택자 우선 ===
-  if (isButtonElement) {
-    // 1. type="submit" 버튼
-    if (element.type === "submit") {
-      selectors.push({
-        strategy: "css",
-        value: 'button[type="submit"]',
-        priority: priority++,
-      });
-    }
-
-    // 2. 로그인/제출 관련 클래스
-    if (element.className) {
-      const loginClasses = element.className
-        .split(" ")
-        .filter((c: string) =>
-          /login|submit|btn-primary|btn-main|signin/i.test(c),
-        );
-      if (loginClasses.length) {
-        selectors.push({
-          strategy: "css",
-          value: `button.${loginClasses[0]}`,
-          priority: priority++,
-        });
-      }
-    }
-  }
-
-  // === 공통: 안정적인 속성들 ===
-
-  // data-testid (가장 안정적)
-  if (element.dataTestId) {
+  if (result.primary) {
     selectors.push({
-      strategy: "testId",
-      value: element.dataTestId,
-      priority: priority++,
+      strategy: result.primary.strategy,
+      value: result.primary.value,
+      priority: 0
     });
   }
 
-  // 안정적인 ID (동적 ID 제외)
-  if (element.id && !isDynamicId(element.id)) {
+  result.fallbacks.forEach((f, index) => {
     selectors.push({
-      strategy: "css",
-      value: `#${element.id}`,
-      priority: priority++,
+      strategy: f.strategy,
+      value: f.value,
+      priority: index + 1
     });
-  }
-
-  // === 후순위: text/label 기반 선택자 (INPUT에는 사용 안함) ===
-  if (!isInputElement) {
-    // ARIA label (버튼/링크에만)
-    if (element.ariaLabel && isButtonElement) {
-      selectors.push({
-        strategy: "label",
-        value: element.ariaLabel,
-        priority: priority++,
-      });
-    }
-
-    // Role + name 조합
-    if (element.role && element.name) {
-      selectors.push({
-        strategy: "role",
-        value: `${element.role}[name="${element.name}"]`,
-        priority: priority++,
-      });
-    }
-
-    // Text content (가장 후순위 - 버튼에만)
-    if (element.text && isButtonElement) {
-      const trimmedText = element.text.trim().slice(0, 30);
-      if (trimmedText && trimmedText.length >= 2) {
-        selectors.push({
-          strategy: "text",
-          value: trimmedText,
-          priority: priority++,
-        });
-      }
-    }
-  }
+  });
 
   return selectors;
 }
 
-/**
- * 동적 ID인지 확인
- * Extracted from RecordingService.isDynamicId()
- */
-function isDynamicId(id: string): boolean {
-  const dynamicPatterns = [
-    /^[a-f0-9]{8}-[a-f0-9]{4}/i, // UUID
-    /^\d{10,}/, // 타임스탬프
-    /_\d+$/, // 숫자 접미사
-    /^react-/i, // React 생성 ID
-    /^ember/i, // Ember 생성 ID
-    /^ng-/i, // Angular 생성 ID
-    /^:r[0-9a-z]+:/i, // React 18+ ID
-  ];
-  return dynamicPatterns.some((p) => p.test(id));
+export class SmartSelectorGenerator {
+
+  /**
+   * 요소 스냅샷에서 스마트 셀렉터 생성
+   */
+  generateFromSnapshot(element: ElementSnapshot): SmartSelector {
+    const selectors = this.generateAllSelectors(element);
+
+    // 신뢰도 순으로 정렬
+    selectors.sort((a, b) => b.confidence - a.confidence);
+
+    const [primary, ...fallbacks] = selectors;
+
+    return {
+      primary: primary || { strategy: 'css', value: element.tagName.toLowerCase(), confidence: 10 },
+      fallbacks,
+      coordinates: element.boundingBox,
+      elementHash: this.generateElementHash(element),
+      snapshot: element,
+    };
+  }
+
+  /**
+   * 모든 가능한 선택자 생성
+   */
+  private generateAllSelectors(element: ElementSnapshot): SelectorWithScore[] {
+    const selectors: SelectorWithScore[] = [];
+    const attrs = element.attributes || {};
+    const isInputElement = this.isInputElement(element.tagName);
+
+    // 1. data-testid (가장 안정적)
+    if (attrs['data-testid']) {
+      selectors.push({
+        strategy: 'testId',
+        value: attrs['data-testid'],
+        confidence: 95,
+      });
+    }
+
+    // 2. name 속성 (폼 요소)
+    if (attrs['name'] && this.isFormElement(element.tagName)) {
+      selectors.push({
+        strategy: 'css',
+        value: `${element.tagName.toLowerCase()}[name="${attrs['name']}"]`,
+        confidence: isInputElement ? 95 : 80,
+      });
+    }
+
+    // 3. 타입 속성 (input)
+    if (element.tagName.toUpperCase() === 'INPUT' && attrs['type']) {
+      const type = attrs['type'];
+      const uniqueTypes = ['password', 'email', 'tel', 'search', 'url', 'number', 'date', 'file'];
+      const confidence = uniqueTypes.includes(type) ? 90 : 50;
+      selectors.push({
+        strategy: 'css',
+        value: `input[type="${type}"]`,
+        confidence,
+      });
+    }
+
+    // 3.5. aria-label
+    if (attrs['aria-label'] && isInputElement) {
+      const tagName = element.tagName.toLowerCase();
+      selectors.push({
+        strategy: 'css',
+        value: `${tagName}[aria-label="${attrs['aria-label']}"]`,
+        confidence: 88,
+      });
+    }
+
+    // 4. ID (동적 ID 감지)
+    if (attrs['id']) {
+      const isStable = this.isStableId(attrs['id']);
+      if (isStable) {
+        selectors.push({
+          strategy: 'css',
+          value: `#${attrs['id']}`,
+          confidence: 85,
+        });
+      }
+    }
+
+    // 5. placeholder
+    if (attrs['placeholder'] && isInputElement) {
+      selectors.push({
+        strategy: 'placeholder',
+        value: attrs['placeholder'],
+        confidence: 80,
+      });
+    }
+
+    // === INPUT 외 요소 ===
+    if (!isInputElement) {
+      // 6. ARIA 레이블
+      if (attrs['aria-label']) {
+        selectors.push({
+          strategy: 'label',
+          value: attrs['aria-label'],
+          confidence: 75,
+        });
+      }
+
+      // 7. Role + 이름
+      if (element.role && element.name) {
+        selectors.push({
+          strategy: 'role',
+          value: `${element.role}[name="${element.name}"]`,
+          confidence: 70,
+        });
+      }
+
+      // 8. 텍스트 내용
+      if (element.textContent && this.isTextBasedElement(element.tagName)) {
+        const text = element.textContent.trim().slice(0, 50);
+        if (text && text.length > 1) {
+          selectors.push({
+            strategy: 'text',
+            value: `text=${text}`,
+            confidence: 65,
+          });
+        }
+      }
+    }
+
+    // 9. CSS 클래스 조합
+    if (attrs['class']) {
+      const stableClasses = this.extractStableClasses(attrs['class']);
+      if (stableClasses.length > 0) {
+        const cssSelector = `${element.tagName.toLowerCase()}.${stableClasses.join('.')}`;
+        selectors.push({
+          strategy: 'css',
+          value: cssSelector,
+          confidence: 45,
+        });
+      }
+    }
+
+    // 10. Parent Chain (CSS Path 분석)
+    const parentSelectors = this.generateParentChainSelectors(element);
+    selectors.push(...parentSelectors);
+
+    // 11. XPath
+    if (element.xpath) {
+      selectors.push({
+        strategy: 'xpath',
+        value: element.xpath,
+        confidence: 30,
+      });
+    }
+
+    // 12. 전체 CSS 경로
+    if (element.cssPath) {
+      selectors.push({
+        strategy: 'css',
+        value: element.cssPath,
+        confidence: 20,
+      });
+    }
+
+    return selectors;
+  }
+
+  /**
+   * 부모 체인 선택자 생성
+   */
+  private generateParentChainSelectors(element: ElementSnapshot): SelectorWithScore[] {
+    const selectors: SelectorWithScore[] = [];
+
+    if (!element.cssPath) return selectors;
+
+    const parts = element.cssPath.split(' > ');
+    if (parts.length < 2) return selectors;
+
+    // 현재 요소 자신을 제외
+    const mySelector = parts.pop()!;
+
+    // 부모들 중에서 ID가 있는 가장 가까운 부모 찾기
+    for (let i = parts.length - 1; i >= 0; i--) {
+      const part = parts[i];
+      if (part.includes('#')) {
+        const idMatch = part.match(/#([^.]+)/);
+        if (idMatch && this.isStableId(idMatch[1])) {
+          const parentId = idMatch[1];
+
+          // 1. Direct descendant
+          selectors.push({
+            strategy: 'css',
+            value: `#${parentId} ${mySelector}`,
+            confidence: 60,
+          });
+
+          // 2. Class combination
+          if (element.attributes && element.attributes['class']) {
+            const stableClasses = this.extractStableClasses(element.attributes['class']);
+            if (stableClasses.length > 0) {
+              selectors.push({
+                strategy: 'css',
+                value: `#${parentId} .${stableClasses.join('.')}`,
+                confidence: 62,
+              });
+            }
+          }
+          break;
+        }
+      }
+    }
+
+    return selectors;
+  }
+
+  private isInputElement(tagName: string): boolean {
+    return ['INPUT', 'TEXTAREA', 'SELECT'].includes(tagName.toUpperCase());
+  }
+
+  private isStableId(id: string): boolean {
+    if (!id) return false;
+    const dynamicPatterns = [
+      /^[a-f0-9]{8}-[a-f0-9]{4}/i,
+      /[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}/i,
+      /^\d+$/,
+      /^\d{10,}/,
+      /_\d+$/,
+      /-\d+$/,
+      /^react-/i,
+      /^ember/i,
+      /^ng-/i,
+      /^:r[0-9a-z]+:/i,
+      /^pt-/i,
+      /^uuid-/i,
+      /^ext-gen/i,
+      /^yui-gen/i,
+      /^closure-lm/i,
+      /\//,
+      /\./,
+    ];
+    return !dynamicPatterns.some(pattern => pattern.test(id));
+  }
+
+  private extractStableClasses(classString: string): string[] {
+    const classes = classString.split(/\s+/).filter(c => c.trim());
+    const ignoredPatterns = [
+      /^css-[a-z0-9]+$/i,
+      /^sc-[a-z]+$/i,
+      /^_[a-z0-9]{5,}$/i,
+      /^emotion-/i,
+      /--[a-z0-9]{6,}$/i,
+      /^(p|m)(t|b|l|r|x|y)?-\d+/,
+      /^w-\d+|w-full|w-screen/,
+      /^h-\d+|h-full|h-screen/,
+      /^flex/, /^grid/,
+      /^items-/, /^justify-/,
+      /^text-(xs|sm|base|lg|xl)/,
+      /^text-(left|center|right)/,
+      /^bg-(red|blue|green|gray|white|black)/,
+      /^absolute|relative|fixed/,
+      /^hidden|block|inline/,
+      /^border/, /^rounded/,
+      /^hover:/, /^focus:/,
+      /^d-/,
+      /^col-/, /^row-/,
+    ];
+
+    return classes
+      .filter(c => !ignoredPatterns.some(p => p.test(c)))
+      .filter(c => c.length > 2 && c.length < 40)
+      .slice(0, 2);
+  }
+
+  private isFormElement(tagName: string): boolean {
+    return ['INPUT', 'SELECT', 'TEXTAREA', 'BUTTON'].includes(tagName.toUpperCase());
+  }
+
+  private isTextBasedElement(tagName: string): boolean {
+    return ['BUTTON', 'A', 'SPAN', 'DIV', 'LABEL', 'P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6']
+      .includes(tagName.toUpperCase());
+  }
+
+  private generateElementHash(element: ElementSnapshot): string {
+    const hashSource = [
+      element.tagName,
+      element.attributes['id'] || '',
+      element.attributes['class'] || '',
+      element.attributes['name'] || '',
+      element.textContent?.slice(0, 20) || '',
+      element.role || '',
+    ].join('|');
+
+    return crypto.createHash('md5').update(hashSource).digest('hex').slice(0, 8);
+  }
+
+  calculateSimilarity(a: SmartSelector, b: SmartSelector): number {
+    let score = 0;
+    if (a.elementHash === b.elementHash) score += 50;
+    const dx = Math.abs(a.coordinates.x - b.coordinates.x);
+    const dy = Math.abs(a.coordinates.y - b.coordinates.y);
+    if (dx < 100 && dy < 100) {
+      score += 30 * (1 - (dx + dy) / 200);
+    }
+    if (a.primary.value === b.primary.value) score += 20;
+    return Math.min(100, score);
+  }
 }
