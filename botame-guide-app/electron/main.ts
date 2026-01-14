@@ -1,19 +1,19 @@
-import { app, BrowserWindow } from 'electron';
-import path from 'path';
+import { app, BrowserWindow } from "electron";
+import path from "path";
 import {
   ChatHandler,
   PlaybookHandler,
   WindowHandler,
   AutomationHandler,
   RecordingHandler,
-} from './ipc';
-import { supabaseService } from './services';
-import { PlaybookStep, ExecutionContext, StepResult } from './playbook/types';
+} from "./ipc";
+import { supabaseService } from "./services";
+import { PlaybookStep, ExecutionContext, StepResult } from "./playbook/types";
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 // Only in production with electron-squirrel-startup installed
 try {
-  if (require('electron-squirrel-startup')) {
+  if (require("electron-squirrel-startup")) {
     app.quit();
   }
 } catch {
@@ -38,7 +38,7 @@ const createWindow = (): void => {
     frame: false,
     alwaysOnTop: true,
     webPreferences: {
-      preload: path.join(__dirname, '../preload/preload.js'),
+      preload: path.join(__dirname, "../preload/preload.js"),
       contextIsolation: true,
       nodeIntegration: false,
       sandbox: false,
@@ -46,14 +46,14 @@ const createWindow = (): void => {
   });
 
   // Load the index.html in development or production
-  if (process.env.NODE_ENV === 'development') {
-    mainWindow.loadURL('http://localhost:5173');
-    mainWindow.webContents.openDevTools({ mode: 'detach' });
+  if (process.env.NODE_ENV === "development") {
+    mainWindow.loadURL("http://localhost:5173");
+    mainWindow.webContents.openDevTools({ mode: "detach" });
   } else {
-    mainWindow.loadFile(path.join(__dirname, '../index.html'));
+    mainWindow.loadFile(path.join(__dirname, "../index.html"));
   }
 
-  mainWindow.on('closed', () => {
+  mainWindow.on("closed", () => {
     mainWindow = null;
   });
 
@@ -68,19 +68,22 @@ const createWindow = (): void => {
  */
 const createStepExecutor = (
   automation: AutomationHandler,
-  playbook: PlaybookHandler
+  playbook: PlaybookHandler,
 ) => {
-  return async (step: PlaybookStep, context: ExecutionContext): Promise<StepResult> => {
-    console.log('[StepExecutor] Executing step:', step.action, step.id);
+  return async (
+    step: PlaybookStep,
+    context: ExecutionContext,
+  ): Promise<StepResult> => {
+    console.log("[StepExecutor] Executing step:", step.action, step.id);
     const auto = automation.getAutomation();
 
     // Initialize browser if not already done
     if (!auto.isInitialized()) {
-      console.log('[StepExecutor] Initializing browser...');
+      console.log("[StepExecutor] Initializing browser...");
       const initResult = await auto.initialize();
-      console.log('[StepExecutor] Browser init result:', initResult);
+      console.log("[StepExecutor] Browser init result:", initResult);
       if (!initResult.success) {
-        console.error('[StepExecutor] Browser init failed:', initResult.error);
+        console.error("[StepExecutor] Browser init failed:", initResult.error);
         return { success: false, error: initResult.error };
       }
 
@@ -92,74 +95,99 @@ const createStepExecutor = (
     }
 
     // Handle wait_for: user - wait for user confirmation
-    console.log('[StepExecutor] step.wait_for:', step.wait_for, 'action:', step.action);
-    if (step.wait_for === 'user' || step.wait_for === 'user_input') {
-      console.log('[StepExecutor] Waiting for user action...');
+    console.log(
+      "[StepExecutor] step.wait_for:",
+      step.wait_for,
+      "action:",
+      step.action,
+    );
+    if (step.wait_for === "user" || step.wait_for === "user_input") {
+      console.log("[StepExecutor] Waiting for user action...");
       return { success: true, waitForUser: true };
     }
 
     // Execute based on action type
     switch (step.action) {
-      case 'navigate': {
+      case "navigate": {
         if (!step.value) {
-          return { success: false, error: 'Navigate action requires a value (URL)' };
+          return {
+            success: false,
+            error: "Navigate action requires a value (URL)",
+          };
         }
         return auto.navigateTo(step.value);
       }
 
-      case 'click': {
+      case "click": {
         if (!step.selector) {
-          return { success: false, error: 'Click action requires a selector' };
+          return { success: false, error: "Click action requires a selector" };
         }
         return auto.clickElement(step.selector);
       }
 
-      case 'type': {
+      case "type": {
         if (!step.selector) {
-          return { success: false, error: 'Type action requires a selector' };
+          return { success: false, error: "Type action requires a selector" };
         }
-        const value = step.value || context.variables[step.variable || ''] as string || '';
+        const value =
+          step.value ||
+          (context.variables[step.variable || ""] as string) ||
+          "";
         return auto.fillInput(step.selector, value);
       }
 
-      case 'select': {
+      case "select": {
         if (!step.selector || !step.value) {
-          return { success: false, error: 'Select action requires selector and value' };
+          return {
+            success: false,
+            error: "Select action requires selector and value",
+          };
         }
         return auto.selectOption(step.selector, step.value);
       }
 
-      case 'wait': {
+      case "wait": {
         if (step.selector) {
           return auto.waitForElement(step.selector, step.timeout);
         }
         // Wait for a fixed time if no selector
-        await new Promise((resolve) => setTimeout(resolve, step.timeout || 1000));
+        await new Promise((resolve) =>
+          setTimeout(resolve, step.timeout || 1000),
+        );
         return { success: true };
       }
 
-      case 'assert': {
+      case "assert": {
         if (!step.selector) {
-          return { success: false, error: 'Assert action requires a selector' };
+          return { success: false, error: "Assert action requires a selector" };
         }
-        const result = await auto.waitForElement(step.selector, step.timeout || 5000);
+        const result = await auto.waitForElement(
+          step.selector,
+          step.timeout || 5000,
+        );
         if (!result.success) {
-          return { success: false, error: `Assertion failed: element not found - ${step.selector}` };
+          return {
+            success: false,
+            error: `Assertion failed: element not found - ${step.selector}`,
+          };
         }
         return { success: true };
       }
 
-      case 'highlight':
-      case 'guide': {
+      case "highlight":
+      case "guide": {
         // For guide actions, just show the message and continue
         // The message is already handled by the engine's event system
         return { success: true };
       }
 
-      case 'extract': {
+      case "extract": {
         // Extract data from page
         if (!step.selector || !step.variable) {
-          return { success: false, error: 'Extract action requires selector and variable' };
+          return {
+            success: false,
+            error: "Extract action requires selector and variable",
+          };
         }
         try {
           const result = await auto.evaluateScript(`
@@ -177,7 +205,7 @@ const createStepExecutor = (
         }
       }
 
-      case 'validate': {
+      case "validate": {
         // Validate extracted data
         return { success: true };
       }
@@ -189,7 +217,7 @@ const createStepExecutor = (
 };
 
 const initializeHandlers = async (): Promise<void> => {
-  const playbooksDir = path.join(app.getPath('userData'), 'playbooks');
+  const playbooksDir = path.join(app.getPath("userData"), "playbooks");
 
   // Initialize Supabase if configured
   const supabaseUrl = process.env.VITE_SUPABASE_URL;
@@ -200,7 +228,7 @@ const initializeHandlers = async (): Promise<void> => {
       url: supabaseUrl,
       anonKey: supabaseKey,
     });
-    console.log('Supabase initialized');
+    console.log("Supabase initialized");
   }
 
   // Create handlers
@@ -211,31 +239,22 @@ const initializeHandlers = async (): Promise<void> => {
   recordingHandler = new RecordingHandler(automationHandler.getAutomation());
 
   // Connect playbook engine with automation (pass playbookHandler for page connection)
-  playbookHandler.setStepExecutor(createStepExecutor(automationHandler, playbookHandler));
+  playbookHandler.setStepExecutor(
+    createStepExecutor(automationHandler, playbookHandler),
+  );
 
   // Initialize Claude service if API key is available
   const claudeApiKey = process.env.CLAUDE_API_KEY;
   if (claudeApiKey) {
     chatHandler.initializeClaudeService({
-      baseUrl: 'https://api.anthropic.com',
+      baseUrl: "https://api.anthropic.com",
       apiKey: claudeApiKey,
-      model: 'claude-3-haiku-20240307',
+      model: "claude-3-haiku-20240307",
       maxTokens: 1024,
     });
-    console.log('Claude API initialized');
-
-    // Initialize Vision service for Interactive Watch & Guide
-    // TEMPORARILY DISABLED FOR DEBUGGING
-    // playbookHandler.setVisionConfig({
-    //   baseUrl: 'https://api.anthropic.com',
-    //   apiKey: claudeApiKey,
-    //   model: 'claude-3-haiku-20240307',
-    //   maxTokens: 100,
-    //   imageDetail: 'low',
-    // });
-    console.log('Vision API disabled for debugging');
+    console.log("Claude API initialized");
   } else {
-    console.log('Claude API key not found, running in offline mode');
+    console.log("Claude API key not found, running in offline mode");
   }
 
   // Register all handlers
@@ -266,32 +285,32 @@ app.whenReady().then(async () => {
   createWindow();
 
   // Auto-initialize browser in development mode
-  if (process.env.NODE_ENV === 'development') {
-    console.log('[Dev] Auto-initializing browser...');
+  if (process.env.NODE_ENV === "development") {
+    console.log("[Dev] Auto-initializing browser...");
     const auto = automationHandler.getAutomation();
     const initResult = await auto.initialize();
     if (initResult.success) {
-      console.log('[Dev] Browser initialized, navigating to main page...');
+      console.log("[Dev] Browser initialized, navigating to main page...");
       await auto.navigateToMain();
     } else {
-      console.error('[Dev] Browser initialization failed:', initResult.error);
+      console.error("[Dev] Browser initialization failed:", initResult.error);
     }
   }
 
-  app.on('activate', () => {
+  app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) {
       createWindow();
     }
   });
 });
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
     cleanupHandlers();
     app.quit();
   }
 });
 
-app.on('before-quit', () => {
+app.on("before-quit", () => {
   cleanupHandlers();
 });

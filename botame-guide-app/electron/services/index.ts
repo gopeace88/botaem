@@ -4,12 +4,11 @@
  */
 
 // Types
-export * from './api.types';
+export * from "./api.types";
 
 // Services
-export { ClaudeService } from './claude.service';
-export { ClaudeVisionService } from './claude-vision.service';
-export { RecommendationService } from './recommendation.service';
-export { SupabaseService, supabaseService } from './supabase.service';
-export { BotameAutomation, botameAutomation } from './botame.automation';
-export { StepVerifier } from './step-verifier';
+export { ClaudeService } from "./claude.service";
+export { RecommendationService } from "./recommendation.service";
+export { SupabaseService, supabaseService } from "./supabase.service";
+export { BotameAutomation, botameAutomation } from "./botame.automation";
+export { StepVerifier } from "./step-verifier";

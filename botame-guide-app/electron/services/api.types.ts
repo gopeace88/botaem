@@ -83,33 +83,3 @@ export interface APIError {
 export type APIResult<T> =
   | { success: true; data: T }
   | { success: false; error: APIError };
-
-// === Vision API Types (Interactive Watch & Guide) ===
-export interface VisionVerifyRequest {
-  screenshot: Buffer;
-  stepMessage: string;
-  verifyCondition?: string;
-}
-
-export interface VisionVerifyResponse {
-  success: boolean;
-  reason: string;
-}
-
-export interface VisionGuidanceRequest {
-  screenshot: Buffer;
-  stepMessage: string;
-  failReason: string;
-}
-
-export interface VisionGuidanceResponse {
-  guidance: string;
-}
-
-export interface VisionConfig {
-  baseUrl: string;
-  apiKey: string;
-  model?: string;
-  maxTokens?: number;
-  imageDetail?: "low" | "high" | "auto";
-}

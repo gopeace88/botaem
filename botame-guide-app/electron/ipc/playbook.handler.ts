@@ -7,15 +7,19 @@
  * - 사용자는 DB에서 동기화하여 로컬 캐시 사용
  */
 
-import { ipcMain, IpcMainInvokeEvent, BrowserWindow } from 'electron';
-import { Page } from 'playwright';
-import { PlaybookEngine, StepExecutor } from '../playbook/engine';
-import { PlaybookParser } from '../playbook/parser';
-import { Playbook } from '../playbook/types';
-import { VisionConfig } from '../services/api.types';
-import { playbookSyncService, SyncStatus, SyncResult, BulkSyncResult } from '../services/playbook-sync.service';
-import * as fs from 'fs';
-import * as path from 'path';
+import { ipcMain, IpcMainInvokeEvent, BrowserWindow } from "electron";
+import { Page } from "playwright";
+import { PlaybookEngine, StepExecutor } from "../playbook/engine";
+import { PlaybookParser } from "../playbook/parser";
+import { Playbook } from "../playbook/types";
+import {
+  playbookSyncService,
+  SyncStatus,
+  SyncResult,
+  BulkSyncResult,
+} from "../services/playbook-sync.service";
+import * as fs from "fs";
+import * as path from "path";
 
 export class PlaybookHandler {
   private engine: PlaybookEngine;
@@ -50,13 +54,6 @@ export class PlaybookHandler {
   }
 
   /**
-   * Set Vision API config for step verification
-   */
-  setVisionConfig(config: VisionConfig): void {
-    this.engine.setVisionConfig(config);
-  }
-
-  /**
    * Set Playwright page for step verification
    */
   setPage(page: Page): void {
@@ -82,14 +79,14 @@ export class PlaybookHandler {
 
     const files = fs.readdirSync(this.playbooksDir);
     const yamlFiles = files.filter(
-      (f) => f.endsWith('.yaml') || f.endsWith('.yml')
+      (f) => f.endsWith(".yaml") || f.endsWith(".yml"),
     );
 
     for (const file of yamlFiles) {
       try {
         const content = fs.readFileSync(
           path.join(this.playbooksDir, file),
-          'utf-8'
+          "utf-8",
         );
         const playbook = this.parser.parse(content);
         this.playbooks.set(playbook.metadata.id, playbook);
@@ -113,108 +110,113 @@ export class PlaybookHandler {
    */
   register(): void {
     // 기존 핸들러
-    ipcMain.handle('playbook:list', this.handleList.bind(this));
-    ipcMain.handle('playbook:load', this.handleLoad.bind(this));
-    ipcMain.handle('playbook:execute', this.handleExecute.bind(this));
-    ipcMain.handle('playbook:pause', this.handlePause.bind(this));
-    ipcMain.handle('playbook:resume', this.handleResume.bind(this));
-    ipcMain.handle('playbook:stop', this.handleStop.bind(this));
-    ipcMain.handle('playbook:userAction', this.handleUserAction.bind(this));
-    ipcMain.handle('playbook:skipVerification', this.handleSkipVerification.bind(this));
+    ipcMain.handle("playbook:list", this.handleList.bind(this));
+    ipcMain.handle("playbook:load", this.handleLoad.bind(this));
+    ipcMain.handle("playbook:execute", this.handleExecute.bind(this));
+    ipcMain.handle("playbook:pause", this.handlePause.bind(this));
+    ipcMain.handle("playbook:resume", this.handleResume.bind(this));
+    ipcMain.handle("playbook:stop", this.handleStop.bind(this));
+    ipcMain.handle("playbook:userAction", this.handleUserAction.bind(this));
+    ipcMain.handle(
+      "playbook:skipVerification",
+      this.handleSkipVerification.bind(this),
+    );
 
     // v2: DB 동기화 핸들러
-    ipcMain.handle('playbook:sync:list', this.handleSyncList.bind(this));
-    ipcMain.handle('playbook:sync:one', this.handleSyncOne.bind(this));
-    ipcMain.handle('playbook:sync:all', this.handleSyncAll.bind(this));
-    ipcMain.handle('playbook:sync:updated', this.handleSyncUpdated.bind(this));
-    ipcMain.handle('playbook:sync:status', this.handleSyncStatus.bind(this));
-    ipcMain.handle('playbook:sync:cached', this.handleGetCached.bind(this));
-    ipcMain.handle('playbook:sync:load', this.handleSyncLoad.bind(this));
+    ipcMain.handle("playbook:sync:list", this.handleSyncList.bind(this));
+    ipcMain.handle("playbook:sync:one", this.handleSyncOne.bind(this));
+    ipcMain.handle("playbook:sync:all", this.handleSyncAll.bind(this));
+    ipcMain.handle("playbook:sync:updated", this.handleSyncUpdated.bind(this));
+    ipcMain.handle("playbook:sync:status", this.handleSyncStatus.bind(this));
+    ipcMain.handle("playbook:sync:cached", this.handleGetCached.bind(this));
+    ipcMain.handle("playbook:sync:load", this.handleSyncLoad.bind(this));
   }
 
   /**
    * Unregister IPC handlers
    */
   unregister(): void {
-    ipcMain.removeHandler('playbook:list');
-    ipcMain.removeHandler('playbook:load');
-    ipcMain.removeHandler('playbook:execute');
-    ipcMain.removeHandler('playbook:pause');
-    ipcMain.removeHandler('playbook:resume');
-    ipcMain.removeHandler('playbook:stop');
-    ipcMain.removeHandler('playbook:userAction');
-    ipcMain.removeHandler('playbook:skipVerification');
+    ipcMain.removeHandler("playbook:list");
+    ipcMain.removeHandler("playbook:load");
+    ipcMain.removeHandler("playbook:execute");
+    ipcMain.removeHandler("playbook:pause");
+    ipcMain.removeHandler("playbook:resume");
+    ipcMain.removeHandler("playbook:stop");
+    ipcMain.removeHandler("playbook:userAction");
+    ipcMain.removeHandler("playbook:skipVerification");
 
     // v2: DB 동기화 핸들러
-    ipcMain.removeHandler('playbook:sync:list');
-    ipcMain.removeHandler('playbook:sync:one');
-    ipcMain.removeHandler('playbook:sync:all');
-    ipcMain.removeHandler('playbook:sync:updated');
-    ipcMain.removeHandler('playbook:sync:status');
-    ipcMain.removeHandler('playbook:sync:cached');
-    ipcMain.removeHandler('playbook:sync:load');
+    ipcMain.removeHandler("playbook:sync:list");
+    ipcMain.removeHandler("playbook:sync:one");
+    ipcMain.removeHandler("playbook:sync:all");
+    ipcMain.removeHandler("playbook:sync:updated");
+    ipcMain.removeHandler("playbook:sync:status");
+    ipcMain.removeHandler("playbook:sync:cached");
+    ipcMain.removeHandler("playbook:sync:load");
   }
 
   /**
    * Setup engine event forwarding to renderer
    */
   private setupEngineEvents(): void {
-    this.engine.on('step_started', (data) => {
-      this.sendToRenderer('playbook:step-changed', data);
+    this.engine.on("step_started", (data) => {
+      this.sendToRenderer("playbook:step-changed", data);
     });
 
-    this.engine.on('step_completed', (data) => {
-      this.sendToRenderer('playbook:step-changed', data);
+    this.engine.on("step_completed", (data) => {
+      this.sendToRenderer("playbook:step-changed", data);
     });
 
-    this.engine.on('waiting_user', (data) => {
-      this.sendToRenderer('playbook:waiting-user', data);
+    this.engine.on("waiting_user", (data) => {
+      this.sendToRenderer("playbook:waiting-user", data);
     });
 
     // Verification events (Interactive Watch & Guide)
-    this.engine.on('verifying', (data) => {
-      this.sendToRenderer('playbook:verifying', data);
-      this.sendToRenderer('playbook:status-changed', { status: 'verifying' });
+    this.engine.on("verifying", (data) => {
+      this.sendToRenderer("playbook:verifying", data);
+      this.sendToRenderer("playbook:status-changed", { status: "verifying" });
     });
 
-    this.engine.on('verify_success', (data) => {
-      this.sendToRenderer('playbook:verify-result', {
+    this.engine.on("verify_success", (data) => {
+      this.sendToRenderer("playbook:verify-result", {
         ...data,
         success: true,
       });
     });
 
-    this.engine.on('verify_failed', (data) => {
-      this.sendToRenderer('playbook:verify-result', {
+    this.engine.on("verify_failed", (data) => {
+      this.sendToRenderer("playbook:verify-result", {
         ...data,
         success: false,
       });
       // Also send back to waiting_user status
-      this.sendToRenderer('playbook:status-changed', { status: 'waiting_user' });
+      this.sendToRenderer("playbook:status-changed", {
+        status: "waiting_user",
+      });
     });
 
-    this.engine.on('completed', () => {
-      this.sendToRenderer('playbook:completed', {});
+    this.engine.on("completed", () => {
+      this.sendToRenderer("playbook:completed", {});
     });
 
-    this.engine.on('error', (data) => {
-      this.sendToRenderer('playbook:error', data);
+    this.engine.on("error", (data) => {
+      this.sendToRenderer("playbook:error", data);
     });
 
-    this.engine.on('started', () => {
-      this.sendToRenderer('playbook:status-changed', { status: 'executing' });
+    this.engine.on("started", () => {
+      this.sendToRenderer("playbook:status-changed", { status: "executing" });
     });
 
-    this.engine.on('paused', () => {
-      this.sendToRenderer('playbook:status-changed', { status: 'paused' });
+    this.engine.on("paused", () => {
+      this.sendToRenderer("playbook:status-changed", { status: "paused" });
     });
 
-    this.engine.on('resumed', () => {
-      this.sendToRenderer('playbook:status-changed', { status: 'executing' });
+    this.engine.on("resumed", () => {
+      this.sendToRenderer("playbook:status-changed", { status: "executing" });
     });
 
-    this.engine.on('stopped', () => {
-      this.sendToRenderer('playbook:status-changed', { status: 'idle' });
+    this.engine.on("stopped", () => {
+      this.sendToRenderer("playbook:status-changed", { status: "idle" });
     });
   }
 
@@ -236,44 +238,53 @@ export class PlaybookHandler {
 
   private async handleLoad(
     _event: IpcMainInvokeEvent,
-    playbookId: string
+    playbookId: string,
   ): Promise<{ success: boolean; playbook?: Playbook; error?: string }> {
-    console.log('[PlaybookHandler] handleLoad called with playbookId:', playbookId);
-    console.log('[PlaybookHandler] Available playbooks:', Array.from(this.playbooks.keys()));
+    console.log(
+      "[PlaybookHandler] handleLoad called with playbookId:",
+      playbookId,
+    );
+    console.log(
+      "[PlaybookHandler] Available playbooks:",
+      Array.from(this.playbooks.keys()),
+    );
 
     const playbook = this.playbooks.get(playbookId);
 
     if (!playbook) {
-      console.error('[PlaybookHandler] Playbook not found:', playbookId);
+      console.error("[PlaybookHandler] Playbook not found:", playbookId);
       return { success: false, error: `Playbook not found: ${playbookId}` };
     }
 
-    console.log('[PlaybookHandler] Loading playbook:', playbook.metadata.name);
+    console.log("[PlaybookHandler] Loading playbook:", playbook.metadata.name);
     this.engine.load(playbook);
-    console.log('[PlaybookHandler] Playbook loaded successfully');
+    console.log("[PlaybookHandler] Playbook loaded successfully");
     return { success: true, playbook };
   }
 
   private async handleExecute(
     _event: IpcMainInvokeEvent,
-    variables?: Record<string, unknown>
+    variables?: Record<string, unknown>,
   ): Promise<{ success: boolean; error?: string }> {
-    console.log('[PlaybookHandler] handleExecute called');
-    console.log('[PlaybookHandler] Current playbook:', this.engine.getPlaybook()?.metadata?.id);
+    console.log("[PlaybookHandler] handleExecute called");
+    console.log(
+      "[PlaybookHandler] Current playbook:",
+      this.engine.getPlaybook()?.metadata?.id,
+    );
     try {
       if (variables) {
-        console.log('[PlaybookHandler] Setting variables:', variables);
+        console.log("[PlaybookHandler] Setting variables:", variables);
         this.engine.setVariables(variables);
       }
-      console.log('[PlaybookHandler] Starting engine...');
+      console.log("[PlaybookHandler] Starting engine...");
       await this.engine.start();
-      console.log('[PlaybookHandler] Engine started successfully');
+      console.log("[PlaybookHandler] Engine started successfully");
       return { success: true };
     } catch (error) {
-      console.error('[PlaybookHandler] Execute error:', error);
+      console.error("[PlaybookHandler] Execute error:", error);
       return {
         success: false,
-        error: error instanceof Error ? error.message : 'Unknown error',
+        error: error instanceof Error ? error.message : "Unknown error",
       };
     }
   }
@@ -295,7 +306,7 @@ export class PlaybookHandler {
 
   private async handleUserAction(
     _event: IpcMainInvokeEvent,
-    data?: unknown
+    data?: unknown,
   ): Promise<{ success: boolean }> {
     await this.engine.userAction(data);
     return { success: true };
@@ -326,7 +337,7 @@ export class PlaybookHandler {
     }>;
     error?: string;
   }> {
-    console.log('[PlaybookHandler] Fetching published playbooks from DB');
+    console.log("[PlaybookHandler] Fetching published playbooks from DB");
     return await playbookSyncService.getPublishedPlaybooks();
   }
 
@@ -335,9 +346,9 @@ export class PlaybookHandler {
    */
   private async handleSyncOne(
     _event: IpcMainInvokeEvent,
-    playbookId: string
+    playbookId: string,
   ): Promise<SyncResult> {
-    console.log('[PlaybookHandler] Syncing playbook:', playbookId);
+    console.log("[PlaybookHandler] Syncing playbook:", playbookId);
     const result = await playbookSyncService.syncPlaybook(playbookId);
 
     // 동기화된 플레이북을 메모리에도 로드
@@ -352,7 +363,7 @@ export class PlaybookHandler {
    * 모든 플레이북 동기화
    */
   private async handleSyncAll(): Promise<BulkSyncResult> {
-    console.log('[PlaybookHandler] Syncing all playbooks from DB');
+    console.log("[PlaybookHandler] Syncing all playbooks from DB");
     const result = await playbookSyncService.syncAllPlaybooks();
 
     // 캐시된 플레이북을 메모리에 로드
@@ -361,7 +372,9 @@ export class PlaybookHandler {
       for (const playbook of cachedPlaybooks) {
         this.playbooks.set(playbook.metadata.id, playbook);
       }
-      console.log(`[PlaybookHandler] Loaded ${cachedPlaybooks.length} playbooks from cache`);
+      console.log(
+        `[PlaybookHandler] Loaded ${cachedPlaybooks.length} playbooks from cache`,
+      );
     }
 
     return result;
@@ -379,7 +392,8 @@ export class PlaybookHandler {
       const statuses = await playbookSyncService.checkSyncStatus();
       return { success: true, statuses };
     } catch (error) {
-      const message = error instanceof Error ? error.message : '알 수 없는 오류';
+      const message =
+        error instanceof Error ? error.message : "알 수 없는 오류";
       return { success: false, error: message };
     }
   }
@@ -402,7 +416,8 @@ export class PlaybookHandler {
 
       return { success: true, playbooks };
     } catch (error) {
-      const message = error instanceof Error ? error.message : '알 수 없는 오류';
+      const message =
+        error instanceof Error ? error.message : "알 수 없는 오류";
       return { success: false, error: message };
     }
   }
@@ -411,7 +426,7 @@ export class PlaybookHandler {
    * 변경된 플레이북만 동기화 (Partial Sync)
    */
   private async handleSyncUpdated(): Promise<BulkSyncResult> {
-    console.log('[PlaybookHandler] Syncing only updated playbooks');
+    console.log("[PlaybookHandler] Syncing only updated playbooks");
     const result = await playbookSyncService.syncUpdatedPlaybooks();
 
     // 캐시된 플레이북을 메모리에 로드
@@ -433,10 +448,15 @@ export class PlaybookHandler {
   private async handleSyncLoad(
     _event: IpcMainInvokeEvent,
     playbookId: string,
-    forceSync = false
+    forceSync = false,
   ): Promise<SyncResult> {
-    console.log(`[PlaybookHandler] Loading playbook with lazy sync: ${playbookId}, force=${forceSync}`);
-    const result = await playbookSyncService.loadPlaybook(playbookId, forceSync);
+    console.log(
+      `[PlaybookHandler] Loading playbook with lazy sync: ${playbookId}, force=${forceSync}`,
+    );
+    const result = await playbookSyncService.loadPlaybook(
+      playbookId,
+      forceSync,
+    );
 
     // 메모리에도 로드
     if (result.success && result.playbook) {

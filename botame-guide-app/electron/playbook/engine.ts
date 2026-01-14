@@ -1,5 +1,5 @@
-import { EventEmitter } from 'events';
-import { Page } from 'playwright';
+import { EventEmitter } from "events";
+import { Page } from "playwright";
 import {
   Playbook,
   PlaybookStep,
@@ -8,16 +8,15 @@ import {
   ExecutionError,
   StepResult,
   PlaybookEngineEvent,
-} from './types';
-import { PlaybookValidator } from './validator';
-import { VariableInterpolator } from './interpolator';
-import { StepVerifier } from '../services/step-verifier';
-import { VisionConfig } from '../services/api.types';
+} from "./types";
+import { PlaybookValidator } from "./validator";
+import { VariableInterpolator } from "./interpolator";
+import { StepVerifier } from "../services/step-verifier";
 
 // Type for step executor function
 export type StepExecutor = (
   step: PlaybookStep,
-  context: ExecutionContext
+  context: ExecutionContext,
 ) => Promise<StepResult>;
 
 /**
@@ -34,19 +33,12 @@ export class PlaybookEngine extends EventEmitter {
   private isPaused = false;
   private isStopped = false;
 
-  constructor(visionConfig?: VisionConfig) {
+  constructor() {
     super();
     this.validator = new PlaybookValidator();
     this.interpolator = new VariableInterpolator();
-    this.stepVerifier = new StepVerifier(visionConfig);
+    this.stepVerifier = new StepVerifier();
     this.context = this.createInitialContext();
-  }
-
-  /**
-   * Set Vision API config for step verification
-   */
-  setVisionConfig(config: VisionConfig): void {
-    this.stepVerifier.setVisionConfig(config);
   }
 
   /**
@@ -63,7 +55,7 @@ export class PlaybookEngine extends EventEmitter {
     return {
       variables: {},
       currentStepIndex: 0,
-      status: 'idle',
+      status: "idle",
       errors: [],
     };
   }
@@ -75,7 +67,9 @@ export class PlaybookEngine extends EventEmitter {
     // Validate playbook
     const validation = this.validator.validate(playbook);
     if (!validation.valid) {
-      throw new Error(`Invalid playbook: ${validation.errors.map((e) => e.message).join(', ')}`);
+      throw new Error(
+        `Invalid playbook: ${validation.errors.map((e) => e.message).join(", ")}`,
+      );
     }
 
     this.playbook = playbook;
@@ -83,7 +77,7 @@ export class PlaybookEngine extends EventEmitter {
     this.isPaused = false;
     this.isStopped = false;
 
-    this.emit('loaded', { type: 'loaded', playbook } as PlaybookEngineEvent);
+    this.emit("loaded", { type: "loaded", playbook } as PlaybookEngineEvent);
   }
 
   /**
@@ -107,59 +101,67 @@ export class PlaybookEngine extends EventEmitter {
    * Start playbook execution
    */
   async start(): Promise<void> {
-    console.log('[Engine] start() called');
+    console.log("[Engine] start() called");
     if (!this.playbook) {
-      console.error('[Engine] No playbook loaded');
-      throw new Error('No playbook loaded');
+      console.error("[Engine] No playbook loaded");
+      throw new Error("No playbook loaded");
     }
-    console.log('[Engine] Playbook:', this.playbook.metadata.id);
+    console.log("[Engine] Playbook:", this.playbook.metadata.id);
 
     // Apply default variable values
-    console.log('[Engine] Applying default variables...');
+    console.log("[Engine] Applying default variables...");
     if (this.playbook.variables) {
-      for (const [name, definition] of Object.entries(this.playbook.variables)) {
-        if (this.context.variables[name] === undefined && definition.default !== undefined) {
+      for (const [name, definition] of Object.entries(
+        this.playbook.variables,
+      )) {
+        if (
+          this.context.variables[name] === undefined &&
+          definition.default !== undefined
+        ) {
           this.context.variables[name] = definition.default;
         }
       }
     }
 
     // Validate required variables
-    console.log('[Engine] Validating variables...');
+    console.log("[Engine] Validating variables...");
     const varValidation = this.validator.validateVariables(
       this.playbook,
-      this.context.variables
+      this.context.variables,
     );
-    console.log('[Engine] Validation result:', varValidation);
+    console.log("[Engine] Validation result:", varValidation);
     if (!varValidation.valid) {
-      console.error('[Engine] Variable validation failed:', varValidation.errors);
+      console.error(
+        "[Engine] Variable validation failed:",
+        varValidation.errors,
+      );
       throw new Error(
-        `Missing required variables: ${varValidation.errors.map((e) => e.path).join(', ')}`
+        `Missing required variables: ${varValidation.errors.map((e) => e.path).join(", ")}`,
       );
     }
 
-    console.log('[Engine] Starting execution...');
+    console.log("[Engine] Starting execution...");
     this.isStopped = false;
     this.isPaused = false;
-    this.context.status = 'executing';
+    this.context.status = "executing";
     this.context.startedAt = new Date();
 
-    this.emit('started', { type: 'started' } as PlaybookEngineEvent);
+    this.emit("started", { type: "started" } as PlaybookEngineEvent);
 
     // Start execution loop
-    console.log('[Engine] Calling executeSteps...');
+    console.log("[Engine] Calling executeSteps...");
     await this.executeSteps();
-    console.log('[Engine] executeSteps completed');
+    console.log("[Engine] executeSteps completed");
   }
 
   /**
    * Pause execution
    */
   pause(): void {
-    if (this.context.status === 'executing') {
+    if (this.context.status === "executing") {
       this.isPaused = true;
-      this.context.status = 'paused';
-      this.emit('paused', { type: 'paused' } as PlaybookEngineEvent);
+      this.context.status = "paused";
+      this.emit("paused", { type: "paused" } as PlaybookEngineEvent);
     }
   }
 
@@ -167,10 +169,10 @@ export class PlaybookEngine extends EventEmitter {
    * Resume execution
    */
   resume(): void {
-    if (this.context.status === 'paused') {
+    if (this.context.status === "paused") {
       this.isPaused = false;
-      this.context.status = 'executing';
-      this.emit('resumed', { type: 'resumed' } as PlaybookEngineEvent);
+      this.context.status = "executing";
+      this.emit("resumed", { type: "resumed" } as PlaybookEngineEvent);
 
       // Continue execution
       this.executeSteps().catch((error) => {
@@ -185,9 +187,9 @@ export class PlaybookEngine extends EventEmitter {
   stop(): void {
     this.isStopped = true;
     this.isPaused = false;
-    this.context.status = 'idle';
+    this.context.status = "idle";
     this.context.currentStepIndex = 0;
-    this.emit('stopped', { type: 'stopped' } as PlaybookEngineEvent);
+    this.emit("stopped", { type: "stopped" } as PlaybookEngineEvent);
   }
 
   /**
@@ -195,7 +197,7 @@ export class PlaybookEngine extends EventEmitter {
    * Triggers verification before proceeding to next step
    */
   async userAction(_data?: unknown): Promise<void> {
-    if (this.context.status !== 'waiting_user') {
+    if (this.context.status !== "waiting_user") {
       return;
     }
 
@@ -206,44 +208,47 @@ export class PlaybookEngine extends EventEmitter {
 
     // If step has verification and we have a page, verify first
     if (currentStep.verify && this.page) {
-      this.context.status = 'verifying';
-      this.emit('verifying', {
-        type: 'verifying',
+      this.context.status = "verifying";
+      this.emit("verifying", {
+        type: "verifying",
         stepIndex: this.context.currentStepIndex,
       } as PlaybookEngineEvent);
 
       try {
-        const verifyResult = await this.stepVerifier.verify(currentStep, this.page);
+        const verifyResult = await this.stepVerifier.verify(
+          currentStep,
+          this.page,
+        );
 
         if (verifyResult.success) {
           // Verification passed
-          this.emit('verify_success', {
-            type: 'verify_success',
+          this.emit("verify_success", {
+            type: "verify_success",
             stepIndex: this.context.currentStepIndex,
             result: verifyResult,
           } as PlaybookEngineEvent);
 
           // Proceed to next step
-          this.context.status = 'executing';
+          this.context.status = "executing";
           this.context.currentStepIndex++;
           this.executeSteps().catch((error) => {
             this.handleError(error);
           });
         } else {
           // Verification failed - emit event with guidance and stay on current step
-          this.emit('verify_failed', {
-            type: 'verify_failed',
+          this.emit("verify_failed", {
+            type: "verify_failed",
             stepIndex: this.context.currentStepIndex,
             result: verifyResult,
           } as PlaybookEngineEvent);
 
           // Return to waiting_user state so user can retry
-          this.context.status = 'waiting_user';
+          this.context.status = "waiting_user";
         }
       } catch (error) {
         // Verification error - log but proceed anyway
-        console.error('Verification error:', error);
-        this.context.status = 'executing';
+        console.error("Verification error:", error);
+        this.context.status = "executing";
         this.context.currentStepIndex++;
         this.executeSteps().catch((err) => {
           this.handleError(err);
@@ -251,7 +256,7 @@ export class PlaybookEngine extends EventEmitter {
       }
     } else {
       // No verification required - proceed directly
-      this.context.status = 'executing';
+      this.context.status = "executing";
       this.context.currentStepIndex++;
       this.executeSteps().catch((error) => {
         this.handleError(error);
@@ -263,27 +268,16 @@ export class PlaybookEngine extends EventEmitter {
    * Skip verification and proceed to next step (manual override)
    */
   skipVerification(): void {
-    if (this.context.status === 'waiting_user' || this.context.status === 'verifying') {
-      this.context.status = 'executing';
+    if (
+      this.context.status === "waiting_user" ||
+      this.context.status === "verifying"
+    ) {
+      this.context.status = "executing";
       this.context.currentStepIndex++;
       this.executeSteps().catch((error) => {
         this.handleError(error);
       });
     }
-  }
-
-  /**
-   * Get step verifier status
-   */
-  getVerifierStatus(): { enabled: boolean; failCount: number; maxRetries: number } {
-    return this.stepVerifier.getVisionStatus();
-  }
-
-  /**
-   * Reset step verifier (enable Vision again)
-   */
-  resetVerifier(): void {
-    this.stepVerifier.enableVision();
   }
 
   /**
@@ -330,12 +324,12 @@ export class PlaybookEngine extends EventEmitter {
    * Execute steps in sequence
    */
   private async executeSteps(): Promise<void> {
-    console.log('[Engine] executeSteps() called');
+    console.log("[Engine] executeSteps() called");
     if (!this.playbook) return;
 
-    console.log('[Engine] Total steps:', this.playbook.steps.length);
-    console.log('[Engine] Current step index:', this.context.currentStepIndex);
-    console.log('[Engine] Has stepExecutor:', !!this.stepExecutor);
+    console.log("[Engine] Total steps:", this.playbook.steps.length);
+    console.log("[Engine] Current step index:", this.context.currentStepIndex);
+    console.log("[Engine] Has stepExecutor:", !!this.stepExecutor);
 
     while (
       this.context.currentStepIndex < this.playbook.steps.length &&
@@ -343,11 +337,11 @@ export class PlaybookEngine extends EventEmitter {
       !this.isPaused
     ) {
       const step = this.playbook.steps[this.context.currentStepIndex];
-      console.log('[Engine] Executing step:', step.id, step.action);
+      console.log("[Engine] Executing step:", step.id, step.action);
 
       // Emit step started event
-      this.emit('step_started', {
-        type: 'step_started',
+      this.emit("step_started", {
+        type: "step_started",
         stepIndex: this.context.currentStepIndex,
         step,
       } as PlaybookEngineEvent);
@@ -357,17 +351,17 @@ export class PlaybookEngine extends EventEmitter {
         const result = await this.executeStep(step);
 
         // Emit step completed event
-        this.emit('step_completed', {
-          type: 'step_completed',
+        this.emit("step_completed", {
+          type: "step_completed",
           stepIndex: this.context.currentStepIndex,
           result,
         } as PlaybookEngineEvent);
 
         // Check if we need to wait for user
         if (result.waitForUser) {
-          this.context.status = 'waiting_user';
-          this.emit('waiting_user', {
-            type: 'waiting_user',
+          this.context.status = "waiting_user";
+          this.emit("waiting_user", {
+            type: "waiting_user",
             stepIndex: this.context.currentStepIndex,
             message: step.message,
           } as PlaybookEngineEvent);
@@ -380,16 +374,16 @@ export class PlaybookEngine extends EventEmitter {
         // Handle step error
         const execError: ExecutionError = {
           stepId: step.id,
-          message: error instanceof Error ? error.message : 'Unknown error',
+          message: error instanceof Error ? error.message : "Unknown error",
           timestamp: new Date(),
         };
         this.context.errors.push(execError);
 
         // Handle based on step's on_error setting
-        if (step.on_error === 'skip') {
+        if (step.on_error === "skip") {
           this.context.currentStepIndex++;
           continue;
-        } else if (step.on_error === 'retry') {
+        } else if (step.on_error === "retry") {
           // Simple retry once
           try {
             await this.executeStep(step);
@@ -412,9 +406,9 @@ export class PlaybookEngine extends EventEmitter {
       !this.isPaused &&
       this.context.currentStepIndex >= this.playbook.steps.length
     ) {
-      this.context.status = 'completed';
+      this.context.status = "completed";
       this.context.completedAt = new Date();
-      this.emit('completed', { type: 'completed' } as PlaybookEngineEvent);
+      this.emit("completed", { type: "completed" } as PlaybookEngineEvent);
     }
   }
 
@@ -423,15 +417,18 @@ export class PlaybookEngine extends EventEmitter {
    */
   private async executeStep(step: PlaybookStep): Promise<StepResult> {
     // Interpolate variables in step
-    const interpolatedStep = this.interpolator.interpolateStep(step, this.context.variables);
+    const interpolatedStep = this.interpolator.interpolateStep(
+      step,
+      this.context.variables,
+    );
 
     // Handle condition steps
-    if (step.action === 'condition') {
+    if (step.action === "condition") {
       return this.executeConditionStep(interpolatedStep);
     }
 
     // Handle loop steps
-    if (step.action === 'loop') {
+    if (step.action === "loop") {
       return this.executeLoopStep(interpolatedStep);
     }
 
@@ -442,7 +439,7 @@ export class PlaybookEngine extends EventEmitter {
 
     // Default behavior when no executor is set
     // This is useful for testing and when running without Playwright
-    if (step.wait_for === 'user') {
+    if (step.wait_for === "user") {
       return { success: true, waitForUser: true };
     }
 
@@ -455,12 +452,15 @@ export class PlaybookEngine extends EventEmitter {
    */
   private async executeConditionStep(step: PlaybookStep): Promise<StepResult> {
     if (!step.condition) {
-      return { success: false, error: 'Condition step missing condition expression' };
+      return {
+        success: false,
+        error: "Condition step missing condition expression",
+      };
     }
 
     const conditionResult = this.interpolator.evaluateCondition(
       step.condition,
-      this.context.variables
+      this.context.variables,
     );
 
     const stepsToExecute = conditionResult ? step.then : step.else;
@@ -485,18 +485,21 @@ export class PlaybookEngine extends EventEmitter {
    */
   private async executeLoopStep(step: PlaybookStep): Promise<StepResult> {
     if (!step.steps || !step.variable) {
-      return { success: false, error: 'Loop step missing steps or variable' };
+      return { success: false, error: "Loop step missing steps or variable" };
     }
 
     const items = this.context.variables[step.variable];
     if (!Array.isArray(items)) {
-      return { success: false, error: `Variable ${step.variable} is not an array` };
+      return {
+        success: false,
+        error: `Variable ${step.variable} is not an array`,
+      };
     }
 
     for (const [index, item] of items.entries()) {
       // Set loop variables
-      this.context.variables['_item'] = item;
-      this.context.variables['_index'] = index;
+      this.context.variables["_item"] = item;
+      this.context.variables["_index"] = index;
 
       for (const nestedStep of step.steps) {
         const result = await this.executeStep(nestedStep);
@@ -510,8 +513,8 @@ export class PlaybookEngine extends EventEmitter {
     }
 
     // Clean up loop variables
-    delete this.context.variables['_item'];
-    delete this.context.variables['_index'];
+    delete this.context.variables["_item"];
+    delete this.context.variables["_index"];
 
     return { success: true };
   }
@@ -521,15 +524,18 @@ export class PlaybookEngine extends EventEmitter {
    */
   private handleError(error: unknown): void {
     const execError: ExecutionError = {
-      stepId: this.getCurrentStep()?.id || 'unknown',
-      message: error instanceof Error ? error.message : 'Unknown error',
+      stepId: this.getCurrentStep()?.id || "unknown",
+      message: error instanceof Error ? error.message : "Unknown error",
       timestamp: new Date(),
     };
 
     this.context.errors.push(execError);
-    this.context.status = 'error';
+    this.context.status = "error";
 
-    this.emit('error', { type: 'error', error: execError } as PlaybookEngineEvent);
+    this.emit("error", {
+      type: "error",
+      error: execError,
+    } as PlaybookEngineEvent);
   }
 
   // Override EventEmitter methods for proper typing
