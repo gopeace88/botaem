@@ -20,7 +20,8 @@
     "benchmark": "node -r esbuild-runner/register benchmarks/playbook-execution.bench.ts",
     "benchmark:startup": "node -r esbuild-runner/register benchmarks/startup-time.bench.ts",
     "benchmark:all": "pnpm run benchmark && pnpm run benchmark:startup",
-    "validate-playbooks": "node -r esbuild-runner/register scripts/validate-playbooks.ts"
+    "validate-playbooks": "node -r esbuild-runner/register scripts/validate-playbooks.ts",
+    "validate-playbooks:local": "node -r esbuild-runner/register scripts/validate-playbooks-local.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.2",
@@ -43,7 +44,7 @@
   "devDependencies": {
     "@anthropic-ai/claude-agent-sdk": "0.1.0",
     "@types/js-yaml": "^4.0.9",
-    "@types/node": "^20.10.6",
+    "@types/node": "^20.19.27",
     "@types/react": "^18.2.46",
     "@types/react-dom": "^18.2.18",
     "@typescript-eslint/eslint-plugin": "^6.17.0",
@@ -54,6 +55,7 @@
     "electron-builder": "^24.9.1",
     "electron-updater": "^6.7.3",
     "electron-vite": "^2.0.0",
+    "esbuild-runner": "^2.2.2",
     "eslint": "^8.56.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -62,6 +64,7 @@
     "postcss": "^8.4.33",
     "supabase": "^2.65.6",
     "tailwindcss": "^3.4.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
     "vite": "^5.0.10",
     "zod": "^4.3.5"
