@@ -38,10 +38,10 @@ const createWindow = (): void => {
     frame: false,
     alwaysOnTop: true,
     webPreferences: {
+      sandbox: true,
       preload: path.join(__dirname, "../preload/preload.js"),
       contextIsolation: true,
       nodeIntegration: false,
-      sandbox: false,
     },
   });
 

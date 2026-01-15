@@ -62,6 +62,12 @@ const electronAPI = {
       'botame:update-issue-status',
       'botame:analyze-issue',
       'botame:apply-fix',
+      // Credentials (API Key Management)
+      'credentials:set',
+      'credentials:get',
+      'credentials:delete',
+      'credentials:has',
+      'credentials:validate',
     ];
 
     if (validChannels.includes(channel)) {

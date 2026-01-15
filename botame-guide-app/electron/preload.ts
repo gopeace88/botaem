@@ -58,7 +58,13 @@ type IpcChannel =
   | 'recording:savePlaybook'
   // Supabase channels
   | 'supabase:initialize'
-  | 'supabase:chat';
+  | 'supabase:chat'
+  // Credentials channels
+  | 'credentials:set'
+  | 'credentials:get'
+  | 'credentials:delete'
+  | 'credentials:has'
+  | 'credentials:validate';
 
 type IpcEventChannel =
   | 'playbook:step-changed'
