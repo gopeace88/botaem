@@ -2,11 +2,35 @@
 
 > 사전 지식 기반 지능형 업무 자동화 가이드
 
+## 🎉 v1.0.0 릴리스 (2025-01-15)
+
+보탬e 관리자의 첫 번째 공식 릴리스가 출시되었습니다!
+
+### 다운로드
+
+- [Windows (.exe)](https://github.com/gopeace88/botaem/releases/download/v1.0.0/보탬e-관리자-Setup-1.0.0.exe)
+- [macOS (.dmg)](https://github.com/gopeace88/botaem/releases/download/v1.0.0/보탬e-관리자-1.0.0.dmg)
+- [Linux (.AppImage)](https://github.com/gopeace88/botaem/releases/download/v1.0.0/보탬e-관리자-1.0.0.AppImage)
+
+### 주요 기능
+
+- ✅ 플레이북 녹화 및 실행
+- ✅ 자동 고침 (Self-Healing) 시스템
+- ✅ 클라우드 동기화 (Supabase)
+- ✅ 오프라인 모드 지원
+- ✅ 자동 업데이트
+- ✅ 보안 API Key 저장소
+
+자세한 내용은 [RELEASE_NOTES_v1.0.0.md](RELEASE_NOTES_v1.0.0.md)를 참조하세요.
+
 ## 문서 구조
 
 ```
 보탬e/
 ├── README.md                    # 이 파일 (진입점)
+├── CHANGELOG.md                 # 변경 로그
+├── RELEASE_NOTES_v1.0.0.md     # v1.0.0 릴리스 노트
+├── RELEASE_CHECKLIST.md        # 릴리스 체크리스트
 ├── Docs/
 │   ├── MASTER_DESIGN.md        # ★ 핵심 설계 문서 (모든 개념 통합)
 │   ├── PLAYBOOK_SYNC_DESIGN.md # 플레이북 동기화 상세
@@ -57,3 +81,37 @@ npm run dev
 - **Browser Automation**: Playwright
 - **Backend**: Supabase (Auth, DB, Storage)
 - **AI**: Claude API
+
+## 개발
+
+```bash
+# 의존성 설치
+pnpm install
+
+# 타입 체크
+pnpm run typecheck
+
+# 린트
+pnpm run lint
+
+# 테스트
+pnpm run test
+
+# E2E 테스트
+pnpm run test:e2e
+
+# 빌드
+pnpm run build
+```
+
+## 릴리스
+
+릴리스 절차는 [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md)를 참조하세요.
+
+## 라이선스
+
+MIT License
+
+## 기여
+
+기여하고 싶으시다면 [GitHub Issues](https://github.com/gopeace88/botaem/issues)나 [GitHub Discussions](https://github.com/gopeace88/botaem/discussions)를 참여해주세요.
