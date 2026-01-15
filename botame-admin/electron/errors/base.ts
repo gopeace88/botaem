@@ -45,6 +45,9 @@ export class BaseError extends Error {
  * User can retry the operation
  */
 export class RecoverableError extends BaseError {
+  // Inherits all functionality from BaseError
+}
+
 /**
  * Fatal Error
  * Application cannot continue

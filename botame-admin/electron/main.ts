@@ -13,6 +13,7 @@ import { PlaybookRunnerService } from './services/playbook-runner.service';
 import { BrowserService } from './services/browser.service';
 import { getAutoUpdateService } from './services/auto-update.service';
 import { getErrorHandler } from './errors/handler';
+import { getCredentialsService } from './services/credentials.service';
 import { FatalError } from './errors/base';
 import { Playbook } from '../shared/types';
 import { configLoader } from '../shared/config';
@@ -441,7 +442,6 @@ function setupIpcHandlers() {
 
 
   // Credentials - API Key Management
-  const { getCredentialsService } = require('./services/credentials.service');
   const credentialsService = getCredentialsService();
 
   ipcMain.handle('credentials:set', async (_event: IpcMainInvokeEvent, service: string, key: string) => {
