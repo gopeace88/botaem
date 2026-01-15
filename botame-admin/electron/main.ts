@@ -2,7 +2,7 @@
  * Electron Main Process - botame-admin
  */
 
-import { app, BrowserWindow, ipcMain } from 'electron';
+import { app, BrowserWindow, ipcMain, IpcMainInvokeEvent } from 'electron';
 import { join } from 'path';
 import { config } from 'dotenv';
 import { PlaybookService } from './services/playbook.service';
@@ -406,6 +406,40 @@ function setupIpcHandlers() {
     return configLoader.getCategories();
   });
 }
+
+
+  // Credentials - API Key Management
+  const { getCredentialsService } = require('./services/credentials.service');
+  const credentialsService = getCredentialsService();
+
+  ipcMain.handle('credentials:set', async (_event: IpcMainInvokeEvent, service: string, key: string) => {
+    return await credentialsService.setApiKey(service as any, key);
+  });
+
+  ipcMain.handle('credentials:get', async (_event: IpcMainInvokeEvent, service: string) => {
+    const key = await credentialsService.getApiKey(service as any);
+    return {
+      success: key !== null,
+      key,
+    };
+  });
+
+  ipcMain.handle('credentials:delete', async (_event: IpcMainInvokeEvent, service: string) => {
+    return await credentialsService.deleteApiKey(service as any);
+  });
+
+  ipcMain.handle('credentials:has', async (_event: IpcMainInvokeEvent, service: string) => {
+    const hasKey = await credentialsService.hasApiKey(service as any);
+    return {
+      success: true,
+      hasKey,
+    };
+  });
+
+  ipcMain.handle('credentials:validate', async (_event: IpcMainInvokeEvent, service: string, key: string) => {
+    const result = credentialsService.validateApiKeyFormat(service as any, key);
+    return result;
+  });
 
 app.whenReady().then(createWindow);
 

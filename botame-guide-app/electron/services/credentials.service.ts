@@ -42,15 +42,11 @@ export class CredentialsService {
     try {
       const encryptedKey = safeStorage.encryptString(key);
       
-      // Store in user data using localStorage pattern
-      // In production, use a proper key-value store
-      const storageKey = this.getStorageKey(service);
-      
-      // For now, use a simple file-based approach
+      // Store in user data using file-based approach
       // TODO: Use electron-store or similar for better persistence
       const { app } = await import('electron');
       const { join } = await import('path');
-      const { writeFile, unlink } = await import('fs/promises');
+      const { writeFile } = await import('fs/promises');
       
       const credentialsPath = join(app.getPath('userData'), 'credentials');
       const credentialFile = join(credentialsPath, `${service}.key`);
@@ -147,13 +143,6 @@ export class CredentialsService {
   async hasApiKey(service: CredentialService): Promise<boolean> {
     const key = await this.getApiKey(service);
     return key !== null && key.length > 0;
-  }
-
-  /**
-   * Get storage key for credential file
-   */
-  private getStorageKey(service: CredentialService): string {
-    return `credential_${service}`;
   }
 
   /**

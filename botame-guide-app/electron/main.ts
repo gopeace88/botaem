@@ -269,6 +269,34 @@ const initializeHandlers = async (): Promise<void> => {
   chatHandler.updatePlaybooks(playbooks);
 
   console.log(`Loaded ${playbooks.length} playbooks`);
+
+  // Initialize Credentials Service and register IPC handlers
+  const { getCredentialsService } = require('./services/credentials.service');
+  const credentialsService = getCredentialsService();
+
+  const { ipcMain } = require('electron');
+  
+  ipcMain.handle('credentials:set', async (_event, service, key) => {
+    return await credentialsService.setApiKey(service, key);
+  });
+
+  ipcMain.handle('credentials:get', async (_event, service) => {
+    const key = await credentialsService.getApiKey(service);
+    return { success: key !== null, key };
+  });
+
+  ipcMain.handle('credentials:delete', async (_event, service) => {
+    return await credentialsService.deleteApiKey(service);
+  });
+
+  ipcMain.handle('credentials:has', async (_event, service) => {
+    const hasKey = await credentialsService.hasApiKey(service);
+    return { success: true, hasKey };
+  });
+
+  ipcMain.handle('credentials:validate', async (_event, service, key) => {
+    return credentialsService.validateApiKeyFormat(service, key);
+  });
 };
 
 const cleanupHandlers = (): void => {
