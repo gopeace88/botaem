@@ -32,6 +32,10 @@ app.commandLine.appendSwitch('ozone-platform', 'x11');
 app.commandLine.appendSwitch('gtk-version', '3');
 app.commandLine.appendSwitch('enable-wayland-ime');
 
+// Disable GPU (WSL2 compatibility)
+app.commandLine.appendSwitch('disable-gpu');
+app.commandLine.appendSwitch('disable-software-rasterizer');
+
 let mainWindow: BrowserWindow | null = null;
 let playbookService: PlaybookService;
 let recordingService: RecordingService;

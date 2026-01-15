@@ -1,0 +1,30 @@
+{
+  "id": "990c6a15-4d49-4fea-bdb6-2d87465ea76d",
+  "playbook_id": "atomic-menu-member",
+  "name": "회원관리 메뉴 클릭",
+  "description": "",
+  "category": "회원관리",
+  "difficulty": "보통",
+  "steps": [
+    {
+      "id": "1",
+      "action": "click",
+      "message": "회원관리 메뉴 클릭",
+      "selector": "text=회원관리"
+    }
+  ],
+  "status": "active",
+  "is_published": true,
+  "version": "1.0.0",
+  "created_at": "2025-12-05T14:11:17.522447+00:00",
+  "updated_at": "2025-12-05T14:11:17.522447+00:00",
+  "level": 1,
+  "variables": {},
+  "estimated_time": null,
+  "keywords": [],
+  "start_url": "https://www.losims.go.kr/lss.do",
+  "metadata": {
+    "aliases": [],
+    "startUrl": ""
+  }
+}

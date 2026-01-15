@@ -1,0 +1,30 @@
+{
+  "id": "be33fd22-60c7-465d-a9c8-7a659261e37c",
+  "playbook_id": "atomic-submenu-execution-transfer",
+  "name": "집행이체관리 서브메뉴 클릭",
+  "description": "",
+  "category": "집행관리",
+  "difficulty": "보통",
+  "steps": [
+    {
+      "id": "1",
+      "action": "click",
+      "message": "집행이체관리 메뉴 클릭",
+      "selector": "a:has-text(\"집행이체관리\")"
+    }
+  ],
+  "status": "active",
+  "is_published": true,
+  "version": "1.0.0",
+  "created_at": "2025-12-05T14:11:13.41794+00:00",
+  "updated_at": "2025-12-05T14:11:13.41794+00:00",
+  "level": 1,
+  "variables": {},
+  "estimated_time": null,
+  "keywords": [],
+  "start_url": "https://www.losims.go.kr/lss.do",
+  "metadata": {
+    "aliases": [],
+    "startUrl": ""
+  }
+}

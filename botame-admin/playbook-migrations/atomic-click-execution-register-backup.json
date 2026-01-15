@@ -1,0 +1,30 @@
+{
+  "id": "bbc0ab3d-eb87-44e6-a769-bd22d9e3472e",
+  "playbook_id": "atomic-click-execution-register",
+  "name": "집행등록 버튼 클릭",
+  "description": "",
+  "category": "집행관리",
+  "difficulty": "보통",
+  "steps": [
+    {
+      "id": "1",
+      "action": "click",
+      "message": "집행등록 버튼 클릭",
+      "selector": "button:has-text(\"집행등록\")"
+    }
+  ],
+  "status": "active",
+  "is_published": true,
+  "version": "1.0.0",
+  "created_at": "2025-12-05T14:11:13.82462+00:00",
+  "updated_at": "2025-12-05T14:11:13.82462+00:00",
+  "level": 1,
+  "variables": {},
+  "estimated_time": null,
+  "keywords": [],
+  "start_url": "https://www.losims.go.kr/lss.do",
+  "metadata": {
+    "aliases": [],
+    "startUrl": ""
+  }
+}

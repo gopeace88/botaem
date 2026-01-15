@@ -1,0 +1,43 @@
+{
+  "id": "23272403-dc7b-4283-8623-9e8bdbef2316",
+  "playbook_id": "func-navigate-transfer",
+  "name": "집행이체관리 화면 이동",
+  "description": "집행관리 > 집행이체관리 화면으로 이동합니다.",
+  "category": "집행관리",
+  "difficulty": "보통",
+  "steps": [
+    {
+      "id": "1",
+      "action": "click",
+      "message": "집행관리 메뉴 클릭",
+      "selector": "text=집행관리"
+    },
+    {
+      "id": "2",
+      "action": "click",
+      "message": "집행이체관리 서브메뉴 클릭",
+      "selector": "a:has-text(\"집행이체관리\")"
+    },
+    {
+      "id": "3",
+      "action": "wait",
+      "message": "화면 로딩 대기",
+      "timeout": 10000,
+      "selector": ".cl-loading:hidden"
+    }
+  ],
+  "status": "active",
+  "is_published": true,
+  "version": "1.0.0",
+  "created_at": "2025-12-05T14:11:19.918544+00:00",
+  "updated_at": "2025-12-05T14:11:19.918544+00:00",
+  "level": 2,
+  "variables": {},
+  "estimated_time": null,
+  "keywords": [],
+  "start_url": "https://www.losims.go.kr/lss.do",
+  "metadata": {
+    "aliases": [],
+    "startUrl": ""
+  }
+}

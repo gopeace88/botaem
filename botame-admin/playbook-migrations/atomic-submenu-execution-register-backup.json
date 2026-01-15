@@ -1,0 +1,30 @@
+{
+  "id": "6e3098b0-a1c9-4bfa-b941-a0a409f45b79",
+  "playbook_id": "atomic-submenu-execution-register",
+  "name": "집행등록 서브메뉴 클릭",
+  "description": "",
+  "category": "집행관리",
+  "difficulty": "보통",
+  "steps": [
+    {
+      "id": "1",
+      "action": "click",
+      "message": "집행관리(집행등록) 메뉴 클릭",
+      "selector": "a:has-text(\"집행관리\"):not(:has-text(\"이체\"))"
+    }
+  ],
+  "status": "active",
+  "is_published": true,
+  "version": "1.0.0",
+  "created_at": "2025-12-05T14:11:13.22898+00:00",
+  "updated_at": "2025-12-05T14:11:13.22898+00:00",
+  "level": 1,
+  "variables": {},
+  "estimated_time": null,
+  "keywords": [],
+  "start_url": "https://www.losims.go.kr/lss.do",
+  "metadata": {
+    "aliases": [],
+    "startUrl": ""
+  }
+}

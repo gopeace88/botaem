@@ -1,0 +1,31 @@
+{
+  "id": "bb145c78-bfb2-43f1-bc0a-e7fad62026b5",
+  "playbook_id": "atomic-type-account-number",
+  "name": "계좌번호 입력",
+  "description": "",
+  "category": "집행관리",
+  "difficulty": "보통",
+  "steps": [
+    {
+      "id": "1",
+      "value": "{{account_number}}",
+      "action": "type",
+      "message": "계좌번호 입력",
+      "selector": "#accountNumber, input[aria-label*=\"계좌\"]"
+    }
+  ],
+  "status": "active",
+  "is_published": true,
+  "version": "1.0.0",
+  "created_at": "2025-12-05T14:11:15.970781+00:00",
+  "updated_at": "2025-12-05T14:11:15.970781+00:00",
+  "level": 1,
+  "variables": {},
+  "estimated_time": null,
+  "keywords": [],
+  "start_url": "https://www.losims.go.kr/lss.do",
+  "metadata": {
+    "aliases": [],
+    "startUrl": ""
+  }
+}

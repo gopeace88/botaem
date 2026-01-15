@@ -230,7 +230,7 @@ class PlaybookValidator {
   async migrate(outputDir: string): Promise<MigrationResult[]> {
     const migrationResults: MigrationResult[] = [];
     const playbooksToMigrate = this.results.filter(
-      (r) => r.needsMigration && r.valid,
+      (r) => r.needsMigration,
     );
 
     console.log(`\n🔄 Migrating ${playbooksToMigrate.length} playbooks...\n`);
@@ -317,21 +317,39 @@ class PlaybookValidator {
   private migratePlaybook(playbook: any): Playbook {
     const migrated: any = { ...playbook };
 
-    // 1. Ensure metadata structure
+    // 1. Ensure metadata structure (preserve existing fields)
     if (!migrated.metadata) {
       migrated.metadata = {};
     }
 
-    // Add aliases if missing
-    if (!migrated.metadata.aliases) {
-      // Generate aliases from name
-      migrated.metadata.aliases = this.generateAliases(migrated.name);
+    // Build complete metadata object from both DB columns and metadata JSONB
+    const completeMetadata: any = {
+      // From metadata JSONB (if exists)
+      ...(typeof migrated.metadata === 'object' ? migrated.metadata : {}),
+      // From DB columns (take precedence)
+      id: migrated.playbook_id || migrated.metadata?.id,
+      name: migrated.name || migrated.metadata?.name,
+      description: migrated.description || migrated.metadata?.description,
+      category: migrated.category || migrated.metadata?.category,
+      difficulty: migrated.difficulty || migrated.metadata?.difficulty,
+      version: migrated.version || migrated.metadata?.version || '1.0.0',
+      keywords: migrated.keywords || migrated.metadata?.keywords || [],
+      estimatedTime: migrated.estimated_time || migrated.metadata?.estimatedTime,
+      estimated_time: migrated.estimated_time || migrated.metadata?.estimated_time,
+      createdAt: migrated.created_at || migrated.metadata?.createdAt,
+      updatedAt: migrated.updated_at || migrated.metadata?.updatedAt,
+      last_updated: migrated.updated_at || migrated.metadata?.last_updated,
+      startUrl: migrated.start_url || migrated.metadata?.startUrl,
+      start_url: migrated.start_url || migrated.metadata?.start_url,
+      author: migrated.author || migrated.metadata?.author,
+    };
+
+    // Add aliases if missing (generate from name)
+    if (!completeMetadata.aliases) {
+      completeMetadata.aliases = this.generateAliases(completeMetadata.name);
     }
 
-    // Handle startUrl/start_url
-    if (migrated.metadata.startUrl && !migrated.metadata.start_url) {
-      migrated.metadata.start_url = migrated.metadata.startUrl;
-    }
+    migrated.metadata = completeMetadata;
 
     // 2. Migrate steps
     if (migrated.steps && Array.isArray(migrated.steps)) {

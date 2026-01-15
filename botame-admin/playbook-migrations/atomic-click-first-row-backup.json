@@ -1,0 +1,35 @@
+{
+  "id": "a8482e39-485d-4a05-9445-2520f59110d7",
+  "playbook_id": "atomic-click-first-row",
+  "name": "첫번째 행 선택",
+  "description": "",
+  "category": "공통",
+  "difficulty": "보통",
+  "steps": [
+    {
+      "id": "1",
+      "action": "click",
+      "message": "첫번째 행 선택",
+      "selector": "tr:nth-child(1) td, .grid-row:first-child",
+      "enhancedFallbacks": {
+        "textSelectors": [],
+        "nearbyLabelSelectors": [],
+        "parentChainSelectors": []
+      }
+    }
+  ],
+  "status": "active",
+  "is_published": true,
+  "version": "1.0.0",
+  "created_at": "2025-12-05T14:11:18.861406+00:00",
+  "updated_at": "2026-01-01T18:40:31.11+00:00",
+  "level": 1,
+  "variables": {},
+  "estimated_time": null,
+  "keywords": [],
+  "start_url": "https://www.losims.go.kr/lss.do",
+  "metadata": {
+    "aliases": [],
+    "startUrl": ""
+  }
+}

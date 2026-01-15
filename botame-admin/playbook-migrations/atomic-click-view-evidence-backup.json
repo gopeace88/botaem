@@ -1,0 +1,30 @@
+{
+  "id": "a713db5d-f220-4844-8ea1-607033b79a6b",
+  "playbook_id": "atomic-click-view-evidence",
+  "name": "증빙내역조회 버튼 클릭",
+  "description": "",
+  "category": "집행관리",
+  "difficulty": "보통",
+  "steps": [
+    {
+      "id": "1",
+      "action": "click",
+      "message": "증빙내역조회 버튼 클릭",
+      "selector": "button:has-text(\"증빙내역조회\"), button:has-text(\"내역조회\")"
+    }
+  ],
+  "status": "active",
+  "is_published": true,
+  "version": "1.0.0",
+  "created_at": "2025-12-05T14:11:14.612732+00:00",
+  "updated_at": "2025-12-05T14:11:14.612732+00:00",
+  "level": 1,
+  "variables": {},
+  "estimated_time": null,
+  "keywords": [],
+  "start_url": "https://www.losims.go.kr/lss.do",
+  "metadata": {
+    "aliases": [],
+    "startUrl": ""
+  }
+}

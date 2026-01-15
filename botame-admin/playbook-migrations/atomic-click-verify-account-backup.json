@@ -1,0 +1,30 @@
+{
+  "id": "a95103ee-92a8-4d95-bf43-c5f4239fafd6",
+  "playbook_id": "atomic-click-verify-account",
+  "name": "계좌확인 버튼 클릭",
+  "description": "",
+  "category": "집행관리",
+  "difficulty": "보통",
+  "steps": [
+    {
+      "id": "1",
+      "action": "click",
+      "message": "계좌(예금주)확인 버튼 클릭",
+      "selector": "button:has-text(\"계좌확인\"), button:has-text(\"예금주확인\")"
+    }
+  ],
+  "status": "active",
+  "is_published": true,
+  "version": "1.0.0",
+  "created_at": "2025-12-05T14:11:16.180584+00:00",
+  "updated_at": "2025-12-05T14:11:16.180584+00:00",
+  "level": 1,
+  "variables": {},
+  "estimated_time": null,
+  "keywords": [],
+  "start_url": "https://www.losims.go.kr/lss.do",
+  "metadata": {
+    "aliases": [],
+    "startUrl": ""
+  }
+}

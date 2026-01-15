@@ -1,0 +1,123 @@
+{
+  "id": "9eeaf136-7815-4405-a5dd-92472829cb6f",
+  "playbook_id": "scenario-settlement-close",
+  "name": "집행마감 시나리오",
+  "description": "수행사업의 집행을 마감합니다.",
+  "category": "정산관리",
+  "difficulty": "보통",
+  "steps": [
+    {
+      "id": "1",
+      "value": "https://www.losims.go.kr/lss.do",
+      "action": "navigate",
+      "message": "보탬e 업무시스템 접속"
+    },
+    {
+      "id": "2",
+      "action": "click",
+      "message": "아이디 로그인 탭 선택",
+      "selector": "text=아이디 로그인"
+    },
+    {
+      "id": "3",
+      "value": "{{user_id}}",
+      "action": "type",
+      "message": "사용자 ID 입력",
+      "selector": "input[type=text].cl-text"
+    },
+    {
+      "id": "4",
+      "value": "{{password}}",
+      "action": "type",
+      "message": "비밀번호 입력",
+      "selector": "input[type=password].cl-text"
+    },
+    {
+      "id": "5",
+      "action": "click",
+      "message": "로그인 버튼 클릭",
+      "selector": ".btn-login:visible >> text=로그인"
+    },
+    {
+      "id": "6",
+      "action": "click",
+      "message": "정산관리 메뉴 클릭",
+      "selector": "text=정산관리"
+    },
+    {
+      "id": "7",
+      "action": "click",
+      "message": "집행마감 메뉴 클릭",
+      "selector": "a:has-text(\"집행마감\")"
+    },
+    {
+      "id": "8",
+      "action": "wait",
+      "message": "화면 로딩 대기",
+      "timeout": 10000,
+      "selector": ".cl-loading:hidden"
+    },
+    {
+      "id": "9",
+      "value": "{{year}}",
+      "action": "select",
+      "message": "회계연도 선택",
+      "selector": "[aria-label*=\"연도\"], #fiscalYear"
+    },
+    {
+      "id": "10",
+      "action": "click",
+      "message": "조회 버튼 클릭",
+      "selector": "button:has-text(\"조회\")"
+    },
+    {
+      "id": "11",
+      "action": "guide",
+      "message": "마감할 수행사업을 선택하세요"
+    },
+    {
+      "id": "12",
+      "action": "click",
+      "message": "집행마감 버튼 클릭",
+      "selector": "button:has-text(\"집행마감\")"
+    },
+    {
+      "id": "13",
+      "action": "click",
+      "message": "확인 버튼 클릭",
+      "selector": "button:has-text(\"확인\")"
+    }
+  ],
+  "status": "active",
+  "is_published": true,
+  "version": "1.0.0",
+  "created_at": "2025-12-05T14:11:22.479625+00:00",
+  "updated_at": "2025-12-05T14:11:22.479625+00:00",
+  "level": 3,
+  "variables": {
+    "year": {
+      "type": "string",
+      "label": "회계연도",
+      "default": "2024",
+      "required": true
+    },
+    "user_id": {
+      "type": "string",
+      "label": "사용자 ID",
+      "required": true
+    },
+    "password": {
+      "type": "string",
+      "label": "비밀번호",
+      "secret": true,
+      "required": true
+    }
+  },
+  "estimated_time": null,
+  "keywords": [],
+  "start_url": "https://www.losims.go.kr/lss.do",
+  "metadata": {
+    "aliases": [],
+    "startUrl": ""
+  }
+}

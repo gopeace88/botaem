@@ -1,0 +1,30 @@
+{
+  "id": "f9302c1b-f85c-4873-946e-fd20986d2924",
+  "playbook_id": "atomic-submenu-report",
+  "name": "실적보고서 서브메뉴 클릭",
+  "description": "",
+  "category": "정산관리",
+  "difficulty": "보통",
+  "steps": [
+    {
+      "id": "1",
+      "action": "click",
+      "message": "실적보고서 메뉴 클릭",
+      "selector": "a:has-text(\"실적보고서\")"
+    }
+  ],
+  "status": "active",
+  "is_published": true,
+  "version": "1.0.0",
+  "created_at": "2025-12-05T14:11:16.95456+00:00",
+  "updated_at": "2025-12-05T14:11:16.95456+00:00",
+  "level": 1,
+  "variables": {},
+  "estimated_time": null,
+  "keywords": [],
+  "start_url": "https://www.losims.go.kr/lss.do",
+  "metadata": {
+    "aliases": [],
+    "startUrl": ""
+  }
+}

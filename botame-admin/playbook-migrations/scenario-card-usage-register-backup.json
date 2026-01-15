@@ -1,0 +1,142 @@
+{
+  "id": "81f4a147-7e4c-4e31-88d6-b899e384c89a",
+  "playbook_id": "scenario-card-usage-register",
+  "name": "카드사용내역 집행등록 시나리오",
+  "description": "로그인부터 카드사용내역 집행등록까지 전체 과정을 수행합니다.",
+  "category": "집행관리",
+  "difficulty": "보통",
+  "steps": [
+    {
+      "id": "1",
+      "value": "https://www.losims.go.kr/lss.do",
+      "action": "navigate",
+      "message": "보탬e 업무시스템 접속"
+    },
+    {
+      "id": "2",
+      "action": "click",
+      "message": "아이디 로그인 탭 선택",
+      "selector": "text=아이디 로그인"
+    },
+    {
+      "id": "3",
+      "value": "{{user_id}}",
+      "action": "type",
+      "message": "사용자 ID 입력",
+      "selector": "input[type=text].cl-text"
+    },
+    {
+      "id": "4",
+      "value": "{{password}}",
+      "action": "type",
+      "message": "비밀번호 입력",
+      "selector": "input[type=password].cl-text"
+    },
+    {
+      "id": "5",
+      "action": "click",
+      "message": "로그인 버튼 클릭",
+      "selector": ".btn-login:visible >> text=로그인"
+    },
+    {
+      "id": "6",
+      "action": "click",
+      "message": "집행관리 메뉴 클릭",
+      "selector": "text=집행관리"
+    },
+    {
+      "id": "7",
+      "action": "click",
+      "message": "집행관리 서브메뉴 클릭",
+      "selector": "a:has-text(\"집행관리\"):not(:has-text(\"이체\"))"
+    },
+    {
+      "id": "8",
+      "action": "wait",
+      "message": "화면 로딩 대기",
+      "timeout": 10000,
+      "selector": ".cl-loading:hidden"
+    },
+    {
+      "id": "9",
+      "value": "{{year}}",
+      "action": "select",
+      "message": "회계연도 선택",
+      "selector": "[aria-label*=\"연도\"], #fiscalYear"
+    },
+    {
+      "id": "10",
+      "action": "click",
+      "message": "조회 버튼 클릭",
+      "selector": "button:has-text(\"조회\")"
+    },
+    {
+      "id": "11",
+      "action": "click",
+      "message": "집행등록 버튼 클릭",
+      "selector": "button:has-text(\"집행등록\")"
+    },
+    {
+      "id": "12",
+      "value": "신용카드",
+      "action": "select",
+      "message": "증빙유형 선택: 신용카드",
+      "selector": "#evidenceType"
+    },
+    {
+      "id": "13",
+      "action": "click",
+      "message": "카드내역조회 클릭",
+      "selector": "button:has-text(\"증빙내역조회\")"
+    },
+    {
+      "id": "14",
+      "action": "guide",
+      "message": "등록할 카드사용내역을 선택하고 비목/세목을 지정하세요"
+    },
+    {
+      "id": "15",
+      "action": "click",
+      "message": "저장 버튼 클릭",
+      "selector": "button:has-text(\"저장\")"
+    },
+    {
+      "id": "16",
+      "action": "click",
+      "message": "집행요청 버튼 클릭",
+      "selector": "button:has-text(\"집행요청\")"
+    }
+  ],
+  "status": "active",
+  "is_published": true,
+  "version": "1.0.0",
+  "created_at": "2025-12-05T14:11:22.081608+00:00",
+  "updated_at": "2025-12-05T14:11:22.081608+00:00",
+  "level": 3,
+  "variables": {
+    "year": {
+      "type": "string",
+      "label": "회계연도",
+      "default": "2024",
+      "required": true
+    },
+    "user_id": {
+      "type": "string",
+      "label": "사용자 ID",
+      "required": true
+    },
+    "password": {
+      "type": "string",
+      "label": "비밀번호",
+      "secret": true,
+      "required": true
+    }
+  },
+  "estimated_time": null,
+  "keywords": [],
+  "start_url": "https://www.losims.go.kr/lss.do",
+  "metadata": {
+    "aliases": [],
+    "startUrl": ""
+  }
+}

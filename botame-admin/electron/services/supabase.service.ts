@@ -362,8 +362,11 @@ export class SupabaseService {
       }
 
       // Convert DB format to Playbook type
+      // Merge metadata JSONB with database columns (DB columns take precedence)
+      const metadataJson = typeof data.metadata === 'object' ? data.metadata : {};
       const playbook: Playbook = {
         metadata: {
+          ...metadataJson, // Include any fields from metadata JSONB (start_url, aliases, etc.)
           id: data.playbook_id,
           name: data.name,
           description: data.description,
@@ -374,6 +377,8 @@ export class SupabaseService {
           estimatedTime: data.estimated_time,
           createdAt: data.created_at,
           updatedAt: data.updated_at,
+          startUrl: metadataJson.start_url || metadataJson.startUrl || data.start_url,
+          aliases: metadataJson.aliases || [],
         },
         steps: data.steps || [],
       };

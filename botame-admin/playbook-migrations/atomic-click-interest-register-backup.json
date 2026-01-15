@@ -1,0 +1,30 @@
+{
+  "id": "d1482859-428e-4bd7-aba2-1681e83b649c",
+  "playbook_id": "atomic-click-interest-register",
+  "name": "이자등록 버튼 클릭",
+  "description": "",
+  "category": "정산관리",
+  "difficulty": "보통",
+  "steps": [
+    {
+      "id": "1",
+      "action": "click",
+      "message": "이자등록 버튼 클릭",
+      "selector": "button:has-text(\"이자등록\")"
+    }
+  ],
+  "status": "active",
+  "is_published": true,
+  "version": "1.0.0",
+  "created_at": "2025-12-05T14:11:17.333905+00:00",
+  "updated_at": "2025-12-05T14:11:17.333905+00:00",
+  "level": 1,
+  "variables": {},
+  "estimated_time": null,
+  "keywords": [],
+  "start_url": "https://www.losims.go.kr/lss.do",
+  "metadata": {
+    "aliases": [],
+    "startUrl": ""
+  }
+}

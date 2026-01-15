@@ -1,0 +1,57 @@
+{
+  "id": "0575ba71-5e11-4bfd-b6a4-9df34cec3445",
+  "playbook_id": "func-transfer-batch",
+  "name": "일괄 이체요청",
+  "description": "선택된 집행건을 일괄 이체요청합니다.",
+  "category": "집행관리",
+  "difficulty": "보통",
+  "steps": [
+    {
+      "id": "1",
+      "action": "click",
+      "message": "전체선택",
+      "selector": ".select-all, input[type=checkbox]:first-child"
+    },
+    {
+      "id": "2",
+      "value": "{{transfer_password}}",
+      "action": "type",
+      "message": "이체비밀번호 입력",
+      "selector": "#transferPassword, input[type=password]:visible"
+    },
+    {
+      "id": "3",
+      "action": "click",
+      "message": "이체요청 버튼 클릭",
+      "selector": "button:has-text(\"이체요청\"), button:has-text(\"이체\")"
+    },
+    {
+      "id": "4",
+      "action": "wait",
+      "message": "인증서 팝업 표시 대기 (수동 인증 필요)",
+      "timeout": 30000,
+      "selector": ".certificate-popup:visible"
+    }
+  ],
+  "status": "active",
+  "is_published": true,
+  "version": "1.0.0",
+  "created_at": "2025-12-05T14:11:21.67154+00:00",
+  "updated_at": "2025-12-05T14:11:21.67154+00:00",
+  "level": 2,
+  "variables": {
+    "transfer_password": {
+      "type": "string",
+      "label": "이체비밀번호",
+      "secret": true,
+      "required": true
+    }
+  },
+  "estimated_time": null,
+  "keywords": [],
+  "start_url": "https://www.losims.go.kr/lss.do",
+  "metadata": {
+    "aliases": [],
+    "startUrl": ""
+  }
+}

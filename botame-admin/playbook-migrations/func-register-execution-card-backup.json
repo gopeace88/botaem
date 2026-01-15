@@ -1,0 +1,57 @@
+{
+  "id": "ca64ef7d-352d-41c3-9c42-fe7d9b9d67a3",
+  "playbook_id": "func-register-execution-card",
+  "name": "신용카드 집행등록",
+  "description": "신용카드 사용내역을 증빙으로 집행등록합니다.",
+  "category": "집행관리",
+  "difficulty": "보통",
+  "steps": [
+    {
+      "id": "1",
+      "action": "click",
+      "message": "집행등록 버튼 클릭",
+      "selector": "button:has-text(\"집행등록\")"
+    },
+    {
+      "id": "2",
+      "action": "wait",
+      "message": "집행등록 화면 표시 대기",
+      "timeout": 5000,
+      "selector": ".execution-form:visible, .modal:visible"
+    },
+    {
+      "id": "3",
+      "value": "신용카드",
+      "action": "select",
+      "message": "증빙유형 선택: 신용카드",
+      "selector": "#evidenceType"
+    },
+    {
+      "id": "4",
+      "action": "click",
+      "message": "증빙내역조회 버튼 클릭",
+      "selector": "button:has-text(\"증빙내역조회\"), button:has-text(\"내역조회\")"
+    },
+    {
+      "id": "5",
+      "action": "wait",
+      "message": "카드내역 목록 로딩 대기",
+      "timeout": 10000,
+      "selector": ".evidence-list:visible"
+    }
+  ],
+  "status": "active",
+  "is_published": true,
+  "version": "1.0.0",
+  "created_at": "2025-12-05T14:11:20.895056+00:00",
+  "updated_at": "2025-12-05T14:11:20.895056+00:00",
+  "level": 2,
+  "variables": {},
+  "estimated_time": null,
+  "keywords": [],
+  "start_url": "https://www.losims.go.kr/lss.do",
+  "metadata": {
+    "aliases": [],
+    "startUrl": ""
+  }
+}

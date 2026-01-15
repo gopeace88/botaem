@@ -1,0 +1,30 @@
+{
+  "id": "fbc7fb47-7d74-4a33-b1ad-0044f6ff12d5",
+  "playbook_id": "atomic-menu-settlement",
+  "name": "정산관리 메뉴 클릭",
+  "description": "",
+  "category": "정산관리",
+  "difficulty": "보통",
+  "steps": [
+    {
+      "id": "1",
+      "action": "click",
+      "message": "정산관리 메뉴 클릭",
+      "selector": "text=정산관리"
+    }
+  ],
+  "status": "active",
+  "is_published": true,
+  "version": "1.0.0",
+  "created_at": "2025-12-05T14:11:16.373472+00:00",
+  "updated_at": "2025-12-05T14:11:16.373472+00:00",
+  "level": 1,
+  "variables": {},
+  "estimated_time": null,
+  "keywords": [],
+  "start_url": "https://www.losims.go.kr/lss.do",
+  "metadata": {
+    "aliases": [],
+    "startUrl": ""
+  }
+}

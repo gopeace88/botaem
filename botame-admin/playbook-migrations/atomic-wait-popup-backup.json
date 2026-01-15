@@ -1,0 +1,31 @@
+{
+  "id": "91de083f-b87b-4d3a-a004-0036ec5bd3a0",
+  "playbook_id": "atomic-wait-popup",
+  "name": "팝업 표시 대기",
+  "description": "",
+  "category": "공통",
+  "difficulty": "보통",
+  "steps": [
+    {
+      "id": "1",
+      "action": "wait",
+      "message": "팝업 표시 대기",
+      "timeout": 10000,
+      "selector": ".popup:visible, .modal:visible, [role=dialog]:visible"
+    }
+  ],
+  "status": "active",
+  "is_published": true,
+  "version": "1.0.0",
+  "created_at": "2025-12-05T14:11:18.488788+00:00",
+  "updated_at": "2025-12-05T14:11:18.488788+00:00",
+  "level": 1,
+  "variables": {},
+  "estimated_time": null,
+  "keywords": [],
+  "start_url": "https://www.losims.go.kr/lss.do",
+  "metadata": {
+    "aliases": [],
+    "startUrl": ""
+  }
+}

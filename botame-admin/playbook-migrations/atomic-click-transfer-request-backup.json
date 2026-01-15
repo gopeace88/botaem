@@ -1,0 +1,30 @@
+{
+  "id": "db44c16a-6392-4c13-854c-7d0952caa4ca",
+  "playbook_id": "atomic-click-transfer-request",
+  "name": "이체요청 버튼 클릭",
+  "description": "",
+  "category": "집행관리",
+  "difficulty": "보통",
+  "steps": [
+    {
+      "id": "1",
+      "action": "click",
+      "message": "이체요청 버튼 클릭",
+      "selector": "button:has-text(\"이체요청\"), button:has-text(\"이체\")"
+    }
+  ],
+  "status": "active",
+  "is_published": true,
+  "version": "1.0.0",
+  "created_at": "2025-12-05T14:11:15.013141+00:00",
+  "updated_at": "2025-12-05T14:11:15.013141+00:00",
+  "level": 1,
+  "variables": {},
+  "estimated_time": null,
+  "keywords": [],
+  "start_url": "https://www.losims.go.kr/lss.do",
+  "metadata": {
+    "aliases": [],
+    "startUrl": ""
+  }
+}
