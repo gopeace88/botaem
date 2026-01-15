@@ -12,6 +12,8 @@ import { AISelectorService } from './services/ai-selector.service';
 import { PlaybookRunnerService } from './services/playbook-runner.service';
 import { BrowserService } from './services/browser.service';
 import { getAutoUpdateService } from './services/auto-update.service';
+import { getErrorHandler } from './errors/handler';
+import { FatalError } from './errors/base';
 import { Playbook } from '../shared/types';
 import { configLoader } from '../shared/config';
 import * as path from 'path';
@@ -37,6 +39,7 @@ let runnerService: PlaybookRunnerService;
 let browserService: BrowserService;
 let aiSelectorService: AISelectorService;
 const autoUpdateService = getAutoUpdateService();
+const errorHandler = getErrorHandler();
 
 function createWindow() {
   const isDev = !app.isPackaged;
@@ -66,6 +69,7 @@ function createWindow() {
   runnerService = new PlaybookRunnerService(browserService);
   aiSelectorService = new AISelectorService();
   autoUpdateService.setMainWindow(mainWindow);
+  errorHandler.setMainWindow(mainWindow);
 
   // Connect recording service to shared browser
   recordingService.setBrowserService(browserService);
@@ -483,4 +487,21 @@ app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow();
   }
+});
+
+// Global error handlers
+process.on('uncaughtException', async (error) => {
+  console.error('[Main] Uncaught exception:', error);
+  await errorHandler.handle(error);
+  
+  // If fatal error, exit app
+  if (error instanceof FatalError) {
+    app.exit(1);
+  }
+});
+
+process.on('unhandledRejection', async (reason, promise) => {
+  console.error('[Main] Unhandled rejection at:', promise, 'reason:', reason);
+  const error = reason instanceof Error ? reason : new Error(String(reason));
+  await errorHandler.handle(error);
 });

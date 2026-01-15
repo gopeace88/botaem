@@ -83,7 +83,12 @@ const electronAPI = {
 
   // Subscribe to events from main process
   on: (channel: string, callback: IpcCallback) => {
-    const validChannels = ['recording:event', 'runner:event', 'supabase:connected'];
+    const validChannels = [
+      'recording:event',
+      'runner:event',
+      'supabase:connected',
+      'error:occurred',
+    ];
 
     if (validChannels.includes(channel)) {
       const subscription = (_event: Electron.IpcRendererEvent, ...args: unknown[]) =>
