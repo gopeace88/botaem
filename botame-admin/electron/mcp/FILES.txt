@@ -1,0 +1,126 @@
+Botame MCP Server - File Structure
+====================================
+
+electron/mcp/
+│
+├── botame-mcp.server.ts (834 lines)
+│   ├── Imports
+│   │   ├── @anthropic-ai/claude-agent-sdk
+│   │   ├── zod
+│   │   ├── js-yaml
+│   │   └── @botame/types
+│   │
+│   ├── Types
+│   │   ├── BotameMcpServerInstance
+│   │   └── BotameMcpServerOptions
+│   │
+│   ├── createBotameMcpServer()
+│   │   └── Returns createSdkMcpServer with 6 tools
+│   │
+│   ├── Tools
+│   │   ├── 1. run_playbook
+│   │   │   ├── Read YAML file
+│   │   │   ├── Validate structure
+│   │   │   ├── Execute via PlaybookRunnerService
+│   │   │   └── Format results
+│   │   │
+│   │   ├── 2. heal_selector
+│   │   │   ├── Generate accessibility selectors
+│   │   │   ├── Generate text selectors
+│   │   │   ├── Generate structural selectors
+│   │   │   ├── Validate against page
+│   │   │   └── Sort by confidence
+│   │   │
+│   │   ├── 3. read_playbook
+│   │   │   ├── Parse YAML
+│   │   │   └── Format display
+│   │   │
+│   │   ├── 4. list_playbooks
+│   │   │   ├── Scan directory
+│   │   │   ├── Parse metadata
+│   │   │   └── Apply filters
+│   │   │
+│   │   ├── 5. get_browser_status
+│   │   │   ├── Check connection
+│   │   │   └── Return state
+│   │   │
+│   │   └── 6. capture_screenshot
+│   │       ├── Capture via Playwright
+│   │       └── Encode base64
+│   │
+│   └── Helper Functions
+│       ├── formatExecutionSummary()
+│       ├── formatPlaybook()
+│       └── generateFallbackSelectors()
+│
+├── index.ts (12 lines)
+│   └── Exports
+│       ├── createBotameMcpServer
+│       ├── BotameMcpServerInstance
+│       └── BotameMcpServerOptions
+│
+├── example.ts (270+ lines)
+│   └── 12 Examples
+│       ├── 1. Basic Setup
+│       ├── 2. List Playbooks
+│       ├── 3. Read Playbook
+│       ├── 4. Check Browser
+│       ├── 5. Run Playbook
+│       ├── 6. Capture Screenshot
+│       ├── 7. Heal Selector
+│       ├── 8. Complete Workflow
+│       ├── 9. Error Handling
+│       ├── 10. Electron IPC
+│       ├── 11. Using Filters
+│       └── 12. Full Page Screenshot
+│
+├── README.md (300+ lines)
+│   ├── Overview
+│   ├── Installation
+│   ├── Usage
+│   ├── Tool Reference (6 tools)
+│   ├── Architecture
+│   ├── Integration
+│   ├── Healing Strategies
+│   ├── File Structure
+│   ├── Dependencies
+│   ├── Error Handling
+│   └── Testing
+│
+├── QUICKSTART.md (200+ lines)
+│   ├── Installation
+│   ├── Basic Usage
+│   ├── Tool Reference (quick)
+│   ├── Response Format
+│   ├── Error Handling
+│   ├── Selector Healing
+│   ├── Integration Example
+│   ├── Troubleshooting
+│   └── Next Steps
+│
+├── IMPLEMENTATION.md (400+ lines)
+│   ├── Overview
+│   ├── Files Created
+│   ├── Technical Implementation
+│   ├── Dependencies
+│   ├── Type Safety
+│   ├── Error Handling
+│   ├── Helper Functions
+│   ├── Integration
+│   ├── Comparison with Obsidian
+│   ├── Key Features
+│   ├── Next Steps
+│   └── Summary
+│
+└── SUMMARY.md (this file)
+    ├── Deliverables
+    ├── MCP Tools
+    ├── Technical Highlights
+    ├── Integration Example
+    ├── Dependencies
+    ├── Documentation
+    ├── Next Steps
+    ├── Requirements Checklist
+    └── Success Criteria
+
+Total: ~2,000 lines of code and documentation
