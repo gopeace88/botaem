@@ -19,7 +19,8 @@
     "test:e2e:report": "playwright show-report",
     "benchmark": "node -r esbuild-runner/register benchmarks/playbook-execution.bench.ts",
     "benchmark:startup": "node -r esbuild-runner/register benchmarks/startup-time.bench.ts",
-    "benchmark:all": "pnpm run benchmark && pnpm run benchmark:startup"
+    "benchmark:all": "pnpm run benchmark && pnpm run benchmark:startup",
+    "validate-playbooks": "node -r esbuild-runner/register scripts/validate-playbooks.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.2",

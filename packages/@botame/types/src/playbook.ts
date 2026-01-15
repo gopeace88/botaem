@@ -140,6 +140,7 @@ export interface PlaybookStep {
   action: ActionType;
   selector?: string; // Primary selector (하위 호환)
   selectors?: SelectorInfo[]; // Multiple fallback selectors
+  smartSelector?: import("./selector").SmartSelector; // AI-powered smart selector
   value?: string;
   message?: string;
   timeout?: number;
