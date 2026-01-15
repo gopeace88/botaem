@@ -38,6 +38,7 @@
     "autoprefixer": "^10.4.16",
     "electron": "^28.3.3",
     "electron-builder": "^24.9.1",
+    "electron-updater": "^6.7.3",
     "electron-vite": "^2.0.0",
     "eslint": "^8.56.0",
     "eslint-plugin-react": "^7.33.2",
@@ -57,6 +58,11 @@
     "directories": {
       "output": "release"
     },
+    "publish": {
+      "provider": "github",
+      "owner": "gopeace88",
+      "repo": "botaem"
+    },
     "win": {
       "target": [
         {
@@ -67,6 +73,12 @@
         }
       ],
       "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
     }
   }
 }

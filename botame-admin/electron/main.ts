@@ -11,6 +11,7 @@ import { SupabaseService } from './services/supabase.service';
 import { AISelectorService } from './services/ai-selector.service';
 import { PlaybookRunnerService } from './services/playbook-runner.service';
 import { BrowserService } from './services/browser.service';
+import { getAutoUpdateService } from './services/auto-update.service';
 import { Playbook } from '../shared/types';
 import { configLoader } from '../shared/config';
 import * as path from 'path';
@@ -35,6 +36,7 @@ let supabaseService: SupabaseService;
 let runnerService: PlaybookRunnerService;
 let browserService: BrowserService;
 let aiSelectorService: AISelectorService;
+const autoUpdateService = getAutoUpdateService();
 
 function createWindow() {
   const isDev = !app.isPackaged;
@@ -63,6 +65,7 @@ function createWindow() {
   browserService = new BrowserService();
   runnerService = new PlaybookRunnerService(browserService);
   aiSelectorService = new AISelectorService();
+  autoUpdateService.setMainWindow(mainWindow);
 
   // Connect recording service to shared browser
   recordingService.setBrowserService(browserService);
@@ -407,6 +410,30 @@ function setupIpcHandlers() {
     return configLoader.getCategories();
   });
 }
+
+
+  // Auto-updater
+  ipcMain.handle('autoupdate:check', async () => {
+    return await autoUpdateService.checkForUpdates();
+  });
+
+  ipcMain.handle('autoupdate:download', async () => {
+    return await autoUpdateService.downloadUpdate();
+  });
+
+  ipcMain.handle('autoupdate:install', () => {
+    autoUpdateService.installAndRestart();
+    return { success: true };
+  });
+
+  ipcMain.handle('autoupdate:getInfo', () => {
+    return {
+      success: true,
+      updateAvailable: autoUpdateService.isUpdateAvailable(),
+      updateDownloaded: autoUpdateService.isUpdateDownloaded(),
+      updateInfo: autoUpdateService.getUpdateInfo(),
+    };
+  });
 
 
   // Credentials - API Key Management

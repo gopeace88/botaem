@@ -68,6 +68,11 @@ const electronAPI = {
       'credentials:delete',
       'credentials:has',
       'credentials:validate',
+      // Auto-updater
+      'autoupdate:check',
+      'autoupdate:download',
+      'autoupdate:install',
+      'autoupdate:getInfo',
     ];
 
     if (validChannels.includes(channel)) {
